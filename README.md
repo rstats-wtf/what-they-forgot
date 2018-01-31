@@ -8,6 +8,7 @@ Shortlinks and downloads:
   * `usethis::use_course("rstd.io/forgot_1")` downloads first challenge re: exploring your package libraries
     - If you have trouble connecting to DropBox, the same files are here in the directory [`day1_s1_explore-libraries`](day1_s1_explore-libraries)
   *  `usethis::use_course("rstd.io/forgot_2")` downloads second challenge re: working with the filesystem programmatically
+    - If you have trouble connecting to DropBox, the same files are here in the directory [`day1_s2_copy-files`](day1_s2_copy-files)
   * [Download PDF of second set of slides](https://github.com/jennybc/what-they-forgot/raw/master/slides/day1_slides2_git-and-github.pdf) re: Git + GitHub + R/Rmd
   * [Happy Git with R](http://happygitwithr.com) participants and helpers should use this as primary resource for Git/GitHub setup and troubleshooting
 
