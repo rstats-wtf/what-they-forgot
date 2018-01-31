@@ -14,13 +14,13 @@ Shortlinks and downloads:
 [![Gitter chat](https://badges.gitter.im/what-they-forgot/Lobby.png)](https://gitter.im/what-they-forgot/Lobby) <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
 
 
-## Installing the `fs` package on macOS
+## Installing the fs package on macOS
 
 fs is a new package from Jim Hester that for managing files and
 directories that I will use throughout the workshop.
 
 The CRAN mirrors are currently having trouble with macOS binaries. If
-you are on mac you can install the `fs` package with a binary that we
+you are on mac you can install the fs package with a binary that we
 built:
 
 ```
