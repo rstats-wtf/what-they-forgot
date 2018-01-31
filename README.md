@@ -27,3 +27,16 @@ built:
 url <- "https://github.com/jennybc/what-they-forgot/blob/master/fs_1.1.0.tgz?raw=true"
 install.packages(url, repos = NULL, type = "binary")
 ```
+
+
+## Fixing slow CRAN downloads
+
+We have set up a local CRAN mirror for the RStudio conference. All
+requests to `https://cran.rstudio.com/` are intercepted and redirected
+to this local mirror in order to improve download speeds. Make sure
+your default CRAN repo is set to the RStudio mirror (this is the
+default if you use RStudio):
+
+```
+options(repos = c(CRAN = "https://cran.rstudio.com/"))
+```
