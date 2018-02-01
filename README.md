@@ -27,6 +27,10 @@ Day 2, morning
   * [Download PDF of slides](https://github.com/jennybc/what-they-forgot/raw/master/slides/day2_slides1_github-search.pdf) re: how to exploit the active R scene on GitHub by Jim Hester
   * General Q & A re: GitHub habits and etiquette.
   * Discuss [issue about updating / reinstalling packages](https://github.com/jennybc/what-they-forgot/issues/4) after updating R. General Q & A re: maintaining one's R installation. Startup files.
+    - [GitHub search](https://github.com/search?utf8=✓&q=dotfiles&type=) for dotfile repos!
+    - Kevin Ushey blog post on `.Rprofile` [RProfile Essentials](http://kevinushey.github.io/blog/2015/02/02/rprofile-essentials/)
+    - Kevin's [etc repo](https://github.com/kevinushey/etc) for dotfiles and the like
+    - Shaun Jackman's [dotfiles repo](https://github.com/sjackman/dotfiles)
   * [Download PDF of slides](https://github.com/jennybc/what-they-forgot/raw/master/slides/day2_slides2_project-api.pdf) re: project subdirectories & choreography, a humane API for an analysis, and the here package
     - Link to GitHub repo you will fork, clone, and develop during the challenge: [rstd.io/forgot_3](https://rstd.io/forgot_3)
     - One possible solution (don't peek!) [rstd.io/forgot_4](https://rstd.io/forgot_4)
@@ -35,8 +39,11 @@ Day 2, afternoon
 
   * Discuss file and directory naming (was skipped on Day 1 due to time)
   * Download PDF of slides on iterating with purrr *link to come*  
-  * Live code, version with prompts only and solutions *links to come*
-  * Prompts for Choose Your own Adventure *link to come*
+  * Live code demo of purrr
+    - [rstd.io/jenny-live-code](https://rstd.io/jenny-live-code)
+    - Version at the start (has gaps for challenges) *link coming*
+    - Version at the end (everything filled in) *link coming*
+  * Prompts for Choose Your Own Adventure *link to come*
   * During Choose Your own Adventure, also assume it's "office hours" w/ Jenny, Kirill, Lucy, Jim. Show us your weird R stuff!
   * Examples that draw on many workshop themes
     - Clickable gallery of [O'Reilly book cover parodies](https://github.com/jennybc/orly-full-res#readme), forked from [thepracticaldev/orly-full-res](https://github.com/thepracticaldev/orly-full-res)
