@@ -15,6 +15,8 @@ Take an existing project, turn on GitHub Pages, and create a few internal links 
 
 Try to fix a small bug or make a small PR (on docs? add example?) to an R package developed on GitHub.
 
+Make a PR on an existing repo/package: Make a bingo card! <http://happygitwithr.com/bingo.html>
+
 What's a topic you're interested in diving deeper into that's not here? We'll try to think up a prompt! Already got this request:
 
   * How do you actually go back to a previous state in the Git history? Temporarily or permanently.
