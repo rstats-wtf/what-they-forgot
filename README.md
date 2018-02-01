@@ -38,12 +38,14 @@ Day 2, morning
     
 Day 2, afternoon
 
+  * Finish morning challenge and debrief
+  * Kirill Müller to share a preview of Make-like packages for R work
   * Discuss file and directory naming (was skipped on Day 1 due to time)
-  * Download PDF of slides on iterating with purrr *link to come*  
+  * [Download PDF of slides](https://github.com/jennybc/what-they-forgot/raw/master/slides/day2_slides4_purrr.pdf) on iterating with purrr
   * Live code demo of purrr
     - [rstd.io/jenny-live-code](https://rstd.io/jenny-live-code)
     - Version at the start (has gaps for challenges) *link coming*
-    - Version at the end (everything filled in) *link coming*
+    - Version at the end (everything filled in) *Jenny to copy her final version here after the live code segment is done*
   * Prompts for Choose Your Own Adventure *link to come*
   * During Choose Your own Adventure, also assume it's "office hours" w/ Jenny, Kirill, Lucy, Jim. Show us your weird R stuff!
   * Examples that draw on many workshop themes
