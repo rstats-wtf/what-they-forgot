@@ -46,7 +46,7 @@ Day 2, afternoon
     - [rstd.io/jenny-live-code](https://rstd.io/jenny-live-code)
     - Version at the start (has gaps for challenges) [purrr-live-coding.R](purrr-live-coding.R)
     - Version at the end (everything filled in) *Jenny to copy her final version here after the live code segment is done*
-  * Prompts for Choose Your Own Adventure: [prompts.md](prompt.md)
+  * Prompts for Choose Your Own Adventure: [prompts.md](prompts.md)
   * During Choose Your own Adventure, also assume it's "office hours" w/ Jenny, Kirill, Lucy, Jim. Show us your weird R stuff!
   * Examples that draw on many workshop themes
     - Clickable gallery of [O'Reilly book cover parodies](https://github.com/jennybc/orly-full-res#readme), forked from [thepracticaldev/orly-full-res](https://github.com/thepracticaldev/orly-full-res)
