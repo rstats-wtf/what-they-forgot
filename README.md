@@ -31,6 +31,7 @@ Day 2, morning
     - Kevin Ushey blog post on `.Rprofile` [RProfile Essentials](http://kevinushey.github.io/blog/2015/02/02/rprofile-essentials/)
     - Kevin's [etc repo](https://github.com/kevinushey/etc) for dotfiles and the like
     - Shaun Jackman's [dotfiles repo](https://github.com/sjackman/dotfiles)
+    - Jim Hester's [dotfiles repo](https://github.com/jimhester/dotfiles)
   * [Download PDF of slides](https://github.com/jennybc/what-they-forgot/raw/master/slides/day2_slides2_project-api.pdf) re: project subdirectories & choreography, a humane API for an analysis, and the here package
     - Link to GitHub repo you will fork, clone, and develop during the challenge: [rstd.io/forgot_3](https://rstd.io/forgot_3)
     - One possible solution (don't peek!) [rstd.io/forgot_4](https://rstd.io/forgot_4)
