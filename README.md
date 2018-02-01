@@ -13,7 +13,8 @@ Shortlinks and downloads:
   * [Happy Git with R](http://happygitwithr.com) participants and helpers should use this as primary resource for Git/GitHub setup and troubleshooting
   * Download PDF of slides re: how to exploit the active R scene on GitHub by Jim Hester *link to come*
   * [Download PDF of slides](https://github.com/jennybc/what-they-forgot/raw/master/slides/day2_slides2_project-api.pdf) re: project subdirectories & choreography, a humane API for an analysis, and the here package
-  * Link GitHub repo you will fork, clone, and develop during the challenge: [rstd.io/forgot_3](https://rstd.io/forgot_3)
+  * Link to GitHub repo you will fork, clone, and develop during the challenge: [rstd.io/forgot_3](https://rstd.io/forgot_3)
+    - One possible solution (don't peek!) [rstd.io/forgot_4](https://rstd.io/forgot_4)
   * Download PDF of slides on iterating with purrr *link to come*  
 
 [![Gitter chat](https://badges.gitter.im/what-they-forgot/Lobby.svg)](https://gitter.im/what-they-forgot/Lobby) <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
