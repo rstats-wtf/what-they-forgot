@@ -42,6 +42,7 @@ Day 2, afternoon
   * Kirill Müller to share a preview of Make-like packages for R work
   * Discuss file and directory naming (was skipped on Day 1 due to time)
   * [Download PDF of slides](https://github.com/jennybc/what-they-forgot/raw/master/slides/day2_slides4_purrr.pdf) on iterating with purrr
+  * Much bigger set of purrr explainers and tutorials: <https://jennybc.github.io/purrr-tutorial/index.html>
   * Live code demo of purrr
     - [rstd.io/jenny-live-code](https://rstd.io/jenny-live-code)
     - Version at the start (has gaps for challenges) [purrr-live-coding.R](purrr-live-coding.R)
