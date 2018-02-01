@@ -11,7 +11,7 @@ Shortlinks and downloads:
     - If you have trouble connecting to DropBox, the same files are here in the directory [`day1_s2_copy-files`](day1_s2_copy-files)
   * [Download PDF of slides](https://github.com/jennybc/what-they-forgot/raw/master/slides/day1_slides2_git-and-github.pdf) re: Git + GitHub + R/Rmd
   * [Happy Git with R](http://happygitwithr.com) participants and helpers should use this as primary resource for Git/GitHub setup and troubleshooting
-  * Download PDF of slides re: how to exploit the active R scene on GitHub by Jim Hester *link to come*
+  * [Download PDF of slides](day2_slides1_github-search.pdf) re: how to exploit the active R scene on GitHub by Jim Hester
   * [Download PDF of slides](https://github.com/jennybc/what-they-forgot/raw/master/slides/day2_slides2_project-api.pdf) re: project subdirectories & choreography, a humane API for an analysis, and the here package
   * Link to GitHub repo you will fork, clone, and develop during the challenge: [rstd.io/forgot_3](https://rstd.io/forgot_3)
     - One possible solution (don't peek!) [rstd.io/forgot_4](https://rstd.io/forgot_4)
