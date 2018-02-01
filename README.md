@@ -4,13 +4,17 @@ Shortlinks and downloads:
 
   * [rstd.io/forgot](https://rstd.io/forgot) points here
   * [rstd.io/forgot_gitter](https://rstd.io/forgot_gitter) is our chat room (ignore if you are overstimulated already)
-  * [Download PDF of first set of slides](https://github.com/jennybc/what-they-forgot/raw/master/slides/day1_slides1_projects-and-paths.pdf) re: projects, file system operations, file names
+  * [Download PDF of of slides](https://github.com/jennybc/what-they-forgot/raw/master/slides/day1_slides1_projects-and-paths.pdf) re: projects, file system operations, file names
   * `usethis::use_course("rstd.io/forgot_1")` downloads first challenge re: exploring your package libraries
     - If you have trouble connecting to DropBox, the same files are here in the directory [`day1_s1_explore-libraries`](day1_s1_explore-libraries)
   *  `usethis::use_course("rstd.io/forgot_2")` downloads second challenge re: working with the filesystem programmatically
     - If you have trouble connecting to DropBox, the same files are here in the directory [`day1_s2_copy-files`](day1_s2_copy-files)
-  * [Download PDF of second set of slides](https://github.com/jennybc/what-they-forgot/raw/master/slides/day1_slides2_git-and-github.pdf) re: Git + GitHub + R/Rmd
+  * [Download PDF of slides](https://github.com/jennybc/what-they-forgot/raw/master/slides/day1_slides2_git-and-github.pdf) re: Git + GitHub + R/Rmd
   * [Happy Git with R](http://happygitwithr.com) participants and helpers should use this as primary resource for Git/GitHub setup and troubleshooting
+  * Download PDF of slides re: how to exploit the active R scene on GitHub by Jim Hester *link to come*
+  * [Download PDF of slides](https://github.com/jennybc/what-they-forgot/raw/master/slides/day2_slides2_project-api.pdf) re: project subdirectories & choreography, a humane API for an analysis, and the here package
+  * Link GitHub repo you will fork, clone, and develop during the challenge: [rstd.io/forgot_3](https://rstd.io/forgot_3)
+  * Download PDF of slides on iterating with purrr *link to come*  
 
 [![Gitter chat](https://badges.gitter.im/what-they-forgot/Lobby.svg)](https://gitter.im/what-they-forgot/Lobby) <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
 
