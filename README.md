@@ -44,7 +44,7 @@ Day 2, afternoon
   * [Download PDF of slides](https://github.com/jennybc/what-they-forgot/raw/master/slides/day2_slides4_purrr.pdf) on iterating with purrr
   * Live code demo of purrr
     - [rstd.io/jenny-live-code](https://rstd.io/jenny-live-code)
-    - Version at the start (has gaps for challenges) *link coming*
+    - Version at the start (has gaps for challenges) [purrr-live-coding.R](purrr-live-coding.R)
     - Version at the end (everything filled in) *Jenny to copy her final version here after the live code segment is done*
   * Prompts for Choose Your Own Adventure: [prompts.md](prompt.md)
   * During Choose Your own Adventure, also assume it's "office hours" w/ Jenny, Kirill, Lucy, Jim. Show us your weird R stuff!
