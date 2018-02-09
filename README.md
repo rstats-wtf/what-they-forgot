@@ -39,7 +39,7 @@ Day 2, morning
 Day 2, afternoon
 
   * Finish morning challenge and debrief
-  * Kirill Müller to share a preview of Make-like packages for R work
+  * [Kirill Müller](https://github.com/krlmlr/) to share a [preview of Make-like packages for R work](https://krlmlr.github.io/drake-pitch/#1)
   * Discuss file and directory naming (was skipped on Day 1 due to time)
   * [Download PDF of slides](https://github.com/jennybc/what-they-forgot/raw/master/slides/day2_slides4_purrr.pdf) on iterating with purrr
   * Much bigger set of purrr explainers and tutorials: <https://jennybc.github.io/purrr-tutorial/index.html>
