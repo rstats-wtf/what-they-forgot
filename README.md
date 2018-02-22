@@ -39,7 +39,7 @@ Day 2, morning
 Day 2, afternoon
 
   * Finish morning challenge and debrief
-  * Kirill Müller to share a preview of Make-like packages for R work
+  * [Kirill Müller](https://github.com/krlmlr/) to share a [preview of Make-like packages for R work](https://krlmlr.github.io/drake-pitch/#1)
   * Discuss file and directory naming (was skipped on Day 1 due to time)
   * [Download PDF of slides](https://github.com/jennybc/what-they-forgot/raw/master/slides/day2_slides4_purrr.pdf) on iterating with purrr
   * Much bigger set of purrr explainers and tutorials: <https://jennybc.github.io/purrr-tutorial/index.html>
@@ -63,14 +63,18 @@ fs is a new package from Jim Hester that for managing files and
 directories that I will use throughout the workshop.
 
 The CRAN mirrors are currently having trouble with macOS binaries. If
-you are on mac you can install the fs package with a binary that we
-built:
+you are on mac you can install the fs package with a binary for the current
+CRAN release (1.1.0):
 
 ```
 url <- "https://github.com/jennybc/what-they-forgot/blob/master/fs_1.1.0.tgz?raw=true"
 install.packages(url, repos = NULL, type = "binary")
 ```
 
+There is also a binary available for the current development version of fs.
+```
+install.packages("https://github.com/r-lib/fs/releases/download/1.1.0.9000/fs_1.1.0.9000.tgz")
+```
 
 ## Fixing slow CRAN downloads
 
