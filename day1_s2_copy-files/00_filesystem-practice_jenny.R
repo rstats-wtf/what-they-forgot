@@ -1,4 +1,4 @@
-## First attempt: Just get it to work ----
+## First attempt: Just get it to work ... on a Mac ----
 
 list.files("~/Desktop/day1_s1_explore-libraries")
 
@@ -40,6 +40,38 @@ list.files()
 ## Copy again, using fs ----
 library(fs)
 (from_dir <- path_home("Desktop", "day1_s1_explore-libraries"))
+(from_files <- dir_ls(from_dir, glob = "*.R"))
+(to_files <- path_file(from_files))
+(out <- file_copy(from_files, to_files))
+dir_ls()
+dir_info()
+
+## Clean it out, so we can write a version that works on Windows ----
+file.remove(to_files)
+dir_ls()
+
+## Copy again, using fs and being resilient to Windows ----
+library(fs)
+
+desktop <- function() {
+  places <- c(
+    path_home("Desktop"), # typical macOS = ~/Desktop
+    path(Sys.getenv("USERPROFILE"), "Desktop"), # typical Windows Desktop
+    path_home() # usually same as above, on Windows
+  )
+  ok <- file_exists(places) & path_file(places) == "Desktop"
+  if (all(!ok)) {
+    stop("Can't determin path to user's Desktop")
+  }
+  places[ok][[1]]
+}
+desktop()
+
+path_desktop <- function(...) {
+  path(desktop(), ...)
+}
+
+(from_dir <- path_desktop("day1_s1_explore-libraries"))
 (from_files <- dir_ls(from_dir, glob = "*.R"))
 (to_files <- path_file(from_files))
 (out <- file_copy(from_files, to_files))
