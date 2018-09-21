@@ -14,3 +14,10 @@
 Debugging?
 
 Resiliency via working on another OS? VM, travis/appveyor, Docker?
+
+Mechanics:
+
+  * The usual setup instructions, perhaps with an upgrade re: git2r/usethis readiness.
+  * Use gitter again to facilitate real-time conversations and link sharing.
+  * Elicit questions people think are of general interest early on Day 1, probably via GitHub issue (also a nice early GH task). We answer/discuss a subset of the most upvoted things on Day 2.
+  * Provide some structure for the highly specific "office hour" type of consultations.
