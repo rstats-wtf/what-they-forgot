@@ -8,10 +8,12 @@
 | Day 1, p.m. 2 | Activity: various combos of getting new/existing stuff into Git/GitHub and of getting GitHub stuff onto your machine<br>Remotes, branches | Jenny, Jim |
 | Day 2, a.m. 1 | R: Startup & how to maintain/upgrade R & pkgs<br>Activity: something about `.Rprofile` and `.Renviron`<br> Debugging start | Jim |
 | Day 2, a.m. 2 | More debugging, eventually morphing into GitHub search and package source navigation/appreciation | Jim    |
-| Day 2, p.m. 1 | Iteration with purrr (include making a README.Rmd programatically) | ? |
+| Day 2, p.m. 1 | Iteration with purrr (include making a README.Rmd programatically) | Jenny |
 | Day 2, p.m. 2 | Practical Git/GitHub workflows: branches, resets, collaboration, merge conflicts, pull & rebase, cherry pick | Jim/Jenny |
 
 Notes:
+
+The order is still wonky, as it time allocated to various things.
 
 Jenny's debugging wish list: browser(), traceback(), options(error = recover)
 
