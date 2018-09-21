@@ -9,7 +9,7 @@
 | Day 2, a.m. 1 | R: Startup & how to maintain/upgrade R & pkgs<br>Activity: something about `.Rprofile` and `.Renviron`<br> Debugging start | Jim |
 | Day 2, a.m. 2 | More debugging, eventually morphing into GitHub search and package source navigation/appreciation | Jim    |
 | Day 2, p.m. 1 | Iteration with purrr (include making a README.Rmd programatically) | Jenny |
-| Day 2, p.m. 2 | Practical Git/GitHub workflows: branches, resets, collaboration, merge conflicts, pull & rebase, cherry pick | Jim/Jenny |
+| Day 2, p.m. 2 | Practical Git/GitHub workflows: Branch as safety net & method of time travel, resets, merge conflicts, amending, interactive rebase to edit commit message/change order of commits, staging specific lines/chunks, models for collaborative work, pull & rebase, cherry pick | Jim/Jenny |
 
 Notes:
 
