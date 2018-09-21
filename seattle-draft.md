@@ -24,3 +24,4 @@ Mechanics:
   * Elicit questions people think are of general interest early on Day 1, probably via GitHub issue (also a nice early GH task). We answer/discuss a subset of the most upvoted things on Day 2.
   * Provide some structure for the highly specific "office hour" type of consultations.
   * Think about: physical setup, groups or pairs (physical proximity or not, eg for a gh activity), sticky notes, 2 projectors?
+  * How to prepare this content so it's easy to link to and use in other parts of life? I.e. don't lock extremely useful content only into a massive slide deck.
