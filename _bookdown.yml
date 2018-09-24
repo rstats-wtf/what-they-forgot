@@ -1,4 +1,5 @@
 book_filename: "bookdown-demo"
+output_dir: "docs"
 language:
   ui:
     chapter_name: "Chapter "
