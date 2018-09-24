@@ -1,5 +1,19 @@
 # What They Forgot to Teach You About R
 
+<https://www.rstudio.com/workshops/what-they-forgot-to-teach-you-about-r/>
+
+Main objectives:
+
+  * Project-oriented mentality
+  * Good hygiene around paths
+  * Better understanding of R installation and package library
+  * How/why version control
+  * How to use dev packages and make use of R / package source
+  * Iteration (currently an isolated topic, so let's discuss)
+  * Meta goal: How to get yourself unstuck! Let's assume things will wrong. Now what? 
+
+The order below is still wonky, as is time allocated to various things.
+
 | Unit          | What | Who |
 |---------------|------|-----|
 | Day 1, a.m. 1 | Admin<br>Deep Thought: be organized<br>Meet instructors & neighbors<br>Exercise: explore your installed packages<br>Deep Thought: Work in a project, fresh starts | Jenny    |
@@ -12,8 +26,6 @@
 | Day 2, p.m. 2 | Practical Git/GitHub workflows: Branch as safety net & method of time travel, resets, merge conflicts, amending, interactive rebase to edit commit message/change order of commits, staging specific lines/chunks, models for collaborative work (multiple people working in same repo w/ or w/o PRs vs. fork and pull), pull & rebase, cherry pick, closing issue via commit/PR | Jim/Jenny |
 
 Notes:
-
-The order is still wonky, as it time allocated to various things.
 
 Jenny's debugging wish list: browser(), traceback(), options(error = recover)
 
