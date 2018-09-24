@@ -1,6 +1,7 @@
 .Rproj.user
 .Rhistory
 .RData
-.Ruserdata
-README.html
-seattle-draft.html
+_publish.R
+_book
+_bookdown_files
+rsconnect
