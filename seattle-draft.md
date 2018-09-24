@@ -14,22 +14,18 @@
 
 ## Overview
 
-The order below is still wonky, as is time allocated to various things.
+More detailed version below!
 
 | Unit          | What | Who |
 |---------------|------|-----|
-| Day 1, a.m. 1 | Admin<br>Deep Thought: be organized<br>Meet instructors & neighbors<br>Exercise: explore your installed packages<br>Deep Thought: Work in a project, fresh starts | Jenny    |
-| Day 1, a.m. 2 | Exercise: create a project, harden earlier exploration into 2 or more scripts, force some file system work<br>Deep Thought: Practice "safe paths"<br>Moar exercise<br> Deep Thought: Naming things| Jenny |
+| Day 1, a.m. 1 | Admin & intros<br>Kick-off activity re: exploring one's R installation and library<br>Deep Thoughts re: organization, projects, fresh starts | Jenny
+| Day 1, a.m. 2 | Activity about splitting a task into muliple and file path discipline<br>Deep Thoughts: re: file paths and names| Jenny |
 | Day 1, p.m. 1 | Deep Thought: Version control is about managing change, not backup<br>Fundamentals of Git/GitHub + R/Rmd<br>Guided activity: new project, GitHub first, practice basic Git/GitHub ops with Rmd -> md work based on morning's example | Jenny |
-| Day 1, p.m. 2 | Activity: various combos of getting new/existing stuff into Git/GitHub and of getting GitHub stuff onto your machine<br>Remotes, branches (understand, query, modify tracking branches) | Jenny, Jim |
-| Day 2, a.m. 1 | R: Startup & how to maintain/upgrade R & pkgs<br>Activity: something about `.Rprofile` and `.Renviron`<br> Debugging start | Jim |
-| Day 2, a.m. 2 | More debugging, eventually morphing into GitHub search and package source navigation/appreciation | Jim    |
-| Day 2, p.m. 1 | Iteration with purrr (include making a README.Rmd programatically) | Jenny |
-| Day 2, p.m. 2 | Practical Git/GitHub workflows: Branch as safety net & method of time travel, resets, merge conflicts, amending, interactive rebase to edit commit message/change order of commits, staging specific lines/chunks, models for collaborative work (multiple people working in same repo w/ or w/o PRs vs. fork and pull), pull & rebase, cherry pick, closing issue via commit/PR | Jim/Jenny |
-
-Notes:
-
-Jenny's debugging wish list: browser(), traceback(), options(error = recover)
+| Day 1, p.m. 2 | Delve more deeply into Git stuff: remotes and branches. Inspect how things are and be able to effect change. | Jim |
+| Day 2, a.m. 1 | How to use `.Rprofile` and `.Renviron` to affect R startup. Inspect and control the version of a specific R package. How to manage package versions *en masse*, i.e. when you update R.Debugging start | Jim |
+| Day 2, a.m. 2 | Debugging (local: browser(), traceback(), options(error = recover)). Searching GitHub to find problems and fixes. | Jim    |
+| Day 2, p.m. 1 | More practical tips for Git/GitHub workflows | Jenny |
+| Day 2, p.m. 2 |Iteration with purrr (include making a README.Rmd programatically)<br>Conconlusion | Jenny |
 
 ## Mechanics:
 
@@ -38,7 +34,7 @@ Jenny's debugging wish list: browser(), traceback(), options(error = recover)
   * Elicit questions people think are of general interest early on Day 1, probably via GitHub issue (also a nice early GH task). We answer/discuss a subset of the most upvoted things on Day 2.
   * Provide some structure for the highly specific "office hour" type of consultations.
   * Think about: physical setup, groups or pairs (physical proximity or not, eg for a gh activity), sticky notes, 2 projectors?
-  * How to prepare this content so it's easy to link to and use in other parts of life? I.e. don't lock extremely useful content only into a massive slide deck.
+  * Jenny will initiate a bookdown site. Probably in the existing WTF repo.
 
 ## Live notes from tidyverse meeting
 
@@ -92,7 +88,7 @@ Day 1, a.m. 1 (Jenny)
   * Admin
   * Deep Thought: be organized
   * Meet instructors & neighbors
-  * Exercise: explore your installed packages
+  * Exercise: explore your R installation and your installed packages
   * Deep Thought: Work in a project, fresh starts
   
 Day 1, a.m. 2 (Jenny)
@@ -102,32 +98,42 @@ Day 1, a.m. 2 (Jenny)
   * Moar exercise (?)
   * Deep Thought: Naming things (?)
 
-Day 1, p.m. 1
+Day 1, p.m. 1 (Jenny)
 
   * Deep Thought: Version control is about managing change, not backup
   * Fundamentals of Git/GitHub + R/Rmd
     - Guided activity: new project, GitHub first
     - Practice basic Git/GitHub ops with R or Rmd -> md work based on morning's example. Ulterior motive: showing importance of md (vs html) on GitHub.
     
-Day 1, p.m. 2
+Day 1, p.m. 2 (Jim)
 
-  * Activity: various combos of getting new/existing stuff into Git/GitHub and of getting GitHub stuff onto your machine (?)
-  * Remotes, branches (understand, query, modify tracking branches)
+  * Some of the more advanced git stuff. Branches, remotes. See how things are, change things.
   
-Day 2, a.m. 1
+Day 2, a.m. 1 (Jim)
 
-  * R: Startup & how to maintain/upgrade R & pkgs
-  * Activity: something about `.Rprofile` and `.Renviron`
-  * Debugging start
+  * R: Startup
+  * Activity: something about `.Rprofile` and `.Renviron`  
+
+  * How to maintain/upgrade R & pkgs
+    - Targetted query / upgrade / downgrade of 1 package
+    - Working with all your packages *en masse*, i.e. when you update R.
+    - Deep dive into a specific package you care about, using GitHub.
   
-Day 2, a.m. 2 
+Day 2, a.m. 2 (Jim)
 
-  * More debugging, eventually morphing into GitHub search and package source navigation/appreciation
+  * Debugging (local: browser(), traceback(), options(error = recover))
+  * Absolutely OK if some GitHub searching stuff happen 
   
 Day 2, p.m. 1 (Jenny)
 
-  * Iteration with purrr (include making a README.Rmd programatically)
+  * Practical Git/GitHub workflows. Thought dump:
+    - Branch as safety net & method of time travel
+    - Resets, merge conflicts, amending, interactive rebase to edit commit message/change order of commits, staging specific lines/chunks
+    - Models for collaborative work (multiple people working in same repo w/ or w/o PRs vs. fork and pull)
+    - Pull & rebase, cherry pick, closing issue via commit/PR
+  * Activity idea: various combos of getting new/existing stuff into Git/GitHub and of getting GitHub stuff onto your machine (?)
   
-Day 2, p.m. 2 
+Day 2, p.m. 2 (Jenny)
 
-  * Practical Git/GitHub workflows
+  * Iteration with purrr (include making a README.Rmd programatically)
+  * Conclusion
