@@ -1,6 +1,6 @@
 # What They Forgot to Teach You About R
 
-Rendered "book": <https://jennybc.github.io/what-they-forgot/>
+Rendered "book": <https://jennybc.github.io/whattheyforgot/>
 
 The impetus for developing and assembling these materials is a two-day hands-on workshop. It is designed for experienced R and RStudio users who want to (re)design their R lifestyle. We focus on building holistic and project-oriented workflows that address the most common sources of friction in data analysis, *outside of doing the statistical analysis itself*.
 
