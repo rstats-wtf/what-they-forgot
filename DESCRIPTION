@@ -7,4 +7,6 @@ Imports:
   emo,
   git2r,
   sessioninfo
-Remotes: rstudio/bookdown
+Remotes:
+  rstudio/bookdown,
+  hadley/emo
