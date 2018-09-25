@@ -1,4 +1,4 @@
-# Projects and Blank Slates
+# Projects and blank slates
 
 Think of R processes as livestock, not pets.
 

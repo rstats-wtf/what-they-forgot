@@ -7,6 +7,7 @@ bookdown::gitbook:
       twitter: false
     download: false
     toc:
+      collapse: section
       before: |
         <li><a href="./">What They Forgot to Teach You About R</a></li>
       after: |
