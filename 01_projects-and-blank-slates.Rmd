@@ -1,0 +1,11 @@
+# Projects and Blank Slates
+
+Think of R processes as livestock, not pets.
+
+Adapt <https://www.tidyverse.org/articles/2017/12/workflow-vs-script/>
+
+Mine this for anything not included above: <http://stat545.com/block002_hello-r-workspace-wd-project.html>
+
+Ditto this: <http://r4ds.had.co.nz/workflow-projects.html>. Especially the screenshots re: RStudio config.
+
+Image from workflow talk shows having many R/RStudio instances open at once, all in different projects. <https://speakerdeck.com/jennybc/zen-and-the-art-of-workflow-maintenance?slide=44>
