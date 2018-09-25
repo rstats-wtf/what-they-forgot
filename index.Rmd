@@ -11,7 +11,7 @@ github-repo: jennybc/what-they-forgot
 description: "The stuff you need to know about R, besides statistical analysis."
 ---
 
-# Blah {-}
+# WTF {-}
 
 ## In-person workshops
 
