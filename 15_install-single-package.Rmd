@@ -5,7 +5,7 @@ How to isolate and experiment with a single package. The world beyond plain usag
   * Install from source
   * Install from any version
   * Install from GitHub
-  * Install to temporary library
+  * Install to temporary library (some old Jenny notes https://gist.github.com/jennybc/4ffc1607d07ed3b025dc)
   
-At least mention, fork, clone, and work with it directly.
+At least mention ... fork, clone, and work with it directly. A connection to Happy Git.
 

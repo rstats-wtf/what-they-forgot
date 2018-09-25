@@ -1,6 +1,9 @@
-# Install a source package
+# Setup an R dev environment
 
 System prep necessary to install R packages from source.
 
 In fact, what is a source package vs a binary?
 
+<http://stat545.com/packages01_system-prep.html>
+
+Certain sections and graphics from here: http://r-pkgs.had.co.nz/package.html

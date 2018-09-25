@@ -8,5 +8,4 @@
 
 `options(error = recover)`
 
-
-  * Absolutely OK if some GitHub searching stuff happen 
+Gabe once shared a method of debugging Rmd: https://gist.github.com/gmbecker/e47b0951b91505b2f4607259bcec8f97. Interesting example of `options(error = recover)`.
