@@ -1,0 +1,67 @@
+# Maintaining package libraries
+
+## How to upgrade an installed package to the latest version.
+
+Sometimes you would like to upgrade a particular package to the latest
+available version. Often this is because you have heard about a new feature, or
+maybe you have run into a bug that may have been fixed.
+
+### In RStudio
+
+Update button -> check packages to update. TODO: screenshot
+
+### R terminal
+
+Devtools has a function `upgrade_packges()` which will upgrade a package (from
+the same source) for _any_ CRAN or development package.
+
+`devtools::upgrade_packages("pkgname")`
+
+In addition if the given package is _not_ already installed it will install it.
+
+## How to upgrade all out-of-date packages
+
+### In RStudio
+
+Update button -> select all -> update
+
+### CRAN packages
+
+`devtools::upgrade_packages(TRUE)`
+
+## How to downgrade a package
+
+First if unsure what version -> [CRAN page](https://cran.r-project.org/web/packages/devtools/index.html) -> [pkgname archive](https://cran.r-project.org/src/contrib/Archive/devtools/)
+
+```r
+devtools::install_version("devtools", "1.13.3")
+```
+
+## How to update package library when updating R
+
+Often you will not need to do anything when updating R. For 'patch' R versions,
+the 'z' in 'x.y.z' the R core developers ensure package compatibility across
+versions. So if you are updating from R 3.5.0 to R 3.5.1 you will not need to
+change anything with your package library.
+
+For 'minor' version changes, the 'y' in 'x.y.z' the package interface _can_
+change, so packages need to be re-installed.
+
+I generally recommend you keep the packages R comes with (base and Recommended)
+packages separate from the rest of your packages. I also recommend you use the
+`%v` wildcard in your `R_LIBS_USER` path so that the package library is labeled
+with the major and minor version of R. Then the process for updating to a new
+version of R becomes
+
+```r
+# Create a new directory for the version of R
+fs::dir_create("~/Library/R/3.5")
+
+# Re-start R so the .libPaths are updated
+
+# Query which packages were installed from the previous version of R
+pkgs <- fs::dirname(fs::dir_ls("~/Library/R/3.4"))
+
+# Install the packages you need in the new version 
+install.packages(pkgs)
+```
