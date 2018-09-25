@@ -1,0 +1,12 @@
+# (PART) All is fail {-} 
+
+# Local and immediate debugging
+
+`browser()`
+
+`traceback()`
+
+`options(error = recover)`
+
+
+  * Absolutely OK if some GitHub searching stuff happen 

@@ -1,0 +1,6 @@
+# Read the source
+
+How to use GitHub search (of code, commits, issues) to shed light on your problem.
+
+The lookup package.
+

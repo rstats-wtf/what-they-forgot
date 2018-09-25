@@ -1,0 +1,3 @@
+# Upgrading R
+
+Typical patterns for upgrading R and your installed packages *en masse*.

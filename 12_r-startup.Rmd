@@ -1,0 +1,5 @@
+# R startup
+
+What happens when R starts up and how to configure things and what's safe / typical to configure.
+
+`.Rprofile`, `.Renviron`

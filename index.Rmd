@@ -11,7 +11,9 @@ github-repo: jennybc/what-they-forgot
 description: "The stuff you need to know about R, besides statistical analysis."
 ---
 
-# In-person workshops
+# Blah {-}
+
+## In-person workshops
 
 The impetus for developing and assembling these materials is a two-day hands-on workshop. It is designed for experienced R and RStudio users who want to (re)design their R lifestyle. We focus on building holistic and project-oriented workflows that address the most common sources of friction in data analysis, *outside of doing the statistical analysis itself*.
 
@@ -32,7 +34,7 @@ The workshops typically include substantial components that draw on other materi
     - [purrr tutorial](https://jennybc.github.io/purrr-tutorial/) from Jenny Bryan
     - [Row-oriented workflows in R with the tidyverse](https://github.com/jennybc/row-oriented-workflows#readme), originally an [RStudio webinar](https://resources.rstudio.com/webinars)
 
-## Seattle 2018 October 4 & 5
+### Seattle 2018 October 4 & 5
 
 At [The Westin Seattle](https://goo.gl/maps/3KSpPzZjWR92) (links to Google maps).
 

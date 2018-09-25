@@ -1,0 +1,6 @@
+# Install a source package
+
+System prep necessary to install R packages from source.
+
+In fact, what is a source package vs a binary?
+

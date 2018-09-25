@@ -1,0 +1,11 @@
+# Install a source package
+
+How to isolate and experiment with a single package. The world beyond plain usage of `install.packages()`.
+
+  * Install from source
+  * Install from any version
+  * Install from GitHub
+  * Install to temporary library
+  
+At least mention, fork, clone, and work with it directly.
+
