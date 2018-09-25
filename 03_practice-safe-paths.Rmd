@@ -1,0 +1,5 @@
+# Practice safe paths
+
+Adapt from <https://github.com/jennybc/here_here#readme>.
+
+Include some coverage of fs.
