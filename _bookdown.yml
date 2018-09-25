@@ -1,5 +1,4 @@
 book_filename: "what-they-forgot"
-output_dir: "docs"
 language:
   ui:
     chapter_name: "Chapter "

@@ -1,11 +1,19 @@
 language: r
-cache: packages
-pandoc_version: 1.19.2.1
+sudo: false
+cache:
+  packages: true
+  directories:
+  - $HOME/.npm
 
-before_script:
-  - chmod +x ./_build.sh
-  - chmod +x ./_deploy.sh
+pandoc_version: 2.1.1
+
+before_install:
+- npm install netlify-cli@next -g
 
 script:
-  - ./_build.sh
-  - ./_deploy.sh
+- Rscript -e 'bookdown::render_book("index.Rmd")'
+
+deploy:
+  provider: script
+  script: netlify deploy -t $NETLIFY_PAT
+  skip_cleanup: true
