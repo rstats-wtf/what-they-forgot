@@ -4,5 +4,7 @@ Title: Does not matter.
 Version: 0.0.1
 Imports:
   bookdown,
-  emo
+  emo,
+  git2r,
+  sessioninfo
 Remotes: rstudio/bookdown

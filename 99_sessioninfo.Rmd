@@ -1,0 +1,8 @@
+# Session info {-}
+
+```{r}
+sessioninfo::session_info()
+
+git2r::repository(getwd())
+```
+
