@@ -1,17 +1,14 @@
 bookdown::gitbook:
   css: style.css
   config:
+    sharing:
+      github: yes
+      facebook: false
+      twitter: false
+    download: false
     toc:
       before: |
-        <li><a href="./">A Minimal Book Example</a></li>
+        <li><a href="./">What They Forgot to Teach You About R</a></li>
       after: |
         <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
-    edit: https://github.com/rstudio/bookdown-demo/edit/master/%s
-    download: ["pdf", "epub"]
-bookdown::pdf_book:
-  includes:
-    in_header: preamble.tex
-  latex_engine: xelatex
-  citation_package: natbib
-  keep_tex: yes
-bookdown::epub_book: default
+    edit: https://github.com/jennybc/what-they-forgot/edit/master/%s
