@@ -5,11 +5,6 @@ cache:
   directories:
   - $HOME/.npm
 
-addons:
-  apt:
-    packages:
-      - libgit2-dev
-
 pandoc_version: 2.1.1
 
 before_install:
