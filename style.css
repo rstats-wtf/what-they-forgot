@@ -13,7 +13,7 @@ pre code {
   white-space: inherit;
 }
 
-.rmdcaution, .rmdimportant, .rmdnote, .rmdtip, .rmdwarning {
+.rmdcaution, .rmdimportant, .rmdnote, .rmdinfo, .rmdwarning {
   padding: 1em 1em 1em 4em;
   margin-bottom: 10px;
   background: #f5f5f5 5px center/3em no-repeat;
@@ -27,9 +27,11 @@ pre code {
 /*.rmdnote {*/
   /*background-image: url("../images/note.png");*/
 /*}*/
-/*.rmdtip {*/
-  /*background-image: url("../images/tip.png");*/
-/*}*/
+
+.rmdinfo {
+  background-image: url("images/info.png");
+}
+
 .rmdwarning {
-  background-image: url("../images/warning.png");
+  background-image: url("images/warning.png");
 }
