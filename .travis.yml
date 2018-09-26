@@ -5,6 +5,11 @@ cache:
   directories:
   - $HOME/.npm
 
+addons:
+  apt:
+    packages:
+      - libgit2-dev
+
 pandoc_version: 2.1.1
 
 before_install:
@@ -15,5 +20,5 @@ script:
 
 deploy:
   provider: script
-  script: netlify deploy -t $NETLIFY_PAT
+  script: netlify deploy
   skip_cleanup: true
