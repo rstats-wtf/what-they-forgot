@@ -1,7 +1,7 @@
 # Session info {-}
 
 ```{r}
-sessioninfo::session_info()
-
 git2r::repository()
+
+sessioninfo::session_info()
 ```
