@@ -104,6 +104,11 @@ if (interactive()) {
 }
 ```
 
+```{block type="rmdinfo"}
+[Try the activity](activities/12-startup-02.R) to learn how to create a
+.Rprofile with a default CRAN repository and add a startup message to it.
+```
+
 ## Disabling startup files
 
 You can run R without any startup files by using the `--vanilla` argument when
