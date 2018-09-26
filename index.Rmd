@@ -34,7 +34,7 @@ The workshops typically include substantial components that draw on other materi
     - [purrr tutorial](https://jennybc.github.io/purrr-tutorial/) from Jenny Bryan
     - [Row-oriented workflows in R with the tidyverse](https://github.com/jennybc/row-oriented-workflows#readme), originally an [RStudio webinar](https://resources.rstudio.com/webinars)
 
-### Seattle 2018 October 4 & 5
+## Seattle 2018 October 4 & 5
 
 At [The Westin Seattle](https://goo.gl/maps/3KSpPzZjWR92) (links to Google maps).
 
@@ -51,16 +51,6 @@ Basic schedule
 3:00 - 3:30 Break  
 3:30 - 5:00 Work session 4  
 5:15 - 6:05 "Office hours", day 1 only!, sign up for 10 min slots w/ an instructor
-
-## How to search within this book {#search}
-
-*move this somewhere less ridiculous when said place exists*
-
-I always forget this, so I'm recording it here. From the [bookdown book](https://bookdown.org/yihui/bookdown/html.html):
-
-> The second button on the toolbar is the search button. Its keyboard shortcut is F (Find). When the button is clicked, you will see a search box at the top of the sidebar. As you type in the box, the TOC will be filtered to display the sections that match the search keyword. Now you can use the arrow keys Up/Down to highlight the next keyword on the current page. When you click the search button again (or hit F outside the search box), the search keyword will be emptied and the search box will be hidden.
-
-For the Up/Down arrow navigation to work, remember to leave the cursor in the search box.
 
 <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">What They Forgot to Teach You About R</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="https://github.com/jennybc/whattheyforgot" property="cc:attributionName" rel="cc:attributionURL">Jennifer Bryan, Jim Hester</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
 
