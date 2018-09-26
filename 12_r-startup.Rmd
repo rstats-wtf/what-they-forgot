@@ -15,7 +15,7 @@ this flexibility comes at a cost, _complexity_.
 And for sure, R's startup procedures are complex
 
 ```{r, echo = FALSE, fig.cap = "R Startup flowchart - [Thomas Lin Pedersen](https://twitter.com/thomasp85/status/961553618196418560)"}
-knitr::include_graphics("images/startup.jpg")
+knitr::include_graphics("images/R-startup.svg")
 ```
 
 However most R users can ignore the majority of this complexity and focus on two main files.
@@ -112,7 +112,7 @@ the environment files with `--no-environ`.
 Both .Renviron and .Rprofile _must_ end with a newline character. If they do not the last line with be ignored without a warning or error.
 ```
 
-# TODOs
+## TODOs
 
 These are mainly notes for things we need to add and what we wanted to cover
 
