@@ -55,7 +55,7 @@ R_LIBS_USER=~/R/%p/%v
 ```
 
 ```{block type="rmdinfo"}
-[Try the activity](activities/12-startup-02.R) to learn how to set a GitHub PAT to your .Renviron and then use it to create a gist
+[Try the activity](activities/12-startup-01.R) to learn how to set a GitHub PAT to your .Renviron and then use it to create a gist
 ```
 
 ## .Rprofile
