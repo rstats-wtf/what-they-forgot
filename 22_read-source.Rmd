@@ -1,6 +1,35 @@
 # Read the source
 
-How to use GitHub search (of code, commits, issues) to shed light on your problem.
+Often when you encounter an error and you do not immediately understand why or
+what it is saying, the first thing you should try is to search for the error
+message. You can search the error directly on google, or search on specific sites like
+<https://community.rstudio.com> or <https://stackoverflow.com>.
 
-The lookup package.
+Another option is to GitHub search to shed light on your problem.
 
+## GitHub search
+
+GitHub allows you to [search](https://github.com/search) code, repositories,
+and issues which can often reveal useful insights into problems.
+
+Doing a generic search is often fruitful, but you can often get more pertinent
+results with a more targeted approach.
+
+## R code on GitHub
+
+The SVN repository used by the R core team to develop R is mirrored on GitHub by Winston Chang at
+<github.com/wch/r-source>. This means that all the code used by your
+local R session (including compiled code) is searchable.
+
+```{block type = "rmdinfo"}
+[Try the activity](activity/22_read-source-01.R) to search the R source for error messages.
+```
+
+In addition all code for CRAN packages is mirrored on GitHub by Gábòr Csardi at
+<github.com/cran>, which means all the code for CRAN packages is also
+searchable.
+
+
+```{block type = "rmdinfo"}
+[Try the activity](activity/22_read-source-02.R) to search CRAN packages.
+```
