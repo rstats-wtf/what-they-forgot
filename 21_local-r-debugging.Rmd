@@ -97,6 +97,19 @@ Some useful things to do are
 
 TODO: RStudio debugging
 
+## Debugging others' code
+
+When the error is occurring outside of your own code it is also useful to be
+able to debug the code. In this case you _could_ download the package code
+locally and debug it like you would with your own code above by adding
+`print()` and / or `browser()` calls. Because R and most R packages are open
+source this is a perfectly viable option and one I often do myself. However
+depending on the package this can sometimes be challenging, particularly for
+those packages which come with R itself.
+
+The other option is to use additional functions which allow you to start a browser in existing functions,
+`debug()`, `trace()` and `recover()`.
+
 ### `debug()`
 
 If you have control of the code (because you are the one writing it), using
@@ -133,28 +146,71 @@ location in a function. The downside to this power and flexibility is that
 
 ### `recover()`
 
-`recover()` is generally not used directly, instead it is used as an error
-handler, by calling `options(error = recover)`. The benefit to `recover()` over
-using `options(error = browser)` is that you can browse on any of the call
-stack, not just where the error occurred. Often the issue is above The benefit
-to `recover()` over using `options(error = browser)` is that you can browse on
-any of the call stack, not just where the error occurred. Often the issue is
-most easily diagnosed in calls higher on the call stack than immediately where
-the error occurred.
+`recover()` is not used directly, instead it is used as an error
+handler, by calling `options(error = recover)`. You can also use other
+functions, such as `browser()` as an error handler, which will start the
+debugger automatically when there is an error.
 
-When recover is called it prints a list of the current calls, with a prompt to
-select which you want to browse in. Then [`browser()`](#browser) is invoked at
-that location.
+The benefit to `recover()` over `browser()` for this case is that `recover()`
+allows you to select where in the call stack you debug, not just the last call
+where the error occurred. Often the issue is above The benefit to `recover()`
+over using `options(error = browser)` is that you can browse on any of the call
+stack, not just where the error occurred. Often the issue is most easily
+diagnosed in calls higher on the call stack than immediately where the error
+occurred.
+
+When `recover()` is called it prints a list of the current calls, with a prompt to
+select which you want to browse in. Then a debugging session is started at that
+location.
+
+## Debugging in RMarkdown documents
+
+One special case where it can sometimes be more difficult to debug is an error
+that occurs only when knitting a RMarkdown document.
+
+The easiest way to debug most of the errors is to simply run the code inside
+the chunk as regular R code in the console and use the normal techniques such
+as inserting `browser()` calls.
+
+However rarely an error will only occur when the code is being kitted. In this
+case you can set an error handler with the following code.
+
+First you will need to modify recover slightly, by adding a `sink()` call to the
+beginning, which disables the sink used by knitr internally. We do this by
+using `trace()`. This can be run in a setup block or in your R console before
+calling `knitr::knit()` / `rmarkdown::render()`
+
+```r
+trace(recover, sink)
+```
+
+Then add the following knitr chunk options to the chunk which is
+failing. `error = FALSE, R.options = list(error = recover)`.
+
+Then knit the file on the R console with `knitr::knit()` or
+`rmarkdown::render()`. The traceback will contain all of the knitr calls as
+well, so you will need to look near the end to find the calls in your code.
+
+```{block type = "rmdwarning"}
+Note you _cannot_ use the 'knit' button in RStudio when trying to debug
+Rmarkdown documents in any cases. The knit button opens a separate R process, so there is no
+way to use an interactive debugger in that case.
+```
 
 ### Resources
 
-- [Debugging techniques in RStudio - Amanda Gadrow](https://resources.rstudio.com/wistia-rstudio-conf-2018-2/debugging-techniques-in-rstudio-amanda-gadrow-4)
+- [Debugging techniques in RStudio - Amanda Gadrow's talk at rstudio::conf 2018](https://resources.rstudio.com/wistia-rstudio-conf-2018-2/debugging-techniques-in-rstudio-amanda-gadrow-4)
+- [Debugging in RStudio article](https://support.rstudio.com/hc/en-us/articles/200713843)
 
 ## TODO
+
+- Debugging shiny (maybe out of scope)
+- Debugging activities
+- More real world examples
+- Using the RStudio debugger features
+- Using search for debugging
+
 The first thing you should do is try and to read and understand the _whole_
 error message. If this does not provide much information a good first step
 would be to google the error message or do a search for it on
 <https://community.rstudio.com> or <https://stackoverflow.com>.
-
-
-Gabe once shared a method of debugging Rmd: https://gist.github.com/gmbecker/e47b0951b91505b2f4607259bcec8f97. Interesting example of `options(error = recover)`.
