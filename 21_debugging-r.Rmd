@@ -1,6 +1,6 @@
 # (PART) All is fail {-}
 
-# Local and immediate debugging
+# Debugging R code
 
 R scripts are great things, when they work. What are some strategies you can
 use when things go sideways and an error occurs in your script?
