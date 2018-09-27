@@ -15,7 +15,7 @@ script:
 
 deploy:
   - provider: script
-    script: netlify deploy --dir _book --draft
+    script: netlify deploy --dir _book
     skip_cleanup: true
     on:
       all_branches: true
