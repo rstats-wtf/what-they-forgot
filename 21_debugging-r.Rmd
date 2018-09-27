@@ -133,6 +133,8 @@ there is also a way to access _any_ function, including un-exported ones,
 debug(ggplot2:::set_last_plot)
 ```
 
+`undebug()` is used to remove the debugging code.
+
 ### `trace()`
 
 `debug()` is very useful, but one drawback is it always executes the first time
@@ -143,6 +145,34 @@ function is called?
 a debugger at the start of a function, it lets you insert _any_ code at _any_
 location in a function. The downside to this power and flexibility is that
 `trace()` is comparatively harder to use than `debug()`.
+
+If called with no additional arguments `trace()` simply prints a
+message when the function is entered.
+
+If called with a function as the second argument this inserts the
+function at the start of the function. `trace(fun, browser)` is
+functionally equivalent to `debug(fun)`. `browser()` or `revover()` are generally the
+most useful functions to use, but this could actually be any R
+function or even regular R expressions. This is often useful to open the
+debugger only when a certain condition is met.
+
+```{r}
+trace(print, quote(if (is.numeric(x) && x >= 3) cat("hi\n")), print = FALSE)
+print(1)
+print(3)
+
+# Use untrace to remove the tracing code
+untrace(print)
+```
+
+You can also use the `at` argument to `trace()` to insert the tracing
+expressions at other points in the function body. To determine the number of
+the expression to insert convert the body of the function to a list. e.g.
+`as.list(body(fun))`.
+
+```{block type ="rmdinfo"}
+[Try the activity](activities/21_debugging-r-01.R) to explore using `trace()` with `at`.
+```
 
 ### `recover()`
 
