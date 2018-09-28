@@ -1,0 +1,246 @@
+# (PART) All is fail {-}
+
+# Debugging R code
+
+R scripts are great things, when they work. What are some strategies you can
+use when things go sideways and an error occurs in your script?
+
+## Debugging your own code
+
+The most common case you will run into a bug is when writing new code yourself.
+Often the mistake is obvious and easily fixed, but sometimes it only appears
+after multiple levels of calls and is harder to diagnose. There are a few
+common strategies to use when debugging your own code.
+
+- Use `traceback()` to determine where a given error is occurring.
+- Output diagnostic information in code with `print()`, `cat()` or `message()` statements.
+- Use `browser()` to open an interactive debugger before the error
+- Use `debug()` to automatically open a debugger at the start of a function call.
+- Use `trace()` to start a debugger at a location inside a function.
+
+### traceback()
+
+The `traceback()` function can be used to print a summary of how your program
+arrived at the error. This is also called a call stack, stack trace or
+backtrace.
+
+In R this gives you each call that lead up to the error, which can be very
+useful for determining what lead to the error.
+
+You can use `traceback()` in two different ways, either by calling it
+immediately after the error has occurred.
+
+<!-- knitr messes with the tracebacks, so we just do this manually :| -->
+
+```{r, eval = FALSE}
+f <- function(x) x + 1
+g <- function(x) f(x)
+g("a")
+```
+```
+#> Error in x + 1 : non-numeric argument to binary operator
+```
+```r
+traceback()
+```
+```
+#> 2: f(x) at #1
+#> 1: g("a")
+```
+
+Or by using `traceback()` as an error handler, which will call it immediately
+on any error. (You could even put this in your [`.Rprofile`](#rprofile))
+
+```{r, eval = FALSE}
+options(error = traceback)
+g("a")
+```
+
+```
+#> Error in x + 1 : non-numeric argument to binary operator
+#> 2: f(x) at #1
+#> 1: g("a")
+```
+
+### `print()`
+
+Once you know where an error occurs it is then helpful to know why. Often
+errors occur because functions are given inputs their authors did not expect,
+so it is useful to print the value of objects during execution.
+
+The most basic way to do this is to sprinkle messages throughout your code,
+with `print()` or `str()`. `str()` is often more useful because it gives more detail
+into the exact structure of an object, which may not be the structure you
+expect it to be.
+
+The main downsides to the print approach is you often have to add them in
+multiple places to narrow down the error, and you cannot further investigate
+the object.
+
+### `browser()`
+
+A more sophisticated debugging method is to put a call to `browser()` in your
+code. This will stop execution at that point and open R's interactive debugger.
+In the debugger you can run any R command to look at objects in the current
+environment, modify them and continue executing.
+
+Some useful things to do are
+
+1. Use `ls()` to determine what objects are available in the current
+   environment. This allows you to see exactly what things you can examine.
+2. Use `str()`, `print()` etc. to examine the objects
+3. Use `n` to evaluate the next statement. Use `s` to evaluate the next
+   statement, but step into function calls.
+4. Use `where` to print a [stack trace](#traceback)
+5. Use `c` to leave the debugger and continue execution
+6. Use `Q` to exit the debugger and return to the R prompt.
+
+TODO: RStudio debugging
+
+## Debugging others' code
+
+When the error is occurring outside of your own code it is also useful to be
+able to debug the code. In this case you _could_ download the package code
+locally and debug it like you would with your own code above by adding
+`print()` and / or `browser()` calls. Because R and most R packages are open
+source this is a perfectly viable option and one I often do myself. However
+depending on the package this can sometimes be challenging, particularly for
+those packages which come with R itself.
+
+The other option is to use additional functions which allow you to start a browser in existing functions,
+`debug()`, `trace()` and `recover()`.
+
+### `debug()`
+
+If you have control of the code (because you are the one writing it), using
+`browser()` is generally the most convenient way to enter the debugger. However
+if the error is occurring in code in a package what options do you have?
+
+This is where the `debug()` function is useful, it will open the R debugger on
+any function, including those in packages.
+
+TODO: good example / activity
+
+```r
+debug(ggplot2::ggplot)
+```
+
+Use can use the `::` syntax to find 'exported' functions in a package, but
+there is also a way to access _any_ function, including un-exported ones,
+`:::`.
+
+```r
+debug(ggplot2:::set_last_plot)
+```
+
+`undebug()` is used to remove the debugging code.
+
+### `trace()`
+
+`debug()` is very useful, but one drawback is it always executes the first time
+a function is called. What can you do if the bug only happens the 100th time a
+function is called?
+
+`trace()` is a more flexible version of `debug()` that not only lets you start
+a debugger at the start of a function, it lets you insert _any_ code at _any_
+location in a function. The downside to this power and flexibility is that
+`trace()` is comparatively harder to use than `debug()`.
+
+If called with no additional arguments `trace()` simply prints a
+message when the function is entered.
+
+If called with a function as the second argument this inserts the
+function at the start of the function. `trace(fun, browser)` is
+functionally equivalent to `debug(fun)`. `browser()` or `revover()` are generally the
+most useful functions to use, but this could actually be any R
+function or even regular R expressions. This is often useful to open the
+debugger only when a certain condition is met.
+
+```{r}
+trace(print, quote(if (is.numeric(x) && x >= 3) cat("hi\n")), print = FALSE)
+print(1)
+print(3)
+
+# Use untrace to remove the tracing code
+untrace(print)
+```
+
+You can also use the `at` argument to `trace()` to insert the tracing
+expressions at other points in the function body. To determine the number of
+the expression to insert convert the body of the function to a list. e.g.
+`as.list(body(fun))`.
+
+```{block type ="rmdinfo"}
+[Try the activity](activities/21_debugging-r-01.R) to explore using `trace()` with `at`.
+```
+
+### `recover()`
+
+`recover()` is not used directly, instead it is used as an error
+handler, by calling `options(error = recover)`. You can also use other
+functions, such as `browser()` as an error handler, which will start the
+debugger automatically when there is an error.
+
+The benefit to `recover()` over `browser()` for this case is that `recover()`
+allows you to select where in the call stack you debug, not just the last call
+where the error occurred. Often the issue is above The benefit to `recover()`
+over using `options(error = browser)` is that you can browse on any of the call
+stack, not just where the error occurred. Often the issue is most easily
+diagnosed in calls higher on the call stack than immediately where the error
+occurred.
+
+When `recover()` is called it prints a list of the current calls, with a prompt to
+select which you want to browse in. Then a debugging session is started at that
+location.
+
+## Debugging in RMarkdown documents
+
+One special case where it can sometimes be more difficult to debug is an error
+that occurs only when knitting a RMarkdown document.
+
+The easiest way to debug most of the errors is to simply run the code inside
+the chunk as regular R code in the console and use the normal techniques such
+as inserting `browser()` calls.
+
+However rarely an error will only occur when the code is being kitted. In this
+case you can set an error handler with the following code.
+
+First you will need to modify recover slightly, by adding a `sink()` call to the
+beginning, which disables the sink used by knitr internally. We do this by
+using `trace()`. This can be run in a setup block or in your R console before
+calling `knitr::knit()` / `rmarkdown::render()`
+
+```r
+trace(recover, sink)
+```
+
+Then add the following knitr chunk options to the chunk which is
+failing. `error = FALSE, R.options = list(error = recover)`.
+
+Then knit the file on the R console with `knitr::knit()` or
+`rmarkdown::render()`. The traceback will contain all of the knitr calls as
+well, so you will need to look near the end to find the calls in your code.
+
+```{block type = "rmdwarning"}
+Note you _cannot_ use the 'knit' button in RStudio when trying to debug
+Rmarkdown documents in any cases. The knit button opens a separate R process, so there is no
+way to use an interactive debugger in that case.
+```
+
+### Resources
+
+- [Debugging techniques in RStudio - Amanda Gadrow's talk at rstudio::conf 2018](https://resources.rstudio.com/wistia-rstudio-conf-2018-2/debugging-techniques-in-rstudio-amanda-gadrow-4)
+- [Debugging in RStudio article](https://support.rstudio.com/hc/en-us/articles/200713843)
+
+## TODO
+
+- Debugging shiny (maybe out of scope)
+- Debugging activities
+- More real world examples
+- Using the RStudio debugger features
+- Using search for debugging
+
+The first thing you should do is try and to read and understand the _whole_
+error message. If this does not provide much information a good first step
+would be to google the error message or do a search for it on
+<https://community.rstudio.com> or <https://stackoverflow.com>.
