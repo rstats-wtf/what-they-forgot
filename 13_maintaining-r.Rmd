@@ -8,7 +8,7 @@ maybe you have run into a bug that may have been fixed.
 
 ### In RStudio
 
-Update button -> check packages to update. TODO: screenshot
+![RStudio has an update dialog (Packages Tab -> Update). Check packages to update them](images/rstudio-update.png)
 
 ### R terminal
 
@@ -23,7 +23,7 @@ In addition if the given package is _not_ already installed it will install it.
 
 ### In RStudio
 
-Update button -> select all -> update
+![RStudio also allows you to update all packages (Packages Tab -> Update -> Select All)](images/rstudio-update-all.png)
 
 ### CRAN packages
 
