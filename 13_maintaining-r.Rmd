@@ -55,12 +55,12 @@ version of R becomes
 
 ```r
 # Create a new directory for the version of R
-fs::dir_create("~/Library/R/3.5")
+fs::dir_create("~/Library/R/3.5/library")
 
 # Re-start R so the .libPaths are updated
 
 # Query which packages were installed from the previous version of R
-pkgs <- fs::dirname(fs::dir_ls("~/Library/R/3.4"))
+pkgs <- fs::dirname(fs::dir_ls("~/Library/R/3.4/library"))
 
 # Install the packages you need in the new version 
 install.packages(pkgs)
