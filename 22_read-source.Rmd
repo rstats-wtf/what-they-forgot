@@ -39,7 +39,7 @@ field in the package DESCRIPTION, as can be seen on the CRAN landing page (e.g.
 `BugReports` field will give you a direct link to the issue page where you
 should report any issues found with the package.
 
-In addition all code for CRAN packages is mirrored on GitHub by Gábòr Csardi at
+In addition all code for CRAN packages is mirrored on GitHub by Gábor Csárdi at
 <https://github.com/cran>, which means all the code for CRAN packages is also
 searchable.
 
