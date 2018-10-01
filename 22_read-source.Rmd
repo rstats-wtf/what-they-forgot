@@ -28,7 +28,7 @@ the documentation included in R including Writing R extensions, R internals and
 R admin guides ([`doc/manual`](https://github.com/wch/r-source/tree/trunk/doc/manual)).
 
 ```{block type = "rmdinfo"}
-[Try activity 1](activity/22_read-source-01.R) to search the R source for code and documentation.
+[Try activity 1](activities/22_read-source-01.R) to search the R source for code and documentation.
 ```
 
 ## Where things exist in CRAN packages
@@ -58,5 +58,5 @@ language the compiled code is written in.
 Long-form documentation in the form of vignettes are stored in `vignettes/`.
 
 ```{block type = "rmdinfo"}
-[Try activity 2](activity/22_read-source-02.R) to search and find source code and documentation in CRAN packages.
+[Try activity 2](activities/22_read-source-02.R) to search and find source code and documentation in CRAN packages.
 ```
