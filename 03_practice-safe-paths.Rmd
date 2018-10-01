@@ -1,0 +1,35 @@
+# Practice safe paths
+
+Adapt from <https://github.com/jennybc/here_here#readme>.
+
+Include some coverage of fs.
+
+## Use projects and the [here package](https://CRAN.R-project.org/package=here)
+
+How can you avoid `setwd()` at the top of every script?
+
+  * Organize each logical project into a folder on your computer.
+  * Make sure the top-level folder advertises itself as such. This can be as simple as having an empty file named `.here`. Or, if you use RStudio and/or Git, those both leave characteristic files behind that will get the job done.
+  * Use the `here()` function from the [here package](https://CRAN.R-project.org/package=here) to build the path when you read or write a file. Create paths relative to the top-level directory.
+  * Whenever you work on this project, launch the R process from the project's top-level directory. If you launch R from the shell, `cd` to the correct folder first.
+  
+To continue our example, start R in the `foofy` directory, wherever that may be. Now the code looks like so:
+
+
+```{r, eval = FALSE}
+library(ggplot2)
+library(here)
+
+df <- read.delim(here("data", "raw_foofy_data.csv"))
+p <- ggplot(df, aes(x, y)) + geom_point()
+ggsave(here("figs", "foofy_scatterplot.png"))
+```
+
+
+This will run, with no edits, for anyone who follows the convention about launching R in the project folder. In fact, it will even work if R's working directory is anywhere inside the project, i.e. it will work from sub-folders. This plays well with knitr/rmarkdown's default behavior around working directory and in package development/checking workflows.
+
+Read up on the [here package](https://CRAN.R-project.org/package=here) to learn
+about more features, such as additional ways to mark the top directory and
+troubleshooting with `dr_here()`. I have also written a [more detailed
+paean](https://github.com/jennybc/here_here) to this package before.
+

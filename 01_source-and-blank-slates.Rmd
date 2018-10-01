@@ -1,6 +1,6 @@
 # (PART) A holistic workflow {-} 
 
-# Saving source and blank slates
+# Saving source and blank slates {#save-source}
 
 ## Save source, not the workspace
 
@@ -22,7 +22,7 @@ Saving code -- not workspaces -- is incredibly important because it is an absolu
 
 Below we lay out the concrete measures for adopting this workflow.
 
-## Use an IDE
+## Use an IDE {#use-an-ide}
 
 When working with R, save your commands in a `.R` file, a.k.a. a script, or in `.Rmd`, a.k.a. an R Markdown document. It doesn't have to be polished. Just save it!
 
@@ -73,7 +73,7 @@ You use a menu or keyboard shortcut to save your code or to re-indent it or run 
 
 Which brings us to ...
 
-## What's wrong with `rm(list = ls())`?
+## What's wrong with `rm(list = ls())`? {#rm-list-ls}
 
 It's fairly common to see data analysis scripts that begin with this object-nuking command:
 
@@ -123,3 +123,5 @@ If you use one "controller" script to run other R scripts or to render multiple 
 
 The post [Project-oriented workflow
 ](https://www.tidyverse.org/articles/2017/12/workflow-vs-script/) from the [tidyverse blog](https://www.tidyverse.org/articles/) is an earlier effort to explain why `rm(list = ls())` and `setwd()` indicate a sub-optimal workflow.
+
+  * That lead to a [lively thread](https://community.rstudio.com/t/project-oriented-workflow-setwd-rm-list-ls-and-computer-fires/3549/2) on [community.rstudio.com](https://community.rstudio.com) where lots of useRs share their experience and tricks.

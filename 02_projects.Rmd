@@ -1,40 +1,14 @@
-# Projects
+# Project-oriented workflow
 
-## Notes
+In \@ref(rm-list-ls), we discouraged the habit of starting R scripts with `rm(list = ls())`, because it doesn't actually achieve the intended goal: to reset things. Restarting R is a better way to power-cycle.
 
-Image from workflow talk shows having many R/RStudio instances open at once, all in different projects. <https://speakerdeck.com/jennybc/zen-and-the-art-of-workflow-maintenance?slide=44>
+But what if you want to shift focus from project A to project B? Restarting R, alone, is not enough. It doesn't change R's working directory, which is needed if projects A and B live in different directories, which they should (see \@ref(work-in-a-project)). Also, what if you want to have project A and B available for work at the same time?
 
-*pieces of blog post, for reworking here*
+My strong recommendation is to use a development tool with first-class support for projects. But first ...
 
-## Workflow versus Product
+## We need to talk about `setwd("path/that/only/works/on/my/machine")` {#setwd}
 
-Let's make a distinction between things you do because of personal taste and habits ("workflow") versus the logic and output that is the essence of your project ("product"). These are part of your workflow:
-
-  * The editor you use to write your R code.
-  * The name of your home directory.
-  * The R code you ran before lunch.
-  
-I consider these to be clearly product:
-
-  * The raw data.
-  * The R code someone needs to run on your raw data to get your results, including the explicit `library()` calls to load necessary packages.
-  
-Ideally, you don't hardwire anything about your workflow into your product. Workflow-related operations should be executed by you interactively, using whatever means is appropriate to your setup, but not built into the scripts themselves.
-
-## Self-contained projects
-
-I suggest organizing each data analysis into a *project*: a folder on your computer that holds all the files relevant to that particular piece of work. I'm **not** assuming this is an [RStudio Project](https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects), though this is a nice implementation discussed below.
-
-Any resident R script is written assuming that it will be run from a fresh R process with working directory set to the project directory. It creates everything it needs, in its own workspace or folder, and it touches nothing it did not create. For example, it does not install additional packages (another pet peeve of mine).
-
-This convention guarantees that the project can be moved around on your computer or onto other computers and will still "just work". I argue that this is the only practical convention that creates reliable, polite behavior across different computers or users and over time. This convention is neither new, nor unique to R.
-
-It's like agreeing that we will all drive on the left or the right. A hallmark of civilization is following conventions that constrain your behavior a little, in the name of public safety.
-
-## What's wrong with `setwd()`?
-
-I run a lot of student code in [STAT 545](http://stat545.com) and, at the start, I see a lot of R scripts that look like this:
-
+A common response to the working directory problem is to set the working directory at the beginning of each script via `setwd()`. At the start of [STAT 545](http://stat545.com), we see a lot of student code that looks like this:
 
 ```{r, eval = FALSE}
 library(ggplot2)
@@ -44,44 +18,110 @@ p <- ggplot(df, aes(x, y)) + geom_point()
 ggsave("../figs/foofy_scatterplot.png")
 ```
 
+The chance of the `setwd()` command having the desired effect -- making the file paths work -- for anyone besides its author is 0%. It's also unlikely to work for the author one or two years or computers from now. To recreate and perhaps extend this plot, the lucky recipient will need to hand edit one or more paths to reflect where the project has landed on their machine.
 
-The chance of the `setwd()` command having the desired effect -- making the file paths work -- for anyone besides its author is 0%. It's also unlikely to work for the author one or two years or computers from now. The project is not self-contained and portable. To recreate and perhaps extend this plot, the lucky recipient will need to hand edit one or more paths to reflect where the project has landed on their machine. When you do this for the 73rd time in 2 days, while marking an assignment, you start to fantasize about lighting the perpetrator's computer on fire.
+Hard-wired, absolute paths, especially when sprinkled throughout the code, make a project brittle. Such code does not travel well across time or space.
 
-This use of `setwd()` is also highly suggestive that the useR does all of their work in one R process and manually switches gears when they shift from one project to another. That sort of workflow makes it unpleasant to work on more than one project at a time and also makes it easy for work done on one project to accidentally leak into subsequent work on another (e.g., objects, loaded packages, session options).
+If, after reading this article, you still decide to use `setwd()` in your scripts, you should at least be very disciplined about it:
 
-## Use projects and the [here package](https://CRAN.R-project.org/package=here)
+  * Only use `setwd()` at the very start of a file, i.e. in an obvious and predictable place. If someone has to hand-edit all of these, make it easy for them.
+  * Always set working directory to the same thing, namely to the top-level of the project (not a subdirectory). Always build subsequent paths relative to that. Here's how that looks in the previous example:
+    ```{r, eval = FALSE}
+    setwd("/Users/jenny/cuddly_broccoli/verbose_funicular/foofy")
+    
+    library(ggplot2)
+    df <- read.delim("data/raw_foofy_data.csv")
+    p <- ggplot(df, aes(x, y)) + geom_point()
+    ggsave("figs/foofy_scatterplot.png")
+    ```
+    
+## Dilemma and a solution
 
-How can you avoid `setwd()` at the top of every script?
+Problem statement:
 
-  * Organize each logical project into a folder on your computer.
-  * Make sure the top-level folder advertises itself as such. This can be as simple as having an empty file named `.here`. Or, if you use RStudio and/or Git, those both leave characteristic files behind that will get the job done.
-  * Use the `here()` function from the [here package](https://CRAN.R-project.org/package=here) to build the path when you read or write a file. Create paths relative to the top-level directory.
-  * Whenever you work on this project, launch the R process from the project's top-level directory. If you launch R from the shell, `cd` to the correct folder first.
-  
-To continue our example, start R in the `foofy` directory, wherever that may be. Now the code looks like so:
+  * We want to work on project A with R's working directory set to `path/to/projectA` and on project B with R's working directory set to `path/to/projectB`.
+  * But we also want to keep code like `setwd("path/to/projectA")` out of our `.R` scripts.
 
+The lowest-tech solution is to simply set working directory yourself, interactively, at the same time as you restart R, when you switch from project A to project B. Execute `setwd("path/to/projectA")`, but don't bake it into your scripts. This works! But it's aggravating enough that most people go back to using `setwd()` anyway and/or are reluctant to cycle rapidly between projects.
 
-```{r, eval = FALSE}
-library(ggplot2)
-library(here)
+I strongly recommend [using an IDE](#use-an-ide) that supports a project-based workflow. This eliminates the tension between your development convenience and the portability of the code.
 
-df <- read.delim(here("data", "raw_foofy_data.csv"))
-p <- ggplot(df, aes(x, y)) + geom_point()
-ggsave(here("figs", "foofy_scatterplot.png"))
-```
+## Organize work into projects (colloquial definition) {#work-in-a-project}
 
+Here's what I mean by "work in a project":
 
-This will run, with no edits, for anyone who follows the convention about launching R in the project folder. In fact, it will even work if R's working directory is anywhere inside the project, i.e. it will work from sub-folders. This plays well with knitr/rmarkdown's default behavior around working directory and in package development/checking workflows.
+  * File system discipline: put all the files related to a single project in a designated folder.
+    - This applies to data, code, figures, notes, etc.
+    - Depending on project complexity, you might enforce further organization into subfolders.
+    - Other common file practices are detailed in *future link: api for a project* and *future link: naming files*.
+  * Working directory intentionality: when working on project A, make sure working directory is set to project A's folder.
+    - Ideally, this is achieved via the development workflow and tooling, not by baking absolute paths into the code.
+  * File path discipline: all paths are relative and, by default, relative to the project's folder.
 
-Read up on the [here package](https://CRAN.R-project.org/package=here) to learn
-about more features, such as additional ways to mark the top directory and
-troubleshooting with `dr_here()`. I have also written a [more detailed
-paean](https://github.com/jennybc/here_here) to this package before.
+These habits are syngergistic: you'll get the biggest payoff if you practice all of them together.
+
+These habits guarantee that the project can be moved around on your computer or onto other computers and will still "just work". I argue that this is the only practical convention that creates reliable, polite behavior across different computers or users and over time. This convention is neither new, nor unique to R.
+
+It's like agreeing that we will all drive on the left or the right. A hallmark of civilization is following conventions that constrain your behavior a little, in the name of public safety.
+
+## IDE support for projects
+
+Projects are a common and very attractive feature of many IDEs (\@ref(use-an-ide)). Again, the practice of organizing work in projects is not prevalent among long-time coders because they use an IDE. It's the other way around: one of the attractions of an IDE is that it makes it easier to exploit development practices that have proven to be useful across many languages and domains.
+
+I would say an IDE or workflow supports project-oriented work in R if there's a way to do these things:
+
+  * Launch the IDE in project A:
+    - Starts R.
+    - Sets working directory to the project's folder. 
+  * Switch a running instance of the IDE from project A to project B:
+    - Restarts R.
+    - Sets working directory to the project's folder.
+    - Optional but nice: restores previously open files, i.e. pick up where you left off.
+  * Have project A and project B open for simultaneous work:
+    - Each project gets its own R process, with working directory set appropriately.
+    - Optional but nice: multiple projects feel like multiple instances of the IDE and you can use a conventional method to switch between them, e.g. Command+Tab (Mac OS) or Alt+Tab (Windows).
 
 ## RStudio Projects
 
-This work style is so crucial that RStudio has an official notion of a [Project](https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects) (with a capital "P"). You can designate a new or existing folder as a Project. All this means is that RStudio leaves a file, e.g., `foofy.Rproj`, in the folder, which is used to store settings specific to that project.
+The RStudio IDE has a notion of a (capital "P") [Project](https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects), which is a very effective implementation of the (small "p") projects described above. 
 
-Double-click on a `.Rproj` file to open a fresh instance of RStudio, with the working directory and file browser pointed at the project folder. The here package is aware of this and the presence of an `.Rproj` is one of the ways it recognizes the top-level folder for a project. 
+You can designate a new or existing folder as a Project. All this means is that RStudio leaves a file, e.g., `foofy.Rproj`, in the folder, which is used to store settings specific to that project. Use *File > New Project ...* to get started.
 
-RStudio fully supports Project-based workflows, making it easy to switch from one to another, have many projects open at once, re-launch recently used Projects, etc.
+Double-click on a `.Rproj` file to open a fresh instance of RStudio, with the working directory and file browser pointed at the project folder.
+
+Once RStudio is running, you can open an existing Project, switch to another Project, launch a second instance of RStudio in a new or existing Project, and much more, via various menus and keyboard shortcuts. Use *File > Open Project* and friends to get started.
+
+Here's a screenshot of the Mac OS app switcher invoked via Command+Tab, showing multiple simultaneous instances of RStudio.
+```{r out.width = '100%', echo = FALSE}
+knitr::include_graphics("img/multiple-rstudio-projects.png")
+```
+This allows rapid context switching across several projects, such as an R package, teaching material, and a data analysis. There is no danger of crosstalk between the projects: each has its own R process, global workspace, and working directory.
+ 
+## Other ways to work with projects
+
+*Aspirational placeholder.*
+
+*Will hopefully outline project-friendly workflows that are not RStudio, e.g. Emacs + ESS. They do exist but I am not expert in them and will seek input from those who are.*
+
+### Project-specific shortcuts on Windows
+
+*still rough*
+
+After installing R, you will have a shortcut to `Rgui.exe` on your desktop and/or somewhere on the Start menu file tree, and perhaps also in the Quick Launch part of the taskbar (Vista and earlier).
+
+Create a copy of this shortcut for each project. Right-click the new shortcut, select `Properties...`, and change the 'Start in' field to the folder where the project lives.
+
+Launch R in a project by double-clicking its suitably-prepared shortcut.
+
+Source:
+
+  * R for Windows FAQ question [2.10 How can I keep workspaces for different projects in different directories?](https://cran.r-project.org/bin/windows/base/rw-FAQ.html#How-can-I-keep-workspaces-for-different-projects-in-different-directories_003f)
+
+## Links to other resources
+
+[This page](http://stat545.com/block002_hello-r-workspace-wd-project.html) from [STAT 545](http://stat545.com/topics.html) covers some of the same ground, but aimed at someone quite new to R.
+
+The post [Project-oriented workflow
+](https://www.tidyverse.org/articles/2017/12/workflow-vs-script/) from the [tidyverse blog](https://www.tidyverse.org/articles/) is an earlier effort to explain why `rm(list = ls())` and `setwd()` indicate a sub-optimal workflow.
+
+  * That lead to a [lively thread](https://community.rstudio.com/t/project-oriented-workflow-setwd-rm-list-ls-and-computer-fires/3549/2) on [community.rstudio.com](https://community.rstudio.com) where lots of useRs share their experience and tricks.
