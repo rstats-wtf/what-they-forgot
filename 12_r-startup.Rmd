@@ -120,21 +120,3 @@ the environment files with `--no-environ`.
 ```{block type = 'rmdwarning'}
 Both .Renviron and .Rprofile _must_ end with a newline character. If they do not the last line with be ignored without a warning or error.
 ```
-
-## TODOs
-
-These are mainly notes for things we need to add and what we wanted to cover
-
-Explain the concept of dotfiles, in general. Special considerations around seeing them and editing them, in different OSes, in RStudio. usethis helpers.
-
-What happens when R starts up.
-
-`.Rprofile`, `.Renviron`
-
-What's safe / typical to configure, e.g. reprex is OK, dplyr is not OK.
-
-Maintaining your library in "user space" is a good connection to "maintaining your R installation". Why and how do most people do this?
-
-Namespaces and conflicts, the conflicted package
-
-GitHub PAT is good example of something we could put in `.Renviron` as an activity.
