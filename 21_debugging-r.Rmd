@@ -95,7 +95,32 @@ Some useful things to do are
 5. Use `c` to leave the debugger and continue execution
 6. Use `Q` to exit the debugger and return to the R prompt.
 
-TODO: RStudio debugging
+## Debugging in RStudio
+
+### Editor breakpoints
+
+RStudio provides some additional tooling for debugging over using R on the
+command line. First you can set an editor breakpoint by cliking to the left of
+the line number in the source file, or by pressing `Shift+F9` with your cursor
+on the line. A breakpoint is equivalent to a `browser()` call, but you avoid
+needing to change your code like `browser()`.
+
+![](https://support.rstudio.com/hc/en-us/article_attachments/201608458/editor-breakpoint.png)
+
+### Stopping on error
+
+If you are trying to hunt down a particular error it is often useful to have
+RStudio enter the debugger when it occurs. You can control the error behavior with (`Debug -> On Error -> Error Inspector`).
+
+![](https://support.rstudio.com/hc/en-us/article_attachments/201608428/break-in-code.png)
+
+### Debugging console
+
+![](https://support.rstudio.com/hc/en-us/article_attachments/201608408/console-window.png)
+
+The RStudio debugging console has a few buttons to make debugging a little
+nicer, From left to right they are, next (equivalent to `n`), step info (`s`),
+continue (`c`) and Stop (`Q`).
 
 ## Debugging others' code
 
@@ -142,8 +167,6 @@ if the error is occurring in code in a package what options do you have?
 
 This is where the `debug()` function is useful, it will open the R debugger on
 any function, including those in packages.
-
-TODO: good example / activity
 
 ```r
 debug(ggplot2::ggplot)
