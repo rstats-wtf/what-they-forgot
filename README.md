@@ -2,8 +2,6 @@
 
 Rendered "book": <https://whattheyforgot.org>
 
-[Gitter chat room](https://gitter.im/what-they-forgot/seattle-2018)
-
 The impetus for developing and assembling these materials is a two-day hands-on workshop. It is designed for experienced R and RStudio users who want to (re)design their R lifestyle. We focus on building holistic and project-oriented workflows that address the most common sources of friction in data analysis, *outside of doing the statistical analysis itself*.
 
 Warning: these materials absolutely do not constitute a self-contained "book", nor do they capture all workshop content. But it is useful to us to organize and share certain excerpts in this format.
