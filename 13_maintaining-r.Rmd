@@ -12,7 +12,7 @@ maybe you have run into a bug that may have been fixed.
 
 ### R terminal
 
-Devtools has a function `upgrade_packges()` which will upgrade a package (from
+Devtools has a function `upgrade_packages()` which will upgrade a package (from
 the same source) for _any_ CRAN or development package.
 
 `devtools::upgrade_packages("pkgname")`
