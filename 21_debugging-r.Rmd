@@ -239,7 +239,7 @@ using `trace()`. This can be run in a setup block or in your R console before
 calling `knitr::knit()` / `rmarkdown::render()`
 
 ```r
-trace(recover, sink)
+trace(recover, quote(sink()))
 ```
 
 Then add the following knitr chunk options to the chunk which is
