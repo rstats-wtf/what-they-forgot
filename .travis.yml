@@ -10,19 +10,24 @@ pandoc_version: 2.1.1
 before_install:
   - nvm install stable
   - npm install netlify-cli -g
+  - export DEPLOY_MSG="${TRAVIS_COMMIT:0:7} ${TRAVIS_COMMIT_MESSAGE:0:70}"
+
+env:
+  - NETLIFY_SITE_ID=e9baeb6e-9dfd-4f11-bfbe-addb42ad407c
+  # NETLIFY_AUTH_TOKEN set in travis settings
 
 script:
 - Rscript -e 'bookdown::render_book("index.Rmd")'
 
 deploy:
   - provider: script
-    script: netlify deploy --dir _book
+    script: netlify deploy --dir _book --prod --message "$DEPLOY_MSG"
+    skip_cleanup: true
+    on:
+      branch: master
+  - provider: script
+    script: netlify deploy --dir _book --message "$DEPLOY_MSG"
     skip_cleanup: true
     on:
       all_branches: true
       condition: $TRAVIS_BRANCH != "master"
-  - provider: script
-    script: netlify deploy --dir _book --prod
-    skip_cleanup: true
-    on:
-      branch: master
