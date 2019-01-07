@@ -10,7 +10,8 @@ pandoc_version: 2.1.1
 before_install:
   - nvm install stable
   - npm install netlify-cli -g
-  - export DEPLOY_MSG="${TRAVIS_COMMIT:0:7} ${TRAVIS_COMMIT_MESSAGE:0:70}"
+  - export COMMIT_MSG=$(echo "$TRAVIS_COMMIT_MESSAGE" | head -n1)
+  - export DEPLOY_MSG="${TRAVIS_COMMIT:0:7} ${COMMIT_MSG:0:50}"
 
 env:
   - NETLIFY_SITE_ID=e9baeb6e-9dfd-4f11-bfbe-addb42ad407c
