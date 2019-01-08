@@ -142,13 +142,10 @@ handler, by calling `options(error = recover)`. You can also use other
 functions, such as `browser()` as an error handler, which will start the
 debugger automatically when there is an error.
 
-The benefit to `recover()` over `browser()` for this case is that `recover()`
-allows you to select where in the call stack you debug, not just the last call
-where the error occurred. Often the issue is above The benefit to `recover()`
-over using `options(error = browser)` is that you can browse on any of the call
-stack, not just where the error occurred. Often the issue is most easily
-diagnosed in calls higher on the call stack than immediately where the error
-occurred.
+The benefit to `recover()` over using `options(error = browser)` is that you can
+browse on any of the call stack, not just where the error occurred. Often the
+issue is most easily diagnosed in calls higher on the stack than immediately
+where the error occurred.
 
 When `recover()` is called it prints a list of the current calls, with a prompt to
 select which you want to browse in. Then a debugging session is started at that
