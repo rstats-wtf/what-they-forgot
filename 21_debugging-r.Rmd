@@ -100,7 +100,7 @@ Some useful things to do are
 ### Editor breakpoints
 
 RStudio provides some additional tooling for debugging over using R on the
-command line. First you can set an editor breakpoint by cliking to the left of
+command line. First you can set an editor breakpoint by clicking to the left of
 the line number in the source file, or by pressing `Shift+F9` with your cursor
 on the line. A breakpoint is equivalent to a `browser()` call, but you avoid
 needing to change your code like `browser()`.
@@ -218,16 +218,16 @@ the expression to insert convert the body of the function to a list. e.g.
 [Try activity 2](activities/21_debugging-r-02.R) to explore using `trace()` with `at`.
 ```
 
-## Debugging in RMarkdown documents
+## Debugging in R Markdown documents
 
 One special case where it can sometimes be more difficult to debug is an error
-that occurs only when knitting a RMarkdown document.
+that occurs only when knitting an R Markdown document.
 
 The easiest way to debug most of the errors is to simply run the code inside
 the chunk as regular R code in the console and use the normal techniques such
 as inserting `browser()` calls.
 
-However rarely an error will only occur when the code is being kitted. In this
+However rarely an error will only occur when the code is being knitted. In this
 case you can set an error handler with the following code.
 
 First you will need to modify recover slightly, by adding a `sink()` call to the
@@ -247,9 +247,9 @@ Then knit the file on the R console with `knitr::knit()` or
 well, so you will need to look near the end to find the calls in your code.
 
 ```{block type = "rmdwarning"}
-Note you _cannot_ use the 'knit' button in RStudio when trying to debug
-Rmarkdown documents in any cases. The knit button opens a separate R process, so there is no
-way to use an interactive debugger in that case.
+Note you _cannot_ use the 'Knit' button in RStudio when trying to debug
+R Markdown documents in any case. The 'Knit' button opens a separate R process,
+so there is no way to use an interactive debugger in that case.
 ```
 
 ### Resources
