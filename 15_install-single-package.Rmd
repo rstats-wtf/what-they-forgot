@@ -12,7 +12,7 @@ To install a source package you will need [setup a development environment](#set
 
 There are a few main functions used to install source packages.
 
-- `devtools::install_dev()` to install the latest development version of a CRAN package. ^[This will only work if the package includes a link to the development location in the package DESCRIPTION].
+- `devtools::install_dev()` to install the latest development version of a CRAN package. ^[This will only work if the package includes a link to the development location in the package DESCRIPTION]
 - `devtools::install_github()` to install a package directly from GitHub, even if it is not on CRAN.
 - `devtools::install_version()` to install previously released CRAN versions of a package.
 
