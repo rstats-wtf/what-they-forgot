@@ -8,7 +8,7 @@ binary version available. This allows you to install development versions not
 yet released on CRAN and previously released versions of packages. It also lets
 you build your own packages locally.
 
-To install a source package you will need [setup a development environment](#setup-an-r-dev-environment).
+To install a source package you will need to [setup a development environment](#setup-an-r-dev-environment).
 
 There are a few main functions used to install source packages.
 
