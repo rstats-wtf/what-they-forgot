@@ -1,5 +1,5 @@
 # Create a GitHub PAT
-# Hint: use the usethis package
+# Hint: use usethis::browse_github_pat()
 
 # Add it to .Renviron
 # Hint: use the usethis package
