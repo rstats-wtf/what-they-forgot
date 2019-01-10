@@ -79,7 +79,7 @@ CRAN package binaries, which means you must build and install all packages from
 source. This takes additional time during installation and can lead to more
 time spent dealing with installation issues if a package fails to compile.
 
-Instead if you prefer the convince of homebrew we recommend installing the
+Instead if you prefer the convenience of homebrew we recommend installing the
 `r-app` cask.
 
 ```r
