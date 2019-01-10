@@ -11,9 +11,9 @@ Warning: these materials absolutely do not constitute a self-contained "book", n
 Past and future offerings:
 
   * rstudio::conf 2018, San Diego, CA
-  * [Seattle, WA, 2018 October 4 & 5](https://www.rstudio.com/workshops/what-they-forgot-to-teach-you-about-r/) at [The Westin Seattle](https://goo.gl/maps/3KSpPzZjWR92) REGISTRATION OPEN
-  * [rstudio::conf 2019](https://www.rstudio.com/conference/), Austin, TX, on  2019 January 15 & 16 training days.  REGISTRATION OPEN
-    
+  * [Seattle, WA, 2018 October 4 & 5](https://www.rstudio.com/workshops/what-they-forgot-to-teach-you-about-r/) at [The Westin Seattle](https://goo.gl/maps/3KSpPzZjWR92)
+  * [rstudio::conf 2019](https://www.rstudio.com/conference/), Austin, TX, on 2019 January 15 & 16 training days.
+  
 The workshops typically include substantial components that draw on other materials, such as:
 
   * [Happy Git and GitHub for the useR](http://happygitwithr.com)
