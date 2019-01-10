@@ -2,7 +2,7 @@
 
 Rendered "book": <https://whattheyforgot.org>
 
-[![Travis build status](https://travis-ci.org/jennybc/whattheyforgot.svg?branch=master)](https://travis-ci.org/jennybc/whattheyforgot)
+[![Travis build status](https://travis-ci.org/jennybc/what-they-forgot.svg?branch=master)](https://travis-ci.org/jennybc/what-they-forgot)
 
 The impetus for developing and assembling these materials is a two-day hands-on workshop. It is designed for experienced R and RStudio users who want to (re)design their R lifestyle. We focus on building holistic and project-oriented workflows that address the most common sources of friction in data analysis, *outside of doing the statistical analysis itself*.
 

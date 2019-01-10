@@ -7,7 +7,7 @@ documentclass: book
 bibliography: [book.bib, packages.bib]
 biblio-style: apalike
 link-citations: yes
-github-repo: jennybc/whattheyforgot
+github-repo: jennybc/what-they-forgot
 description: "The stuff you need to know about R, besides statistical analysis."
 ---
 
@@ -19,7 +19,7 @@ The impetus for developing and assembling these materials is a two-day hands-on 
 
 Warning: these materials absolutely do not constitute a self-contained "book", nor do they capture all workshop content. But it is useful to us to organize and share certain excerpts in this format.
 
-Repo that makes this site: <https://github.com/jennybc/whattheyforgot>
+Repo that makes this site: <https://github.com/jennybc/what-they-forgot>
 
 Past and future offerings:
 
@@ -54,7 +54,7 @@ Basic schedule
 
 **Please do the requested Git/GitHub prep in advance, as requested via email! Go [here](http://happygitwithr.com/workshops.html#pre-workshop-set-up) for details and use [this community thread](https://community.rstudio.com/t/what-they-forgot-to-teach-you-seattle-oct-2018-system-setup/15287) if you hit a roadblock.**
 
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">What They Forgot to Teach You About R</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="https://github.com/jennybc/whattheyforgot" property="cc:attributionName" rel="cc:attributionURL">Jennifer Bryan, Jim Hester</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">What They Forgot to Teach You About R</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="https://github.com/jennybc/what-they-forgot" property="cc:attributionName" rel="cc:attributionURL">Jennifer Bryan, Jim Hester</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
 
 ```{r include=FALSE}
 # automatically create a bib database for R packages
