@@ -65,3 +65,41 @@ devtools::has_devel()
 
 If this function runs without error then congratulations, your R installation
 is properly setup!
+
+## What about Homebrew?
+
+Users on macOS often install R with [homebrew](https://brew.sh/) via
+
+```r
+brew install r
+```
+
+Unfortunately, when R is installed in this way it is not compatible with the
+CRAN package binaries, which means you must build and install all packages from
+source. This takes additional time during installation and can lead to more
+time spent dealing with installation issues if a package fails to compile.
+
+Instead if you prefer the convince of homebrew we recommend installing the
+`r-app` cask.
+
+```r
+brew cask install r-app
+```
+
+This will install the CRAN R distribution, so all package binaries will be
+available just like they would be from installing R manually.
+
+## What about Conda?
+
+Some users use [conda](https://conda.io) in python contexts and
+notice that conda now also provides (some) R package binaries.
+
+However we would suggest avoiding conda at this time, only a limited number of
+all CRAN packages are available ^[~1,500 out of ~13,000 as of this writing] and
+many users run into installation problems trying to use `install.packages()`
+inside conda environments. Using `install.packages()` also means you no longer
+declare all dependencies in the same location. Which means your work is less
+reproducible than if you always install only conda packages.
+
+For these reasons we suggest you either restrict yourself only to packages
+available as official conda packages, or avoid using conda for R.
