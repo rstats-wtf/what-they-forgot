@@ -55,7 +55,9 @@ R_LIBS_USER=~/R/%p/%v
 ```
 
 ```{block type="rmdinfo"}
-[Try the activity](activities/12-startup-01.R) to learn how to set a GitHub PAT to your .Renviron and then use it to create a gist
+[Try the activity](https://raw.githubusercontent.com/jimhester/wtf-source-package/master/01_source-package_spartan.R) `usethis::use_course("rstd.io/wtf-source-package")`
+
+to learn how to set a GitHub PAT to your .Renviron and then use it with `usethis::use_github()` to upload a project to GitHub.
 ```
 
 ## .Rprofile
@@ -105,8 +107,9 @@ if (interactive()) {
 ```
 
 ```{block type="rmdinfo"}
-[Try the activity](activities/12-startup-02.R) to learn how to create a
-.Rprofile with a default CRAN repository and add a startup message to it.
+[Try the activity](https://raw.githubusercontent.com/jimhester/wtf-source-package/master/02_source-package_spartan.R) `usethis::use_course("rstd.io/wtf-source-package")`
+
+to learn how to create a .Rprofile with a default CRAN repository and add a startup message to it.
 ```
 
 ## Disabling startup files
