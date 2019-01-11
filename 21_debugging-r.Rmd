@@ -152,8 +152,8 @@ select which you want to browse in. Then a debugging session is started at that
 location.
 
 ```{block type="rmdinfo"}
-[Try the activity](https://raw.githubusercontent.com/jimhester/wtf-debugging/master/01_debugging_spartan.R) `usethis::use_course("rstd.io/wtf-debugging")`
-[Try the activity](https://raw.githubusercontent.com/jimhester/wtf-debugging/master/02_debugging_spartan.R) `usethis::use_course("rstd.io/wtf-debugging")`
+[Try activity 1](https://raw.githubusercontent.com/jimhester/wtf-debugging/master/01_debugging_spartan.R) `usethis::use_course("rstd.io/wtf-debugging")`
+[Try activity 2](https://raw.githubusercontent.com/jimhester/wtf-debugging/master/02_debugging_spartan.R) `usethis::use_course("rstd.io/wtf-debugging")`
 
 to practice debugging errors using the tools described
 ```
@@ -217,7 +217,7 @@ the expression to insert convert the body of the function to a list. e.g.
 `as.list(body(fun))`.
 
 ```{block type="rmdinfo"}
-[Try the activity](https://raw.githubusercontent.com/jimhester/wtf-debugging/master/03_debugging_spartan.R) `usethis::use_course("rstd.io/wtf-debugging")`
+[Try activity 3](https://raw.githubusercontent.com/jimhester/wtf-debugging/master/03_debugging_spartan.R) `usethis::use_course("rstd.io/wtf-debugging")`
 
 to explore using `trace()` with `at`.
 ```
