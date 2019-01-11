@@ -86,7 +86,7 @@ This is highly suggestive of a non-reproducible workflow.
 This line is meant to reset things, either to power-cycle the current analysis or to switch from one project to another. But there are better ways to do both:
 
   * To power-cycle the current analysis, restart R! See above.
-  * To switch from one project to another, either restart R or, even better, use an IDE with proper support for projects, where each project gets its own R process. *(link to project-oriented workflow)*
+  * To switch from one project to another, either restart R or, even better, use an IDE with proper support for projects, where each project gets its own R process. See [Project-oriented workflow](#project-oriented-workflow).
 
 **The problem with `rm(list = ls())` is that, given the intent, it does not go far enough.** All it does is delete user-created objects from the global workspace.
 
@@ -100,7 +100,7 @@ Why does this matter? It makes your script vulnerable to hidden dependencies on 
 
 The solution is to write every script assuming it will be run in a fresh R process. The best way to do that is ... develop scripts in a fresh R process! 
 
-As above, there is nothing inherently evil about `rm(list = ls())`. It's a red flag, because it is indicative of a non-reproducible workflow. Since it appears to "work" ~90% of the time, it's very easy to deceive yourself into thinking your script is self-contained, when it is not.
+There is nothing inherently evil about `rm(list = ls())`. It's a red flag, because it is indicative of a non-reproducible workflow. Since it appears to "work" ~90% of the time, it's very easy to deceive yourself into thinking your script is self-contained, when it is not.
 
 ## Objects that take a long time to create
 

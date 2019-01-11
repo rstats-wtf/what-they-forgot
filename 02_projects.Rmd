@@ -1,4 +1,4 @@
-# Project-oriented workflow
+# Project-oriented workflow {#project-oriented-workflow}
 
 In \@ref(rm-list-ls), we discouraged the habit of starting R scripts with `rm(list = ls())`, because it doesn't actually achieve the intended goal: to reset things. Restarting R is a better way to power-cycle.
 
