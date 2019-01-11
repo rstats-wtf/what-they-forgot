@@ -151,9 +151,11 @@ When `recover()` is called it prints a list of the current calls, with a prompt 
 select which you want to browse in. Then a debugging session is started at that
 location.
 
-```{block type = 'rmdinfo'}
-[Try activity 1](activities/21_debugging-r-01.R) to use `traceback()`, breakpoints, `browser()` and `recover()`
-to debug an commonly encountered error.
+```{block type="rmdinfo"}
+[Try the activity](https://raw.githubusercontent.com/jimhester/wtf-debugging/master/01_debugging_spartan.R) `usethis::use_course("rstd.io/wtf-debugging")`
+[Try the activity](https://raw.githubusercontent.com/jimhester/wtf-debugging/master/02_debugging_spartan.R) `usethis::use_course("rstd.io/wtf-debugging")`
+
+to practice debugging errors using the tools described
 ```
 
 ### `debug()`
@@ -214,8 +216,10 @@ expressions at other points in the function body. To determine the number of
 the expression to insert convert the body of the function to a list. e.g.
 `as.list(body(fun))`.
 
-```{block type ="rmdinfo"}
-[Try activity 2](activities/21_debugging-r-02.R) to explore using `trace()` with `at`.
+```{block type="rmdinfo"}
+[Try the activity](https://raw.githubusercontent.com/jimhester/wtf-debugging/master/03_debugging_spartan.R) `usethis::use_course("rstd.io/wtf-debugging")`
+
+to explore using `trace()` with `at`.
 ```
 
 ## Debugging in R Markdown documents
