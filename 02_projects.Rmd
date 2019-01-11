@@ -58,7 +58,7 @@ Here's what I mean by "work in a project":
     - Ideally, this is achieved via the development workflow and tooling, not by baking absolute paths into the code.
   * File path discipline: all paths are relative and, by default, relative to the project's folder.
 
-These habits are syngergistic: you'll get the biggest payoff if you practice all of them together.
+These habits are synergistic: you'll get the biggest payoff if you practice all of them together.
 
 These habits guarantee that the project can be moved around on your computer or onto other computers and will still "just work". I argue that this is the only practical convention that creates reliable, polite behavior across different computers or users and over time. This convention is neither new, nor unique to R.
 
