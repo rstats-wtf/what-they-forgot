@@ -1,11 +1,59 @@
 # Install a source package
 
-How to isolate and experiment with a single package. The world beyond plain usage of `install.packages()`.
+The most common type of package you install is a **binary** package. Packages
+released on CRAN are built as pre-compiled binaries.
 
-  * Install from source
-  * Install from any version
-  * Install from GitHub
-  * Install to temporary library (some old Jenny notes https://gist.github.com/jennybc/4ffc1607d07ed3b025dc)
-  
-At least mention ... fork, clone, and work with it directly. A connection to Happy Git.
+However often it is useful to install packages which do not have a pre-built
+binary version available. This allows you to install development versions not
+yet released on CRAN and previously released versions of packages. It also lets
+you build your own packages locally.
 
+To install a source package you will need [setup a development environment](#setup-an-r-dev-environment).
+
+There are a few main functions used to install source packages.
+
+- `devtools::install_dev()` to install the latest development version of a CRAN package. ^[This will only work if the package includes a link to the development location in the package DESCRIPTION]
+- `devtools::install_github()` to install a package directly from GitHub, even if it is not on CRAN.
+- `devtools::install_version()` to install previously released CRAN versions of a package.
+
+For example `devtools::install_dev("dplyr")` will install the development
+version of dplyr. `devtools::install_github("jimhester/lookup")` will install
+Jim's lookup package (which is not on CRAN), and
+`devtools::install_version("readr", "1.0.0")` will install readr 1.0.0.
+
+It is also possible to [fork, clone and work with a package
+directly](https://happygitwithr.com/fork.html) then use `devtools::install()`
+and `devtools::load_all()` to work with the package locally like you would with
+a package you have created yourself.
+
+## Installation to a temporary library
+
+It is sometimes useful to install packages to a temporary library, so that they
+don't affect your normal packages. This can be done by using the `lib` argument
+to the devtools install functions, then using `lib.loc` in `library()` when you
+load the package.
+
+```r
+library(devtools)
+
+tmp_lib <- "~/tmp/tmp_library"
+dir.create(tmp_lib)
+
+devtools::install_github("dill/beyonce", lib = tmp_lib)
+
+## restart R
+
+## explicitly load the affected packages from the temporary library
+library(beyonce, lib.loc = tmp_lib)
+
+## your experimentation goes here
+
+## done? clean up!
+unlink(tmp_lib, recursive = TRUE)
+```
+
+```{block type="rmdinfo"}
+[Try the activity](https://raw.githubusercontent.com/jimhester/wtf-source-package/master/01_source-package_spartan.R): `usethis::use_course("rstd.io/wtf-source-package")`
+
+To practice installing various types of source packages.
+```
