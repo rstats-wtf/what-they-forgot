@@ -24,8 +24,7 @@ However most R users can ignore the majority of this complexity and focus on two
 2. [.Rprofile](#rprofile) - which contains R code to be run in each session.
 
 These files are R specific instances of a broader family of customization files
-commonly referred to as [dotfiles](https://www.quora.com/What-are-dotfiles),
-used to tailor the behavior of many programs, particularly those with roots in
+commonly referred to as [dotfiles](https://www.quora.com/What-are-dotfiles). These are used to tailor the behavior of many programs, particularly those with roots in
 the unix command line.
 
 Many people store their [dotfiles on GitHub](https://dotfiles.github.io/) and a
