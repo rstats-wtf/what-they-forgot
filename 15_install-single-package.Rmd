@@ -5,7 +5,7 @@ released on CRAN are built as pre-compiled binaries.
 
 However often it is useful to install packages which do not have a pre-built
 binary version available. This allows you to install development versions not
-yet released on CRAN and previously released versions of packages. It also lets
+yet released on CRAN, as well as older versions of released packages. It also lets
 you build your own packages locally.
 
 To install a source package you will need to [setup a development environment](#setup-an-r-dev-environment).
