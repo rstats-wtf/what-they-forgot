@@ -10,7 +10,7 @@ output:
 R has been designed to be used from shared computing resources such as linux
 servers. As a result R's startup offers lots of opportunity for customization;
 both for every user of a system as well as for each individual user. However
-this flexibility comes at a cost, _complexity_.
+this flexibility comes at a cost: _complexity_.
 
 And for sure, R's startup procedures are complex
 
