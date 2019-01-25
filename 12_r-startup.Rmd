@@ -12,7 +12,7 @@ servers. As a result R's startup offers lots of opportunity for customization;
 both for every user of a system as well as for each individual user. However
 this flexibility comes at a cost, _complexity_.
 
-And for sure, R's startup procedures are complex
+And for sure, R's startup procedures are complex:
 
 ```{r, echo = FALSE, fig.cap = "R Startup flowchart - [Thomas Lin Pedersen](https://twitter.com/thomasp85/status/961553618196418560)"}
 knitr::include_graphics("images/R-startup.svg")
