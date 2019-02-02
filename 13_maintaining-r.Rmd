@@ -12,10 +12,10 @@ maybe you have run into a bug that may have been fixed.
 
 ### R terminal
 
-Devtools has a function `upgrade_packages()` which will upgrade a package (from
+Devtools has a function `update_packages()` which will upgrade a package (from
 the same source) for _any_ CRAN or development package.
 
-`devtools::upgrade_packages("pkgname")`
+`devtools::update_packages("pkgname")`
 
 In addition if the given package is _not_ already installed it will install it.
 
@@ -27,7 +27,7 @@ In addition if the given package is _not_ already installed it will install it.
 
 ### CRAN packages
 
-`devtools::upgrade_packages(TRUE)`
+`devtools::update_packages(TRUE)`
 
 ## How to downgrade a package
 
