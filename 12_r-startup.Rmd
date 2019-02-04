@@ -12,7 +12,7 @@ servers. As a result R's startup offers lots of opportunity for customization;
 both for every user of a system as well as for each individual user. However
 this flexibility comes at a cost, _complexity_.
 
-And for sure, R's startup procedures are complex
+And for sure, R's startup procedures are complex:
 
 ```{r, echo = FALSE, fig.cap = "R Startup flowchart - [Thomas Lin Pedersen](https://twitter.com/thomasp85/status/961553618196418560)"}
 knitr::include_graphics("images/R-startup.svg")
@@ -20,12 +20,11 @@ knitr::include_graphics("images/R-startup.svg")
 
 However most R users can ignore the majority of this complexity and focus on two main files.
 
-1. [.Renviron](#renviron) - which contains environment variables to be set in R sessions.
-2. [.Rprofile](#rprofile) - which contains R code to be run in each session.
+1. [`.Renviron`](#renviron) - which contains environment variables to be set in R sessions.
+2. [`.Rprofile`](#rprofile) - which contains R code to be run in each session.
 
 These files are R specific instances of a broader family of customization files
-commonly referred to as [dotfiles](https://www.quora.com/What-are-dotfiles),
-used to tailor the behavior of many programs, particularly those with roots in
+commonly referred to as [dotfiles](https://www.quora.com/What-are-dotfiles). These are used to tailor the behavior of many programs, particularly those with roots in
 the unix command line.
 
 Many people store their [dotfiles on GitHub](https://dotfiles.github.io/) and a
@@ -35,7 +34,7 @@ people's dotfile repositories.
 One way to find R specific dotfiles is to do a [GitHub search for
 filename:.Rprofile](https://github.com/search?q=filename%3A.Rprofile+interactive&type=Code).
 
-## .Renviron
+## `.Renviron`
 
 The `.Renviron` file is most useful for defining sensitive information such as
 API keys (such as GitHub or twitter) as well as R specific environment
@@ -57,10 +56,10 @@ R_LIBS_USER=~/R/%p/%v
 ```{block type="rmdinfo"}
 [Try the activity](https://raw.githubusercontent.com/jimhester/wtf-source-package/master/01_source-package_spartan.R) `usethis::use_course("rstd.io/wtf-source-package")`
 
-to learn how to set a GitHub PAT to your .Renviron and then use it with `usethis::use_github()` to upload a project to GitHub.
+to learn how to set a GitHub PAT to your `.Renviron` and then use it with `usethis::use_github()` to upload a project to GitHub.
 ```
 
-## .Rprofile
+## `.Rprofile`
 
 The `.Rprofile` file contains R code to be run when R starts up. It is run
 after the `.Renviron` file is sourced. Typically `.Rprofile` is located in the
@@ -109,7 +108,7 @@ if (interactive()) {
 ```{block type="rmdinfo"}
 [Try the activity](https://raw.githubusercontent.com/jimhester/wtf-source-package/master/02_source-package_spartan.R) `usethis::use_course("rstd.io/wtf-source-package")`
 
-to learn how to create a .Rprofile with a default CRAN repository and add a startup message to it.
+to learn how to create a `.Rprofile` with a default CRAN repository and add a startup message to it.
 ```
 
 ## Disabling startup files
@@ -121,5 +120,5 @@ session start / resume`. You can also selectively disable only the user or site
 the environment files with `--no-environ`.
 
 ```{block type = 'rmdwarning'}
-Both .Renviron and .Rprofile _must_ end with a newline character. If they do not the last line with be ignored without a warning or error.
+Both `.Renviron` and `.Rprofile` _must_ end with a newline character. If they do not the last line with be ignored without a warning or error.
 ```
