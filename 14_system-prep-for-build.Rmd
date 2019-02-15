@@ -1,4 +1,4 @@
-# Setup an R dev environment
+# Set up an R dev environment
 
 There are two different types of R packages you can install, **binary**
 packages and **source** packages. When you install released packages from CRAN
@@ -64,7 +64,7 @@ devtools::has_devel()
 ```
 
 If this function runs without error then congratulations, your R installation
-is properly setup!
+is properly set up!
 
 ## What about Homebrew?
 
