@@ -34,7 +34,15 @@ If, after reading this article, you still decide to use `setwd()` in your script
     p <- ggplot(df, aes(x, y)) + geom_point()
     ggsave("figs/foofy_scatterplot.png")
     ```
-    
+
+The convention about leaving working directory at the top-level of a project is tightly connected to topics in \@ref(safe-paths).
+
+### If you like `setwd()`, then carry on
+
+If you use `setwd("path/that/only/works/on/my/machine")` and it does not cause your or your collaborators grief, then I am happy for you. Carry on. This was my practice as well for many years.
+
+But eventually I admitted that this *did* cause me grief whenever I moved my files, collaborated on an analysis with a colleague, or got a new computer. Then, as the instructor of [STAT545](http://stat545.com), I started to run other people's code *en masse*. Up to 80 students submitted multiple `.R` and `.Rmd` files each week, riddled with `setwd()` calls that required artisanal hand editing by me. This was the straw that broke the camel's back and made me determined to clearly articulate this problem and some solutions. You can design this particular aggravation out of your life.
+
 ## Dilemma and a solution
 
 Problem statement:
@@ -89,9 +97,10 @@ You can designate a new or existing folder as a Project. All this means is that 
 
 Double-click on a `.Rproj` file to open a fresh instance of RStudio, with the working directory and file browser pointed at the project folder.
 
-Once RStudio is running, you can open an existing Project, switch to another Project, launch a second instance of RStudio in a new or existing Project, and much more, via various menus and keyboard shortcuts. Use *File > Open Project* and friends to get started.
+Once RStudio is running, you can open an existing Project, switch to another Project, launch a second instance of RStudio in a new or existing Project, and much more, via various menus and keyboard shortcuts (more below).
 
 Here's a screenshot of the Mac OS app switcher invoked via Command+Tab, showing multiple simultaneous instances of RStudio.
+
 ```{r out.width = '100%', echo = FALSE}
 knitr::include_graphics("img/multiple-rstudio-projects.png")
 ```
@@ -99,7 +108,7 @@ This allows rapid context switching across several projects, such as an R packag
 
 ### Tricks for opening Projects
 
-Once you decide "I want to do some work in Project A", there are various ways to accelerate the startup process. I'll review a few going from general and low-tech to more specific.
+Once you decide "I want to do some work in Project K", there are various ways to accelerate the startup process. I'll review a few going from general and low-tech to more specific.
 
 **Have a dedicated folder for your Projects.** I keep the vast majority of my R work in RStudio Projects in the folder `~/rrr/`. What I call this folder and where I keep it is not important. The main point is if you have One Main Place for Projects, then you can go there in Finder or File Explorer and drill down to the `.Rproj` file needed to launch any specific project. You can make the One Main Place more accessible to yourself by putting it in the Finder's Sidebar (macOS) or *insert windows equivalent here*.
 
