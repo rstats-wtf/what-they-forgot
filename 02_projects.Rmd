@@ -96,12 +96,36 @@ Here's a screenshot of the Mac OS app switcher invoked via Command+Tab, showing 
 knitr::include_graphics("img/multiple-rstudio-projects.png")
 ```
 This allows rapid context switching across several projects, such as an R package, teaching material, and a data analysis. There is no danger of crosstalk between the projects: each has its own R process, global workspace, and working directory.
+
+### Tricks for opening Projects
+
+Once you decide "I want to do some work in Project A", there are various ways to accelerate the startup process. I'll review a few going from general and low-tech to more specific.
+
+**Have a dedicated folder for your Projects.** I keep the vast majority of my R work in RStudio Projects in the folder `~/rrr/`. What I call this folder and where I keep it is not important. The main point is if you have One Main Place for Projects, then you can go there in Finder or File Explorer and drill down to the `.Rproj` file needed to launch any specific project. You can make the One Main Place more accessible to yourself by putting it in the Finder's Sidebar (macOS) or *insert windows equivalent here*.
+
+**RStudio knows about recently used Projects.** Once you are in RStudio, there are several ways to access other Projects you've recently worked in. In the upper right corner is a drop-down menu with various Project- and session-related goodies in it.
+
+```{r out.width = '50%', echo = FALSE}
+knitr::include_graphics("img/rstudio-project-switching.png")
+```
+
+Use the "arrow and paper" icon to open a Project in a separate RStudio instance, while also leaving the Project you're launching it from open. Click on a Project's name to switch the current RStudio instance from one Project to another. The *File* menu also offers ways to switch project or open new, additional instances.
+
+**Find and Launch Projects with Alfred.** This is a highly specific app recommendation that only works on macOS, but I'm sure other tools have a similar capability on macOS and Windows. I use [Alfred](https://www.alfredapp.com), which is a macOS application launcher and general productivity booster, based on a recommendation from Hadley Wickham.
+
+You will set an Alfred hotkey (I use Option + Space), similar to macOS Spotlight. The hotkey calls up a search window, where you can summon apps or files. I've configured Alfred to search preferentially for `.Rproj` files here, making it extremely easy to find and launch RStudio Projects. Here's what happens when I type "tidy":
+
+```{r out.width = '50%', echo = FALSE}
+knitr::include_graphics("img/alfred-tidy.png")
+```
+
+You can achieve this by "registering" the `.Rproj` file type with Alfred. Go to Alfred's *Preferences > Features > Default Results > Advanced...*. Drag any `.Rproj` file onto this space and then close. 
  
 ## Other ways to work with projects
 
 *Aspirational placeholder.*
 
-*Will hopefully outline project-friendly workflows that are not RStudio, e.g. Emacs + ESS. They do exist but I am not expert in them and will seek input from those who are.*
+*Will hopefully sketch project-friendly workflows that are not RStudio, e.g. Emacs + ESS. They do exist but I am not expert in them and an open to input from those who are. Links to well-developed guides would be best as I don't want to ingest anything I can't maintain.*
 
 ### Project-specific shortcuts on Windows
 
