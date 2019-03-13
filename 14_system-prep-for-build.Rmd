@@ -80,7 +80,8 @@ source. This takes additional time during installation and can lead to more
 time spent dealing with installation issues if a package fails to compile.
 
 Instead, if you prefer the convenience of homebrew, we recommend installing the
-`r` **cask**. *NOTE: the cask used to be named `r-app` but the `-app` suffix has recently been dropped due [a homebrew policy change around 2019-03-11](https://github.com/Homebrew/homebrew-cask/pull/59689)*. 
+`r` **cask**. *NOTE: the cask used to be named `r-app` but the `-app` suffix was
+dropped due to [a homebrew policy change around 2019-03-11](https://github.com/Homebrew/homebrew-cask/pull/59689)*. 
 
 ```r
 brew cask install r
