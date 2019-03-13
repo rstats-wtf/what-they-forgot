@@ -68,7 +68,7 @@ is properly set up!
 
 ## What about Homebrew?
 
-Users on macOS often install R with [homebrew](https://brew.sh/) via
+Users on macOS often install R with [homebrew](https://brew.sh/) via this **formula**:
 
 ```r
 brew install r
@@ -79,11 +79,11 @@ CRAN package binaries, which means you must build and install all packages from
 source. This takes additional time during installation and can lead to more
 time spent dealing with installation issues if a package fails to compile.
 
-Instead if you prefer the convenience of homebrew we recommend installing the
-`r-app` cask.
+Instead, if you prefer the convenience of homebrew, we recommend installing the
+`r` **cask**. *NOTE: the cask used to be named `r-app` but the `-app` suffix has recently been dropped due [a homebrew policy change around 2019-03-11](https://github.com/Homebrew/homebrew-cask/pull/59689)*. 
 
 ```r
-brew cask install r-app
+brew cask install r
 ```
 
 This will install the CRAN R distribution, so all package binaries will be
