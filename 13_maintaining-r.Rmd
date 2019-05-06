@@ -88,7 +88,7 @@ fs::dir_create("~/Library/R/3.5/library")
 # Re-start R so the .libPaths are updated
 
 # Lookup what packages were in your old package library
-pkgs <- fs::dirname(fs::dir_ls("~/Library/R/3.4/library"))
+pkgs <- fs::path_file(fs::dir_ls("~/Library/R/3.4/library"))
 
 # Filter these packages as needed
 
