@@ -110,7 +110,7 @@ This allows rapid context switching across several projects, such as an R packag
 
 Once you decide "I want to do some work in Project K", there are various ways to accelerate the startup process. I'll review a few going from general and low-tech to more specific.
 
-**Have a dedicated folder for your Projects.** I keep the vast majority of my R work in RStudio Projects in the folder `~/rrr/`. What I call this folder and where I keep it is not important. The main point is if you have One Main Place for Projects, then you can go there in Finder or File Explorer and drill down to the `.Rproj` file needed to launch any specific project. You can make the One Main Place more accessible to yourself by putting it in the Finder's Sidebar (macOS) or *insert windows equivalent here*.
+**Have a dedicated folder for your Projects.** I keep the vast majority of my R work in RStudio Projects in the folder `~/rrr/`. What I call this folder and where I keep it is not important. The main point is if you have One Main Place for Projects, then you can go there in Finder or File Explorer and drill down to the `.Rproj` file needed to launch any specific project. You can make the One Main Place more accessible to yourself by putting it in the Finder's Sidebar (macOS) or in the Navigation Pane (Windows).
 
 **RStudio knows about recently used Projects.** Once you are in RStudio, there are several ways to access other Projects you've recently worked in. In the upper right corner is a drop-down menu with various Project- and session-related goodies in it.
 
