@@ -37,7 +37,7 @@ to search the R source for code and documentation.
 
 You can find the development home of most R packages by looking at the `URL`
 field in the package DESCRIPTION, as can be seen on the CRAN landing page (e.g.
-[devtools landing page](https://cran.r-project.org/package=readr)). The
+[devtools landing page](https://cran.r-project.org/package=devtools)). The
 `BugReports` field will give you a direct link to the issue page where you
 should report any issues found with the package.
 
