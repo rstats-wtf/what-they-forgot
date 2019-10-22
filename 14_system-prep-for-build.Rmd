@@ -54,7 +54,7 @@ If they are not installed you have a few options.
   ```shell
   xcode-select --install
   ```
-- Install the current release of full [Xcode from the Mac App Store](macappstore://itunes.apple.com/us/app/xcode/id497799835). WAY more
+- Install the current release of full [Xcode from the Mac App Store](https://itunes.apple.com/ca/app/xcode/id497799835?mt=12). WAY more
   stuff than you need but the advantage is App Store convenience.
 
 ## Verify system prep
