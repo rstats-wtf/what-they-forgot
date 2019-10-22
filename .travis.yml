@@ -14,7 +14,7 @@ before_install:
   - export DEPLOY_MSG="${TRAVIS_COMMIT:0:7} ${COMMIT_MSG:0:50}"
 
 env:
-  - NETLIFY_SITE_ID=e9baeb6e-9dfd-4f11-bfbe-addb42ad407c
+  - NETLIFY_SITE_ID=ad37c579-9932-4076-ae3b-7e2802c26ab2
   # NETLIFY_AUTH_TOKEN set in travis settings
 
 script:
