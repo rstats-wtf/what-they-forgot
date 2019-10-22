@@ -5,7 +5,8 @@ Rendered site: [rstats.wtf](https://rstats.wtf)
 <a alt = "TravisCI Build Status" href="https://travis-ci.org/rstats-wtf/what-they-forgot"><img src="https://travis-ci.org/rstats-wtf/what-they-forgot.svg?branch=master" height = 20 /></a>
 <a alt = "Netlify Deployments" href="https://app.netlify.com/sites/rstats-wtf/deploys"><img src="https://api.netlify.com/api/v1/badges/ad37c579-9932-4076-ae3b-7e2802c26ab2/deploy-status" height = 20 /></a>
 <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" height = 20 /></a>
-<a alt = "Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public." href="http://www.repostatus.org/#wip"><img src="http://www.repostatus.org/badges/latest/wip.svg" height = 20 /></a>
+<a href="https://www.repostatus.org/#active"><img src="https://www.repostatus.org/badges/latest/active.svg" alt="Project Status: Active – The project has reached a stable, usable state and is being actively developed." height = 20 /></a>
+
 
 The impetus for developing and assembling these materials is a two-day hands-on workshop. It is designed for experienced R and RStudio users who want to (re)design their R lifestyle. We focus on building holistic and project-oriented workflows that address the most common sources of friction in data analysis, *outside of doing the statistical analysis itself*.
 
