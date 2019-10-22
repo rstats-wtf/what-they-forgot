@@ -7,33 +7,41 @@ documentclass: book
 bibliography: [book.bib, packages.bib]
 biblio-style: apalike
 link-citations: yes
-github-repo: jennybc/what-they-forgot
+github-repo: rstats-wtf/what-they-forgot
 description: "The stuff you need to know about R, besides statistical analysis."
 ---
 
-# WTF {-}
+# What They Forgot to Teach You About R {-}
 
-## In-person workshops
+The initial impetus for creating these materials is a two-day hands-on workshop. The target learner:
 
-The impetus for developing and assembling these materials is a two-day hands-on workshop. It is designed for experienced R and RStudio users who want to (re)design their R lifestyle. We focus on building holistic and project-oriented workflows that address the most common sources of friction in data analysis, *outside of doing the statistical analysis itself*.
+  * Has a moderate amount of R and RStudio experience.
+  * Is largely self-taught.
+  * Suspects they have drifted into some idiosyncratic habits that may slow
+    them down or make their work products more brittle.
+  * Is interested in (re)designing their R lifestyle, to be more effective and
+    more self-sufficient.
 
-Warning: these materials absolutely do not constitute a self-contained "book", nor do they capture all workshop content. But it is useful to us to organize and share certain excerpts in this format.
+The in-person workshops are still the primary delivery method for this content, but we've begun recording prose versions of this content, in order to make it more widely available and for participants to refer back to. Warning: these materials absolutely do not constitute a self-contained "book", nor do they capture all workshop content. 
 
-Repo that makes this site: <https://github.com/jennybc/what-they-forgot>
+We focus on building holistic and project-oriented workflows that address the most common sources of friction in data analysis, *outside of doing the statistical analysis itself*.
+
+## Workshops {-}
 
 Past and future offerings:
 
-  * rstudio::conf 2018, San Diego, CA
-  * Seattle, WA, 2018 October 4 & 5 at The Westin Seattle
-  * [rstudio::conf 2019](https://www.rstudio.com/conference/), Austin, TX
-  * *an offering during 2019 is likely but no details yet*
-    
+  * rstudio::conf January 2018, San Diego, CA
+  * 2018 October 4 & 5, Seattle, WA
+  * rstudio::conf January 2019, Austin, TX
+  * [rstudio::conf 2020](https://rstudio.com/conference/), San Francisco, CA,
+    on the January 27 and 28 Training Days, before the main event
+  
 The workshops typically include substantial components that draw on other materials, such as:
 
-  * [Happy Git and GitHub for the useR](http://happygitwithr.com)
+  * [Happy Git and GitHub for the useR](https://happygitwithr.com)
   * Iterating well with the purrr package
     - [purrr tutorial](https://jennybc.github.io/purrr-tutorial/) from Jenny Bryan
-    - [Row-oriented workflows in R with the tidyverse](https://github.com/jennybc/row-oriented-workflows#readme), originally an [RStudio webinar](https://resources.rstudio.com/webinars)
+    - [Row-oriented workflows in R with the tidyverse](https://github.com/jennybc/row-oriented-workflows#readme)
 
 <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">What They Forgot to Teach You About R</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="https://github.com/jennybc/what-they-forgot" property="cc:attributionName" rel="cc:attributionURL">Jennifer Bryan, Jim Hester</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
 
