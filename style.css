@@ -35,3 +35,22 @@ pre code {
 .rmdwarning {
   background-image: url("images/warning.png");
 }
+
+/* These two rules make the horizontal line go straight across in top navbar */
+
+.summary > li:first-child {
+	height: 50px;
+	padding-top: 10px;
+	border-bottom: 1px solid rgba(0,0,0,.07);
+}
+
+.book .book-summary ul.summary li.divider {
+	height: 0px;
+}
+
+/* Hide first level-one markdown header from only the chapter named
+what-they-forgot-to-teach-you-about-r */
+
+#what-they-forgot-to-teach-you-about-r > h1:nth-child(1){
+  visibility: hidden;
+}
