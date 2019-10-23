@@ -1,6 +1,8 @@
 --- 
 title: "What They Forgot to Teach You About R"
-author: "Jennifer Bryan, Jim Hester"
+author:
+  - Jennifer Bryan
+  - Jim Hester
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
