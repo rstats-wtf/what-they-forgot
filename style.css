@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans|Proza+Libre:500,500i|Source+Code+Pro&display=swap');
+
 p.caption {
   color: #777;
   margin-top: 10px;
@@ -53,4 +55,59 @@ what-they-forgot-to-teach-you-about-r */
 
 #what-they-forgot-to-teach-you-about-r > h1:nth-child(1){
   visibility: hidden;
+}
+
+/*------------- Body and header text---------------- */
+
+.book.font-family-1 {
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+.title, h1, h2, h3, h4 {
+  font-family: 'Proza Libre', sans-serif;
+  color: #284a29;
+}
+
+.author {
+  color: #284a29 !important;
+}
+
+p.author em {
+  font-style: normal !important;
+}
+
+/*------------ TOC --------------*/
+
+.summary {
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+.book .book-summary ul.summary li a,
+.book .book-summary ul.summary li span {
+  color: #284a29;
+}
+
+.summary a:hover {
+  color: #629d62 !important;
+}
+
+.book .book-summary ul.summary li.active>a { /*active TOC links*/
+  color: #629d62 !important;
+}
+
+/*-----Body Links-------*/
+
+.book .book-body .page-wrapper .page-inner section.normal a {
+  color: #629d62;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal a:hover {
+ color: #284a29; /* darker color when hovering */
+}
+
+/*------------- CODE --------------*/
+
+.book .book-body .page-wrapper .page-inner section.normal code,
+.book .book-body .page-wrapper .page-inner section.normal pre {
+  font-family: 'Source Code Pro', monospace;
 }
