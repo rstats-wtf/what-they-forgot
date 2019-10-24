@@ -67,9 +67,9 @@ If you run R from the shell, use Ctrl+D or `q()` to quit, then restart R.
 
 No, there is no R command you can put at the top of a script to restart R before executing the rest of the file.
 
-No, this is a not a good reason to build RStudio API hacks into your scripts.
+No, this is a not a good reason to build RStudio API hacks into your scripts. We shall not speak of your favorite trick that starts with `.rs.api.*`.
 
-You use a menu or keyboard shortcut to save your code or to re-indent it or run a spell-checker, right? This is how you should approach restarting R periodically during the day.
+You use a menu or keyboard shortcut to save your code or to re-indent it or run a spell-checker, right? This is how you should approach restarting R periodically during the day. It's a workflow task. It does not belong in your code.
 
 Which brings us to ...
 
@@ -117,9 +117,13 @@ Various approaches exist for automating a workflow, i.e. running a set of script
 
 If you use one "controller" script to run other R scripts or to render multiple R Markdown documents, it's a good idea to force the use of a fresh R process for each one. If your controller script is written in R, consider using the [callr package](https://callr.r-lib.org) to `source()` or `render()` each worker script or `.Rmd` in its own R session.
 
+The R package [drake](https://ropenscilabs.github.io/drake-manual/) is gaining traction as a formal tool for workflow automation (sort of GNU make, but for R):
+
+>  It analyzes your workflow, skips steps with up-to-date results, and orchestrates the rest with optional distributed computing.
+
 ## Links to other resources
 
-[This page](http://stat545.com/block002_hello-r-workspace-wd-project.html) from [STAT 545](http://stat545.com/topics.html) covers some of the same ground, but aimed at someone quite new to R.
+[This page](https://stat545.com/r-basics.html) from [STAT 545](https://stat545.com) covers some of the same ground, but aimed at someone quite new to R.
 
 The post [Project-oriented workflow
 ](https://www.tidyverse.org/articles/2017/12/workflow-vs-script/) from the [tidyverse blog](https://www.tidyverse.org/articles/) is an earlier effort to explain why `rm(list = ls())` and `setwd()` indicate a sub-optimal workflow.
