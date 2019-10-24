@@ -24,17 +24,17 @@ We focus on building holistic and project-oriented workflows that address the mo
 
 ## Workshops
 
-Past and future offerings:
+Upcoming and past offerings:
 
-  * rstudio::conf January 2018, San Diego, CA
-  * 2018 October 4 & 5, Seattle, WA
-  * rstudio::conf January 2019, Austin, TX
   * [rstudio::conf 2020](https://rstudio.com/conference/), San Francisco, CA,
-    on the January 27 and 28 Training Days, before the main event
+    January 27 & 28 Training Days
+  * rstudio::conf January 2019, Austin, TX
+  * 2018 October 4 & 5, Seattle, WA
+  * rstudio::conf January 2018, San Diego, CA
   
 The workshops typically include substantial components that draw on other materials, such as:
 
   * [Happy Git and GitHub for the useR](https://happygitwithr.com)
   * Iterating well with the purrr package
-    - [purrr tutorial](https://jennybc.github.io/purrr-tutorial/) from Jenny Bryan
+    - [purrr tutorial](https://jennybc.github.io/purrr-tutorial/)
     - [Row-oriented workflows in R with the tidyverse](https://github.com/jennybc/row-oriented-workflows#readme)

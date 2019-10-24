@@ -33,7 +33,7 @@ We focus on building holistic and project-oriented workflows that address the mo
 Upcoming and past offerings:
 
   * [rstudio::conf 2020](https://rstudio.com/conference/), San Francisco, CA,
-    on the January 27 and 28 Training Days, before the main event
+    January 27 & 28 Training Days
   * rstudio::conf January 2019, Austin, TX
   * 2018 October 4 & 5, Seattle, WA
   * rstudio::conf January 2018, San Diego, CA
