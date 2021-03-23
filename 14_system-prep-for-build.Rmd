@@ -84,7 +84,7 @@ Instead, if you prefer the convenience of homebrew, we recommend installing the
 dropped due to [a homebrew policy change around 2019-03-11](https://github.com/Homebrew/homebrew-cask/pull/59689)*. 
 
 ```r
-brew cask install r
+brew install --cask r
 ```
 
 This will install the CRAN R distribution, so all package binaries will be
