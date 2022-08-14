@@ -35,7 +35,7 @@ Some popular IDEs:
   * RStudio: download [here](https://www.rstudio.com/products/rstudio/download/#download) or (I recommend) run the [Preview version](https://www.rstudio.com/products/rstudio/download/preview/)
   * Emacs + ESS: <https://ess.r-project.org>
   * vim + Nvim-R: blog post [How to Turn Vim Into an IDE for R](https://medium.com/@kadek/turning-vim-into-an-r-ide-cd9602e8c217)
-  * Visual Studio + RTVS: <https://docs.microsoft.com/en-us/visualstudio/rtvs>
+  * Visual Studio Code: <https://code.visualstudio.com/docs/languages/r>
   
 Sometimes people resist advice because it's hard to incorporate into their current workflow and dismiss it as something "for experts only". But this gets the direction of causality backwards: long-time and professional coders don't do these things because they use an IDE. They use an IDE because it makes it so much easier to follow best practices.
   
@@ -117,9 +117,9 @@ Various approaches exist for automating a workflow, i.e. running a set of script
 
 If you use one "controller" script to run other R scripts or to render multiple R Markdown documents, it's a good idea to force the use of a fresh R process for each one. If your controller script is written in R, consider using the [callr package](https://callr.r-lib.org) to `source()` or `render()` each worker script or `.Rmd` in its own R session.
 
-The R package [drake](https://ropenscilabs.github.io/drake-manual/) is gaining traction as a formal tool for workflow automation (sort of GNU make, but for R):
+The R package [targets](https://docs.ropensci.org/targets/) is gaining traction as a formal tool for workflow automation (sort of GNU make, but for R):
 
->  It analyzes your workflow, skips steps with up-to-date results, and orchestrates the rest with optional distributed computing.
+>  targets skips costly runtime for tasks that are already up to date, [and] orchestrates the necessary computation with implicit parallel computing...
 
 ## Links to other resources
 
