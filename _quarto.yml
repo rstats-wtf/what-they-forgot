@@ -1,0 +1,42 @@
+project:
+  type: book
+
+book:
+  title: "What They Forgot to Teach You About R"
+  author:
+    - Jennifer Bryan
+    - Jim Hester
+  date: "8/27/2022"
+  chapters:
+    - index.Rmd
+    - part: "A holistic workflow"
+      chapters:
+        - source-and-blank-slates.Rmd
+        - projects.Rmd
+        - practice-safe-paths.Rmd
+        - naming-files.Rmd
+        - api-for-an-analysis.Rmd
+    - part: personal-radmin.qmd
+      chapters:
+        - get-to-know-your-r-installation.Rmd
+        - r-startup.Rmd
+        - maintaining-r.Rmd
+        - install-single-package.Rmd
+    - part: "All is Fail"
+      chapters:
+        - debugging-R.Rmd
+        - read-source.Rmd
+        - reprexing.Rmd
+    - search.Rmd
+    - sessioninfo.Rmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt
+
+
+

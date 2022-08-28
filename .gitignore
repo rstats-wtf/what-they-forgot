@@ -9,3 +9,5 @@ what-they-forgot.rds
 .netlify
 node_modules
 package-lock.json
+
+/.quarto/
