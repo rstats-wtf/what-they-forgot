@@ -3,6 +3,8 @@ project:
 
 book:
   title: "What They Forgot to Teach You About R"
+  repo-url: https://github.com/rstats-wtf/what-they-forgot
+  site-url: https://rstats.wtf
   author:
     - Jennifer Bryan
     - Jim Hester
@@ -16,7 +18,7 @@ book:
         - practice-safe-paths.Rmd
         - naming-files.Rmd
         - api-for-an-analysis.Rmd
-    - part: personal-radmin.qmd
+    - part: "Personal R Administration"
       chapters:
         - get-to-know-your-r-installation.Rmd
         - r-startup.Rmd
@@ -24,13 +26,13 @@ book:
         - install-single-package.Rmd
     - part: "All is Fail"
       chapters:
-        - debugging-R.Rmd
+        - debugging-r.Rmd
         - read-source.Rmd
         - reprexing.Rmd
     - search.Rmd
     - sessioninfo.Rmd
 
-bibliography: references.bib
+bibliography: [book.bib, packages.bib]
 
 format:
   html:

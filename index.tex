@@ -184,7 +184,7 @@
 \begin{document}
 \frontmatter
 \maketitle
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[interior hidden, enhanced, borderline west={3pt}{0pt}{shadecolor}, sharp corners, breakable, boxrule=0pt, frame hidden]}{\end{tcolorbox}}\fi
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[sharp corners, enhanced, interior hidden, breakable, borderline west={3pt}{0pt}{shadecolor}, frame hidden, boxrule=0pt]}{\end{tcolorbox}}\fi
 
 \renewcommand*\contentsname{Table of contents}
 {
@@ -2024,7 +2024,8 @@ then return the cursor to the search box and use Up/Down.
 
 \begin{verbatim}
 Local:    modernize-build C:/Users/edavi/Documents/projects/what-they-forgot
-Head:     [9b3d43c] 2021-03-23: Update brew instructions
+Remote:   modernize-build @ origin (https://github.com/rstats-wtf/what-they-forgot.git)
+Head:     [c184814] 2022-08-28: bookdown => quarto, add actions
 \end{verbatim}
 
 \begin{Shaded}
@@ -2045,7 +2046,7 @@ Head:     [9b3d43c] 2021-03-23: Update brew instructions
  ctype    English_United States.1252
  tz       America/New_York
  date     2022-08-28
- pandoc   2.19.2 @ C:/Users/edavi/scoop/apps/rstudio-pro-daily/current/bin/quarto/bin/tools/ (via rmarkdown)
+ pandoc   2.19.2 @ C:/Users/edavi/scoop/shims/ (via rmarkdown)
 
 - Packages -------------------------------------------------------------------
  ! package     * version date (UTC) lib source

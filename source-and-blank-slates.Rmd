@@ -1,5 +1,3 @@
-# (PART) A holistic workflow {-} 
-
 # Saving source and blank slates {#save-source}
 
 ## Save source, not the workspace

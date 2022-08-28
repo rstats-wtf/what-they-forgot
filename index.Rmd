@@ -1,15 +1,6 @@
---- 
-title: "What They Forgot to Teach You About R"
-author:
-  - Jennifer Bryan
-  - Jim Hester
-site: bookdown::bookdown_site
-output: bookdown::gitbook
-documentclass: book
-bibliography: [book.bib, packages.bib]
+---
 biblio-style: apalike
 link-citations: yes
-github-repo: rstats-wtf/what-they-forgot
 description: "The stuff you need to know about R, besides statistical analysis."
 ---
 
