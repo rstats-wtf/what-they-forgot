@@ -1,9 +1,3 @@
----
-biblio-style: apalike
-link-citations: yes
-description: "The stuff you need to know about R, besides statistical analysis."
----
-
 # What They Forgot to Teach You About R {-}
 
 The initial impetus for creating these materials is a two-day hands-on workshop. The target learner:

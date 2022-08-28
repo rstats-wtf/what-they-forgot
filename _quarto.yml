@@ -3,6 +3,7 @@ project:
 
 book:
   title: "What They Forgot to Teach You About R"
+  subtitle: "The stuff you need to know about R, besides statistical analysis."
   repo-url: https://github.com/rstats-wtf/what-they-forgot
   site-url: https://rstats.wtf
   author:
@@ -29,10 +30,10 @@ book:
         - debugging-r.Rmd
         - read-source.Rmd
         - reprexing.Rmd
-    - search.Rmd
     - sessioninfo.Rmd
 
 bibliography: [book.bib, packages.bib]
+link-citations: true
 
 format:
   html:
