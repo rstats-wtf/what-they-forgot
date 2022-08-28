@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.1.149">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>What They Forgot to Teach You About R - 2&nbsp; Project-oriented workflow</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./practice-safe-paths.html" rel="next">
+<link href="./source-and-blank-slates.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Project-oriented workflow</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">What They Forgot to Teach You About R</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/rstats-wtf/what-they-forgot" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
+</div>
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">What They Forgot to Teach You About R</a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">A holistic workflow</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./source-and-blank-slates.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Saving source and blank slates</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./projects.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Project-oriented workflow</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./practice-safe-paths.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Practice safe paths</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./naming-files.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">How to name files</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./api-for-an-analysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">API for an analysis</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">Personal R Administration</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./get-to-know-your-r-installation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Get to know your R installation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./r-startup.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">R Startup</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./maintaining-r.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Maintaining R</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./install-single-package.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Install a source package</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">All is Fail</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./debugging-r.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Debugging R code</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./read-source.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Read the source</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./reprexing.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Reproduce the problem</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./search.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Search this book</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sessioninfo.html" class="sidebar-item-text sidebar-link">Session info</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#setwd" id="toc-setwd" class="nav-link active" data-scroll-target="#setwd"><span class="toc-section-number">2.1</span>  We need to talk about <code>setwd("path/that/only/works/on/my/machine")</code></a>
+  <ul class="collapse">
+  <li><a href="#if-you-like-setwd-then-carry-on" id="toc-if-you-like-setwd-then-carry-on" class="nav-link" data-scroll-target="#if-you-like-setwd-then-carry-on"><span class="toc-section-number">2.1.1</span>  If you like <code>setwd()</code>, then carry on</a></li>
+  </ul></li>
+  <li><a href="#dilemma-and-a-solution" id="toc-dilemma-and-a-solution" class="nav-link" data-scroll-target="#dilemma-and-a-solution"><span class="toc-section-number">2.2</span>  Dilemma and a solution</a></li>
+  <li><a href="#work-in-a-project" id="toc-work-in-a-project" class="nav-link" data-scroll-target="#work-in-a-project"><span class="toc-section-number">2.3</span>  Organize work into projects (colloquial definition)</a></li>
+  <li><a href="#ide-support-for-projects" id="toc-ide-support-for-projects" class="nav-link" data-scroll-target="#ide-support-for-projects"><span class="toc-section-number">2.4</span>  IDE support for projects</a></li>
+  <li><a href="#rstudio-projects" id="toc-rstudio-projects" class="nav-link" data-scroll-target="#rstudio-projects"><span class="toc-section-number">2.5</span>  RStudio Projects</a>
+  <ul class="collapse">
+  <li><a href="#tricks-for-opening-projects" id="toc-tricks-for-opening-projects" class="nav-link" data-scroll-target="#tricks-for-opening-projects"><span class="toc-section-number">2.5.1</span>  Tricks for opening Projects</a></li>
+  </ul></li>
+  <li><a href="#other-ways-to-work-with-projects" id="toc-other-ways-to-work-with-projects" class="nav-link" data-scroll-target="#other-ways-to-work-with-projects"><span class="toc-section-number">2.6</span>  Other ways to work with projects</a>
+  <ul class="collapse">
+  <li><a href="#project-specific-shortcuts-on-windows" id="toc-project-specific-shortcuts-on-windows" class="nav-link" data-scroll-target="#project-specific-shortcuts-on-windows"><span class="toc-section-number">2.6.1</span>  Project-specific shortcuts on Windows</a></li>
+  </ul></li>
+  <li><a href="#links-to-other-resources" id="toc-links-to-other-resources" class="nav-link" data-scroll-target="#links-to-other-resources"><span class="toc-section-number">2.7</span>  Links to other resources</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="project-oriented-workflow" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Project-oriented workflow</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<p>In @ref(rm-list-ls), we discouraged the habit of starting R scripts with <code>rm(list = ls())</code>, because it doesn’t actually achieve the intended goal: to reset things. Restarting R is a better way to power-cycle.</p>
+<p>But what if you want to shift focus from project A to project B? Restarting R, alone, is not enough. It doesn’t change R’s working directory, which is needed if projects A and B live in different directories, which they should (see @ref(work-in-a-project)). Also, what if you want to have project A and B available for work at the same time?</p>
+<p>My strong recommendation is to use a development tool with first-class support for projects. But first …</p>
+<section id="setwd" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="setwd"><span class="header-section-number">2.1</span> We need to talk about <code>setwd("path/that/only/works/on/my/machine")</code></h2>
+<p>A common response to the working directory problem is to set the working directory at the beginning of each script via <code>setwd()</code>. At the start of <a href="http://stat545.com">STAT 545</a>, we see a lot of student code that looks like this:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">"/Users/jenny/cuddly_broccoli/verbose_funicular/foofy/data"</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read.delim</span>(<span class="st">"raw_foofy_data.csv"</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df, <span class="fu">aes</span>(x, y)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">"../figs/foofy_scatterplot.png"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The chance of the <code>setwd()</code> command having the desired effect – making the file paths work – for anyone besides its author is 0%. It’s also unlikely to work for the author one or two years or computers from now. To recreate and perhaps extend this plot, the lucky recipient will need to hand edit one or more paths to reflect where the project has landed on their machine.</p>
+<p>Hard-wired, absolute paths, especially when sprinkled throughout the code, make a project brittle. Such code does not travel well across time or space.</p>
+<p>If, after reading this article, you still decide to use <code>setwd()</code> in your scripts, you should at least be very disciplined about it:</p>
+<ul>
+<li><p>Only use <code>setwd()</code> at the very start of a file, i.e.&nbsp;in an obvious and predictable place. If someone has to hand-edit all of these, make it easy for them.</p></li>
+<li><p>Always set working directory to the same thing, namely to the top-level of the project (not a subdirectory). Always build subsequent paths relative to that. Here’s how that looks in the previous example:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">"/Users/jenny/cuddly_broccoli/verbose_funicular/foofy"</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read.delim</span>(<span class="st">"data/raw_foofy_data.csv"</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df, <span class="fu">aes</span>(x, y)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">"figs/foofy_scatterplot.png"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></li>
+</ul>
+<p>The convention about leaving working directory at the top-level of a project is tightly connected to topics in @ref(safe-paths).</p>
+<section id="if-you-like-setwd-then-carry-on" class="level3" data-number="2.1.1">
+<h3 data-number="2.1.1" class="anchored" data-anchor-id="if-you-like-setwd-then-carry-on"><span class="header-section-number">2.1.1</span> If you like <code>setwd()</code>, then carry on</h3>
+<p>If you use <code>setwd("path/that/only/works/on/my/machine")</code> and it does not cause you or your collaborators grief, then I am happy for you. Carry on. This was my practice as well for many years.</p>
+<p>But eventually I admitted that this <em>did</em> cause me grief whenever I moved my files, collaborated on an analysis with a colleague, or got a new computer. Then, as the instructor of <a href="http://stat545.com">STAT545</a>, I started to run other people’s code <em>en masse</em>. Up to 80 students submitted multiple <code>.R</code> and <code>.Rmd</code> files each week, riddled with <code>setwd()</code> calls that required artisanal hand editing by me. This was the straw that broke the camel’s back and made me determined to clearly articulate this problem and some solutions. You can design this particular aggravation out of your life.</p>
+</section>
+</section>
+<section id="dilemma-and-a-solution" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="dilemma-and-a-solution"><span class="header-section-number">2.2</span> Dilemma and a solution</h2>
+<p>Problem statement:</p>
+<ul>
+<li>We want to work on project A with R’s working directory set to <code>path/to/projectA</code> and on project B with R’s working directory set to <code>path/to/projectB</code>.</li>
+<li>But we also want to keep code like <code>setwd("path/to/projectA")</code> out of our <code>.R</code> scripts.</li>
+</ul>
+<p>The lowest-tech solution is to simply set working directory yourself, interactively, at the same time as you restart R, when you switch from project A to project B. Execute <code>setwd("path/to/projectA")</code>, but don’t bake it into your scripts. This works! But it’s aggravating enough that most people go back to using <code>setwd()</code> anyway and/or are reluctant to cycle rapidly between projects.</p>
+<p>I strongly recommend <a href="source-and-blank-slates.html#use-an-ide">using an IDE</a> that supports a project-based workflow. This eliminates the tension between your development convenience and the portability of the code.</p>
+</section>
+<section id="work-in-a-project" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="work-in-a-project"><span class="header-section-number">2.3</span> Organize work into projects (colloquial definition)</h2>
+<p>Here’s what I mean by “work in a project”:</p>
+<ul>
+<li>File system discipline: put all the files related to a single project in a designated folder.
+<ul>
+<li>This applies to data, code, figures, notes, etc.</li>
+<li>Depending on project complexity, you might enforce further organization into subfolders.</li>
+<li>Other common file practices are detailed in <em>future link: api for a project</em> and <em>future link: naming files</em>.</li>
+</ul></li>
+<li>Working directory intentionality: when working on project A, make sure working directory is set to project A’s folder.
+<ul>
+<li>Ideally, this is achieved via the development workflow and tooling, not by baking absolute paths into the code.</li>
+</ul></li>
+<li>File path discipline: all paths are relative and, by default, relative to the project’s folder.</li>
+</ul>
+<p>These habits are synergistic: you’ll get the biggest payoff if you practice all of them together.</p>
+<p>These habits guarantee that the project can be moved around on your computer or onto other computers and will still “just work”. I argue that this is the only practical convention that creates reliable, polite behavior across different computers or users and over time. This convention is neither new, nor unique to R.</p>
+<p>It’s like agreeing that we will all drive on the left or the right. A hallmark of civilization is following conventions that constrain your behavior a little, in the name of public safety.</p>
+</section>
+<section id="ide-support-for-projects" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="ide-support-for-projects"><span class="header-section-number">2.4</span> IDE support for projects</h2>
+<p>Projects are a common and very attractive feature of many IDEs (@ref(use-an-ide)). Again, the practice of organizing work in projects is not prevalent among long-time coders because they use an IDE. It’s the other way around: one of the attractions of an IDE is that it makes it easier to exploit development practices that have proven to be useful across many languages and domains.</p>
+<p>I would say an IDE or workflow supports project-oriented work in R if there’s a way to do these things:</p>
+<ul>
+<li>Launch the IDE in project A:
+<ul>
+<li>Starts R.</li>
+<li>Sets working directory to the project’s folder.</li>
+</ul></li>
+<li>Switch a running instance of the IDE from project A to project B:
+<ul>
+<li>Restarts R.</li>
+<li>Sets working directory to the project’s folder.</li>
+<li>Optional but nice: restores previously open files, i.e.&nbsp;pick up where you left off.</li>
+</ul></li>
+<li>Have project A and project B open for simultaneous work:
+<ul>
+<li>Each project gets its own R process, with working directory set appropriately.</li>
+<li>Optional but nice: multiple projects feel like multiple instances of the IDE and you can use a conventional method to switch between them, e.g.&nbsp;Command+Tab (Mac OS) or Alt+Tab (Windows).</li>
+</ul></li>
+</ul>
+</section>
+<section id="rstudio-projects" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="rstudio-projects"><span class="header-section-number">2.5</span> RStudio Projects</h2>
+<p>The RStudio IDE has a notion of a (capital “P”) <a href="https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects">Project</a>, which is a very effective implementation of the (small “p”) projects described above.</p>
+<p>You can designate a new or existing folder as a Project. All this means is that RStudio leaves a file, e.g., <code>foofy.Rproj</code>, in the folder, which is used to store settings specific to that project. Use <em>File &gt; New Project …</em> to get started.</p>
+<p>Double-click on a <code>.Rproj</code> file to open a fresh instance of RStudio, with the working directory and file browser pointed at the project folder.</p>
+<p>Once RStudio is running, you can open an existing Project, switch to another Project, launch a second instance of RStudio in a new or existing Project, and much more, via various menus and keyboard shortcuts (more below).</p>
+<p>Here’s a screenshot of the Mac OS app switcher invoked via Command+Tab, showing multiple simultaneous instances of RStudio.</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="img/multiple-rstudio-projects.png" class="img-fluid" style="width:100.0%"></p>
+</div>
+</div>
+<p>This allows rapid context switching across several projects, such as an R package, teaching material, and a data analysis. There is no danger of crosstalk between the projects: each has its own R process, global workspace, and working directory.</p>
+<section id="tricks-for-opening-projects" class="level3" data-number="2.5.1">
+<h3 data-number="2.5.1" class="anchored" data-anchor-id="tricks-for-opening-projects"><span class="header-section-number">2.5.1</span> Tricks for opening Projects</h3>
+<p>Once you decide “I want to do some work in Project K”, there are various ways to accelerate the startup process. I’ll review a few going from general and low-tech to more specific.</p>
+<p><strong>Have a dedicated folder for your Projects.</strong> I keep the vast majority of my R work in RStudio Projects in the folder <code>~/rrr/</code>. What I call this folder and where I keep it is not important. The main point is if you have One Main Place for Projects, then you can go there in Finder or File Explorer and drill down to the <code>.Rproj</code> file needed to launch any specific project. You can make the One Main Place more accessible to yourself by putting it in the Finder’s Sidebar (macOS) or in the Navigation Pane (Windows).</p>
+<p><strong>RStudio knows about recently used Projects.</strong> Once you are in RStudio, there are several ways to access other Projects you’ve recently worked in. In the upper right corner is a drop-down menu with various Project- and session-related goodies in it.</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="img/rstudio-project-switching.png" class="img-fluid" style="width:50.0%"></p>
+</div>
+</div>
+<p>Use the “arrow and paper” icon to open a Project in a separate RStudio instance, while also leaving the Project you’re launching it from open. Click on a Project’s name to switch the current RStudio instance from one Project to another. The <em>File</em> menu also offers ways to switch project or open new, additional instances.</p>
+<p><strong>Find and Launch Projects with Alfred.</strong> This is a highly specific app recommendation that only works on macOS, but I’m sure other tools have a similar capability on macOS and Windows. I use <a href="https://www.alfredapp.com">Alfred</a>, which is a macOS application launcher and general productivity booster, based on a recommendation from Hadley Wickham.</p>
+<p>You will set an Alfred hotkey (I use Option + Space), similar to macOS Spotlight. The hotkey calls up a search window, where you can summon apps or files. I’ve configured Alfred to search preferentially for <code>.Rproj</code> files here, making it extremely easy to find and launch RStudio Projects. Here’s what happens when I type “tidy”:</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="img/alfred-tidy.png" class="img-fluid" style="width:50.0%"></p>
+</div>
+</div>
+<p>You can achieve this by “registering” the <code>.Rproj</code> file type with Alfred. Go to Alfred’s <em>Preferences &gt; Features &gt; Default Results &gt; Advanced…</em>. Drag any <code>.Rproj</code> file onto this space and then close.</p>
+</section>
+</section>
+<section id="other-ways-to-work-with-projects" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="other-ways-to-work-with-projects"><span class="header-section-number">2.6</span> Other ways to work with projects</h2>
+<p><em>Aspirational placeholder.</em></p>
+<p><em>Will hopefully sketch project-friendly workflows that are not RStudio, e.g.&nbsp;Emacs + ESS. They do exist but I am not expert in them and an open to input from those who are. Links to well-developed guides would be best as I don’t want to ingest anything I can’t maintain.</em></p>
+<section id="project-specific-shortcuts-on-windows" class="level3" data-number="2.6.1">
+<h3 data-number="2.6.1" class="anchored" data-anchor-id="project-specific-shortcuts-on-windows"><span class="header-section-number">2.6.1</span> Project-specific shortcuts on Windows</h3>
+<p><em>still rough</em></p>
+<p>After installing R, you will have a shortcut to <code>Rgui.exe</code> on your desktop and/or somewhere on the Start menu file tree, and perhaps also in the Quick Launch part of the taskbar (Vista and earlier).</p>
+<p>Create a copy of this shortcut for each project. Right-click the new shortcut, select <code>Properties...</code>, and change the ‘Start in’ field to the folder where the project lives.</p>
+<p>Launch R in a project by double-clicking its suitably-prepared shortcut.</p>
+<p>Source:</p>
+<ul>
+<li>R for Windows FAQ question <a href="https://cran.r-project.org/bin/windows/base/rw-FAQ.html#How-can-I-keep-workspaces-for-different-projects-in-different-directories_003f">2.10 How can I keep workspaces for different projects in different directories?</a></li>
+</ul>
+</section>
+</section>
+<section id="links-to-other-resources" class="level2" data-number="2.7">
+<h2 data-number="2.7" class="anchored" data-anchor-id="links-to-other-resources"><span class="header-section-number">2.7</span> Links to other resources</h2>
+<p><a href="http://stat545.com/block002_hello-r-workspace-wd-project.html">This page</a> from <a href="http://stat545.com/topics.html">STAT 545</a> covers some of the same ground, but aimed at someone quite new to R.</p>
+<p>The post <a href="https://www.tidyverse.org/articles/2017/12/workflow-vs-script/">Project-oriented workflow</a> from the <a href="https://www.tidyverse.org/articles/">tidyverse blog</a> is an earlier effort to explain why <code>rm(list = ls())</code> and <code>setwd()</code> indicate a sub-optimal workflow.</p>
+<ul>
+<li>That lead to a <a href="https://community.rstudio.com/t/project-oriented-workflow-setwd-rm-list-ls-and-computer-fires/3549/2">lively thread</a> on <a href="https://community.rstudio.com">community.rstudio.com</a> where lots of useRs share their experience and tricks.</li>
+</ul>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./source-and-blank-slates.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Saving source and blank slates</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./practice-safe-paths.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Practice safe paths</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

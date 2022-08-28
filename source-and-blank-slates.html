@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.1.149">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>What They Forgot to Teach You About R - 1&nbsp; Saving source and blank slates</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./projects.html" rel="next">
+<link href="./index.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Saving source and blank slates</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">What They Forgot to Teach You About R</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/rstats-wtf/what-they-forgot" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
+</div>
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">What They Forgot to Teach You About R</a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">A holistic workflow</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./source-and-blank-slates.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Saving source and blank slates</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./projects.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Project-oriented workflow</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./practice-safe-paths.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Practice safe paths</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./naming-files.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">How to name files</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./api-for-an-analysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">API for an analysis</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">Personal R Administration</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./get-to-know-your-r-installation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Get to know your R installation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./r-startup.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">R Startup</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./maintaining-r.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Maintaining R</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./install-single-package.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Install a source package</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">All is Fail</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./debugging-r.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Debugging R code</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./read-source.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Read the source</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./reprexing.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Reproduce the problem</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./search.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Search this book</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sessioninfo.html" class="sidebar-item-text sidebar-link">Session info</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#save-source-not-the-workspace" id="toc-save-source-not-the-workspace" class="nav-link active" data-scroll-target="#save-source-not-the-workspace"><span class="toc-section-number">1.1</span>  Save source, not the workspace</a></li>
+  <li><a href="#use-an-ide" id="toc-use-an-ide" class="nav-link" data-scroll-target="#use-an-ide"><span class="toc-section-number">1.2</span>  Use an IDE</a></li>
+  <li><a href="#always-start-r-with-a-blank-slate" id="toc-always-start-r-with-a-blank-slate" class="nav-link" data-scroll-target="#always-start-r-with-a-blank-slate"><span class="toc-section-number">1.3</span>  Always start R with a blank slate</a></li>
+  <li><a href="#restart-r-often-during-development" id="toc-restart-r-often-during-development" class="nav-link" data-scroll-target="#restart-r-often-during-development"><span class="toc-section-number">1.4</span>  Restart R often during development</a>
+  <ul class="collapse">
+  <li><a href="#pre-emptively-handling-a-faq" id="toc-pre-emptively-handling-a-faq" class="nav-link" data-scroll-target="#pre-emptively-handling-a-faq"><span class="toc-section-number">1.4.1</span>  Pre-emptively handling a FAQ</a></li>
+  </ul></li>
+  <li><a href="#rm-list-ls" id="toc-rm-list-ls" class="nav-link" data-scroll-target="#rm-list-ls"><span class="toc-section-number">1.5</span>  What’s wrong with <code>rm(list = ls())</code>?</a></li>
+  <li><a href="#objects-that-take-a-long-time-to-create" id="toc-objects-that-take-a-long-time-to-create" class="nav-link" data-scroll-target="#objects-that-take-a-long-time-to-create"><span class="toc-section-number">1.6</span>  Objects that take a long time to create</a></li>
+  <li><a href="#automated-workflows" id="toc-automated-workflows" class="nav-link" data-scroll-target="#automated-workflows"><span class="toc-section-number">1.7</span>  Automated workflows</a></li>
+  <li><a href="#links-to-other-resources" id="toc-links-to-other-resources" class="nav-link" data-scroll-target="#links-to-other-resources"><span class="toc-section-number">1.8</span>  Links to other resources</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="save-source" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Saving source and blank slates</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<section id="save-source-not-the-workspace" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="save-source-not-the-workspace"><span class="header-section-number">1.1</span> Save source, not the workspace</h2>
+<blockquote class="blockquote">
+<p>Think of your R processes as livestock, not pets.</p>
+</blockquote>
+<p>I’m borrowing an analogy used to describe the ethos of cloud computing (<a href="http://cloudscaling.com/blog/cloud-computing/the-history-of-pets-vs-cattle/">history of this meme</a>). Livestock is managed in herds and there is little fuss when individuals are lost or must be sacrificed. A pet, on the other hand, is unique and precious.</p>
+<p>Why are individual servers disposable in cloud computing? Because they can be destroyed and replaced at any time and you generally have lots of them. Their creation is automated and the result of the work that they do is recorded in a file or other persistent data store.</p>
+<p>I recommend you cultivate a workflow in which you treat R processes (a.k.a. “sessions”) like livestock. Any individual R process and the associated workspace is disposable. Why might this be unappealing? This sounds terrible if your workspace is a pet, i.e.&nbsp;it holds precious objects and you aren’t 100% sure you can reproduce them. This fear is worth designing away, because attachment to your workspace indicates you have a non-reproducible workflow. This is guaranteed to lead to heartache.</p>
+<p>Everything that really matters should be achieved through code that you save.</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="img/if-you-liked-it-you-should-have-saved-the-source-for-it.jpg" class="img-fluid" style="width:100.0%"></p>
+</div>
+</div>
+<p>All important objects or figures should be explicitly saved to file, in a granular way. This is in contrast to storing them implicitly or explicitly, as part of an entire workspace, or saving them via the mouse. These recommendations make useful objects readily available for use in other scripts or documents, with the additional assurance that they can be regenerated on-demand. <em>(future link: the API for an analysis)</em></p>
+<p>Saving code – not workspaces – is incredibly important because it is an absolute requirement for reproducibility. Renouncing <code>.Rdata</code> and restarting R often are not intrinsically important or morally superior behaviours. They are important because they provide constant pressure for you to do the right thing: save the source code needed to create all important artefacts of your analysis.</p>
+<p>Below we lay out the concrete measures for adopting this workflow.</p>
+</section>
+<section id="use-an-ide" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="use-an-ide"><span class="header-section-number">1.2</span> Use an IDE</h2>
+<p>When working with R, save your commands in a <code>.R</code> file, a.k.a. a script, or in <code>.Rmd</code>, a.k.a. an R Markdown document. It doesn’t have to be polished. Just save it!</p>
+<p>An <a href="https://en.wikipedia.org/wiki/Integrated_development_environment">integrated development environment</a> (IDE) is critical for making this workflow pleasant. Without an IDE, you edit your code in one app, copy one or more lines to the clipboard, then paste that into R, and execute. Over and over. If this is your life, it is very attractive to type code directly in R!</p>
+<p>Any good IDE offers a powerful, R-aware code editor and provides many ways to send your code to a running R process (along with other modern conveniences). This eliminates the temptation to develop code directly in the R Console. Instead, it becomes easier to do the right thing, which is to develop code in a <code>.R</code> or <code>.Rmd</code> file.</p>
+<p>Some popular IDEs:</p>
+<ul>
+<li>RStudio: download <a href="https://www.rstudio.com/products/rstudio/download/#download">here</a> or (I recommend) run the <a href="https://www.rstudio.com/products/rstudio/download/preview/">Preview version</a></li>
+<li>Emacs + ESS: <a href="https://ess.r-project.org" class="uri">https://ess.r-project.org</a></li>
+<li>vim + Nvim-R: blog post <a href="https://medium.com/@kadek/turning-vim-into-an-r-ide-cd9602e8c217">How to Turn Vim Into an IDE for R</a></li>
+<li>Visual Studio + RTVS: <a href="https://docs.microsoft.com/en-us/visualstudio/rtvs" class="uri">https://docs.microsoft.com/en-us/visualstudio/rtvs</a></li>
+</ul>
+<p>Sometimes people resist advice because it’s hard to incorporate into their current workflow and dismiss it as something “for experts only”. But this gets the direction of causality backwards: long-time and professional coders don’t do these things because they use an IDE. They use an IDE because it makes it so much easier to follow best practices.</p>
+</section>
+<section id="always-start-r-with-a-blank-slate" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="always-start-r-with-a-blank-slate"><span class="header-section-number">1.3</span> Always start R with a blank slate</h2>
+<p>When you quit R, do not save the workspace to an <code>.Rdata</code> file. When you launch, do not reload the workspace from an <code>.Rdata</code> file.</p>
+<ul>
+<li>In RStudio, set this via <em>Tools &gt; Global Options</em>.</li>
+</ul>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/rstudio-workspace.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<p></p><figcaption class="figure-caption">via R for Data Science</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<pre><code>FYI: `usethis::use_blank_slate()` prints a reminder about how to do this.</code></pre>
+<ul>
+<li>If you run R from the shell, launch with <code>R --no-save --no-restore-data</code>. You might want to define an alias in your <code>.bash_profile</code>: <code>alias R='R --no-save --no-restore-data'</code>. Learn more by executing <code>R --help</code> in a shell.</li>
+</ul>
+</section>
+<section id="restart-r-often-during-development" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="restart-r-often-during-development"><span class="header-section-number">1.4</span> Restart R often during development</h2>
+<blockquote class="blockquote">
+<p>Have you tried turning it off and then on again?</p>
+<p>– timeless troubleshooting wisdom, applies to everything</p>
+</blockquote>
+<p>If you use RStudio, use the menu item <em>Session &gt; Restart R</em> or the associated keyboard shortcut Ctrl+Shift+F10 (Windows and Linux) or Command+Shift+F10 (Mac OS). Additional keyboard shortcuts make it easy to restart development where you left off, i.e.&nbsp;to say “re-run all the code up to HERE”:</p>
+<ul>
+<li>In an R script, use Ctrl+Alt+B (Windows and Linux) or Command+Option+B (Mac OS)</li>
+<li>In R markdown, use Ctrl+Alt+P (Windows and Linux) or Command+Option+P (Mac OS)</li>
+</ul>
+<p>If you run R from the shell, use Ctrl+D or <code>q()</code> to quit, then restart R.</p>
+<section id="pre-emptively-handling-a-faq" class="level3" data-number="1.4.1">
+<h3 data-number="1.4.1" class="anchored" data-anchor-id="pre-emptively-handling-a-faq"><span class="header-section-number">1.4.1</span> Pre-emptively handling a FAQ</h3>
+<p>No, there is no R command you can put at the top of a script to restart R before executing the rest of the file.</p>
+<p>No, this is a not a good reason to build RStudio API hacks into your scripts. We shall not speak of your favorite trick that starts with <code>.rs.api.*</code>.</p>
+<p>You use a menu or keyboard shortcut to save your code or to re-indent it or run a spell-checker, right? This is how you should approach restarting R periodically during the day. It’s a workflow task. It does not belong in your code.</p>
+<p>Which brings us to …</p>
+</section>
+</section>
+<section id="rm-list-ls" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="rm-list-ls"><span class="header-section-number">1.5</span> What’s wrong with <code>rm(list = ls())</code>?</h2>
+<p>It’s fairly common to see data analysis scripts that begin with this object-nuking command:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list =</span> <span class="fu">ls</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>This is highly suggestive of a non-reproducible workflow.</p>
+<p>This line is meant to reset things, either to power-cycle the current analysis or to switch from one project to another. But there are better ways to do both:</p>
+<ul>
+<li>To power-cycle the current analysis, restart R! See above.</li>
+<li>To switch from one project to another, either restart R or, even better, use an IDE with proper support for projects, where each project gets its own R process. See <a href="projects.html">Project-oriented workflow</a>.</li>
+</ul>
+<p><strong>The problem with <code>rm(list = ls())</code> is that, given the intent, it does not go far enough.</strong> All it does is delete user-created objects from the global workspace.</p>
+<p>Many other changes to the R landscape persist invisibly and can have profound effects on subsequent development. Any packages that have ever been attached via <code>library()</code> are still available. Any options that have been set to non-default values remain that way. Working directory is not affected (which is, of course, why we see <code>setwd()</code> so often here too!).</p>
+<p>Why does this matter? It makes your script vulnerable to hidden dependencies on things you ran in this R process before you executed <code>rm(list = ls())</code>.</p>
+<ul>
+<li>You might use functions from a package without including the necessary <code>library()</code> call. Your collaborator won’t be able to run this script.</li>
+<li>You might code up an analysis assuming that <code>stringsAsFactors = FALSE</code> but next week, when you have restarted R, everything will inexplicably be broken.</li>
+<li>You might write paths relative to some random working directory, then be puzzled next month when nothing can be found or results don’t appear where you expect.</li>
+</ul>
+<p>The solution is to write every script assuming it will be run in a fresh R process. The best way to do that is … develop scripts in a fresh R process!</p>
+<p>There is nothing inherently evil about <code>rm(list = ls())</code>. It’s a red flag, because it is indicative of a non-reproducible workflow. Since it appears to “work” ~90% of the time, it’s very easy to deceive yourself into thinking your script is self-contained, when it is not.</p>
+</section>
+<section id="objects-that-take-a-long-time-to-create" class="level2" data-number="1.6">
+<h2 data-number="1.6" class="anchored" data-anchor-id="objects-that-take-a-long-time-to-create"><span class="header-section-number">1.6</span> Objects that take a long time to create</h2>
+<p>Power-cycling your analysis regularly can be very painful if there are parts that take a long time to execute.</p>
+<p>This indicates it’s time for a modular approach that breaks the analysis into natural phases, each with an associated script and outputs. <em>(future link: API for an analysis)</em> Isolate each computationally demanding step in its own script and write the precious object to file with <code>saveRDS(my_precious, here("results", "my_precious.rds"))</code>. Now you can develop scripts to do downstream work that reload the precious object via <code>my_precious &lt;- readRDS(here("results", "my_precious.rds"))</code>. Breaking an analysis into logical steps, with clear inputs and outputs, is a good idea anyway.</p>
+</section>
+<section id="automated-workflows" class="level2" data-number="1.7">
+<h2 data-number="1.7" class="anchored" data-anchor-id="automated-workflows"><span class="header-section-number">1.7</span> Automated workflows</h2>
+<p>Various approaches exist for automating a workflow, i.e.&nbsp;running a set of scripts in sequence. Many people can get by with low-tech solutions, such as <a href="http://kbroman.org/minimal_make/">using GNU Make</a> or even writing a pseudo-Makefile in R.</p>
+<p>If you use one “controller” script to run other R scripts or to render multiple R Markdown documents, it’s a good idea to force the use of a fresh R process for each one. If your controller script is written in R, consider using the <a href="https://callr.r-lib.org">callr package</a> to <code>source()</code> or <code>render()</code> each worker script or <code>.Rmd</code> in its own R session.</p>
+<p>The R package <a href="https://ropenscilabs.github.io/drake-manual/">drake</a> is gaining traction as a formal tool for workflow automation (sort of GNU make, but for R):</p>
+<blockquote class="blockquote">
+<p>It analyzes your workflow, skips steps with up-to-date results, and orchestrates the rest with optional distributed computing.</p>
+</blockquote>
+</section>
+<section id="links-to-other-resources" class="level2" data-number="1.8">
+<h2 data-number="1.8" class="anchored" data-anchor-id="links-to-other-resources"><span class="header-section-number">1.8</span> Links to other resources</h2>
+<p><a href="https://stat545.com/r-basics.html">This page</a> from <a href="https://stat545.com">STAT 545</a> covers some of the same ground, but aimed at someone quite new to R.</p>
+<p>The post <a href="https://www.tidyverse.org/articles/2017/12/workflow-vs-script/">Project-oriented workflow</a> from the <a href="https://www.tidyverse.org/articles/">tidyverse blog</a> is an earlier effort to explain why <code>rm(list = ls())</code> and <code>setwd()</code> indicate a sub-optimal workflow.</p>
+<ul>
+<li>That lead to a <a href="https://community.rstudio.com/t/project-oriented-workflow-setwd-rm-list-ls-and-computer-fires/3549/2">lively thread</a> on <a href="https://community.rstudio.com">community.rstudio.com</a> where lots of useRs share their experience and tricks.</li>
+</ul>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./index.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">What They Forgot to Teach You About R</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./projects.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Project-oriented workflow</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>
