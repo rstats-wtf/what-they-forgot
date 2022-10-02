@@ -67,7 +67,7 @@ directory (`fs::dir_create(Sys.getenv("R_LIBS_USER"))`).
 You can also alternatively set `R_LIBS_USER` to a different path; but make sure
 to include the `%v` wildcard. e.g. `~/R/library/%v`. The `%v` is
 automatically expanded to the major and minor version of R, so with R 3.5.1
-this path becomes `~/Library/R/3.5/library`. See [Renviron](#renviron) for how
+this path becomes `~/R/library/3.5`. See [Renviron](#renviron) for how
 to edit your `.Renviron` file.
 
 ```{block type = "rmdwarning"}
