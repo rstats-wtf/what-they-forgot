@@ -17,7 +17,7 @@ We focus on building holistic and project-oriented workflows that address the mo
 
 Upcoming and past offerings:
 
-  * [posit::conf 2023](), Chicago, IL
+  * [posit::conf 2023](https://posit.co/conference/), Chicago, IL
   * [rstudio::conf 2022](https://rstats-wtf.github.io/wtf-2022-rsc/), Oxon Hill, MD
   * [rstudio::conf 2020](https://rstats-wtf.github.io/wtf-2020-rsc/), San Francisco, CA
   * [rstudio::conf 2019](https://rstats-wtf.github.io/wtf-2019-rsc/), Austin, TX

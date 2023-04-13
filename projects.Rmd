@@ -61,7 +61,7 @@ Here's what I mean by "work in a project":
   * File system discipline: put all the files related to a single project in a designated folder.
     - This applies to data, code, figures, notes, etc.
     - Depending on project complexity, you might enforce further organization into subfolders.
-    - Other common file practices are detailed in *future link: api for a project* and *future link: naming files*.
+    - Other common file practices are detailed in [API for an analysis](#api-for-an-analysis) and [How to name files](#how-to-name-files).
   * Working directory intentionality: when working on project A, make sure working directory is set to project A's folder.
     - Ideally, this is achieved via the development workflow and tooling, not by baking absolute paths into the code.
   * File path discipline: all paths are relative and, by default, relative to the project's folder.
