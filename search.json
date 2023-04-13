@@ -4,21 +4,28 @@
     "href": "index.html",
     "title": "What They Forgot to Teach You About R",
     "section": "",
-    "text": "The initial impetus for creating these materials is a two-day hands-on workshop. The target learner:\n\nHas a moderate amount of R and RStudio experience.\nIs largely self-taught.\nSuspects they have drifted into some idiosyncratic habits that may slow them down or make their work products more brittle.\nIs interested in (re)designing their R lifestyle, to be more effective and more self-sufficient.\n\nThe in-person workshops are still the primary delivery method for this content, but we’ve begun recording prose versions of this content, in order to make it more widely available and for participants to refer back to. Warning: these materials absolutely do not constitute a self-contained “book”, nor do they capture all workshop content.\nWe focus on building holistic and project-oriented workflows that address the most common sources of friction in data analysis, outside of doing the statistical analysis itself.\n\n\nUpcoming and past offerings:\n\nrstudio::conf 2020, San Francisco, CA, January 27 & 28 Training Days\nrstudio::conf January 2019, Austin, TX\n2018 October 4 & 5, Seattle, WA\nrstudio::conf January 2018, San Diego, CA\n\nThe workshops typically include substantial components that draw on other materials, such as:\n\nHappy Git and GitHub for the useR\nIterating well with the purrr package\n\npurrr tutorial\nRow-oriented workflows in R with the tidyverse\n\n\nWhat They Forgot to Teach You About R by Jennifer Bryan, Jim Hester is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License."
+    "text": "What They Forgot to Teach You About R\nThe initial impetus for creating these materials is a two-day hands-on workshop. The target learner:\nThe in-person workshops are still the primary delivery method for this content, but we’ve begun recording prose versions of this content, in order to make it more widely available and for participants to refer back to. Warning: these materials absolutely do not constitute a self-contained “book”, nor do they capture all workshop content.\nWe focus on building holistic and project-oriented workflows that address the most common sources of friction in data analysis, outside of doing the statistical analysis itself."
   },
   {
-    "objectID": "source-and-blank-slates.html",
-    "href": "source-and-blank-slates.html",
+    "objectID": "index.html#workshops",
+    "href": "index.html#workshops",
+    "title": "What They Forgot to Teach You About R",
+    "section": "Workshops",
+    "text": "Workshops\nUpcoming and past offerings:\n\nposit::conf 2023, Chicago, IL\nrstudio::conf 2022, Oxon Hill, MD\nrstudio::conf 2020, San Francisco, CA\nrstudio::conf 2019, Austin, TX\nWTF Seattle Seattle, WA\nrstudio::conf 2018, San Diego, CA\n\nThe workshops typically include substantial components that draw on other materials, such as:\n\nHappy Git and GitHub for the useR\nIterating well with the purrr package\n\npurrr tutorial\nRow-oriented workflows in R with the tidyverse\n\n\nWhat They Forgot to Teach You About R by Jennifer Bryan, Jim Hester is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License."
+  },
+  {
+    "objectID": "source-and-blank-slates.html#save-source-not-the-workspace",
+    "href": "source-and-blank-slates.html#save-source-not-the-workspace",
     "title": "1  Saving source and blank slates",
-    "section": "",
-    "text": "Think of your R processes as livestock, not pets.\n\nI’m borrowing an analogy used to describe the ethos of cloud computing (history of this meme). Livestock is managed in herds and there is little fuss when individuals are lost or must be sacrificed. A pet, on the other hand, is unique and precious.\nWhy are individual servers disposable in cloud computing? Because they can be destroyed and replaced at any time and you generally have lots of them. Their creation is automated and the result of the work that they do is recorded in a file or other persistent data store.\nI recommend you cultivate a workflow in which you treat R processes (a.k.a. “sessions”) like livestock. Any individual R process and the associated workspace is disposable. Why might this be unappealing? This sounds terrible if your workspace is a pet, i.e. it holds precious objects and you aren’t 100% sure you can reproduce them. This fear is worth designing away, because attachment to your workspace indicates you have a non-reproducible workflow. This is guaranteed to lead to heartache.\nEverything that really matters should be achieved through code that you save.\n\n\n\n\n\nAll important objects or figures should be explicitly saved to file, in a granular way. This is in contrast to storing them implicitly or explicitly, as part of an entire workspace, or saving them via the mouse. These recommendations make useful objects readily available for use in other scripts or documents, with the additional assurance that they can be regenerated on-demand. (future link: the API for an analysis)\nSaving code – not workspaces – is incredibly important because it is an absolute requirement for reproducibility. Renouncing .Rdata and restarting R often are not intrinsically important or morally superior behaviours. They are important because they provide constant pressure for you to do the right thing: save the source code needed to create all important artefacts of your analysis.\nBelow we lay out the concrete measures for adopting this workflow."
+    "section": "1.1 Save source, not the workspace",
+    "text": "1.1 Save source, not the workspace\n\nThink of your R processes as livestock, not pets.\n\nI’m borrowing an analogy used to describe the ethos of cloud computing (history of this meme). Livestock is managed in herds and there is little fuss when individuals are lost or must be sacrificed. A pet, on the other hand, is unique and precious.\nWhy are individual servers disposable in cloud computing? Because they can be destroyed and replaced at any time and you generally have lots of them. Their creation is automated and the result of the work that they do is recorded in a file or other persistent data store.\nI recommend you cultivate a workflow in which you treat R processes (a.k.a. “sessions”) like livestock. Any individual R process and the associated workspace is disposable. Why might this be unappealing? This sounds terrible if your workspace is a pet, i.e. it holds precious objects and you aren’t 100% sure you can reproduce them. This fear is worth designing away, because attachment to your workspace indicates you have a non-reproducible workflow. This is guaranteed to lead to heartache.\nEverything that really matters should be achieved through code that you save.\n\n\n\n\n\nAll important objects or figures should be explicitly saved to file, in a granular way. This is in contrast to storing them implicitly or explicitly, as part of an entire workspace, or saving them via the mouse. These recommendations make useful objects readily available for use in other scripts or documents, with the additional assurance that they can be regenerated on-demand. (future link: the API for an analysis)\nSaving code – not workspaces – is incredibly important because it is an absolute requirement for reproducibility. Renouncing .Rdata and restarting R often are not intrinsically important or morally superior behaviours. They are important because they provide constant pressure for you to do the right thing: save the source code needed to create all important artefacts of your analysis.\nBelow we lay out the concrete measures for adopting this workflow."
   },
   {
     "objectID": "source-and-blank-slates.html#use-an-ide",
     "href": "source-and-blank-slates.html#use-an-ide",
     "title": "1  Saving source and blank slates",
     "section": "1.2 Use an IDE",
-    "text": "1.2 Use an IDE\nWhen working with R, save your commands in a .R file, a.k.a. a script, or in .Rmd, a.k.a. an R Markdown document. It doesn’t have to be polished. Just save it!\nAn integrated development environment (IDE) is critical for making this workflow pleasant. Without an IDE, you edit your code in one app, copy one or more lines to the clipboard, then paste that into R, and execute. Over and over. If this is your life, it is very attractive to type code directly in R!\nAny good IDE offers a powerful, R-aware code editor and provides many ways to send your code to a running R process (along with other modern conveniences). This eliminates the temptation to develop code directly in the R Console. Instead, it becomes easier to do the right thing, which is to develop code in a .R or .Rmd file.\nSome popular IDEs:\n\nRStudio: download here or (I recommend) run the Preview version\nEmacs + ESS: https://ess.r-project.org\nvim + Nvim-R: blog post How to Turn Vim Into an IDE for R\nVisual Studio + RTVS: https://docs.microsoft.com/en-us/visualstudio/rtvs\n\nSometimes people resist advice because it’s hard to incorporate into their current workflow and dismiss it as something “for experts only”. But this gets the direction of causality backwards: long-time and professional coders don’t do these things because they use an IDE. They use an IDE because it makes it so much easier to follow best practices."
+    "text": "1.2 Use an IDE\nWhen working with R, save your commands in a .R file, a.k.a. a script, or in .Rmd, a.k.a. an R Markdown document. It doesn’t have to be polished. Just save it!\nAn integrated development environment (IDE) is critical for making this workflow pleasant. Without an IDE, you edit your code in one app, copy one or more lines to the clipboard, then paste that into R, and execute. Over and over. If this is your life, it is very attractive to type code directly in R!\nAny good IDE offers a powerful, R-aware code editor and provides many ways to send your code to a running R process (along with other modern conveniences). This eliminates the temptation to develop code directly in the R Console. Instead, it becomes easier to do the right thing, which is to develop code in a .R or .Rmd file.\nSome popular IDEs:\n\nRStudio: download here or (I recommend) run the Preview version\nEmacs + ESS: https://ess.r-project.org\nvim + Nvim-R: blog post How to Turn Vim Into an IDE for R\nVisual Studio Code: https://code.visualstudio.com/docs/languages/r\n\nSometimes people resist advice because it’s hard to incorporate into their current workflow and dismiss it as something “for experts only”. But this gets the direction of causality backwards: long-time and professional coders don’t do these things because they use an IDE. They use an IDE because it makes it so much easier to follow best practices."
   },
   {
     "objectID": "source-and-blank-slates.html#always-start-r-with-a-blank-slate",
@@ -53,7 +60,7 @@
     "href": "source-and-blank-slates.html#automated-workflows",
     "title": "1  Saving source and blank slates",
     "section": "1.7 Automated workflows",
-    "text": "1.7 Automated workflows\nVarious approaches exist for automating a workflow, i.e. running a set of scripts in sequence. Many people can get by with low-tech solutions, such as using GNU Make or even writing a pseudo-Makefile in R.\nIf you use one “controller” script to run other R scripts or to render multiple R Markdown documents, it’s a good idea to force the use of a fresh R process for each one. If your controller script is written in R, consider using the callr package to source() or render() each worker script or .Rmd in its own R session.\nThe R package drake is gaining traction as a formal tool for workflow automation (sort of GNU make, but for R):\n\nIt analyzes your workflow, skips steps with up-to-date results, and orchestrates the rest with optional distributed computing."
+    "text": "1.7 Automated workflows\nVarious approaches exist for automating a workflow, i.e. running a set of scripts in sequence. Many people can get by with low-tech solutions, such as using GNU Make or even writing a pseudo-Makefile in R.\nIf you use one “controller” script to run other R scripts or to render multiple R Markdown documents, it’s a good idea to force the use of a fresh R process for each one. If your controller script is written in R, consider using the callr package to source() or render() each worker script or .Rmd in its own R session.\nThe R package targets is gaining traction as a formal tool for workflow automation (sort of GNU make, but for R):\n\ntargets skips costly runtime for tasks that are already up to date, [and] orchestrates the necessary computation with implicit parallel computing…"
   },
   {
     "objectID": "source-and-blank-slates.html#links-to-other-resources",
@@ -61,13 +68,6 @@
     "title": "1  Saving source and blank slates",
     "section": "1.8 Links to other resources",
     "text": "1.8 Links to other resources\nThis page from STAT 545 covers some of the same ground, but aimed at someone quite new to R.\nThe post Project-oriented workflow from the tidyverse blog is an earlier effort to explain why rm(list = ls()) and setwd() indicate a sub-optimal workflow.\n\nThat lead to a lively thread on community.rstudio.com where lots of useRs share their experience and tricks."
-  },
-  {
-    "objectID": "projects.html",
-    "href": "projects.html",
-    "title": "2  Project-oriented workflow",
-    "section": "",
-    "text": "In @ref(rm-list-ls), we discouraged the habit of starting R scripts with rm(list = ls()), because it doesn’t actually achieve the intended goal: to reset things. Restarting R is a better way to power-cycle.\nBut what if you want to shift focus from project A to project B? Restarting R, alone, is not enough. It doesn’t change R’s working directory, which is needed if projects A and B live in different directories, which they should (see @ref(work-in-a-project)). Also, what if you want to have project A and B available for work at the same time?\nMy strong recommendation is to use a development tool with first-class support for projects. But first …"
   },
   {
     "objectID": "projects.html#setwd",
@@ -88,7 +88,7 @@
     "href": "projects.html#work-in-a-project",
     "title": "2  Project-oriented workflow",
     "section": "2.3 Organize work into projects (colloquial definition)",
-    "text": "2.3 Organize work into projects (colloquial definition)\nHere’s what I mean by “work in a project”:\n\nFile system discipline: put all the files related to a single project in a designated folder.\n\nThis applies to data, code, figures, notes, etc.\nDepending on project complexity, you might enforce further organization into subfolders.\nOther common file practices are detailed in future link: api for a project and future link: naming files.\n\nWorking directory intentionality: when working on project A, make sure working directory is set to project A’s folder.\n\nIdeally, this is achieved via the development workflow and tooling, not by baking absolute paths into the code.\n\nFile path discipline: all paths are relative and, by default, relative to the project’s folder.\n\nThese habits are synergistic: you’ll get the biggest payoff if you practice all of them together.\nThese habits guarantee that the project can be moved around on your computer or onto other computers and will still “just work”. I argue that this is the only practical convention that creates reliable, polite behavior across different computers or users and over time. This convention is neither new, nor unique to R.\nIt’s like agreeing that we will all drive on the left or the right. A hallmark of civilization is following conventions that constrain your behavior a little, in the name of public safety."
+    "text": "2.3 Organize work into projects (colloquial definition)\nHere’s what I mean by “work in a project”:\n\nFile system discipline: put all the files related to a single project in a designated folder.\n\nThis applies to data, code, figures, notes, etc.\nDepending on project complexity, you might enforce further organization into subfolders.\nOther common file practices are detailed in API for an analysis and How to name files.\n\nWorking directory intentionality: when working on project A, make sure working directory is set to project A’s folder.\n\nIdeally, this is achieved via the development workflow and tooling, not by baking absolute paths into the code.\n\nFile path discipline: all paths are relative and, by default, relative to the project’s folder.\n\nThese habits are synergistic: you’ll get the biggest payoff if you practice all of them together.\nThese habits guarantee that the project can be moved around on your computer or onto other computers and will still “just work”. I argue that this is the only practical convention that creates reliable, polite behavior across different computers or users and over time. This convention is neither new, nor unique to R.\nIt’s like agreeing that we will all drive on the left or the right. A hallmark of civilization is following conventions that constrain your behavior a little, in the name of public safety."
   },
   {
     "objectID": "projects.html#ide-support-for-projects",
@@ -119,13 +119,6 @@
     "text": "2.7 Links to other resources\nThis page from STAT 545 covers some of the same ground, but aimed at someone quite new to R.\nThe post Project-oriented workflow from the tidyverse blog is an earlier effort to explain why rm(list = ls()) and setwd() indicate a sub-optimal workflow.\n\nThat lead to a lively thread on community.rstudio.com where lots of useRs share their experience and tricks."
   },
   {
-    "objectID": "practice-safe-paths.html",
-    "href": "practice-safe-paths.html",
-    "title": "3  Practice safe paths",
-    "section": "",
-    "text": "Adapt from https://github.com/jennybc/here_here#readme.\nInclude some coverage of fs."
-  },
-  {
     "objectID": "practice-safe-paths.html#use-projects-and-the-here-package",
     "href": "practice-safe-paths.html#use-projects-and-the-here-package",
     "title": "3  Practice safe paths",
@@ -144,21 +137,14 @@
     "href": "api-for-an-analysis.html",
     "title": "5  API for an analysis",
     "section": "",
-    "text": "https://speakerdeck.com/jennybc/zen-and-the-art-of-workflow-maintenance?slide=57"
+    "text": "Prose version of slides 57 - 63 from here:\nhttps://speakerdeck.com/jennybc/zen-and-the-art-of-workflow-maintenance?slide=57"
   },
   {
     "objectID": "get-to-know-your-r-installation.html",
     "href": "get-to-know-your-r-installation.html",
     "title": "6  Get to know your R installation",
     "section": "",
-    "text": "Study your package library."
-  },
-  {
-    "objectID": "r-startup.html",
-    "href": "r-startup.html",
-    "title": "7  R Startup",
-    "section": "",
-    "text": "R has been designed to be used from shared computing resources such as linux servers. As a result R’s startup offers lots of opportunity for customization; both for every user of a system as well as for each individual user. However this flexibility comes at a cost: complexity.\nAnd for sure, R’s startup procedures are complex:\nHowever most R users can ignore the majority of this complexity and focus on two main files.\nThese files are R specific instances of a broader family of customization files commonly referred to as dotfiles. These are used to tailor the behavior of many programs, particularly those with roots in the unix command line.\nMany people store their dotfiles on GitHub and a great way to find inspiration for what you can do with them is to browse other people’s dotfile repositories.\nOne way to find R specific dotfiles is to do a GitHub search for filename:.Rprofile."
+    "text": "R version, where the executable lives.\nStudy your package library."
   },
   {
     "objectID": "r-startup.html#renviron",
@@ -182,11 +168,11 @@
     "text": "7.3 Disabling startup files\nYou can run R without any startup files by using the --vanilla argument when starting R. In RStudio you can do this by checking the option Project Options -> Disable .Rprofile execution on session start / resume. You can also selectively disable only the user or site .Rprofile with --no-init-file and --no-site-file respectively, and disable the environment files with --no-environ.\n\n\n\nBoth .Renviron and .Rprofile must end with a newline character. If they do not the last line with be ignored without a warning or error."
   },
   {
-    "objectID": "maintaining-r.html",
-    "href": "maintaining-r.html",
+    "objectID": "maintaining-r.html#how-to-upgrade-an-installed-package-to-the-latest-version.",
+    "href": "maintaining-r.html#how-to-upgrade-an-installed-package-to-the-latest-version.",
     "title": "8  Maintaining R",
-    "section": "",
-    "text": "Sometimes you would like to upgrade a particular package to the latest available version. Often this is because you have heard about a new feature, or maybe you have run into a bug that may have been fixed.\n\n\n\n\n\nRStudio has an update dialog (Packages Tab -> Update). Check packages to update them\n\n\n\n\n\nDevtools has a function update_packages() which will upgrade a package (from the same source) for any CRAN or development package.\ndevtools::update_packages(\"pkgname\")\nIn addition if the given package is not already installed it will install it."
+    "section": "8.1 How to upgrade an installed package to the latest version.",
+    "text": "8.1 How to upgrade an installed package to the latest version.\nSometimes you would like to upgrade a particular package to the latest available version. Often this is because you have heard about a new feature, or maybe you have run into a bug that may have been fixed.\n\n8.1.1 In RStudio\n\n\n\nRStudio has an update dialog (Packages Tab -> Update). Check packages to update them\n\n\n\n\n8.1.2 R terminal\nDevtools has a function update_packages() which will upgrade a package (from the same source) for any CRAN or development package.\ndevtools::update_packages(\"pkgname\")\nIn addition if the given package is not already installed it will install it."
   },
   {
     "objectID": "maintaining-r.html#how-to-upgrade-all-out-of-date-packages",
@@ -207,14 +193,7 @@
     "href": "maintaining-r.html#how-to-transfer-your-library-when-updating-r",
     "title": "8  Maintaining R",
     "section": "8.4 How to transfer your library when updating R",
-    "text": "8.4 How to transfer your library when updating R\nOften you will not need to do anything when updating R. For ‘patch’ R versions, the ‘z’ in ‘x.y.z’ the R core developers ensure package compatibility across versions. So if you are updating from R 3.5.0 to R 3.5.1 you can use the same packages you are currently using.\nFor ‘minor’ version changes, the ‘y’ in ‘x.y.z’ the package interface can change, so packages need to be re-installed.\n\n\n\nYou may see some suggestions that you can just copy your packages even when the ‘minor’ version changes. DO NOT DO THIS. While it may work some (even most) of the time, R-core does not guarantee compatibility between these versions and things could break (even break silently).\n\n\n\nI suggest you keep the packages R comes with (base and recommended) packages separate from the rest of your packages. This makes it easy to re-install R if needed without touching your CRAN packages. You also want to make sure the package library is specific to the minor version of R.\nR_LIBS_USER is actually set by default to this scheme, (to ~/R/win-library/x.y on Windows and ~/Library/R/x.y/library on macOS) but the directory may not already exist, so one option is just to create this directory (fs::dir_create(Sys.getenv(\"R_LIBS_USER\"))).\nYou can also alternatively set R_LIBS_USER to a different path; but make sure to include the %v wildcard. e.g. ~/R/library/%v. The %v is automatically expanded to the major and minor version of R, so with R 3.5.1 this path becomes ~/Library/R/3.5/library. See Renviron for how to edit your .Renviron file.\n\n\n\nPaths in R_LIBS_USER are only used if the directories they specify actually exist. So in addition to adding R_LIBS_USER to your .Renviron you need to create the directory as well.\n\n\n\nOnce this is setup, the process for transferring your package library becomes. (assumes R_LIBS_USER is set to ~/Library/R/3.5/library).\n# Install new version of R (lets say 3.5.0 in this example)\n\n# Create a new directory for the version of R\nfs::dir_create(\"~/Library/R/3.5/library\")\n\n# Re-start R so the .libPaths are updated\n\n# Lookup what packages were in your old package library\npkgs <- fs::path_file(fs::dir_ls(\"~/Library/R/3.4/library\"))\n\n# Filter these packages as needed\n\n# Install the packages in the new version\ninstall.packages(pkgs)"
-  },
-  {
-    "objectID": "install-single-package.html",
-    "href": "install-single-package.html",
-    "title": "9  Install a source package",
-    "section": "",
-    "text": "The most common type of package you install is a binary package. Packages released on CRAN are built as pre-compiled binaries.\nHowever often it is useful to install packages which do not have a pre-built binary version available. This allows you to install development versions not yet released on CRAN, as well as older versions of released packages. It also lets you build your own packages locally.\nTo install a source package you will need to setup a development environment.\nThere are a few main functions used to install source packages.\nFor example devtools::install_dev(\"dplyr\") will install the development version of dplyr. devtools::install_github(\"jimhester/lookup\") will install Jim’s lookup package (which is not on CRAN), and devtools::install_version(\"readr\", \"1.0.0\") will install readr 1.0.0.\nIt is also possible to fork, clone and work with a package directly then use devtools::install() and devtools::load_all() to work with the package locally like you would with a package you have created yourself."
+    "text": "8.4 How to transfer your library when updating R\nOften you will not need to do anything when updating R. For ‘patch’ R versions, the ‘z’ in ‘x.y.z’ the R core developers ensure package compatibility across versions. So if you are updating from R 3.5.0 to R 3.5.1 you can use the same packages you are currently using.\nFor ‘minor’ version changes, the ‘y’ in ‘x.y.z’ the package interface can change, so packages need to be re-installed.\n\n\n\nYou may see some suggestions that you can just copy your packages even when the ‘minor’ version changes. DO NOT DO THIS. While it may work some (even most) of the time, R-core does not guarantee compatibility between these versions and things could break (even break silently).\n\n\n\nI suggest you keep the packages R comes with (base and recommended) packages separate from the rest of your packages. This makes it easy to re-install R if needed without touching your CRAN packages. You also want to make sure the package library is specific to the minor version of R.\nR_LIBS_USER is actually set by default to this scheme, (to ~/R/win-library/x.y on Windows and ~/Library/R/x.y/library on macOS) but the directory may not already exist, so one option is just to create this directory (fs::dir_create(Sys.getenv(\"R_LIBS_USER\"))).\nYou can also alternatively set R_LIBS_USER to a different path; but make sure to include the %v wildcard. e.g. ~/R/library/%v. The %v is automatically expanded to the major and minor version of R, so with R 3.5.1 this path becomes ~/R/library/3.5. See Renviron for how to edit your .Renviron file.\n\n\n\nPaths in R_LIBS_USER are only used if the directories they specify actually exist. So in addition to adding R_LIBS_USER to your .Renviron you need to create the directory as well.\n\n\n\nOnce this is setup, the process for transferring your package library becomes. (assumes R_LIBS_USER is set to ~/Library/R/3.5/library).\n# Install new version of R (lets say 3.5.0 in this example)\n\n# Create a new directory for the version of R\nfs::dir_create(\"~/Library/R/3.5/library\")\n\n# Re-start R so the .libPaths are updated\n\n# Lookup what packages were in your old package library\npkgs <- fs::path_file(fs::dir_ls(\"~/Library/R/3.4/library\"))\n\n# Filter these packages as needed\n\n# Install the packages in the new version\ninstall.packages(pkgs)"
   },
   {
     "objectID": "install-single-package.html#installation-to-a-temporary-library",
@@ -222,13 +201,6 @@
     "title": "9  Install a source package",
     "section": "9.1 Installation to a temporary library",
     "text": "9.1 Installation to a temporary library\nIt is sometimes useful to install packages to a temporary library, so that they don’t affect your normal packages. This can be done by using the lib argument to the devtools install functions, then using lib.loc in library() when you load the package.\nlibrary(devtools)\n\ntmp_lib <- \"~/tmp/tmp_library\"\ndir.create(tmp_lib)\n\ndevtools::install_github(\"dill/beyonce\", lib = tmp_lib)\n\n## restart R\n\n## explicitly load the affected packages from the temporary library\nlibrary(beyonce, lib.loc = tmp_lib)\n\n## your experimentation goes here\n\n## done? clean up!\nunlink(tmp_lib, recursive = TRUE)\n\n\n\nTry the activity: usethis::use_course(“rstd.io/wtf-source-package”)\n\n\nTo practice installing various types of source packages."
-  },
-  {
-    "objectID": "debugging-r.html",
-    "href": "debugging-r.html",
-    "title": "10  Debugging R code",
-    "section": "",
-    "text": "R scripts are great things, when they work. What are some strategies you can use when things go sideways and an error occurs in your script?"
   },
   {
     "objectID": "debugging-r.html#debugging-your-own-code",
@@ -259,13 +231,6 @@
     "text": "10.4 Debugging in R Markdown documents\nOne special case where it can sometimes be more difficult to debug is an error that occurs only when knitting an R Markdown document.\nThe easiest way to debug most of the errors is to simply run the code inside the chunk as regular R code in the console and use the normal techniques such as inserting browser() calls.\nHowever rarely an error will only occur when the code is being knitted. In this case you can set an error handler with the following code.\nFirst you will need to modify recover slightly, by adding a sink() call to the beginning, which disables the sink used by knitr internally. We do this by using trace(). This can be run in a setup block or in your R console before calling knitr::knit() / rmarkdown::render()\ntrace(recover, sink)\nThen add the following knitr chunk options to the chunk which is failing. error = FALSE, R.options = list(error = recover).\nThen knit the file on the R console with knitr::knit() or rmarkdown::render(). The traceback will contain all of the knitr calls as well, so you will need to look near the end to find the calls in your code.\n\n\n\nNote you cannot use the ‘Knit’ button in RStudio when trying to debug R Markdown documents in any case. The ‘Knit’ button opens a separate R process, so there is no way to use an interactive debugger in that case.\n\n\n\n\n10.4.1 Resources\n\nDebugging techniques in RStudio - Amanda Gadrow’s talk at rstudio::conf 2018\nDebugging in RStudio article"
   },
   {
-    "objectID": "read-source.html",
-    "href": "read-source.html",
-    "title": "11  Read the source",
-    "section": "",
-    "text": "Often when you encounter an error and you do not immediately understand why or what it is saying, the first thing you should try is to search for the error message. You can search the error directly on google, or search on specific sites like https://community.rstudio.com or https://stackoverflow.com.\nAnother option is to GitHub search to shed light on your problem."
-  },
-  {
     "objectID": "read-source.html#github-search",
     "href": "read-source.html#github-search",
     "title": "11  Read the source",
@@ -291,13 +256,13 @@
     "href": "reprexing.html",
     "title": "12  Reproduce the problem",
     "section": "",
-    "text": "You can reliably induce it, with minimal setup and fuss. To the point where others can reproduce it.\n\nDiscuss “bisect” as a useful mentality, applied to lines of code / functions or across versions.\nLink out to reprex stuff re: mechanics of sharing."
+    "text": "Before you seek outside help, strive to nail down your problem with this level of rigor:\n\nYou can reliably induce it, with minimal setup and fuss. To the point where others can reproduce it.\n\nDiscuss “bisect” as a useful mentality, applied to lines of code / functions or across versions.\nLink out to reprex stuff re: mechanics of sharing."
   },
   {
     "objectID": "sessioninfo.html",
     "href": "sessioninfo.html",
     "title": "Session info",
     "section": "",
-    "text": "git2r::repository()\n\nLocal:    (detached) /home/runner/work/what-they-forgot/what-they-forgot\nHead:     [3eabf50] 2022-08-28: Merge 70d10a0643e3a9589e553509b78b49f6ad8f85bf into 9b3d43c3b3828393fd6faf2963b6f6b32e8a3ccd\n\nsessioninfo::session_info()\n\n─ Session info ───────────────────────────────────────────────────────────────\n setting  value\n version  R version 4.2.1 (2022-06-23)\n os       Ubuntu 20.04.4 LTS\n system   x86_64, linux-gnu\n ui       X11\n language (EN)\n collate  C.UTF-8\n ctype    C.UTF-8\n tz       UTC\n date     2022-08-28\n pandoc   2.5 @ /usr/bin/ (via rmarkdown)\n\n─ Packages ───────────────────────────────────────────────────────────────────\n package     * version date (UTC) lib source\n cli           3.3.0   2022-04-25 [1] RSPM\n digest        0.6.29  2021-12-01 [1] RSPM\n evaluate      0.16    2022-08-09 [1] RSPM\n fastmap       1.1.0   2021-01-25 [1] RSPM\n git2r         0.30.1  2022-03-16 [1] RSPM\n htmltools     0.5.3   2022-07-18 [1] RSPM\n jsonlite      1.8.0   2022-02-22 [1] RSPM\n knitr         1.40    2022-08-24 [1] RSPM\n magrittr      2.0.3   2022-03-30 [1] RSPM\n renv          0.15.5  2022-05-26 [1] CRAN (R 4.2.1)\n rlang         1.0.4   2022-07-12 [1] RSPM\n rmarkdown     2.16    2022-08-24 [1] RSPM\n sessioninfo   1.2.2   2021-12-06 [1] any (@1.2.2)\n stringi       1.7.8   2022-07-11 [1] RSPM\n stringr       1.4.1   2022-08-20 [1] RSPM\n xfun          0.32    2022-08-10 [1] RSPM\n\n [1] /home/runner/work/what-they-forgot/what-they-forgot/renv/library/R-4.2/x86_64-pc-linux-gnu\n [2] /opt/R/4.2.1/lib/R/library\n\n──────────────────────────────────────────────────────────────────────────────"
+    "text": "git2r::repository()\n\nLocal:    (detached) /home/runner/work/what-they-forgot/what-they-forgot\nHead:     [4df3627] 2023-04-13: Merge 954860678e0d9741a2f61ec46ec0a82f74ceee3a into 192d140fcc6463684e058d66954cfefc6fd59367\n\nsessioninfo::session_info()\n\n─ Session info ───────────────────────────────────────────────────────────────\n setting  value\n version  R version 4.2.3 (2023-03-15)\n os       Ubuntu 22.04.2 LTS\n system   x86_64, linux-gnu\n ui       X11\n language (EN)\n collate  C.UTF-8\n ctype    C.UTF-8\n tz       UTC\n date     2023-04-13\n pandoc   2.9.2.1 @ /usr/bin/ (via rmarkdown)\n\n─ Packages ───────────────────────────────────────────────────────────────────\n package     * version date (UTC) lib source\n cli           3.6.1   2023-03-23 [1] RSPM\n digest        0.6.31  2022-12-11 [1] RSPM\n evaluate      0.20    2023-01-17 [1] RSPM\n fastmap       1.1.1   2023-02-24 [1] RSPM\n git2r         0.31.0  2023-01-26 [1] RSPM\n htmltools     0.5.5   2023-03-23 [1] RSPM\n jsonlite      1.8.4   2022-12-06 [1] RSPM\n knitr         1.42    2023-01-25 [1] RSPM\n renv          0.15.5  2022-05-26 [1] RSPM (R 4.2.0)\n rlang         1.1.0   2023-03-14 [1] RSPM\n rmarkdown     2.21    2023-03-26 [1] RSPM\n sessioninfo   1.2.2   2021-12-06 [1] any (@1.2.2)\n xfun          0.38    2023-03-24 [1] RSPM\n\n [1] /home/runner/work/what-they-forgot/what-they-forgot/renv/library/R-4.2/x86_64-pc-linux-gnu\n [2] /opt/R/4.2.3/lib/R/library\n\n──────────────────────────────────────────────────────────────────────────────"
   }
 ]

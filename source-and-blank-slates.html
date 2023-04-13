@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.1.149">
+<meta name="generator" content="quarto-1.2.475">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -295,6 +295,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="quarto-title-meta">
 
     
+  
     
   </div>
   
@@ -329,7 +330,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>RStudio: download <a href="https://www.rstudio.com/products/rstudio/download/#download">here</a> or (I recommend) run the <a href="https://www.rstudio.com/products/rstudio/download/preview/">Preview version</a></li>
 <li>Emacs + ESS: <a href="https://ess.r-project.org" class="uri">https://ess.r-project.org</a></li>
 <li>vim + Nvim-R: blog post <a href="https://medium.com/@kadek/turning-vim-into-an-r-ide-cd9602e8c217">How to Turn Vim Into an IDE for R</a></li>
-<li>Visual Studio + RTVS: <a href="https://docs.microsoft.com/en-us/visualstudio/rtvs" class="uri">https://docs.microsoft.com/en-us/visualstudio/rtvs</a></li>
+<li>Visual Studio Code: <a href="https://code.visualstudio.com/docs/languages/r" class="uri">https://code.visualstudio.com/docs/languages/r</a></li>
 </ul>
 <p>Sometimes people resist advice because it’s hard to incorporate into their current workflow and dismiss it as something “for experts only”. But this gets the direction of causality backwards: long-time and professional coders don’t do these things because they use an IDE. They use an IDE because it makes it so much easier to follow best practices.</p>
 </section>
@@ -406,9 +407,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2 data-number="1.7" class="anchored" data-anchor-id="automated-workflows"><span class="header-section-number">1.7</span> Automated workflows</h2>
 <p>Various approaches exist for automating a workflow, i.e.&nbsp;running a set of scripts in sequence. Many people can get by with low-tech solutions, such as <a href="http://kbroman.org/minimal_make/">using GNU Make</a> or even writing a pseudo-Makefile in R.</p>
 <p>If you use one “controller” script to run other R scripts or to render multiple R Markdown documents, it’s a good idea to force the use of a fresh R process for each one. If your controller script is written in R, consider using the <a href="https://callr.r-lib.org">callr package</a> to <code>source()</code> or <code>render()</code> each worker script or <code>.Rmd</code> in its own R session.</p>
-<p>The R package <a href="https://ropenscilabs.github.io/drake-manual/">drake</a> is gaining traction as a formal tool for workflow automation (sort of GNU make, but for R):</p>
+<p>The R package <a href="https://docs.ropensci.org/targets/">targets</a> is gaining traction as a formal tool for workflow automation (sort of GNU make, but for R):</p>
 <blockquote class="blockquote">
-<p>It analyzes your workflow, skips steps with up-to-date results, and orchestrates the rest with optional distributed computing.</p>
+<p>targets skips costly runtime for tasks that are already up to date, [and] orchestrates the necessary computation with implicit parallel computing…</p>
 </blockquote>
 </section>
 <section id="links-to-other-resources" class="level2" data-number="1.8">
@@ -464,7 +465,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
     button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
     setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
       button.setAttribute("title", currentTitle);
       button.classList.remove('code-copy-button-checked');
     }, 1000);
@@ -500,24 +518,42 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
   var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
   for (var i=0; i<bibliorefs.length; i++) {
     const ref = bibliorefs[i];
-    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
-    tippyHover(ref, function() {
-      var popup = window.document.createElement('div');
-      cites.forEach(function(cite) {
-        var citeDiv = window.document.createElement('div');
-        citeDiv.classList.add('hanging-indent');
-        citeDiv.classList.add('csl-entry');
-        var biblioDiv = window.document.getElementById('ref-' + cite);
-        if (biblioDiv) {
-          citeDiv.innerHTML = biblioDiv.innerHTML;
-        }
-        popup.appendChild(citeDiv);
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
       });
-      return popup.innerHTML;
-    });
+    }
   }
 });
 </script>
