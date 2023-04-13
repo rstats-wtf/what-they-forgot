@@ -55,9 +55,6 @@ jobs:
           branch: gh-pages
           folder: _book 
           
-      - name: Copy redirects file
-        run: cp _redirects _book/
-
       - name: Deploy to Netlify
         if: contains(env.isExtPR, 'false')
         id: netlify-deploy
