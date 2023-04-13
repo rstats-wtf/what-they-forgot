@@ -9,7 +9,8 @@ book:
   author:
     - Jennifer Bryan
     - Jim Hester
-  date: "8/27/2022"
+    - Shannon Pileggi
+    - E. David Aja
   chapters:
     - index.Rmd
     - part: "A holistic workflow"

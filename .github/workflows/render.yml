@@ -22,13 +22,6 @@ jobs:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
       isExtPR: ${{ github.event.pull_request.head.repo.fork == true }}
     steps:
-      - name: Generate Locales used in Package within
-        run: |
-          sudo locale-gen it_IT.UTF-8
-          sudo locale-gen pl_PL.UTF-8
-          sudo locale-gen pt_BR.UTF-8
-          sudo locale-gen en_GB.UTF-8
-
       - name: Configure Git user
         run: |
           git config --global user.name "$GITHUB_ACTOR"
