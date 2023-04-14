@@ -1,5 +1,3 @@
-# (PART) All is fail {-}
-
 # Debugging R code
 
 R scripts are great things, when they work. What are some strategies you can

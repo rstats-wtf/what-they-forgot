@@ -1,0 +1,42 @@
+project:
+  type: book
+
+book:
+  title: "What They Forgot to Teach You About R"
+  subtitle: "The stuff you need to know about R, besides statistical analysis."
+  repo-url: https://github.com/rstats-wtf/what-they-forgot
+  site-url: https://rstats.wtf
+  google-analytics: UA-131757508-1
+  author:
+    - Jennifer Bryan
+    - Jim Hester
+    - Shannon Pileggi
+    - E. David Aja
+  chapters:
+    - index.Rmd
+    - part: "A holistic workflow"
+      chapters:
+        - source-and-blank-slates.Rmd
+        - projects.Rmd
+        - practice-safe-paths.Rmd
+        - naming-files.Rmd
+        - api-for-an-analysis.Rmd
+    - part: "Personal R Administration"
+      chapters:
+        - get-to-know-your-r-installation.Rmd
+        - r-startup.Rmd
+        - maintaining-r.Rmd
+        - install-single-package.Rmd
+    - part: "All is Fail"
+      chapters:
+        - debugging-r.Rmd
+        - read-source.Rmd
+        - reprexing.Rmd
+    - sessioninfo.Rmd
+
+bibliography: [book.bib, packages.bib]
+link-citations: true
+
+format:
+  html:
+    theme: cosmo

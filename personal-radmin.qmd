@@ -1,0 +1,13 @@
+# Personal R Administration
+
+
+
+```{mermaid}
+flowchart TD
+inst(Installing & Upgrading R)
+start(Starting R)
+pkg(Installing Packages)
+repro(Reproducible Environments)
+
+start --> pkg --> repro --> inst --> start
+```

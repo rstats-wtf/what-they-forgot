@@ -1,18 +1,3 @@
---- 
-title: "What They Forgot to Teach You About R"
-author:
-  - Jennifer Bryan
-  - Jim Hester
-site: bookdown::bookdown_site
-output: bookdown::gitbook
-documentclass: book
-bibliography: [book.bib, packages.bib]
-biblio-style: apalike
-link-citations: yes
-github-repo: rstats-wtf/what-they-forgot
-description: "The stuff you need to know about R, besides statistical analysis."
----
-
 # What They Forgot to Teach You About R {-}
 
 The initial impetus for creating these materials is a two-day hands-on workshop. The target learner:
@@ -31,12 +16,13 @@ We focus on building holistic and project-oriented workflows that address the mo
 ## Workshops {-}
 
 Upcoming and past offerings:
-  
-  * [rstudio::conf 2022](https://github.com/rstats-wtf/wtf-2022-rsc), Oxon Hill, MD
-  * [rstudio::conf 2020](https://github.com/rstats-wtf/wtf-2020-rsc), San Francisco, CA
-  * [rstudio::conf January 2019](https://github.com/rstats-wtf/wtf-2019-rsc), Austin, TX
-  * [2018 October 4 & 5](https://github.com/rstats-wtf/wtf-2018-seattle), Seattle, WA
-  * rstudio::conf January 2018, San Diego, CA
+
+  * [posit::conf 2023](https://posit.co/conference/), Chicago, IL
+  * [rstudio::conf 2022](https://rstats-wtf.github.io/wtf-2022-rsc/), Oxon Hill, MD
+  * [rstudio::conf 2020](https://rstats-wtf.github.io/wtf-2020-rsc/), San Francisco, CA
+  * [rstudio::conf 2019](https://rstats-wtf.github.io/wtf-2019-rsc/), Austin, TX
+  * [WTF Seattle](https://github.com/rstats-wtf/wtf-2018-seattle) Seattle, WA
+  * rstudio::conf 2018, San Diego, CA
   
 The workshops typically include substantial components that draw on other materials, such as:
 
