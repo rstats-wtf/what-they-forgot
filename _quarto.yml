@@ -6,6 +6,7 @@ book:
   subtitle: "The stuff you need to know about R, besides statistical analysis."
   repo-url: https://github.com/rstats-wtf/what-they-forgot
   site-url: https://rstats.wtf
+  google-analytics: UA-131757508-1
   author:
     - Jennifer Bryan
     - Jim Hester
