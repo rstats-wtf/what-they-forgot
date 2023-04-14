@@ -40,7 +40,7 @@ The easiest way to edit `.Renviron` is by running `usethis::edit_r_environ()`.
 
 A simple example of a `.Renviron` file is
 
-```bash
+```shell
 R_HISTSIZE=100000
 GITHUB_PAT=abc123
 R_LIBS_USER=~/R/%p/%v
