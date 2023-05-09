@@ -112,6 +112,8 @@ session start / resume`. You can also selectively disable only the user or site
 `.Rprofile` with `--no-init-file` and `--no-site-file` respectively, and disable
 the environment files with `--no-environ`.
 
-```{block type = 'rmdwarning'}
-Both `.Renviron` and `.Rprofile` _must_ end with a newline character. If they do not the last line with be ignored without a warning or error.
-```
+::: {.callout-warning}
+
+Both `.Renviron` and `.Rprofile` _must_ end with a newline character. If they do not the last line will be ignored without a warning or error.
+
+:::
