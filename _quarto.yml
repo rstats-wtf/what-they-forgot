@@ -24,7 +24,7 @@ book:
     - part: "Personal R Administration"
       chapters:
         - get-to-know-your-r-installation.Rmd
-        - r-startup.Rmd
+        - r-startup.qmd
         - maintaining-r.Rmd
         - install-single-package.Rmd
     - part: "All is Fail"
