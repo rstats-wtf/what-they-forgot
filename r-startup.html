@@ -333,11 +333,11 @@ subgraph env[Setting Environment Variables]
     isFlagNoEnvironSet{--no-environ}
     isEnvRenvironSet[/R_ENVIRON/]
     doesRenvironSiteExist[/R_HOME/etc/Renviron.site/]
+    setEnvUser[Set environment variables]
     isEnvRenvironUserSet[/R_ENVIRON_USER/]
     doesProjectRenvironExist[/.Renviron/]
     doesUserRenvironExist[/"~/.Renviron"/]
     setEnvSystem[Set environment variables]
-    setEnvUser[Set environment variables]
 
     isFlagNoEnvironSet --&gt; |unset| isEnvRenvironSet
     isEnvRenvironSet --&gt; |undefined| doesRenvironSiteExist
@@ -350,9 +350,9 @@ subgraph env[Setting Environment Variables]
     isEnvRenvironUserSet &amp; doesProjectRenvironExist &amp; doesUserRenvironExist ---&gt; setEnvUser
 end
 
+doesUserRenvironExist --&gt; |DNE| isFlagNoSiteFileSet
 isFlagNoEnvironSet --&gt; |set| isFlagNoSiteFileSet
 setEnvUser --&gt; isFlagNoSiteFileSet
-doesProjectRenvironExist --&gt; |DNE| isFlagNoSiteFileSet
 start --&gt; isFlagNoEnvironSet
 
 subgraph startup[Running Startup Scripts]
