@@ -108,9 +108,6 @@ ga('send', {
   'anonymizeIp': true,
 });
 </script>
-<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
-<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
-<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 </head>
@@ -317,100 +314,6 @@ ga('send', {
 <p><img src="images/R-startup.svg" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">R Startup flowchart - <a href="https://twitter.com/thomasp85/status/961553618196418560">Thomas Lin Pedersen</a></figcaption>
 </figure>
-</div>
-</div>
-</div>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<div>
-<pre class="mermaid mermaid-js">flowchart TD
-
-start((start))
-
-subgraph env[Setting Environment Variables]
-    direction TB
-    isFlagNoEnvironSet{--no-environ}
-    isEnvRenvironSet[/R_ENVIRON/]
-    doesRenvironSiteExist[/R_HOME/etc/Renviron.site/]
-    setEnvUser[Set environment variables]
-    isEnvRenvironUserSet[/R_ENVIRON_USER/]
-    doesProjectRenvironExist[/.Renviron/]
-    doesUserRenvironExist[/"~/.Renviron"/]
-    setEnvSystem[Set environment variables]
-
-    isFlagNoEnvironSet --&gt; |unset| isEnvRenvironSet
-    isEnvRenvironSet --&gt; |undefined| doesRenvironSiteExist
-    doesRenvironSiteExist --&gt; |DNE| isEnvRenvironUserSet
-    isEnvRenvironUserSet --&gt; |undefined| doesProjectRenvironExist
-    doesProjectRenvironExist --&gt; |DNE| doesUserRenvironExist
-
-    isEnvRenvironSet &amp; doesRenvironSiteExist ---&gt; setEnvSystem
-    setEnvSystem --&gt; isEnvRenvironUserSet
-    isEnvRenvironUserSet &amp; doesProjectRenvironExist &amp; doesUserRenvironExist ---&gt; setEnvUser
-end
-
-doesUserRenvironExist --&gt; |DNE| isFlagNoSiteFileSet
-isFlagNoEnvironSet --&gt; |set| isFlagNoSiteFileSet
-setEnvUser --&gt; isFlagNoSiteFileSet
-start --&gt; isFlagNoEnvironSet
-
-subgraph startup[Running Startup Scripts]
-    direction TB
-    isFlagNoSiteFileSet{--no-site-file}
-    isEnvRprofileSet[/R_PROFILE/]
-    doesRprofileSiteExist[/R_HOME/etc/Rprofile.site/]
-    runScriptSystem[Run script]
-    isFlagNoInitFileSet{--no-init-file}
-    isEnvRprofileUserSet[/R_PROFILE_USER/]
-    doesProjectRprofileExist[/.Rprofile/]
-    doesUserRprofileExist[/"~/.Rprofile"/]
-    runScriptUser[Run script]
-
-    isFlagNoSiteFileSet --&gt; |set| isFlagNoInitFileSet
-    isFlagNoSiteFileSet --&gt; |unset| isEnvRprofileSet
-    isEnvRprofileSet --&gt; |undefined| doesRprofileSiteExist
-    doesRprofileSiteExist --&gt; |DNE| isFlagNoInitFileSet
-
-    isEnvRprofileSet &amp; doesRprofileSiteExist --&gt; runScriptSystem --&gt; isFlagNoInitFileSet
-    isFlagNoInitFileSet --&gt; |unset| isEnvRprofileUserSet
-    isEnvRprofileUserSet &amp; doesProjectRprofileExist &amp; doesUserRprofileExist --&gt; runScriptUser
-    isEnvRprofileUserSet --&gt; |undefined| doesProjectRprofileExist --&gt; |DNE| doesUserRprofileExist
-end
-
-isFlagNoInitFileSet --&gt; |set| isFlagNoRestoreDataSet
-doesUserRprofileExist --&gt; |DNE| isFlagNoRestoreDataSet
-runScriptUser --&gt; isFlagNoRestoreDataSet
-
-
-subgraph session[Setting Up Session]
-    direction TB
-    isFlagNoRestoreDataSet{--no-restore-data}
-    doesProjectRDataExist[/.Rdata/]
-    loadData[Load data]
-    runDotFirst[[".First()"]]
-    runBaseDotFirstSys[["base::.First.sys()"]]
-    isFlagNoRestoreHistorySet{--no-restore-history}
-    isEnvRHistifileSet[/R_HISTFILE/]
-    doesProjectRhistoryExist[/.Rhistory/]
-    loadHistory[Load history]
-
-    isFlagNoRestoreDataSet --&gt; |unset| doesProjectRDataExist
-    isFlagNoRestoreDataSet --&gt; |set| runDotFirst
-    doesProjectRDataExist --&gt; |DNE| runDotFirst
-    doesProjectRDataExist --&gt; loadData
-    loadData --&gt; runDotFirst --&gt; runBaseDotFirstSys --&gt; isFlagNoRestoreHistorySet
-end
-
-isFlagNoRestoreHistorySet --&gt; |set| running
-isFlagNoRestoreHistorySet --&gt; |unset| isEnvRHistifileSet
-isEnvRHistifileSet --&gt; |undefined| doesProjectRhistoryExist
-doesProjectRhistoryExist --&gt; running
-isEnvRHistifileSet &amp; doesProjectRhistoryExist --&gt; loadHistory --&gt; running
-
-running((running))
-</pre>
-</div>
 </div>
 </div>
 </div>
