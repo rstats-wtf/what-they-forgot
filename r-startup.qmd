@@ -7,7 +7,7 @@ this flexibility comes at a cost: _complexity_.
 
 And for sure, R's startup procedures are complex:
 
-```{mermaid, "R Startup flowchart - [Thomas Lin Pedersen](https://twitter.com/thomasp85/status/961553618196418560)"}
+```{mermaid}
 flowchart LR
 
 subgraph start
@@ -139,11 +139,11 @@ GITHUB_PAT=abc123
 R_LIBS_USER=~/R/%p/%v
 ```
 
-```{block type="rmdinfo"}
+::: {.callout-note}
 [Try the activity](https://raw.githubusercontent.com/rstats-wtf/wtf-startup/master/01_startup_spartan.R) `usethis::use_course("rstd.io/wtf-source-package")`
 
 to learn how to set a GitHub PAT to your `.Renviron` and then use it with `usethis::use_github()` to upload a project to GitHub.
-```
+:::
 
 ## `.Rprofile`
 
@@ -191,11 +191,11 @@ if (interactive()) {
 }
 ```
 
-```{block type="rmdinfo"}
+::: {.callout-note}
 [Try the activity](https://raw.githubusercontent.com/rstats-wtf/wtf-startup/master/02_startup_spartan.R) `usethis::use_course("rstd.io/wtf-source-package")`
 
 to learn how to create a `.Rprofile` with a default CRAN repository and add a startup message to it.
-```
+:::
 
 ## Disabling startup files
 
@@ -205,6 +205,6 @@ session start / resume`. You can also selectively disable only the user or site
 `.Rprofile` with `--no-init-file` and `--no-site-file` respectively, and disable
 the environment files with `--no-environ`.
 
-```{block type = 'rmdwarning'}
+::: {.callout-warning}
 Both `.Renviron` and `.Rprofile` _must_ end with a newline character. If they do not the last line with be ignored without a warning or error.
-```
+:::
