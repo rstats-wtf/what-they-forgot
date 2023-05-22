@@ -7,14 +7,11 @@ this flexibility comes at a cost: _complexity_.
 
 And for sure, R's startup procedures are complex:
 
-```{r, echo = FALSE, fig.cap = "R Startup flowchart - [Thomas Lin Pedersen](https://twitter.com/thomasp85/status/961553618196418560)"}
-knitr::include_graphics("images/R-startup.svg")
-```
+```{mermaid, "R Startup flowchart - [Thomas Lin Pedersen](https://twitter.com/thomasp85/status/961553618196418560)"}
+flowchart LR
 
-```{mermaid}
-flowchart TD
-
-start((start))
+subgraph start
+end
 
 subgraph env[Setting Environment Variables]
     direction TB
@@ -26,6 +23,7 @@ subgraph env[Setting Environment Variables]
     doesProjectRenvironExist[/.Renviron/]
     doesUserRenvironExist[/"~/.Renviron"/]
     setEnvSystem[Set environment variables]
+    endEnvSetup[End envvar set]
 
     isFlagNoEnvironSet --> |unset| isEnvRenvironSet
     isEnvRenvironSet --> |undefined| doesRenvironSiteExist
@@ -35,13 +33,12 @@ subgraph env[Setting Environment Variables]
 
     isEnvRenvironSet & doesRenvironSiteExist ---> setEnvSystem
     setEnvSystem --> isEnvRenvironUserSet
-    isEnvRenvironUserSet & doesProjectRenvironExist & doesUserRenvironExist ---> setEnvUser
+    isEnvRenvironUserSet & doesProjectRenvironExist & doesUserRenvironExist ---> setEnvUser 
 end
 
-doesUserRenvironExist --> |DNE| isFlagNoSiteFileSet
-isFlagNoEnvironSet --> |set| isFlagNoSiteFileSet
-setEnvUser --> isFlagNoSiteFileSet
-start --> isFlagNoEnvironSet
+doesUserRenvironExist --> |DNE| endEnvSetup
+isFlagNoEnvironSet --> |set| endEnvSetup
+setEnvUser --> endEnvSetup
 
 subgraph startup[Running Startup Scripts]
     direction TB
@@ -54,6 +51,7 @@ subgraph startup[Running Startup Scripts]
     doesProjectRprofileExist[/.Rprofile/]
     doesUserRprofileExist[/"~/.Rprofile"/]
     runScriptUser[Run script]
+    endStartupScripts[End startup scripts]
 
     isFlagNoSiteFileSet --> |set| isFlagNoInitFileSet
     isFlagNoSiteFileSet --> |unset| isEnvRprofileSet
@@ -66,10 +64,9 @@ subgraph startup[Running Startup Scripts]
     isEnvRprofileUserSet --> |undefined| doesProjectRprofileExist --> |DNE| doesUserRprofileExist
 end
 
-isFlagNoInitFileSet --> |set| isFlagNoRestoreDataSet
-doesUserRprofileExist --> |DNE| isFlagNoRestoreDataSet
-runScriptUser --> isFlagNoRestoreDataSet
-
+isFlagNoInitFileSet --> |set| endStartupScripts
+doesUserRprofileExist --> |DNE| endStartupScripts
+runScriptUser --> endStartupScripts
 
 subgraph session[Setting Up Session]
     direction TB
@@ -82,6 +79,7 @@ subgraph session[Setting Up Session]
     isEnvRHistifileSet[/R_HISTFILE/]
     doesProjectRhistoryExist[/.Rhistory/]
     loadHistory[Load history]
+    endSessionSetup[End of Session Setup]
 
     isFlagNoRestoreDataSet --> |unset| doesProjectRDataExist
     isFlagNoRestoreDataSet --> |set| runDotFirst
@@ -90,13 +88,20 @@ subgraph session[Setting Up Session]
     loadData --> runDotFirst --> runBaseDotFirstSys --> isFlagNoRestoreHistorySet
 end
 
-isFlagNoRestoreHistorySet --> |set| running
+isFlagNoRestoreHistorySet --> |set| endSessionSetup
 isFlagNoRestoreHistorySet --> |unset| isEnvRHistifileSet
 isEnvRHistifileSet --> |undefined| doesProjectRhistoryExist
-doesProjectRhistoryExist --> running
-isEnvRHistifileSet & doesProjectRhistoryExist --> loadHistory --> running
+doesProjectRhistoryExist --> endSessionSetup
+isEnvRHistifileSet & doesProjectRhistoryExist --> loadHistory --> endSessionSetup
 
-running((running))
+subgraph running
+end
+
+start --> env
+env --> startup
+startup --> session
+session --> running
+
 ```
 
 However most R users can ignore the majority of this complexity and focus on two main files.
