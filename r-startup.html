@@ -108,9 +108,6 @@ ga('send', {
   'anonymizeIp': true,
 });
 </script>
-<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
-<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
-<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 </head>
@@ -312,104 +309,11 @@ ga('send', {
 <p>And for sure, R’s startup procedures are complex:</p>
 <div class="cell">
 <div class="cell-output-display">
-<div>
-<div>
-<pre class="mermaid mermaid-js">flowchart LR
-
-subgraph start
-end
-
-subgraph env[Setting Environment Variables]
-    direction TB
-    isFlagNoEnvironSet{--no-environ}
-    isEnvRenvironSet[/R_ENVIRON/]
-    doesRenvironSiteExist[/R_HOME/etc/Renviron.site/]
-    setEnvUser[Set environment variables]
-    isEnvRenvironUserSet[/R_ENVIRON_USER/]
-    doesProjectRenvironExist[/.Renviron/]
-    doesUserRenvironExist[/"~/.Renviron"/]
-    setEnvSystem[Set environment variables]
-    endEnvSetup[End envvar set]
-
-    isFlagNoEnvironSet --&gt; |unset| isEnvRenvironSet
-    isEnvRenvironSet --&gt; |undefined| doesRenvironSiteExist
-    doesRenvironSiteExist --&gt; |DNE| isEnvRenvironUserSet
-    isEnvRenvironUserSet --&gt; |undefined| doesProjectRenvironExist
-    doesProjectRenvironExist --&gt; |DNE| doesUserRenvironExist
-
-    isEnvRenvironSet &amp; doesRenvironSiteExist ---&gt; setEnvSystem
-    setEnvSystem --&gt; isEnvRenvironUserSet
-    isEnvRenvironUserSet &amp; doesProjectRenvironExist &amp; doesUserRenvironExist ---&gt; setEnvUser 
-end
-
-doesUserRenvironExist --&gt; |DNE| endEnvSetup
-isFlagNoEnvironSet --&gt; |set| endEnvSetup
-setEnvUser --&gt; endEnvSetup
-
-subgraph startup[Running Startup Scripts]
-    direction TB
-    isFlagNoSiteFileSet{--no-site-file}
-    isEnvRprofileSet[/R_PROFILE/]
-    doesRprofileSiteExist[/R_HOME/etc/Rprofile.site/]
-    runScriptSystem[Run script]
-    isFlagNoInitFileSet{--no-init-file}
-    isEnvRprofileUserSet[/R_PROFILE_USER/]
-    doesProjectRprofileExist[/.Rprofile/]
-    doesUserRprofileExist[/"~/.Rprofile"/]
-    runScriptUser[Run script]
-    endStartupScripts[End startup scripts]
-
-    isFlagNoSiteFileSet --&gt; |set| isFlagNoInitFileSet
-    isFlagNoSiteFileSet --&gt; |unset| isEnvRprofileSet
-    isEnvRprofileSet --&gt; |undefined| doesRprofileSiteExist
-    doesRprofileSiteExist --&gt; |DNE| isFlagNoInitFileSet
-
-    isEnvRprofileSet &amp; doesRprofileSiteExist --&gt; runScriptSystem --&gt; isFlagNoInitFileSet
-    isFlagNoInitFileSet --&gt; |unset| isEnvRprofileUserSet
-    isEnvRprofileUserSet &amp; doesProjectRprofileExist &amp; doesUserRprofileExist --&gt; runScriptUser
-    isEnvRprofileUserSet --&gt; |undefined| doesProjectRprofileExist --&gt; |DNE| doesUserRprofileExist
-end
-
-isFlagNoInitFileSet --&gt; |set| endStartupScripts
-doesUserRprofileExist --&gt; |DNE| endStartupScripts
-runScriptUser --&gt; endStartupScripts
-
-subgraph session[Setting Up Session]
-    direction TB
-    isFlagNoRestoreDataSet{--no-restore-data}
-    doesProjectRDataExist[/.Rdata/]
-    loadData[Load data]
-    runDotFirst[[".First()"]]
-    runBaseDotFirstSys[["base::.First.sys()"]]
-    isFlagNoRestoreHistorySet{--no-restore-history}
-    isEnvRHistifileSet[/R_HISTFILE/]
-    doesProjectRhistoryExist[/.Rhistory/]
-    loadHistory[Load history]
-    endSessionSetup[End of Session Setup]
-
-    isFlagNoRestoreDataSet --&gt; |unset| doesProjectRDataExist
-    isFlagNoRestoreDataSet --&gt; |set| runDotFirst
-    doesProjectRDataExist --&gt; |DNE| runDotFirst
-    doesProjectRDataExist --&gt; loadData
-    loadData --&gt; runDotFirst --&gt; runBaseDotFirstSys --&gt; isFlagNoRestoreHistorySet
-end
-
-isFlagNoRestoreHistorySet --&gt; |set| endSessionSetup
-isFlagNoRestoreHistorySet --&gt; |unset| isEnvRHistifileSet
-isEnvRHistifileSet --&gt; |undefined| doesProjectRhistoryExist
-doesProjectRhistoryExist --&gt; endSessionSetup
-isEnvRHistifileSet &amp; doesProjectRhistoryExist --&gt; loadHistory --&gt; endSessionSetup
-
-subgraph running
-end
-
-start --&gt; env
-env --&gt; startup
-startup --&gt; session
-session --&gt; running
-
-</pre>
-</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/R-startup.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">R Startup flowchart - <a href="https://twitter.com/thomasp85/status/961553618196418560">Thomas Lin Pedersen</a></figcaption>
+</figure>
 </div>
 </div>
 </div>
@@ -430,18 +334,14 @@ session --&gt; running
 <pre class="shell"><code>R_HISTSIZE=100000
 GITHUB_PAT=abc123
 R_LIBS_USER=~/R/%p/%v</code></pre>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><a href="https://raw.githubusercontent.com/rstats-wtf/wtf-startup/master/01_startup_spartan.R">Try the activity</a> <code>usethis::use_course("rstd.io/wtf-source-package")</code></p>
-<p>to learn how to set a GitHub PAT to your <code>.Renviron</code> and then use it with <code>usethis::use_github()</code> to upload a project to GitHub.</p>
+<div class="cell" type="rmdinfo">
+<div class="rmdinfo">
+<p>
+<a href="https://raw.githubusercontent.com/rstats-wtf/wtf-startup/master/01_startup_spartan.R">Try the activity</a> <code>usethis::use_course(“rstd.io/wtf-source-package”)</code>
+</p>
+<p>
+to learn how to set a GitHub PAT to your <code>.Renviron</code> and then use it with <code>usethis::use_github()</code> to upload a project to GitHub.
+</p>
 </div>
 </div>
 </section>
@@ -469,18 +369,14 @@ Note
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">interactive</span>()) {</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">options</span>(<span class="at">width =</span> <span class="dv">120</span>)</span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><a href="https://raw.githubusercontent.com/rstats-wtf/wtf-startup/master/02_startup_spartan.R">Try the activity</a> <code>usethis::use_course("rstd.io/wtf-source-package")</code></p>
-<p>to learn how to create a <code>.Rprofile</code> with a default CRAN repository and add a startup message to it.</p>
+<div class="cell" type="rmdinfo">
+<div class="rmdinfo">
+<p>
+<a href="https://raw.githubusercontent.com/rstats-wtf/wtf-startup/master/02_startup_spartan.R">Try the activity</a> <code>usethis::use_course(“rstd.io/wtf-source-package”)</code>
+</p>
+<p>
+to learn how to create a <code>.Rprofile</code> with a default CRAN repository and add a startup message to it.
+</p>
 </div>
 </div>
 </section>
@@ -488,17 +384,11 @@ Note
 <section id="disabling-startup-files" class="level2" data-number="7.3">
 <h2 data-number="7.3" class="anchored" data-anchor-id="disabling-startup-files"><span class="header-section-number">7.3</span> Disabling startup files</h2>
 <p>You can run R without any startup files by using the <code>--vanilla</code> argument when starting R. In RStudio you can do this by checking the option <code>Project Options -&gt; Disable .Rprofile execution on session start / resume</code>. You can also selectively disable only the user or site <code>.Rprofile</code> with <code>--no-init-file</code> and <code>--no-site-file</code> respectively, and disable the environment files with <code>--no-environ</code>.</p>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Warning
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Both <code>.Renviron</code> and <code>.Rprofile</code> <em>must</em> end with a newline character. If they do not the last line with be ignored without a warning or error.</p>
+<div class="cell" type="rmdwarning">
+<div class="rmdwarning">
+<p>
+Both <code>.Renviron</code> and <code>.Rprofile</code> <em>must</em> end with a newline character. If they do not the last line with be ignored without a warning or error.
+</p>
 </div>
 </div>
 
