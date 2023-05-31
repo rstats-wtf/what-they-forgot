@@ -27,11 +27,11 @@ as stats, graphics, utils and others ([`src/library/*`](https://github.com/wch/r
 the documentation included in R including Writing R extensions, R internals and
 R admin guides ([`doc/manual`](https://github.com/wch/r-source/tree/trunk/doc/manual)).
 
-```{block type="rmdinfo"}
+::: {.callout-note}
 [Try the activity](https://raw.githubusercontent.com/jimhester/wtf-read-source/master/01_read-source_spartan.R) `usethis::use_course("rstd.io/wtf-read-source")`
 
 to search the R source for code and documentation.
-```
+:::
 
 ## Where things exist in CRAN packages
 
@@ -59,8 +59,8 @@ language the compiled code is written in.
 
 Long-form documentation in the form of vignettes are stored in `vignettes/`.
 
-```{block type="rmdinfo"}
+::: {.callout-note}
 [Try the activity](https://raw.githubusercontent.com/jimhester/wtf-read-source/master/02_read-source_spartan.R) `usethis::use_course("rstd.io/wtf-read-source")`
 
 to search and find source code and documentation in CRAN packages.
-```
+:::

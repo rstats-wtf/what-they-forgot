@@ -52,8 +52,8 @@ library(beyonce, lib.loc = tmp_lib)
 unlink(tmp_lib, recursive = TRUE)
 ```
 
-```{block type="rmdinfo"}
+::: {.callout-note}
 [Try the activity](https://raw.githubusercontent.com/jimhester/wtf-source-package/master/01_source-package_spartan.R): `usethis::use_course("rstd.io/wtf-source-package")`
 
 To practice installing various types of source packages.
-```
+:::
