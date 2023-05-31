@@ -1,3 +1,11 @@
+---
+format:
+  html:
+    mermaid-format: svg
+    mermaid:
+        theme: neutral
+---
+
 # R Startup
 
 R has been designed to be used from shared computing resources such as linux
@@ -102,6 +110,8 @@ env --> startup
 startup --> session
 session --> running
 
+%%| fig-cap: R Startup flowchart. Original by [Thomas Lin Pedersen](https://twitter.com/thomasp85/status/961553618196418560)
+
 ```
 
 However most R users can ignore the majority of this complexity and focus on two main files.
@@ -131,9 +141,9 @@ _not_ R code, it uses a format similar to that used on the command line shell.
 
 The easiest way to edit `.Renviron` is by running `usethis::edit_r_environ()`.
 
-A simple example of a `.Renviron` file is
+A simple example of a `.Renviron` file is:
 
-```shell
+```{.bash filename=".Renviron" }
 R_HISTSIZE=100000
 GITHUB_PAT=abc123
 R_LIBS_USER=~/R/%p/%v
@@ -181,9 +191,9 @@ those started by R itself) it is important to guard most of the code with
 `interactive()`, so it is only run in interactive sessions (sessions you are
 controlling with a terminal).
 
-A simple example of a `.Rprofile` is
+A simple example of a `.Rprofile` is:
 
-```r
+```{.r filename=".Rprofile"}
 options(repos = c(CRAN = "https://cran.rstudio.org"))
 
 if (interactive()) {
