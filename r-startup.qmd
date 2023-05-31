@@ -216,5 +216,5 @@ session start / resume`. You can also selectively disable only the user or site
 the environment files with `--no-environ`.
 
 ::: {.callout-warning}
-Both `.Renviron` and `.Rprofile` _must_ end with a newline character. If they do not the last line with be ignored without a warning or error.
+Both `.Renviron` and `.Rprofile` _must_ end with a newline character. If they do not the last line will be ignored without a warning or error.
 :::
