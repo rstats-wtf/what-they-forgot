@@ -25,12 +25,12 @@ book:
       chapters:
         - get-to-know-your-r-installation.Rmd
         - r-startup.qmd
-        - maintaining-r.Rmd
-        - install-single-package.Rmd
+        - maintaining-r.qmd
+        - install-single-package.qmd
     - part: "All is Fail"
       chapters:
-        - debugging-r.Rmd
-        - read-source.Rmd
+        - debugging-r.qmd
+        - read-source.qmd
         - reprexing.Rmd
     - sessioninfo.Rmd
 
