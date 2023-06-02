@@ -16,7 +16,7 @@ this flexibility comes at a cost: _complexity_.
 And for sure, R's startup procedures are complex:
 
 ```{mermaid}
-%%| fig-cap: R Startup flowchart. Original by [Thomas Lin Pedersen](https://twitter.com/thomasp85/status/961553618196418560)
+%%| fig-cap: R Startup flowchart. DNE = does not exist. Original by [Thomas Lin Pedersen](https://twitter.com/thomasp85/status/961553618196418560)
 
 flowchart LR
 
