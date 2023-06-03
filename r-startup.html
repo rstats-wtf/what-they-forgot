@@ -109,7 +109,6 @@ ga('send', {
   'anonymizeIp': true,
 });
 </script>
-<script src="site_libs/quarto-diagram/mermaid-postprocess-shim.js"></script>
 
 
 </head>
@@ -311,345 +310,11 @@ ga('send', {
 <p>And for sure, R’s startup procedures are complex:</p>
 <div class="cell">
 <div class="cell-output-display">
-<div>
-<div>
-<svg viewbox="0 0 1658.9453125 1204.078125" height="480" aria-labelledby="chart-title-mermaid-1685727768818 chart-desc-mermaid-1685727768818" role="img" xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" width="672" id="mermaid-figure-1">
-<title id="chart-title-mermaid-1685727768818">
-</title>
-<desc id="chart-desc-mermaid-1685727768818"></desc>
-<style>#mermaid-figure-1 {font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;fill:#000000;}#mermaid-figure-1 .error-icon{fill:#552222;}#mermaid-figure-1 .error-text{fill:#552222;stroke:#552222;}#mermaid-figure-1 .edge-thickness-normal{stroke-width:2px;}#mermaid-figure-1 .edge-thickness-thick{stroke-width:3.5px;}#mermaid-figure-1 .edge-pattern-solid{stroke-dasharray:0;}#mermaid-figure-1 .edge-pattern-dashed{stroke-dasharray:3;}#mermaid-figure-1 .edge-pattern-dotted{stroke-dasharray:2;}#mermaid-figure-1 .marker{fill:#666;stroke:#666;}#mermaid-figure-1 .marker.cross{stroke:#666;}#mermaid-figure-1 svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;}#mermaid-figure-1 .label{font-family:"trebuchet ms",verdana,arial,sans-serif;color:#000000;}#mermaid-figure-1 .cluster-label text{fill:#333;}#mermaid-figure-1 .cluster-label span{color:#333;}#mermaid-figure-1 .label text,#mermaid-figure-1 span{fill:#000000;color:#000000;}#mermaid-figure-1 .node rect,#mermaid-figure-1 .node circle,#mermaid-figure-1 .node ellipse,#mermaid-figure-1 .node polygon,#mermaid-figure-1 .node path{fill:#eee;stroke:#999;stroke-width:1px;}#mermaid-figure-1 .node .label{text-align:center;}#mermaid-figure-1 .node.clickable{cursor:pointer;}#mermaid-figure-1 .arrowheadPath{fill:#333333;}#mermaid-figure-1 .edgePath .path{stroke:#666;stroke-width:2.0px;}#mermaid-figure-1 .flowchart-link{stroke:#666;fill:none;}#mermaid-figure-1 .edgeLabel{background-color:white;text-align:center;}#mermaid-figure-1 .edgeLabel rect{opacity:0.5;background-color:white;fill:white;}#mermaid-figure-1 .cluster rect{fill:hsl(0, 0%, 98.9215686275%);stroke:#707070;stroke-width:1px;}#mermaid-figure-1 .cluster text{fill:#333;}#mermaid-figure-1 .cluster span{color:#333;}#mermaid-figure-1 div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:12px;background:hsl(-160, 0%, 93.3333333333%);border:1px solid #707070;border-radius:2px;pointer-events:none;z-index:100;}#mermaid-figure-1 :root{--mermaid-font-family:"trebuchet ms",verdana,arial,sans-serif;}</style>
-<g transform="translate(0, 0)"><marker orient="auto" markerheight="12" markerwidth="12" markerunits="userSpaceOnUse" refy="5" refx="9" viewbox="0 0 10 10" class="marker flowchart" id="flowchart-pointEnd"><path style="stroke-width: 1; stroke-dasharray: 1, 0;" class="arrowMarkerPath" d="M 0 0 L 10 5 L 0 10 z"></path></marker><marker orient="auto" markerheight="12" markerwidth="12" markerunits="userSpaceOnUse" refy="5" refx="0" viewbox="0 0 10 10" class="marker flowchart" id="flowchart-pointStart"><path style="stroke-width: 1; stroke-dasharray: 1, 0;" class="arrowMarkerPath" d="M 0 5 L 10 10 L 10 0 z"></path></marker><marker orient="auto" markerheight="11" markerwidth="11" markerunits="userSpaceOnUse" refy="5" refx="11" viewbox="0 0 10 10" class="marker flowchart" id="flowchart-circleEnd"><circle style="stroke-width: 1; stroke-dasharray: 1, 0;" class="arrowMarkerPath" r="5" cy="5" cx="5"></circle></marker><marker orient="auto" markerheight="11" markerwidth="11" markerunits="userSpaceOnUse" refy="5" refx="-1" viewbox="0 0 10 10" class="marker flowchart" id="flowchart-circleStart"><circle style="stroke-width: 1; stroke-dasharray: 1, 0;" class="arrowMarkerPath" r="5" cy="5" cx="5"></circle></marker><marker orient="auto" markerheight="11" markerwidth="11" markerunits="userSpaceOnUse" refy="5.2" refx="12" viewbox="0 0 11 11" class="marker cross flowchart" id="flowchart-crossEnd"><path style="stroke-width: 2; stroke-dasharray: 1, 0;" class="arrowMarkerPath" d="M 1,1 l 9,9 M 10,1 l -9,9"></path></marker><marker orient="auto" markerheight="11" markerwidth="11" markerunits="userSpaceOnUse" refy="5.2" refx="-1" viewbox="0 0 11 11" class="marker cross flowchart" id="flowchart-crossStart"><path style="stroke-width: 2; stroke-dasharray: 1, 0;" class="arrowMarkerPath" d="M 1,1 l 9,9 M 10,1 l -9,9"></path></marker><g class="root"><g class="clusters"></g><g class="edgePaths"><path marker-end="url(#flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-start LE-env" id="L-start-env-0" d="M54.125,602.0390625L58.291666666666664,602.0390625C62.458333333333336,602.0390625,70.79166666666667,602.0390625,79.125,602.0390625C87.45833333333333,602.0390625,95.79166666666667,602.0390625,99.95833333333333,602.0390625L104.125,602.0390625"></path><path marker-end="url(#flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-env LE-startup" id="L-env-startup-0" d="M617.0234375,602.0390625L621.1901041666666,602.0390625C625.3567708333334,602.0390625,633.6901041666666,602.0390625,642.0234375,602.0390625C650.3567708333334,602.0390625,658.6901041666666,602.0390625,662.8567708333334,602.0390625L667.0234375,602.0390625"></path><path marker-end="url(#flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-startup LE-session" id="L-startup-session-0" d="M1114.3125,602.0390625L1118.4791666666667,602.0390625C1122.6458333333333,602.0390625,1130.9791666666667,602.0390625,1139.3125,602.0390625C1147.6458333333333,602.0390625,1155.9791666666667,602.0390625,1160.1458333333333,602.0390625L1164.3125,602.0390625"></path><path marker-end="url(#flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-session LE-running" id="L-session-running-0" d="M1532.5703125,602.0390625L1536.7369791666667,602.0390625C1540.9036458333333,602.0390625,1549.2369791666667,602.0390625,1557.5703125,602.0390625C1565.9036458333333,602.0390625,1574.2369791666667,602.0390625,1578.4036458333333,602.0390625L1582.5703125,602.0390625"></path></g><g class="edgeLabels"><g class="edgeLabel"><g transform="translate(0, 0)" class="label"><foreignobject height="0" width="0">
-<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
-<span class="edgeLabel"></span>
-</div>
-</foreignobject></g></g><g class="edgeLabel"><g transform="translate(0, 0)" class="label"><foreignobject height="0" width="0">
-<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
-<span class="edgeLabel"></span>
-</div>
-</foreignobject></g></g><g class="edgeLabel"><g transform="translate(0, 0)" class="label"><foreignobject height="0" width="0">
-<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
-<span class="edgeLabel"></span>
-</div>
-</foreignobject></g></g><g class="edgeLabel"><g transform="translate(0, 0)" class="label"><foreignobject height="0" width="0">
-<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
-<span class="edgeLabel"></span>
-</div>
-</foreignobject></g></g></g><g class="nodes"><g transform="translate(1156.8125, 0)" class="root"><g class="clusters"><g id="session" class="cluster default"><rect height="1188.078125" width="368.2578125" y="8" x="8" ry="0" rx="0" style=""></rect><g transform="translate(124.08984375, 13)" class="cluster-label"><foreignobject height="18" width="136.078125">
-<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
-<span class="nodeLabel">Setting Up Session</span>
-</div>
-</foreignobject></g></g></g><g class="edgePaths"><path marker-end="url(#flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-isFlagNoRestoreDataSet LE-doesProjectRDataExist" id="L-isFlagNoRestoreDataSet-doesProjectRDataExist-0" d="M156.5543556785555,180.3590431785555L153.36951514879627,189.47368181546292C150.184674619037,198.58832045237034,143.8149935595185,216.8175977261852,140.71348636309258,231.68223636309258C137.61197916666666,246.546875,137.77864583333334,258.046875,137.86197916666666,263.796875L137.9453125,269.546875"></path><path marker-end="url(#flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-isFlagNoRestoreDataSet LE-runDotFirst" id="L-isFlagNoRestoreDataSet-runDotFirst-0" d="M220.81976701988677,158.46929548011323L234.25149855823898,171.23222540009434C247.68323009659116,183.9951553200755,274.5466931732956,209.52101516003776,287.9784247116478,230.70061174668555C301.41015625,251.88020833333334,301.41015625,268.7135416666667,301.41015625,285.546875C301.41015625,302.3802083333333,301.41015625,319.2135416666667,301.41015625,336.046875C301.41015625,352.8802083333333,301.41015625,369.7135416666667,301.41015625,385.046875C301.41015625,400.3802083333333,301.41015625,414.2135416666667,288.4283854166667,425.8480547440178C275.4466145833333,437.48256782136895,249.48307291666666,446.91826064273783,236.50130208333334,451.63610705342234L223.51953125,456.35395346410684"></path><path marker-end="url(#flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-doesProjectRDataExist LE-runDotFirst" id="L-doesProjectRDataExist-runDotFirst-0" d="M121.12240872524752,302.546875L115.26151247937294,308.1302083333333C109.40061623349834,313.7135416666667,97.67882374174917,324.8802083333333,91.81792749587459,338.8802083333333C85.95703125,352.8802083333333,85.95703125,369.7135416666667,85.95703125,385.046875C85.95703125,400.3802083333333,85.95703125,414.2135416666667,96.01692708333333,425.4185325418551C106.07682291666667,436.62352341704354,126.19661458333333,445.2001718340871,136.25651041666666,449.48849604260886L146.31640625,453.7768202511307"></path><path marker-end="url(#flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-doesProjectRDataExist LE-loadData" id="L-doesProjectRDataExist-loadData-0" d="M153.7076113861386,302.546875L159.03759282178217,308.1302083333333C164.36757425742573,313.7135416666667,175.02753712871288,324.8802083333333,180.3575185643564,336.1302083333333C185.6875,347.3802083333333,185.6875,358.7135416666667,185.6875,364.3802083333333L185.6875,370.046875"></path><path marker-end="url(#flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-loadData LE-runDotFirst" id="L-loadData-runDotFirst-0" d="M185.6875,403.046875L185.6875,407.2135416666667C185.6875,411.3802083333333,185.6875,419.7135416666667,185.64337035642572,428.1302083333333C185.5992407128514,436.546875,185.5109814257028,445.046875,185.46685178212851,449.296875L185.4227221385542,453.546875"></path><path marker-end="url(#flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-runDotFirst LE-runBaseDotFirstSys" id="L-runDotFirst-runBaseDotFirstSys-0" d="M184.91796875,486.546875L184.83463541666666,490.6302083333333C184.75130208333334,494.7135416666667,184.58463541666666,502.8802083333333,184.58463541666666,511.2135416666667C184.58463541666666,519.546875,184.75130208333334,528.046875,184.83463541666666,532.296875L184.91796875,536.546875"></path><path marker-end="url(#flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-runBaseDotFirstSys LE-isFlagNoRestoreHistorySet" id="L-runBaseDotFirstSys-isFlagNoRestoreHistorySet-0" d="M184.91796875,569.546875L184.83463541666666,573.6302083333334C184.75130208333334,577.7135416666666,184.58463541666666,585.8802083333334,184.58463541666666,594.2135416666666C184.58463541666666,602.546875,184.75130208333334,611.046875,184.83463541666666,615.296875L184.91796875,619.546875"></path><path marker-end="url(#flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-isFlagNoRestoreHistorySet LE-endSessionSetup" id="L-isFlagNoRestoreHistorySet-endSessionSetup-0" d="M144.76251011384284,763.4226663638428L135.10938342820236,775.6985761365357C125.45625674256189,787.9744859092285,106.15000337128095,812.5263054546143,96.49687668564047,833.2188818939738C86.84375,853.9114583333334,86.84375,870.7447916666666,86.84375,887.578125C86.84375,904.4114583333334,86.84375,921.2447916666666,86.84375,938.078125C86.84375,954.9114583333334,86.84375,971.7447916666666,86.84375,987.078125C86.84375,1002.4114583333334,86.84375,1016.2447916666666,86.84375,1030.078125C86.84375,1043.9114583333333,86.84375,1057.7447916666667,86.84375,1071.578125C86.84375,1085.4114583333333,86.84375,1099.2447916666667,95.9198983433735,1110.328125C104.996046686747,1121.4114583333333,123.14834337349397,1129.7447916666667,132.22449171686748,1133.9114583333333L141.30064006024097,1138.078125"></path><path marker-end="url(#flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-isFlagNoRestoreHistorySet LE-isEnvRHistifileSet" id="L-isFlagNoRestoreHistorySet-isEnvRHistifileSet-0" d="M208.02067297228672,780.4754207777133L211.12790456023893,789.909204814761C214.23513614819115,799.3429888518089,220.4495993240956,818.2105569259044,223.64016424538113,833.3943409629522C226.83072916666666,848.578125,226.99739583333334,860.078125,227.08072916666666,865.828125L227.1640625,871.578125"></path><path marker-end="url(#flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-isEnvRHistifileSet LE-doesProjectRhistoryExist" id="L-isEnvRHistifileSet-doesProjectRhistoryExist-0" d="M213.267713490099,904.578125L208.41189665841583,910.1614583333334C203.55607982673268,915.7447916666666,193.84444616336634,926.9114583333334,189.0719626650165,938.2447916666666C184.29947916666666,949.578125,184.46614583333334,961.078125,184.54947916666666,966.828125L184.6328125,972.578125"></path><path marker-end="url(#flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-doesProjectRhistoryExist LE-endSessionSetup" id="L-doesProjectRhistoryExist-endSessionSetup-0" d="M169.57718373493975,1005.578125L165.69192394578315,1009.6614583333334C161.8066641566265,1013.7447916666666,154.03614457831324,1021.9114583333334,150.15088478915663,1032.9114583333333C146.265625,1043.9114583333333,146.265625,1057.7447916666667,146.265625,1071.578125C146.265625,1085.4114583333333,146.265625,1099.2447916666667,149.3757216365462,1110.328125C152.48581827309238,1121.4114583333333,158.70601154618473,1129.7447916666667,161.81610818273091,1133.9114583333333L164.9262048192771,1138.078125"></path><path marker-end="url(#flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-isEnvRHistifileSet LE-loadHistory" id="L-isEnvRHistifileSet-loadHistory-0" d="M252.02382425742573,904.578125L260.4781868811881,910.1614583333334C268.9325495049505,915.7447916666666,285.8412747524753,926.9114583333334,294.2956373762376,940.9114583333334C302.75,954.9114583333334,302.75,971.7447916666666,302.75,987.078125C302.75,1002.4114583333334,302.75,1016.2447916666666,299.4324328564257,1027.328125C296.11486571285144,1038.4114583333333,289.4797314257028,1046.7447916666667,286.1621642821285,1050.9114583333333L282.8445971385542,1055.078125"></path><path marker-end="url(#flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-doesProjectRhistoryExist LE-loadHistory" id="L-doesProjectRhistoryExist-loadHistory-0" d="M201.74628200301206,1005.578125L205.98453187751002,1009.6614583333334C210.22278175200805,1013.7447916666666,218.69928150100404,1021.9114583333334,227.20773719879517,1030.1614583333333C235.71619289658634,1038.4114583333333,244.25660454317267,1046.7447916666667,248.52681036646584,1050.9114583333333L252.79701618975903,1055.078125"></path><path marker-end="url(#flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-loadHistory LE-endSessionSetup" id="L-loadHistory-endSessionSetup-0" d="M269.70703125,1088.078125L269.70703125,1092.2447916666667C269.70703125,1096.4114583333333,269.70703125,1104.7447916666667,260.42341239959836,1113.078125C251.13979354919675,1121.4114583333333,232.57255584839356,1129.7447916666667,223.28893699799195,1133.9114583333333L214.00531814759034,1138.078125"></path></g><g class="edgeLabels"><g transform="translate(137.4453125, 235.046875)" class="edgeLabel"><g transform="translate(-19.5703125, -9)" class="label"><foreignobject height="18" width="39.140625">
-<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
-<span class="edgeLabel">unset</span>
-</div>
-</foreignobject></g></g><g transform="translate(301.41015625, 336.046875)" class="edgeLabel"><g transform="translate(-10.671875, -9)" class="label"><foreignobject height="18" width="21.34375">
-<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
-<span class="edgeLabel">set</span>
-</div>
-</foreignobject></g></g><g transform="translate(85.95703125, 386.546875)" class="edgeLabel"><g transform="translate(-16.890625, -9)" class="label"><foreignobject height="18" width="33.78125">
-<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
-<span class="edgeLabel">DNE</span>
-</div>
-</foreignobject></g></g><g class="edgeLabel"><g transform="translate(0, 0)" class="label"><foreignobject height="0" width="0">
-<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
-<span class="edgeLabel"></span>
-</div>
-</foreignobject></g></g><g class="edgeLabel"><g transform="translate(0, 0)" class="label"><foreignobject height="0" width="0">
-<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
-<span class="edgeLabel"></span>
-</div>
-</foreignobject></g></g><g class="edgeLabel"><g transform="translate(0, 0)" class="label"><foreignobject height="0" width="0">
-<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
-<span class="edgeLabel"></span>
-</div>
-</foreignobject></g></g><g class="edgeLabel"><g transform="translate(0, 0)" class="label"><foreignobject height="0" width="0">
-<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
-<span class="edgeLabel"></span>
-</div>
-</foreignobject></g></g><g transform="translate(86.84375, 988.578125)" class="edgeLabel"><g transform="translate(-10.671875, -9)" class="label"><foreignobject height="18" width="21.34375">
-<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
-<span class="edgeLabel">set</span>
-</div>
-</foreignobject></g></g><g transform="translate(226.6640625, 837.078125)" class="edgeLabel"><g transform="translate(-19.5703125, -9)" class="label"><foreignobject height="18" width="39.140625">
-<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
-<span class="edgeLabel">unset</span>
-</div>
-</foreignobject></g></g><g transform="translate(184.1328125, 938.078125)" class="edgeLabel"><g transform="translate(-35.1484375, -9)" class="label"><foreignobject height="18" width="70.296875">
-<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
-<span class="edgeLabel">undefined</span>
-</div>
-</foreignobject></g></g><g class="edgeLabel"><g transform="translate(0, 0)" class="label"><foreignobject height="0" width="0">
-<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
-<span class="edgeLabel"></span>
-</div>
-</foreignobject></g></g><g class="edgeLabel"><g transform="translate(0, 0)" class="label"><foreignobject height="0" width="0">
-<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
-<span class="edgeLabel"></span>
-</div>
-</foreignobject></g></g><g class="edgeLabel"><g transform="translate(0, 0)" class="label"><foreignobject height="0" width="0">
-<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
-<span class="edgeLabel"></span>
-</div>
-</foreignobject></g></g><g class="edgeLabel"><g transform="translate(0, 0)" class="label"><foreignobject height="0" width="0">
-<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
-<span class="edgeLabel"></span>
-</div>
-</foreignobject></g></g></g><g class="nodes"><g transform="translate(177.2421875, 117.0234375)" id="flowchart-isFlagNoRestoreDataSet-184" class="node default default"><polygon style="" transform="translate(-84.0234375,84.0234375)" class="label-container" points="84.0234375,0 168.046875,-84.0234375 84.0234375,-168.046875 0,-84.0234375"></polygon><g transform="translate(-60.0234375, -9)" style="" class="label"><foreignobject height="18" width="120.046875">
-<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
-<span class="nodeLabel">–no-restore-data</span>
-</div>
-</foreignobject></g></g><g transform="translate(137.4453125, 285.546875)" id="flowchart-doesProjectRDataExist-185" class="node default default"><polygon style="" transform="translate(-31.0703125,16.5)" class="label-container" points="-11,0 56.640625,0 73.140625,-33 5.5,-33"></polygon><g transform="translate(-23.5703125, -9)" style="" class="label"><foreignobject height="18" width="47.140625">
-<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
-<span class="nodeLabel">.Rdata</span>
-</div>
-</foreignobject></g></g><g transform="translate(184.41796875, 469.546875)" id="flowchart-runDotFirst-187" class="node default default"><polygon style="" transform="translate(-30.6015625,16.5)" class="label-container" points="0,0 61.203125,0 61.203125,-33 0,-33 0,0 -8,0 69.203125,0 69.203125,-33 -8,-33 -8,0"></polygon><g transform="translate(-23.1015625, -9)" style="" class="label"><foreignobject height="18" width="46.203125">
-<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
-<span class="nodeLabel">.First()</span>
-</div>
-</foreignobject></g></g><g transform="translate(185.6875, 386.546875)" id="flowchart-loadData-186" class="node default default"><rect height="33" width="86.1875" y="-16.5" x="-43.09375" ry="0" rx="0" style="" class="basic label-container"></rect><g transform="translate(-35.59375, -9)" style="" class="label"><foreignobject height="18" width="71.1875">
-<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
-<span class="nodeLabel">Load data</span>
-</div>
-</foreignobject></g></g><g transform="translate(184.41796875, 552.546875)" id="flowchart-runBaseDotFirstSys-188" class="node default default"><polygon style="" transform="translate(-66.6171875,16.5)" class="label-container" points="0,0 133.234375,0 133.234375,-33 0,-33 0,0 -8,0 141.234375,0 141.234375,-33 -8,-33 -8,0"></polygon><g transform="translate(-59.1171875, -9)" style="" class="label"><foreignobject height="18" width="118.234375">
-<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
-<span class="nodeLabel">base::.First.sys()</span>
-</div>
-</foreignobject></g></g><g transform="translate(184.41796875, 711.0625)" id="flowchart-isFlagNoRestoreHistorySet-189" class="node default default"><polygon style="" transform="translate(-92.015625,92.015625)" class="label-container" points="92.015625,0 184.03125,-92.015625 92.015625,-184.03125 0,-92.015625"></polygon><g transform="translate(-68.015625, -9)" style="" class="label"><foreignobject height="18" width="136.03125">
-<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
-<span class="nodeLabel">–no-restore-history</span>
-</div>
-</foreignobject></g></g><g transform="translate(177.2421875, 1154.578125)" id="flowchart-endSessionSetup-193" class="node default default"><rect height="33" width="168.890625" y="-16.5" x="-84.4453125" ry="0" rx="0" style="" class="basic label-container"></rect><g transform="translate(-76.9453125, -9)" style="" class="label"><foreignobject height="18" width="153.890625">
-<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
-<span class="nodeLabel">End of Session Setup</span>
-</div>
-</foreignobject></g></g><g transform="translate(226.6640625, 887.578125)" id="flowchart-isEnvRHistifileSet-190" class="node default default"><polygon style="" transform="translate(-52.84375,16.5)" class="label-container" points="-11,0 100.1875,0 116.6875,-33 5.5,-33"></polygon><g transform="translate(-45.34375, -9)" style="" class="label"><foreignobject height="18" width="90.6875">
-<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
-<span class="nodeLabel">R_HISTFILE</span>
-</div>
-</foreignobject></g></g><g transform="translate(184.1328125, 988.578125)" id="flowchart-doesProjectRhistoryExist-191" class="node default default"><polygon style="" transform="translate(-39.0625,16.5)" class="label-container" points="-11,0 72.625,0 89.125,-33 5.5,-33"></polygon><g transform="translate(-31.5625, -9)" style="" class="label"><foreignobject height="18" width="63.125">
-<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
-<span class="nodeLabel">.Rhistory</span>
-</div>
-</foreignobject></g></g><g transform="translate(269.70703125, 1071.578125)" id="flowchart-loadHistory-192" class="node default default"><rect height="33" width="102.171875" y="-16.5" x="-51.0859375" ry="0" rx="0" style="" class="basic label-container"></rect><g transform="translate(-43.5859375, -9)" style="" class="label"><foreignobject height="18" width="87.171875">
-<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
-<span class="nodeLabel">Load history</span>
-</div>
-</foreignobject></g></g></g></g><g transform="translate(659.5234375, 36.796875)" class="root"><g class="clusters"><g id="startup" class="cluster default"><rect height="1114.484375" width="447.2890625" y="8" x="8" ry="0" rx="0" style=""></rect><g transform="translate(147.15234375, 13)" class="cluster-label"><foreignobject height="18" width="168.984375">
-<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
-<span class="nodeLabel">Running Startup Scripts</span>
-</div>
-</foreignobject></g></g></g><g class="edgePaths"><path marker-end="url(#flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-isFlagNoSiteFileSet LE-isFlagNoInitFileSet" id="L-isFlagNoSiteFileSet-isFlagNoInitFileSet-0" d="M195.64505737208358,125.03958862208358L175.36306864340295,137.44444885173633C155.08107991472238,149.84930908138907,114.51710245736119,174.65902954069452,94.23511372868059,195.48055643701392C73.953125,216.30208333333334,73.953125,233.13541666666666,73.953125,249.96875C73.953125,266.8020833333333,73.953125,283.6354166666667,73.953125,300.46875C73.953125,317.3020833333333,73.953125,334.1354166666667,73.953125,349.46875C73.953125,364.8020833333333,73.953125,378.6354166666667,73.953125,392.46875C73.953125,406.3020833333333,73.953125,420.1354166666667,73.953125,433.96875C73.953125,447.8020833333333,73.953125,461.6354166666667,92.26863781893813,479.4891746810619C110.58415063787625,497.34293269545714,147.2151762757525,519.2171153909142,165.53068909469064,530.1542067386428L183.84620191362876,541.0912980863712"></path><path marker-end="url(#flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-isFlagNoSiteFileSet LE-isEnvRprofileSet" id="L-isFlagNoSiteFileSet-isEnvRprofileSet-0" d="M265.5347805057076,137.0081882442924L273.6045045880897,147.41828187024365C281.67422867047173,157.82837549619492,297.81367683523587,178.64856274809745,305.9667342509513,194.80865637404872C314.1197916666667,210.96875,314.2864583333333,222.46875,314.3697916666667,228.21875L314.453125,233.96875"></path><path marker-end="url(#flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-isEnvRprofileSet LE-doesRprofileSiteExist" id="L-isEnvRprofileSet-doesRprofileSiteExist-0" d="M288.15625,266.96875L279.0416666666667,272.5520833333333C269.9270833333333,278.1354166666667,251.69791666666666,289.3020833333333,242.66666666666666,300.6354166666667C233.63541666666666,311.96875,233.80208333333334,323.46875,233.88541666666666,329.21875L233.96875,334.96875"></path><path marker-end="url(#flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-doesRprofileSiteExist LE-isFlagNoInitFileSet" id="L-doesRprofileSiteExist-isFlagNoInitFileSet-0" d="M229.99284638554218,367.96875L228.9054969879518,372.0520833333333C227.81814759036146,376.1354166666667,225.64344879518072,384.3020833333333,224.55609939759037,395.3020833333333C223.46875,406.3020833333333,223.46875,420.1354166666667,223.46875,433.96875C223.46875,447.8020833333333,223.46875,461.6354166666667,223.55208333333334,472.8020833333333C223.63541666666666,483.96875,223.80208333333334,492.46875,223.88541666666666,496.71875L223.96875,500.96875"></path><path marker-end="url(#flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-isEnvRprofileSet LE-runScriptSystem" id="L-isEnvRprofileSet-runScriptSystem-0" d="M340.826577970297,266.96875L349.80079414191414,272.5520833333333C358.7750103135313,278.1354166666667,376.72344265676566,289.3020833333333,385.6976588283828,303.3020833333333C394.671875,317.3020833333333,394.671875,334.1354166666667,394.671875,349.46875C394.671875,364.8020833333333,394.671875,378.6354166666667,391.734343624498,389.71875C388.796812248996,400.8020833333333,382.9217494979919,409.1354166666667,379.98421812248995,413.3020833333333L377.046686746988,417.46875"></path><path marker-end="url(#flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-doesRprofileSiteExist LE-runScriptSystem" id="L-doesRprofileSiteExist-runScriptSystem-0" d="M257.58654932228916,367.96875L263.4673067269076,372.0520833333333C269.3480641315261,376.1354166666667,281.109578940763,384.3020833333333,294.2737669427711,392.5520833333333C307.4379549447791,400.8020833333333,322.0048161395582,409.1354166666667,329.28824673694777,413.3020833333333L336.5716773343373,417.46875"></path><path marker-end="url(#flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-runScriptSystem LE-isFlagNoInitFileSet" id="L-runScriptSystem-isFlagNoInitFileSet-0" d="M365.4140625,450.46875L365.4140625,454.6354166666667C365.4140625,458.8020833333333,365.4140625,467.1354166666667,348.3964476407635,482.10868722409685C331.37883278152697,497.081957781527,297.34360306305393,518.6951655630539,280.3259882038174,529.5017694538175L263.3083733445809,540.3083733445809"></path><path marker-end="url(#flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-isFlagNoInitFileSet LE-isEnvRprofileUserSet" id="L-isFlagNoInitFileSet-isEnvRprofileUserSet-0" d="M198.16614781580824,603.1817728158082L191.35134713817354,613.0655398465069C184.53654646053883,622.9493068772055,170.90694510526941,642.7168409386028,164.17547776096805,658.3506079693014C157.44401041666666,673.984375,157.61067708333334,685.484375,157.69401041666666,691.234375L157.77734375,696.984375"></path><path marker-end="url(#flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-isEnvRprofileUserSet LE-runScriptUser" id="L-isEnvRprofileUserSet-runScriptUser-0" d="M132.63169090346534,729.984375L123.91247679455445,735.5677083333334C115.19326268564356,741.1510416666666,97.7548344678218,752.3177083333334,89.03562035891089,766.3177083333334C80.31640625,780.3177083333334,80.31640625,797.1510416666666,80.31640625,813.984375C80.31640625,830.8177083333334,80.31640625,847.6510416666666,80.31640625,864.484375C80.31640625,881.3177083333334,80.31640625,898.1510416666666,80.31640625,913.484375C80.31640625,928.8177083333334,80.31640625,942.6510416666666,83.25393762550202,953.734375C86.19146900100402,964.8177083333334,92.06653175200803,973.1510416666666,95.00406312751005,977.3177083333334L97.94159450301206,981.484375"></path><path marker-end="url(#flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-doesProjectRprofileExist LE-runScriptUser" id="L-doesProjectRprofileExist-runScriptUser-0" d="M195.2154238861386,830.984375L187.61832198844886,836.5677083333334C180.0212200907591,842.1510416666666,164.82701629537954,853.3177083333334,157.22991439768978,867.3177083333334C149.6328125,881.3177083333334,149.6328125,898.1510416666666,149.6328125,913.484375C149.6328125,928.8177083333334,149.6328125,942.6510416666666,145.61086533634537,953.734375C141.58891817269077,964.8177083333334,133.5450238453815,973.1510416666666,129.5230766817269,977.3177083333334L125.50112951807229,981.484375"></path><path marker-end="url(#flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-doesUserRprofileExist LE-runScriptUser" id="L-doesUserRprofileExist-runScriptUser-0" d="M243.22119728915663,931.984375L238.3483935742972,936.0677083333334C233.47558985943775,940.1510416666666,223.7299824297189,948.3177083333334,208.3742313002008,956.5677083333334C193.01848017068275,964.8177083333334,172.05258534136547,973.1510416666666,161.56963792670683,977.3177083333334L151.0866905120482,981.484375"></path><path marker-end="url(#flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-isEnvRprofileUserSet LE-doesProjectRprofileExist" id="L-isEnvRprofileUserSet-doesProjectRprofileExist-0" d="M177.15795173267327,729.984375L183.7305847772277,735.5677083333334C190.30321782178217,741.1510416666666,203.4484839108911,752.3177083333334,210.10445028877885,763.6510416666666C216.76041666666666,774.984375,216.92708333333334,786.484375,217.01041666666666,792.234375L217.09375,797.984375"></path><path marker-end="url(#flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-doesProjectRprofileExist LE-doesUserRprofileExist" id="L-doesProjectRprofileExist-doesUserRprofileExist-0" d="M231.8273514851485,830.984375L236.80404290429044,836.5677083333334C241.7807343234323,842.1510416666666,251.73411716171617,853.3177083333334,256.7941419141914,864.6510416666666C261.8541666666667,875.984375,262.0208333333333,887.484375,262.1041666666667,893.234375L262.1875,898.984375"></path><path marker-end="url(#flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-isFlagNoInitFileSet LE-endStartupScripts" id="L-isFlagNoInitFileSet-endStartupScripts-0" d="M263.8594876295239,589.093637370476L284.14592719126995,601.3254269753967C304.43236675301597,613.5572165803173,345.005245876508,638.0207957901587,365.291685438254,658.6692520617461C385.578125,679.3177083333334,385.578125,696.1510416666666,385.578125,712.984375C385.578125,729.8177083333334,385.578125,746.6510416666666,385.578125,763.484375C385.578125,780.3177083333334,385.578125,797.1510416666666,385.578125,813.984375C385.578125,830.8177083333334,385.578125,847.6510416666666,385.578125,864.484375C385.578125,881.3177083333334,385.578125,898.1510416666666,385.578125,913.484375C385.578125,928.8177083333334,385.578125,942.6510416666666,385.578125,956.484375C385.578125,970.3177083333334,385.578125,984.1510416666666,385.578125,997.984375C385.578125,1011.8177083333334,385.578125,1025.6510416666667,370.5676926455823,1036.734375C355.5572602911646,1047.8177083333333,325.5363955823293,1056.1510416666667,310.52596322791163,1060.3177083333333L295.51553087349396,1064.484375"></path><path marker-end="url(#flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-doesUserRprofileExist LE-endStartupScripts" id="L-doesUserRprofileExist-endStartupScripts-0" d="M272.78266189759034,931.984375L275.3748744979919,936.0677083333334C277.96708709839356,940.1510416666666,283.1515122991968,948.3177083333334,285.74372489959836,959.3177083333334C288.3359375,970.3177083333334,288.3359375,984.1510416666666,288.3359375,997.984375C288.3359375,1011.8177083333334,288.3359375,1025.6510416666667,283.08877698293173,1036.734375C277.8416164658634,1047.8177083333333,267.3472954317269,1056.1510416666667,262.1001349146586,1060.3177083333333L256.85297439759034,1064.484375"></path><path marker-end="url(#flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-runScriptUser LE-endStartupScripts" id="L-runScriptUser-endStartupScripts-0" d="M109.57421875,1014.484375L109.57421875,1018.6510416666666C109.57421875,1022.8177083333334,109.57421875,1031.1510416666667,122.2750219628514,1039.484375C134.9758251757028,1047.8177083333333,160.37743160140562,1056.1510416666667,173.07823481425703,1060.3177083333333L185.77903802710844,1064.484375"></path></g><g class="edgeLabels"><g transform="translate(73.953125, 350.96875)" class="edgeLabel"><g transform="translate(-10.671875, -9)" class="label"><foreignobject height="18" width="21.34375">
-<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
-<span class="edgeLabel">set</span>
-</div>
-</foreignobject></g></g><g transform="translate(313.953125, 199.46875)" class="edgeLabel"><g transform="translate(-19.5703125, -9)" class="label"><foreignobject height="18" width="39.140625">
-<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
-<span class="edgeLabel">unset</span>
-</div>
-</foreignobject></g></g><g transform="translate(233.46875, 300.46875)" class="edgeLabel"><g transform="translate(-35.1484375, -9)" class="label"><foreignobject height="18" width="70.296875">
-<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
-<span class="edgeLabel">undefined</span>
-</div>
-</foreignobject></g></g><g transform="translate(223.46875, 433.96875)" class="edgeLabel"><g transform="translate(-16.890625, -9)" class="label"><foreignobject height="18" width="33.78125">
-<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
-<span class="edgeLabel">DNE</span>
-</div>
-</foreignobject></g></g><g class="edgeLabel"><g transform="translate(0, 0)" class="label"><foreignobject height="0" width="0">
-<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
-<span class="edgeLabel"></span>
-</div>
-</foreignobject></g></g><g class="edgeLabel"><g transform="translate(0, 0)" class="label"><foreignobject height="0" width="0">
-<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
-<span class="edgeLabel"></span>
-</div>
-</foreignobject></g></g><g class="edgeLabel"><g transform="translate(0, 0)" class="label"><foreignobject height="0" width="0">
-<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
-<span class="edgeLabel"></span>
-</div>
-</foreignobject></g></g><g transform="translate(157.27734375, 662.484375)" class="edgeLabel"><g transform="translate(-19.5703125, -9)" class="label"><foreignobject height="18" width="39.140625">
-<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
-<span class="edgeLabel">unset</span>
-</div>
-</foreignobject></g></g><g class="edgeLabel"><g transform="translate(0, 0)" class="label"><foreignobject height="0" width="0">
-<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
-<span class="edgeLabel"></span>
-</div>
-</foreignobject></g></g><g class="edgeLabel"><g transform="translate(0, 0)" class="label"><foreignobject height="0" width="0">
-<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
-<span class="edgeLabel"></span>
-</div>
-</foreignobject></g></g><g class="edgeLabel"><g transform="translate(0, 0)" class="label"><foreignobject height="0" width="0">
-<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
-<span class="edgeLabel"></span>
-</div>
-</foreignobject></g></g><g transform="translate(216.59375, 763.484375)" class="edgeLabel"><g transform="translate(-35.1484375, -9)" class="label"><foreignobject height="18" width="70.296875">
-<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
-<span class="edgeLabel">undefined</span>
-</div>
-</foreignobject></g></g><g transform="translate(261.6875, 864.484375)" class="edgeLabel"><g transform="translate(-16.890625, -9)" class="label"><foreignobject height="18" width="33.78125">
-<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
-<span class="edgeLabel">DNE</span>
-</div>
-</foreignobject></g></g><g transform="translate(385.578125, 864.484375)" class="edgeLabel"><g transform="translate(-10.671875, -9)" class="label"><foreignobject height="18" width="21.34375">
-<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
-<span class="edgeLabel">set</span>
-</div>
-</foreignobject></g></g><g transform="translate(288.3359375, 997.984375)" class="edgeLabel"><g transform="translate(-16.890625, -9)" class="label"><foreignobject height="18" width="33.78125">
-<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
-<span class="edgeLabel">DNE</span>
-</div>
-</foreignobject></g></g><g class="edgeLabel"><g transform="translate(0, 0)" class="label"><foreignobject height="0" width="0">
-<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
-<span class="edgeLabel"></span>
-</div>
-</foreignobject></g></g></g><g class="nodes"><g transform="translate(236.07421875, 99.234375)" id="flowchart-isFlagNoSiteFileSet-147" class="node default default"><polygon style="" transform="translate(-66.234375,66.234375)" class="label-container" points="66.234375,0 132.46875,-66.234375 66.234375,-132.46875 0,-66.234375"></polygon><g transform="translate(-42.234375, -9)" style="" class="label"><foreignobject height="18" width="84.46875">
-<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
-<span class="nodeLabel">–no-site-file</span>
-</div>
-</foreignobject></g></g><g transform="translate(223.46875, 564.4765625)" id="flowchart-isFlagNoInitFileSet-151" class="node default default"><polygon style="" transform="translate(-64.0078125,64.0078125)" class="label-container" points="64.0078125,0 128.015625,-64.0078125 64.0078125,-128.015625 0,-64.0078125"></polygon><g transform="translate(-40.0078125, -9)" style="" class="label"><foreignobject height="18" width="80.015625">
-<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
-<span class="nodeLabel">–no-init-file</span>
-</div>
-</foreignobject></g></g><g transform="translate(313.953125, 249.96875)" id="flowchart-isEnvRprofileSet-148" class="node default default"><polygon style="" transform="translate(-51.9609375,16.5)" class="label-container" points="-11,0 98.421875,0 114.921875,-33 5.5,-33"></polygon><g transform="translate(-44.4609375, -9)" style="" class="label"><foreignobject height="18" width="88.921875">
-<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
-<span class="nodeLabel">R_PROFILE</span>
-</div>
-</foreignobject></g></g><g transform="translate(233.46875, 350.96875)" id="flowchart-doesRprofileSiteExist-149" class="node default default"><polygon style="" transform="translate(-99.0859375,16.5)" class="label-container" points="-11,0 192.671875,0 209.171875,-33 5.5,-33"></polygon><g transform="translate(-91.5859375, -9)" style="" class="label"><foreignobject height="18" width="183.171875">
-<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
-<span class="nodeLabel">R_HOME/etc/Rprofile.site</span>
-</div>
-</foreignobject></g></g><g transform="translate(365.4140625, 433.96875)" id="flowchart-runScriptSystem-150" class="node default default"><rect height="33" width="87.03125" y="-16.5" x="-43.515625" ry="0" rx="0" style="" class="basic label-container"></rect><g transform="translate(-36.015625, -9)" style="" class="label"><foreignobject height="18" width="72.03125">
-<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
-<span class="nodeLabel">Run script</span>
-</div>
-</foreignobject></g></g><g transform="translate(157.27734375, 712.984375)" id="flowchart-isEnvRprofileUserSet-152" class="node default default"><polygon style="" transform="translate(-78.6328125,16.5)" class="label-container" points="-11,0 151.765625,0 168.265625,-33 5.5,-33"></polygon><g transform="translate(-71.1328125, -9)" style="" class="label"><foreignobject height="18" width="142.265625">
-<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
-<span class="nodeLabel">R_PROFILE_USER</span>
-</div>
-</foreignobject></g></g><g transform="translate(109.57421875, 997.984375)" id="flowchart-runScriptUser-155" class="node default default"><rect height="33" width="87.03125" y="-16.5" x="-43.515625" ry="0" rx="0" style="" class="basic label-container"></rect><g transform="translate(-36.015625, -9)" style="" class="label"><foreignobject height="18" width="72.03125">
-<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
-<span class="nodeLabel">Run script</span>
-</div>
-</foreignobject></g></g><g transform="translate(216.59375, 813.984375)" id="flowchart-doesProjectRprofileExist-153" class="node default default"><polygon style="" transform="translate(-37.2890625,16.5)" class="label-container" points="-11,0 69.078125,0 85.578125,-33 5.5,-33"></polygon><g transform="translate(-29.7890625, -9)" style="" class="label"><foreignobject height="18" width="59.578125">
-<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
-<span class="nodeLabel">.Rprofile</span>
-</div>
-</foreignobject></g></g><g transform="translate(261.6875, 914.984375)" id="flowchart-doesUserRprofileExist-154" class="node default default"><polygon style="" transform="translate(-44.1875,16.5)" class="label-container" points="-11,0 82.875,0 99.375,-33 5.5,-33"></polygon><g transform="translate(-36.6875, -9)" style="" class="label"><foreignobject height="18" width="73.375">
-<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
-<span class="nodeLabel">~/.Rprofile</span>
-</div>
-</foreignobject></g></g><g transform="translate(236.07421875, 1080.984375)" id="flowchart-endStartupScripts-156" class="node default default"><rect height="33" width="147.5" y="-16.5" x="-73.75" ry="0" rx="0" style="" class="basic label-container"></rect><g transform="translate(-66.25, -9)" style="" class="label"><foreignobject height="18" width="132.5">
-<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
-<span class="nodeLabel">End startup scripts</span>
-</div>
-</foreignobject></g></g></g></g><g transform="translate(96.625, 65.90625)" class="root"><g class="clusters"><g id="env" class="cluster default"><rect height="1056.265625" width="512.8984375" y="8" x="8" ry="0" rx="0" style=""></rect><g transform="translate(157.42578125, 13)" class="cluster-label"><foreignobject height="18" width="214.046875">
-<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
-<span class="nodeLabel">Setting Environment Variables</span>
-</div>
-</foreignobject></g></g></g><g class="edgePaths"><path marker-end="url(#flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-isFlagNoEnvironSet LE-isEnvRenvironSet" id="L-isFlagNoEnvironSet-isEnvRenvironSet-0" d="M274.387809981635,140.59484123163497L267.3726541513625,150.70663852636247C260.35749832108996,160.81843582109,246.32718666054498,181.04203041054498,239.39536416360582,196.9038277052725C232.46354166666666,212.765625,232.63020833333334,224.265625,232.71354166666666,230.015625L232.796875,235.765625"></path><path marker-end="url(#flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-isEnvRenvironSet LE-doesRenvironSiteExist" id="L-isEnvRenvironSet-doesRenvironSiteExist-0" d="M208.36850247524754,268.765625L199.89562706270627,274.3489583333333C191.422751650165,279.9322916666667,174.4770008250825,291.0989583333333,166.08745874587459,302.4322916666667C157.69791666666666,313.765625,157.86458333333334,325.265625,157.94791666666666,331.015625L158.03125,336.765625"></path><path marker-end="url(#flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-doesRenvironSiteExist LE-isEnvRenvironUserSet" id="L-doesRenvironSiteExist-isEnvRenvironUserSet-0" d="M135.63883659638554,369.765625L129.90085341365463,373.8489583333333C124.1628702309237,377.9322916666667,112.68690386546184,386.0989583333333,106.94892068273093,394.3489583333333C101.2109375,402.5989583333333,101.2109375,410.9322916666667,101.2109375,420.765625C101.2109375,430.5989583333333,101.2109375,441.9322916666667,101.2109375,456.015625C101.2109375,470.0989583333333,101.2109375,486.9322916666667,101.2109375,502.265625C101.2109375,517.5989583333334,101.2109375,531.4322916666666,114.45550953815261,542.5989583333334C127.70008157630521,553.765625,154.18922565261045,562.265625,167.43379769076304,566.515625L180.67836972891567,570.765625"></path><path marker-end="url(#flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-isEnvRenvironUserSet LE-doesProjectRenvironExist" id="L-isEnvRenvironUserSet-doesProjectRenvironExist-0" d="M216.8048422029703,603.765625L211.2292955858086,609.3489583333334C205.65374896864685,614.9322916666666,194.50265573432344,626.0989583333334,189.01044245049505,637.4322916666666C183.51822916666666,648.765625,183.68489583333334,660.265625,183.76822916666666,666.015625L183.8515625,671.765625"></path><path marker-end="url(#flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-doesProjectRenvironExist LE-doesUserRenvironExist" id="L-doesProjectRenvironExist-doesUserRenvironExist-0" d="M166.4466661509901,704.765625L160.38589366749173,710.3489583333334C154.3251211839934,715.9322916666666,142.2035762169967,727.0989583333334,136.22613706683168,738.4322916666666C130.24869791666666,749.765625,130.41536458333334,761.265625,130.49869791666666,767.015625L130.58203125,772.765625"></path><path marker-end="url(#flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-isEnvRenvironSet LE-setEnvSystem" id="L-isEnvRenvironSet-setEnvSystem-0" d="M279.6625928217822,268.765625L295.67455651815186,274.3489583333333C311.68652021452147,279.9322916666667,343.71044760726073,291.0989583333333,359.7224113036304,305.0989583333333C375.734375,319.0989583333333,375.734375,335.9322916666667,375.734375,351.265625C375.734375,366.5989583333333,375.734375,380.4322916666667,375.734375,391.515625C375.734375,402.5989583333333,375.734375,410.9322916666667,375.734375,420.765625C375.734375,430.5989583333333,375.734375,441.9322916666667,369.282668110561,453.265625C362.8309612211221,464.5989583333333,349.92754744224425,475.9322916666667,343.47584055280527,481.5989583333333L337.02413366336634,487.265625"></path><path marker-end="url(#flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-doesRenvironSiteExist LE-setEnvSystem" id="L-doesRenvironSiteExist-setEnvSystem-0" d="M192.2007247740964,369.765625L200.746046686747,373.8489583333333C209.2913685993976,377.9322916666667,226.38201242469881,386.0989583333333,234.9273343373494,394.3489583333333C243.47265625,402.5989583333333,243.47265625,410.9322916666667,243.47265625,420.765625C243.47265625,430.5989583333333,243.47265625,441.9322916666667,251.86219832920793,453.265625C260.25174040841586,464.5989583333333,277.03082456683165,475.9322916666667,285.4203666460396,481.5989583333333L293.8099087252475,487.265625"></path><path marker-end="url(#flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-setEnvSystem LE-isEnvRenvironUserSet" id="L-setEnvSystem-isEnvRenvironUserSet-0" d="M318.23828125,520.265625L318.23828125,524.4322916666666C318.23828125,528.5989583333334,318.23828125,536.9322916666666,309.6929593373494,545.3489583333334C301.1476374246988,553.765625,284.0569935993976,562.265625,275.511671686747,566.515625L266.9663497740964,570.765625"></path><path marker-end="url(#flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-isEnvRenvironUserSet LE-setEnvUser" id="L-isEnvRenvironUserSet-setEnvUser-0" d="M279.6625928217822,603.765625L295.67455651815186,609.3489583333334C311.68652021452147,614.9322916666666,343.71044760726073,626.0989583333334,359.7224113036304,640.0989583333334C375.734375,654.0989583333334,375.734375,670.9322916666666,375.734375,687.765625C375.734375,704.5989583333334,375.734375,721.4322916666666,375.734375,738.265625C375.734375,755.0989583333334,375.734375,771.9322916666666,375.734375,787.265625C375.734375,802.5989583333334,375.734375,816.4322916666666,375.734375,827.515625C375.734375,838.5989583333334,375.734375,846.9322916666666,375.734375,856.765625C375.734375,866.5989583333334,375.734375,877.9322916666666,369.282668110561,889.265625C362.8309612211221,900.5989583333334,349.92754744224425,911.9322916666666,343.47584055280527,917.5989583333334L337.02413366336634,923.265625"></path><path marker-end="url(#flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-doesProjectRenvironExist LE-setEnvUser" id="L-doesProjectRenvironExist-setEnvUser-0" d="M213.58934096534654,704.765625L223.71898205445544,710.3489583333334C233.84862314356437,715.9322916666666,254.10790532178217,727.0989583333334,264.23754641089107,741.0989583333334C274.3671875,755.0989583333334,274.3671875,771.9322916666666,274.3671875,787.265625C274.3671875,802.5989583333334,274.3671875,816.4322916666666,274.3671875,827.515625C274.3671875,838.5989583333334,274.3671875,846.9322916666666,274.3671875,856.765625C274.3671875,866.5989583333334,274.3671875,877.9322916666666,279.29001650165014,889.265625C284.21284550330034,900.5989583333334,294.05850350660063,911.9322916666666,298.9813325082508,917.5989583333334L303.904161509901,923.265625"></path><path marker-end="url(#flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-doesUserRenvironExist LE-setEnvUser" id="L-doesUserRenvironExist-setEnvUser-0" d="M115.74538780120481,805.765625L111.91542733433734,809.8489583333334C108.08546686746986,813.9322916666666,100.42554593373494,822.0989583333334,96.59558546686746,830.3489583333334C92.765625,838.5989583333334,92.765625,846.9322916666666,92.765625,856.765625C92.765625,866.5989583333334,92.765625,877.9322916666666,118.06618708745874,889.265625C143.3667491749175,900.5989583333334,193.967873349835,911.9322916666666,219.26843543729373,917.5989583333334L244.5689975247525,923.265625"></path><path marker-end="url(#flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-doesUserRenvironExist LE-endEnvSetup" id="L-doesUserRenvironExist-endEnvSetup-0" d="M137.91570971385542,805.765625L139.6843153865462,809.8489583333334C141.45292105923696,813.9322916666666,144.9901324046185,822.0989583333334,146.75873807730923,830.3489583333334C148.52734375,838.5989583333334,148.52734375,846.9322916666666,148.52734375,856.765625C148.52734375,866.5989583333334,148.52734375,877.9322916666666,148.52734375,892.015625C148.52734375,906.0989583333334,148.52734375,922.9322916666666,148.52734375,938.265625C148.52734375,953.5989583333334,148.52734375,967.4322916666666,162.50434550702812,978.515625C176.48134726405624,989.5989583333334,204.43535077811245,997.9322916666666,218.41235253514057,1002.0989583333334L232.38935429216866,1006.265625"></path><path marker-end="url(#flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-isFlagNoEnvironSet LE-endEnvSetup" id="L-isFlagNoEnvironSet-endEnvSetup-0" d="M342.02164231529076,127.30257643470922L360.76738422107564,139.629751195591C379.5131261268605,151.95692595647282,417.0046099384303,176.6112754782364,435.7503518442151,197.35511690578485C454.49609375,218.09895833333334,454.49609375,234.93229166666666,454.49609375,251.765625C454.49609375,268.5989583333333,454.49609375,285.4322916666667,454.49609375,302.265625C454.49609375,319.0989583333333,454.49609375,335.9322916666667,454.49609375,351.265625C454.49609375,366.5989583333333,454.49609375,380.4322916666667,454.49609375,391.515625C454.49609375,402.5989583333333,454.49609375,410.9322916666667,454.49609375,420.765625C454.49609375,430.5989583333333,454.49609375,441.9322916666667,454.49609375,456.015625C454.49609375,470.0989583333333,454.49609375,486.9322916666667,454.49609375,502.265625C454.49609375,517.5989583333334,454.49609375,531.4322916666666,454.49609375,545.265625C454.49609375,559.0989583333334,454.49609375,572.9322916666666,454.49609375,588.265625C454.49609375,603.5989583333334,454.49609375,620.4322916666666,454.49609375,637.265625C454.49609375,654.0989583333334,454.49609375,670.9322916666666,454.49609375,687.765625C454.49609375,704.5989583333334,454.49609375,721.4322916666666,454.49609375,738.265625C454.49609375,755.0989583333334,454.49609375,771.9322916666666,454.49609375,787.265625C454.49609375,802.5989583333334,454.49609375,816.4322916666666,454.49609375,827.515625C454.49609375,838.5989583333334,454.49609375,846.9322916666666,454.49609375,856.765625C454.49609375,866.5989583333334,454.49609375,877.9322916666666,454.49609375,892.015625C454.49609375,906.0989583333334,454.49609375,922.9322916666666,454.49609375,938.265625C454.49609375,953.5989583333334,454.49609375,967.4322916666666,436.84765625,978.7410173635512C419.19921875,990.0497430604356,383.90234375,998.8338611208713,366.25390625,1003.2259201510892L348.60546875,1007.6179791813071"></path><path marker-end="url(#flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-setEnvUser LE-endEnvSetup" id="L-setEnvUser-endEnvSetup-0" d="M318.23828125,956.265625L318.23828125,960.4322916666666C318.23828125,964.5989583333334,318.23828125,972.9322916666666,315.1760322540161,981.265625C312.11378325803213,989.5989583333334,305.98928526606426,997.9322916666666,302.92703627008035,1002.0989583333334L299.8647872740964,1006.265625"></path></g><g class="edgeLabels"><g transform="translate(232.296875, 201.265625)" class="edgeLabel"><g transform="translate(-19.5703125, -9)" class="label"><foreignobject height="18" width="39.140625">
-<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
-<span class="edgeLabel">unset</span>
-</div>
-</foreignobject></g></g><g transform="translate(157.53125, 302.265625)" class="edgeLabel"><g transform="translate(-35.1484375, -9)" class="label"><foreignobject height="18" width="70.296875">
-<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
-<span class="edgeLabel">undefined</span>
-</div>
-</foreignobject></g></g><g transform="translate(101.2109375, 453.265625)" class="edgeLabel"><g transform="translate(-16.890625, -9)" class="label"><foreignobject height="18" width="33.78125">
-<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
-<span class="edgeLabel">DNE</span>
-</div>
-</foreignobject></g></g><g transform="translate(183.3515625, 637.265625)" class="edgeLabel"><g transform="translate(-35.1484375, -9)" class="label"><foreignobject height="18" width="70.296875">
-<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
-<span class="edgeLabel">undefined</span>
-</div>
-</foreignobject></g></g><g transform="translate(130.08203125, 738.265625)" class="edgeLabel"><g transform="translate(-16.890625, -9)" class="label"><foreignobject height="18" width="33.78125">
-<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
-<span class="edgeLabel">DNE</span>
-</div>
-</foreignobject></g></g><g class="edgeLabel"><g transform="translate(0, 0)" class="label"><foreignobject height="0" width="0">
-<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
-<span class="edgeLabel"></span>
-</div>
-</foreignobject></g></g><g class="edgeLabel"><g transform="translate(0, 0)" class="label"><foreignobject height="0" width="0">
-<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
-<span class="edgeLabel"></span>
-</div>
-</foreignobject></g></g><g class="edgeLabel"><g transform="translate(0, 0)" class="label"><foreignobject height="0" width="0">
-<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
-<span class="edgeLabel"></span>
-</div>
-</foreignobject></g></g><g class="edgeLabel"><g transform="translate(0, 0)" class="label"><foreignobject height="0" width="0">
-<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
-<span class="edgeLabel"></span>
-</div>
-</foreignobject></g></g><g class="edgeLabel"><g transform="translate(0, 0)" class="label"><foreignobject height="0" width="0">
-<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
-<span class="edgeLabel"></span>
-</div>
-</foreignobject></g></g><g class="edgeLabel"><g transform="translate(0, 0)" class="label"><foreignobject height="0" width="0">
-<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
-<span class="edgeLabel"></span>
-</div>
-</foreignobject></g></g><g transform="translate(148.52734375, 889.265625)" class="edgeLabel"><g transform="translate(-16.890625, -9)" class="label"><foreignobject height="18" width="33.78125">
-<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
-<span class="edgeLabel">DNE</span>
-</div>
-</foreignobject></g></g><g transform="translate(454.49609375, 586.765625)" class="edgeLabel"><g transform="translate(-10.671875, -9)" class="label"><foreignobject height="18" width="21.34375">
-<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
-<span class="edgeLabel">set</span>
-</div>
-</foreignobject></g></g><g class="edgeLabel"><g transform="translate(0, 0)" class="label"><foreignobject height="0" width="0">
-<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
-<span class="edgeLabel"></span>
-</div>
-</foreignobject></g></g></g><g class="nodes"><g transform="translate(301.05859375, 100.1328125)" id="flowchart-isFlagNoEnvironSet-113" class="node default default"><polygon style="" transform="translate(-67.1328125,67.1328125)" class="label-container" points="67.1328125,0 134.265625,-67.1328125 67.1328125,-134.265625 0,-67.1328125"></polygon><g transform="translate(-43.1328125, -9)" style="" class="label"><foreignobject height="18" width="86.265625">
-<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
-<span class="nodeLabel">–no-environ</span>
-</div>
-</foreignobject></g></g><g transform="translate(232.296875, 251.765625)" id="flowchart-isEnvRenvironSet-114" class="node default default"><polygon style="" transform="translate(-54.1796875,16.5)" class="label-container" points="-11,0 102.859375,0 119.359375,-33 5.5,-33"></polygon><g transform="translate(-46.6796875, -9)" style="" class="label"><foreignobject height="18" width="93.359375">
-<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
-<span class="nodeLabel">R_ENVIRON</span>
-</div>
-</foreignobject></g></g><g transform="translate(157.53125, 352.765625)" id="flowchart-doesRenvironSiteExist-115" class="node default default"><polygon style="" transform="translate(-103.53125,16.5)" class="label-container" points="-11,0 201.5625,0 218.0625,-33 5.5,-33"></polygon><g transform="translate(-96.03125, -9)" style="" class="label"><foreignobject height="18" width="192.0625">
-<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
-<span class="nodeLabel">R_HOME/etc/Renviron.site</span>
-</div>
-</foreignobject></g></g><g transform="translate(232.296875, 586.765625)" id="flowchart-isEnvRenvironUserSet-117" class="node default default"><polygon style="" transform="translate(-80.8515625,16.5)" class="label-container" points="-11,0 156.203125,0 172.703125,-33 5.5,-33"></polygon><g transform="translate(-73.3515625, -9)" style="" class="label"><foreignobject height="18" width="146.703125">
-<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
-<span class="nodeLabel">R_ENVIRON_USER</span>
-</div>
-</foreignobject></g></g><g transform="translate(183.3515625, 687.765625)" id="flowchart-doesProjectRenvironExist-118" class="node default default"><polygon style="" transform="translate(-41.7421875,16.5)" class="label-container" points="-11,0 77.984375,0 94.484375,-33 5.5,-33"></polygon><g transform="translate(-34.2421875, -9)" style="" class="label"><foreignobject height="18" width="68.484375">
-<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
-<span class="nodeLabel">.Renviron</span>
-</div>
-</foreignobject></g></g><g transform="translate(130.08203125, 788.765625)" id="flowchart-doesUserRenvironExist-119" class="node default default"><polygon style="" transform="translate(-48.6328125,16.5)" class="label-container" points="-11,0 91.765625,0 108.265625,-33 5.5,-33"></polygon><g transform="translate(-41.1328125, -9)" style="" class="label"><foreignobject height="18" width="82.265625">
-<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
-<span class="nodeLabel">~/.Renviron</span>
-</div>
-</foreignobject></g></g><g transform="translate(318.23828125, 503.765625)" id="flowchart-setEnvSystem-120" class="node default default"><rect height="33" width="199.984375" y="-16.5" x="-99.9921875" ry="0" rx="0" style="" class="basic label-container"></rect><g transform="translate(-92.4921875, -9)" style="" class="label"><foreignobject height="18" width="184.984375">
-<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
-<span class="nodeLabel">Set environment variables</span>
-</div>
-</foreignobject></g></g><g transform="translate(318.23828125, 939.765625)" id="flowchart-setEnvUser-116" class="node default default"><rect height="33" width="199.984375" y="-16.5" x="-99.9921875" ry="0" rx="0" style="" class="basic label-container"></rect><g transform="translate(-92.4921875, -9)" style="" class="label"><foreignobject height="18" width="184.984375">
-<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
-<span class="nodeLabel">Set environment variables</span>
-</div>
-</foreignobject></g></g><g transform="translate(287.73828125, 1022.765625)" id="flowchart-endEnvSetup-121" class="node default default"><rect height="33" width="121.734375" y="-16.5" x="-60.8671875" ry="0" rx="0" style="" class="basic label-container"></rect><g transform="translate(-53.3671875, -9)" style="" class="label"><foreignobject height="18" width="106.734375">
-<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
-<span class="nodeLabel">End envvar set</span>
-</div>
-</foreignobject></g></g></g></g><g transform="translate(31.0625, 602.0390625)" id="flowchart-start-218" class="node default default"><rect height="33" width="46.125" y="-16.5" x="-23.0625" ry="0" rx="0" style="" class="basic label-container"></rect><g transform="translate(-15.5625, -9)" style="" class="label"><foreignobject height="18" width="31.125">
-<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
-<span class="nodeLabel">start</span>
-</div>
-</foreignobject></g></g><g transform="translate(1616.7578125, 602.0390625)" id="flowchart-running-225" class="node default default"><rect height="33" width="68.375" y="-16.5" x="-34.1875" ry="0" rx="0" style="" class="basic label-container"></rect><g transform="translate(-26.6875, -9)" style="" class="label"><foreignobject height="18" width="53.375">
-<div style="display: inline-block; white-space: nowrap;" data-xmlns="http://www.w3.org/1999/xhtml">
-<span class="nodeLabel">running</span>
-</div>
-</foreignobject></g></g></g></g></g>
-</svg>
-</div>
-<p>R Startup flowchart. DNE = does not exist. Original by <a href="https://twitter.com/thomasp85/status/961553618196418560">Thomas Lin Pedersen</a></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/R-startup.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">R Startup flowchart - <a href="https://twitter.com/thomasp85/status/961553618196418560">Thomas Lin Pedersen</a></figcaption>
+</figure>
 </div>
 </div>
 </div>
@@ -666,27 +331,18 @@ ga('send', {
 <p>The <code>.Renviron</code> file is most useful for defining sensitive information such as API keys (such as GitHub or twitter) as well as R specific environment variables like the history size (<code>R_HISTSIZE=100000</code>) and default library locations <code>R_LIBS_USER</code>.</p>
 <p>The <code>.Renviron</code> file contains lists of environment variables to set. This is <em>not</em> R code, it uses a format similar to that used on the command line shell.</p>
 <p>The easiest way to edit <code>.Renviron</code> is by running <code>usethis::edit_r_environ()</code>.</p>
-<p>A simple example of a <code>.Renviron</code> file is:</p>
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>.Renviron</strong></pre>
-</div>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="va">R_HISTSIZE</span><span class="op">=</span>100000</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="va">GITHUB_PAT</span><span class="op">=</span>abc123</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="va">R_LIBS_USER</span><span class="op">=</span>~/R/%p/%v</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><a href="https://raw.githubusercontent.com/rstats-wtf/wtf-startup/master/01_startup_spartan.R">Try the activity</a> <code>usethis::use_course("rstd.io/wtf-source-package")</code></p>
-<p>to learn how to set a GitHub PAT to your <code>.Renviron</code> and then use it with <code>usethis::use_github()</code> to upload a project to GitHub.</p>
+<p>A simple example of a <code>.Renviron</code> file is</p>
+<pre class="shell"><code>R_HISTSIZE=100000
+GITHUB_PAT=abc123
+R_LIBS_USER=~/R/%p/%v</code></pre>
+<div class="cell" type="rmdinfo">
+<div class="rmdinfo">
+<p>
+<a href="https://raw.githubusercontent.com/rstats-wtf/wtf-startup/master/01_startup_spartan.R">Try the activity</a> <code>usethis::use_course(“rstd.io/wtf-source-package”)</code>
+</p>
+<p>
+to learn how to set a GitHub PAT to your <code>.Renviron</code> and then use it with <code>usethis::use_github()</code> to upload a project to GitHub.
+</p>
 </div>
 </div>
 </section>
@@ -708,29 +364,20 @@ Note
 <p>A good rule of thumb is you should only put things in your <code>.Rprofile</code> that you run interactively in the R terminal. If it ever appears in a R script or R Markdown file it should <em>not</em> be in your <code>.Rprofile</code>.</p>
 <p>If you set these options in your <code>.Rprofile</code>, then try to run one of your scripts on another system without your <code>.Rprofile</code> it will no longer be reproducible. Some problematic examples are loading packages <em>used</em> in analysis (such as <code>dplyr</code> or <code>ggplot2</code>) or changing default options which change the <em>value</em> of outputs, such as <code>options(stringsAsFactors = FALSE)</code>.</p>
 <p>In addition because the <code>.Rprofile</code> is run by <em>every</em> R process (including those started by R itself) it is important to guard most of the code with <code>interactive()</code>, so it is only run in interactive sessions (sessions you are controlling with a terminal).</p>
-<p>A simple example of a <code>.Rprofile</code> is:</p>
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>.Rprofile</strong></pre>
-</div>
+<p>A simple example of a <code>.Rprofile</code> is</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">repos =</span> <span class="fu">c</span>(<span class="at">CRAN =</span> <span class="st">"https://cran.rstudio.org"</span>))</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">interactive</span>()) {</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">options</span>(<span class="at">width =</span> <span class="dv">120</span>)</span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><a href="https://raw.githubusercontent.com/rstats-wtf/wtf-startup/master/02_startup_spartan.R">Try the activity</a> <code>usethis::use_course("rstd.io/wtf-source-package")</code></p>
-<p>to learn how to create a <code>.Rprofile</code> with a default CRAN repository and add a startup message to it.</p>
+<div class="cell" type="rmdinfo">
+<div class="rmdinfo">
+<p>
+<a href="https://raw.githubusercontent.com/rstats-wtf/wtf-startup/master/02_startup_spartan.R">Try the activity</a> <code>usethis::use_course(“rstd.io/wtf-source-package”)</code>
+</p>
+<p>
+to learn how to create a <code>.Rprofile</code> with a default CRAN repository and add a startup message to it.
+</p>
 </div>
 </div>
 </section>
@@ -738,17 +385,11 @@ Note
 <section id="disabling-startup-files" class="level2" data-number="7.3">
 <h2 data-number="7.3" class="anchored" data-anchor-id="disabling-startup-files"><span class="header-section-number">7.3</span> Disabling startup files</h2>
 <p>You can run R without any startup files by using the <code>--vanilla</code> argument when starting R. In RStudio you can do this by checking the option <code>Project Options -&gt; Disable .Rprofile execution on session start / resume</code>. You can also selectively disable only the user or site <code>.Rprofile</code> with <code>--no-init-file</code> and <code>--no-site-file</code> respectively, and disable the environment files with <code>--no-environ</code>.</p>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Warning
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Both <code>.Renviron</code> and <code>.Rprofile</code> <em>must</em> end with a newline character. If they do not the last line will be ignored without a warning or error.</p>
+<div class="cell" type="rmdwarning">
+<div class="rmdwarning">
+<p>
+Both <code>.Renviron</code> and <code>.Rprofile</code> <em>must</em> end with a newline character. If they do not the last line with be ignored without a warning or error.
+</p>
 </div>
 </div>
 
