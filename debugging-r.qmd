@@ -195,7 +195,7 @@ message when the function is entered.
 
 If called with a function as the second argument this inserts the
 function at the start of the function. `trace(fun, browser)` is
-functionally equivalent to `debug(fun)`. `browser()` or `revover()` are generally the
+functionally equivalent to `debug(fun)`. `browser()` or `recover()` are generally the
 most useful functions to use, but this could actually be any R
 function or even regular R expressions. This is often useful to open the
 debugger only when a certain condition is met.
