@@ -33,7 +33,7 @@ In addition if the given package is _not_ already installed it will install it.
 
 First if unsure what version -> [CRAN page](https://cran.r-project.org/web/packages/devtools/index.html) -> [pkgname archive](https://cran.r-project.org/src/contrib/Archive/devtools/)
 
-```r
+```{.r}
 devtools::install_version("devtools", "1.13.3")
 ```
 
@@ -47,12 +47,12 @@ packages you are currently using.
 For 'minor' version changes, the 'y' in 'x.y.z' the package interface _can_
 change, so packages need to be re-installed.
 
-```{block type="rmdwarning"}
+::: {.callout-warning}
 You may see some suggestions that you can just copy your packages even when the
 'minor' version changes. **DO NOT DO THIS**. While it may work some (even most)
 of the time, R-core does not guarantee compatibility between these versions and
 things could break (even break silently).
-```
+:::
 
 I suggest you keep the packages R comes with (base and recommended)
 packages separate from the rest of your packages. This makes it easy to
@@ -70,16 +70,16 @@ automatically expanded to the major and minor version of R, so with R 3.5.1
 this path becomes `~/R/library/3.5`. See [Renviron](#renviron) for how
 to edit your `.Renviron` file.
 
-```{block type = "rmdwarning"}
+::: {.callout-warning}
 Paths in `R_LIBS_USER` are only used if the directories they specify actually
 exist. So in addition to adding `R_LIBS_USER` to your `.Renviron` you need to
 create the directory as well.
-```
+:::
 
 Once this is setup, the process for transferring your package library becomes.
 (assumes `R_LIBS_USER` is set to `~/Library/R/3.5/library`).
 
-```r
+```{.r}
 # Install new version of R (lets say 3.5.0 in this example)
 
 # Create a new directory for the version of R

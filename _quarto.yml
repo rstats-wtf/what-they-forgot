@@ -13,26 +13,26 @@ book:
     - Shannon Pileggi
     - E. David Aja
   chapters:
-    - index.Rmd
+    - index.qmd
     - part: "A holistic workflow"
       chapters:
-        - source-and-blank-slates.Rmd
-        - projects.Rmd
-        - practice-safe-paths.Rmd
-        - naming-files.Rmd
-        - api-for-an-analysis.Rmd
+        - source-and-blank-slates.qmd
+        - projects.qmd
+        - practice-safe-paths.qmd
+        - naming-files.qmd
+        - api-for-an-analysis.qmd
     - part: "Personal R Administration"
       chapters:
-        - get-to-know-your-r-installation.Rmd
+        - get-to-know-your-r-installation.qmd
         - r-startup.qmd
-        - maintaining-r.Rmd
-        - install-single-package.Rmd
+        - maintaining-r.qmd
+        - install-single-package.qmd
     - part: "All is Fail"
       chapters:
-        - debugging-r.Rmd
-        - read-source.Rmd
-        - reprexing.Rmd
-    - sessioninfo.Rmd
+        - debugging-r.qmd
+        - read-source.qmd
+        - reprexing.qmd
+    - sessioninfo.qmd
 
 bibliography: [book.bib, packages.bib]
 link-citations: true

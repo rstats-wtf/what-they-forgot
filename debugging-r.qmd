@@ -149,12 +149,12 @@ When `recover()` is called it prints a list of the current calls, with a prompt 
 select which you want to browse in. Then a debugging session is started at that
 location.
 
-```{block type="rmdinfo"}
+::: {.callout-note}
 [Try activity 1](https://raw.githubusercontent.com/jimhester/wtf-debugging/master/01_debugging_spartan.R) `usethis::use_course("rstd.io/wtf-debugging")`
 [Try activity 2](https://raw.githubusercontent.com/jimhester/wtf-debugging/master/02_debugging_spartan.R) `usethis::use_course("rstd.io/wtf-debugging")`
 
 to practice debugging errors using the tools described
-```
+:::
 
 ### `debug()`
 
@@ -214,11 +214,11 @@ expressions at other points in the function body. To determine the number of
 the expression to insert convert the body of the function to a list. e.g.
 `as.list(body(fun))`.
 
-```{block type="rmdinfo"}
+::: {.callout-note}
 [Try activity 3](https://raw.githubusercontent.com/jimhester/wtf-debugging/master/03_debugging_spartan.R) `usethis::use_course("rstd.io/wtf-debugging")`
 
 to explore using `trace()` with `at`.
-```
+:::
 
 ## Debugging in R Markdown documents
 
@@ -248,11 +248,11 @@ Then knit the file on the R console with `knitr::knit()` or
 `rmarkdown::render()`. The traceback will contain all of the knitr calls as
 well, so you will need to look near the end to find the calls in your code.
 
-```{block type = "rmdwarning"}
+::: {.callout-warning}
 Note you _cannot_ use the 'Knit' button in RStudio when trying to debug
 R Markdown documents in any case. The 'Knit' button opens a separate R process,
 so there is no way to use an interactive debugger in that case.
-```
+:::
 
 ### Resources
 
