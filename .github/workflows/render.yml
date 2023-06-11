@@ -37,6 +37,8 @@ jobs:
 
       - uses: r-lib/actions/setup-r-dependencies@v2
 
+      - uses: browser-actions/setup-chrome@v1
+
       - name: Render book
         run: quarto render
 
