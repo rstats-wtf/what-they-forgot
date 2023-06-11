@@ -404,18 +404,14 @@ ga('send', {
 <p><code>recover()</code> is not used directly, instead it is used as an error handler, by calling <code>options(error = recover)</code>. You can also use other functions, such as <code>browser()</code> as an error handler, which will start the debugger automatically when there is an error.</p>
 <p>The benefit to <code>recover()</code> over using <code>options(error = browser)</code> is that you can browse on any of the call stack, not just where the error occurred. Often the issue is most easily diagnosed in calls higher on the stack than immediately where the error occurred.</p>
 <p>When <code>recover()</code> is called it prints a list of the current calls, with a prompt to select which you want to browse in. Then a debugging session is started at that location.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><a href="https://raw.githubusercontent.com/jimhester/wtf-debugging/master/01_debugging_spartan.R">Try activity 1</a> <code>usethis::use_course("rstd.io/wtf-debugging")</code> <a href="https://raw.githubusercontent.com/jimhester/wtf-debugging/master/02_debugging_spartan.R">Try activity 2</a> <code>usethis::use_course("rstd.io/wtf-debugging")</code></p>
-<p>to practice debugging errors using the tools described</p>
+<div class="cell" type="rmdinfo">
+<div class="rmdinfo">
+<p>
+<a href="https://raw.githubusercontent.com/jimhester/wtf-debugging/master/01_debugging_spartan.R">Try activity 1</a> <code>usethis::use_course(“rstd.io/wtf-debugging”)</code> <a href="https://raw.githubusercontent.com/jimhester/wtf-debugging/master/02_debugging_spartan.R">Try activity 2</a> <code>usethis::use_course(“rstd.io/wtf-debugging”)</code>
+</p>
+<p>
+to practice debugging errors using the tools described
+</p>
 </div>
 </div>
 </section>
@@ -458,18 +454,14 @@ Note
 </div>
 </div>
 <p>You can also use the <code>at</code> argument to <code>trace()</code> to insert the tracing expressions at other points in the function body. To determine the number of the expression to insert convert the body of the function to a list. e.g. <code>as.list(body(fun))</code>.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><a href="https://raw.githubusercontent.com/jimhester/wtf-debugging/master/03_debugging_spartan.R">Try activity 3</a> <code>usethis::use_course("rstd.io/wtf-debugging")</code></p>
-<p>to explore using <code>trace()</code> with <code>at</code>.</p>
+<div class="cell" type="rmdinfo">
+<div class="rmdinfo">
+<p>
+<a href="https://raw.githubusercontent.com/jimhester/wtf-debugging/master/03_debugging_spartan.R">Try activity 3</a> <code>usethis::use_course(“rstd.io/wtf-debugging”)</code>
+</p>
+<p>
+to explore using <code>trace()</code> with <code>at</code>.
+</p>
 </div>
 </div>
 </section>
@@ -483,17 +475,11 @@ Note
 <div class="sourceCode" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">trace</span>(recover, sink)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Then add the following knitr chunk options to the chunk which is failing. <code>error = FALSE, R.options = list(error = recover)</code>.</p>
 <p>Then knit the file on the R console with <code>knitr::knit()</code> or <code>rmarkdown::render()</code>. The traceback will contain all of the knitr calls as well, so you will need to look near the end to find the calls in your code.</p>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Warning
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Note you <em>cannot</em> use the ‘Knit’ button in RStudio when trying to debug R Markdown documents in any case. The ‘Knit’ button opens a separate R process, so there is no way to use an interactive debugger in that case.</p>
+<div class="cell" type="rmdwarning">
+<div class="rmdwarning">
+<p>
+Note you <em>cannot</em> use the ‘Knit’ button in RStudio when trying to debug R Markdown documents in any case. The ‘Knit’ button opens a separate R process, so there is no way to use an interactive debugger in that case.
+</p>
 </div>
 </div>
 <section id="resources" class="level3" data-number="10.4.1">
