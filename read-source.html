@@ -280,14 +280,18 @@ ga('send', {
 <h2 data-number="11.2" class="anchored" data-anchor-id="where-things-exist-in-the-r-source"><span class="header-section-number">11.2</span> Where things exist in the R source</h2>
 <p>The SVN repository used by the R core team to develop R is mirrored on GitHub by Winston Chang at <a href="https://github.com/wch/r-source" class="uri">https://github.com/wch/r-source</a>. This means that all the code used by your local R session (including compiled code) is searchable.</p>
 <p>The R source uses a complicated layout and contains the source of all the code in base R (<a href="https://github.com/wch/r-source/tree/trunk/src/main"><code>src/main</code></a>) as well as the set of packages included in base R, such as stats, graphics, utils and others (<a href="https://github.com/wch/r-source/tree/trunk/src/library"><code>src/library/*</code></a>). It also contains all of the documentation included in R including Writing R extensions, R internals and R admin guides (<a href="https://github.com/wch/r-source/tree/trunk/doc/manual"><code>doc/manual</code></a>).</p>
-<div class="cell" type="rmdinfo">
-<div class="rmdinfo">
-<p>
-<a href="https://raw.githubusercontent.com/jimhester/wtf-read-source/master/01_read-source_spartan.R">Try the activity</a> <code>usethis::use_course(“rstd.io/wtf-read-source”)</code>
-</p>
-<p>
-to search the R source for code and documentation.
-</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><a href="https://raw.githubusercontent.com/jimhester/wtf-read-source/master/01_read-source_spartan.R">Try the activity</a> <code>usethis::use_course("rstd.io/wtf-read-source")</code></p>
+<p>to search the R source for code and documentation.</p>
 </div>
 </div>
 </section>
@@ -299,14 +303,18 @@ to search the R source for code and documentation.
 <p>If a package is <em>not</em> using roxygen (often older packages or those in base R) the documentation will be in <code>.Rd</code> files in the <code>man/</code> directory. (These files also exist in roxygen packages, but are generated automatically and should not be edited by hand).</p>
 <p>If the package uses compiled code it will be in <code>src/</code> regardless of what language the compiled code is written in.</p>
 <p>Long-form documentation in the form of vignettes are stored in <code>vignettes/</code>.</p>
-<div class="cell" type="rmdinfo">
-<div class="rmdinfo">
-<p>
-<a href="https://raw.githubusercontent.com/jimhester/wtf-read-source/master/02_read-source_spartan.R">Try the activity</a> <code>usethis::use_course(“rstd.io/wtf-read-source”)</code>
-</p>
-<p>
-to search and find source code and documentation in CRAN packages.
-</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><a href="https://raw.githubusercontent.com/jimhester/wtf-read-source/master/02_read-source_spartan.R">Try the activity</a> <code>usethis::use_course("rstd.io/wtf-read-source")</code></p>
+<p>to search and find source code and documentation in CRAN packages.</p>
 </div>
 </div>
 
