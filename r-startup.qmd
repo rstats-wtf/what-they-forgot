@@ -1,3 +1,11 @@
+---
+format:
+  html:
+    mermaid-format: svg
+    mermaid:
+        theme: neutral
+---
+
 # R Startup
 
 R has been designed to be used from shared computing resources such as linux
@@ -7,8 +15,103 @@ this flexibility comes at a cost: _complexity_.
 
 And for sure, R's startup procedures are complex:
 
-```{r, echo = FALSE, fig.cap = "R Startup flowchart - [Thomas Lin Pedersen](https://twitter.com/thomasp85/status/961553618196418560)"}
-knitr::include_graphics("images/R-startup.svg")
+```{mermaid}
+%%| fig-cap: R Startup flowchart. DNE = does not exist. Original by [Thomas Lin Pedersen](https://twitter.com/thomasp85/status/961553618196418560)
+
+flowchart LR
+
+subgraph start
+end
+
+subgraph env[Setting Environment Variables]
+    direction TB
+    isFlagNoEnvironSet{--no-environ}
+    isEnvRenvironSet[/R_ENVIRON/]
+    doesRenvironSiteExist[/R_HOME/etc/Renviron.site/]
+    setEnvUser[Set environment variables]
+    isEnvRenvironUserSet[/R_ENVIRON_USER/]
+    doesProjectRenvironExist[/.Renviron/]
+    doesUserRenvironExist[/"~/.Renviron"/]
+    setEnvSystem[Set environment variables]
+    endEnvSetup[End envvar set]
+
+    isFlagNoEnvironSet --> |unset| isEnvRenvironSet
+    isEnvRenvironSet --> |undefined| doesRenvironSiteExist
+    doesRenvironSiteExist --> |DNE| isEnvRenvironUserSet
+    isEnvRenvironUserSet --> |undefined| doesProjectRenvironExist
+    doesProjectRenvironExist --> |DNE| doesUserRenvironExist
+
+    isEnvRenvironSet & doesRenvironSiteExist ---> setEnvSystem
+    setEnvSystem --> isEnvRenvironUserSet
+    isEnvRenvironUserSet & doesProjectRenvironExist & doesUserRenvironExist ---> setEnvUser 
+end
+
+doesUserRenvironExist --> |DNE| endEnvSetup
+isFlagNoEnvironSet --> |set| endEnvSetup
+setEnvUser --> endEnvSetup
+
+subgraph startup[Running Startup Scripts]
+    direction TB
+    isFlagNoSiteFileSet{--no-site-file}
+    isEnvRprofileSet[/R_PROFILE/]
+    doesRprofileSiteExist[/R_HOME/etc/Rprofile.site/]
+    runScriptSystem[Run script]
+    isFlagNoInitFileSet{--no-init-file}
+    isEnvRprofileUserSet[/R_PROFILE_USER/]
+    doesProjectRprofileExist[/.Rprofile/]
+    doesUserRprofileExist[/"~/.Rprofile"/]
+    runScriptUser[Run script]
+    endStartupScripts[End startup scripts]
+
+    isFlagNoSiteFileSet --> |set| isFlagNoInitFileSet
+    isFlagNoSiteFileSet --> |unset| isEnvRprofileSet
+    isEnvRprofileSet --> |undefined| doesRprofileSiteExist
+    doesRprofileSiteExist --> |DNE| isFlagNoInitFileSet
+
+    isEnvRprofileSet & doesRprofileSiteExist --> runScriptSystem --> isFlagNoInitFileSet
+    isFlagNoInitFileSet --> |unset| isEnvRprofileUserSet
+    isEnvRprofileUserSet & doesProjectRprofileExist & doesUserRprofileExist --> runScriptUser
+    isEnvRprofileUserSet --> |undefined| doesProjectRprofileExist --> |DNE| doesUserRprofileExist
+end
+
+isFlagNoInitFileSet --> |set| endStartupScripts
+doesUserRprofileExist --> |DNE| endStartupScripts
+runScriptUser --> endStartupScripts
+
+subgraph session[Setting Up Session]
+    direction TB
+    isFlagNoRestoreDataSet{--no-restore-data}
+    doesProjectRDataExist[/.Rdata/]
+    loadData[Load data]
+    runDotFirst[[".First()"]]
+    runBaseDotFirstSys[["base::.First.sys()"]]
+    isFlagNoRestoreHistorySet{--no-restore-history}
+    isEnvRHistifileSet[/R_HISTFILE/]
+    doesProjectRhistoryExist[/.Rhistory/]
+    loadHistory[Load history]
+    endSessionSetup[End of Session Setup]
+
+    isFlagNoRestoreDataSet --> |unset| doesProjectRDataExist
+    isFlagNoRestoreDataSet --> |set| runDotFirst
+    doesProjectRDataExist --> |DNE| runDotFirst
+    doesProjectRDataExist --> loadData
+    loadData --> runDotFirst --> runBaseDotFirstSys --> isFlagNoRestoreHistorySet
+end
+
+isFlagNoRestoreHistorySet --> |set| endSessionSetup
+isFlagNoRestoreHistorySet --> |unset| isEnvRHistifileSet
+isEnvRHistifileSet --> |undefined| doesProjectRhistoryExist
+doesProjectRhistoryExist --> endSessionSetup
+isEnvRHistifileSet & doesProjectRhistoryExist --> loadHistory --> endSessionSetup
+
+subgraph running
+end
+
+start --> env
+env --> startup
+startup --> session
+session --> running
+
 ```
 
 However most R users can ignore the majority of this complexity and focus on two main files.
@@ -38,19 +141,19 @@ _not_ R code, it uses a format similar to that used on the command line shell.
 
 The easiest way to edit `.Renviron` is by running `usethis::edit_r_environ()`.
 
-A simple example of a `.Renviron` file is
+A simple example of a `.Renviron` file is:
 
-```shell
+```{.bash filename=".Renviron" }
 R_HISTSIZE=100000
 GITHUB_PAT=abc123
 R_LIBS_USER=~/R/%p/%v
 ```
 
-```{block type="rmdinfo"}
+::: {.callout-note}
 [Try the activity](https://raw.githubusercontent.com/rstats-wtf/wtf-startup/master/01_startup_spartan.R) `usethis::use_course("rstd.io/wtf-source-package")`
 
 to learn how to set a GitHub PAT to your `.Renviron` and then use it with `usethis::use_github()` to upload a project to GitHub.
-```
+:::
 
 ## `.Rprofile`
 
@@ -88,9 +191,9 @@ those started by R itself) it is important to guard most of the code with
 `interactive()`, so it is only run in interactive sessions (sessions you are
 controlling with a terminal).
 
-A simple example of a `.Rprofile` is
+A simple example of a `.Rprofile` is:
 
-```r
+```{.r filename=".Rprofile"}
 options(repos = c(CRAN = "https://cran.rstudio.org"))
 
 if (interactive()) {
@@ -98,11 +201,11 @@ if (interactive()) {
 }
 ```
 
-```{block type="rmdinfo"}
+::: {.callout-note}
 [Try the activity](https://raw.githubusercontent.com/rstats-wtf/wtf-startup/master/02_startup_spartan.R) `usethis::use_course("rstd.io/wtf-source-package")`
 
 to learn how to create a `.Rprofile` with a default CRAN repository and add a startup message to it.
-```
+:::
 
 ## Disabling startup files
 
@@ -112,6 +215,6 @@ session start / resume`. You can also selectively disable only the user or site
 `.Rprofile` with `--no-init-file` and `--no-site-file` respectively, and disable
 the environment files with `--no-environ`.
 
-```{block type = 'rmdwarning'}
-Both `.Renviron` and `.Rprofile` _must_ end with a newline character. If they do not the last line with be ignored without a warning or error.
-```
+::: {.callout-warning}
+Both `.Renviron` and `.Rprofile` _must_ end with a newline character. If they do not the last line will be ignored without a warning or error.
+:::
