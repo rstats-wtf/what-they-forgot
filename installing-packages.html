@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>What They Forgot to Teach You About R - 15&nbsp; Reproduce the problem</title>
+<title>What They Forgot to Teach You About R - 8&nbsp; Installing packages</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./sessioninfo.html" rel="next">
-<link href="./read-source.html" rel="prev">
+<link href="./reproducible-environments.html" rel="next">
+<link href="./r-startup.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -75,6 +75,9 @@ ga('send', {
   'anonymizeIp': true,
 });
 </script>
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 </head>
@@ -88,7 +91,7 @@ ga('send', {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./debugging-r.html">All is Fail</a></li><li class="breadcrumb-item"><a href="./reprexing.html"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Reproduce the problem</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./project-workflow-meta.html">Personal R Administration</a></li><li class="breadcrumb-item"><a href="./installing-packages.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Installing packages</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -186,7 +189,7 @@ ga('send', {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./installing-packages.html" class="sidebar-item-text sidebar-link">
+  <a href="./installing-packages.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Installing packages</span></span></a>
   </div>
 </li>
@@ -239,7 +242,7 @@ ga('send', {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./reprexing.html" class="sidebar-item-text sidebar-link active">
+  <a href="./reprexing.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Reproduce the problem</span></span></a>
   </div>
 </li>
@@ -257,14 +260,20 @@ ga('send', {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#a-highly-simplified-package-lifecycle" id="toc-a-highly-simplified-package-lifecycle" class="nav-link active" data-scroll-target="#a-highly-simplified-package-lifecycle"><span class="header-section-number">8.1</span> a highly simplified package lifecycle</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Reproduce the problem</span></h1>
+<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Installing packages</span></h1>
 </div>
 
 
@@ -279,14 +288,48 @@ ga('send', {
 
 </header>
 
-<p>Before you seek outside help, strive to nail down your problem with this level of rigor:</p>
-<ul>
-<li>You can reliably induce it, with minimal setup and fuss. To the point where others can reproduce it.</li>
-</ul>
-<p>Discuss “bisect” as a useful mentality, applied to lines of code / functions or across versions.</p>
-<p>Link out to reprex stuff re: mechanics of sharing.</p>
+<section id="a-highly-simplified-package-lifecycle" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="a-highly-simplified-package-lifecycle"><span class="header-section-number">8.1</span> a highly simplified package lifecycle</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<div>
+<pre class="mermaid mermaid-js">%%{init: {"theme": "dark" } }%%
+graph TD
+Source -- "devtools::build()" --&gt; Bundled
+Bundled -- "devtools::build(binary = TRUE)"--&gt; Binary 
+Binary --"install.packages()"--&gt; Installed 
+Installed --"library()"--&gt; Loaded 
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<div>
+<pre class="mermaid mermaid-js">%%{init: {"theme": "dark" } }%%
+flowchart TD
+subgraph dev
+  direction LR
+Source -- "devtools::build()" --&gt; Bundled
+Bundled -- "devtools::build(binary = TRUE)"--&gt; Binary 
+end
+subgraph use
+direction LR
+Binary --"install.packages()"--&gt; Installed 
+Installed --"library()"--&gt; Loaded 
+end
+</pre>
+</div>
+</div>
+</div>
+</div>
+<p><a href="https://r-pkgs.org/Structure.html">R Packages</a> covers these phases of the package lifecycle in much more detail.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -524,13 +567,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./read-source.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Read the source</span></span>
+      <a href="./r-startup.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">R Startup</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./sessioninfo.html" class="pagination-link">
-        <span class="nav-page-text">Session info</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./reproducible-environments.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Reproducible Environments</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

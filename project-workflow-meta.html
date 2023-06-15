@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>What They Forgot to Teach You About R - 15&nbsp; Reproduce the problem</title>
+<title>What They Forgot to Teach You About R - 6&nbsp; Project Workflow: the meta</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./sessioninfo.html" rel="next">
-<link href="./read-source.html" rel="prev">
+<link href="./r-startup.html" rel="next">
+<link href="./api-for-an-analysis.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -75,6 +75,9 @@ ga('send', {
   'anonymizeIp': true,
 });
 </script>
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 </head>
@@ -88,7 +91,7 @@ ga('send', {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./debugging-r.html">All is Fail</a></li><li class="breadcrumb-item"><a href="./reprexing.html"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Reproduce the problem</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./project-workflow-meta.html">Personal R Administration</a></li><li class="breadcrumb-item"><a href="./project-workflow-meta.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Project Workflow: the meta</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -174,7 +177,7 @@ ga('send', {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./project-workflow-meta.html" class="sidebar-item-text sidebar-link">
+  <a href="./project-workflow-meta.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Project Workflow: the meta</span></span></a>
   </div>
 </li>
@@ -239,7 +242,7 @@ ga('send', {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./reprexing.html" class="sidebar-item-text sidebar-link active">
+  <a href="./reprexing.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Reproduce the problem</span></span></a>
   </div>
 </li>
@@ -257,14 +260,22 @@ ga('send', {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#the-cycle" id="toc-the-cycle" class="nav-link active" data-scroll-target="#the-cycle"><span class="header-section-number">6.1</span> the cycle</a></li>
+  <li><a href="#the-project-onion" id="toc-the-project-onion" class="nav-link" data-scroll-target="#the-project-onion"><span class="header-section-number">6.2</span> the project onion</a></li>
+  <li><a href="#the-project-onion-r" id="toc-the-project-onion-r" class="nav-link" data-scroll-target="#the-project-onion-r"><span class="header-section-number">6.3</span> the project onion: R</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Reproduce the problem</span></h1>
+<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Project Workflow: the meta</span></h1>
 </div>
 
 
@@ -279,14 +290,48 @@ ga('send', {
 
 </header>
 
-<p>Before you seek outside help, strive to nail down your problem with this level of rigor:</p>
-<ul>
-<li>You can reliably induce it, with minimal setup and fuss. To the point where others can reproduce it.</li>
-</ul>
-<p>Discuss “bisect” as a useful mentality, applied to lines of code / functions or across versions.</p>
-<p>Link out to reprex stuff re: mechanics of sharing.</p>
+<section id="the-cycle" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="the-cycle"><span class="header-section-number">6.1</span> the cycle</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+
+start(starting R)
+packages(installing R packages)
+repro(creating reproducible environments)
+installing("installing | upgrading R")
+
+start --&gt; packages --&gt; repro --&gt; installing --&gt; start
+</pre>
+</div>
+</div>
+</div>
+</div>
+<p>If you go all in on the project-oriented workflow, installing R and upgrading R are the same operation.</p>
+</section>
+<section id="the-project-onion" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="the-project-onion"><span class="header-section-number">6.2</span> the project onion</h2>
+<p>Going all in on the project-oriented workflow means adopting tools that make it possible to programmatically manage each of the layers of project setup:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./img/project-oyster.svg" title="package managers install language managers install language verions which install environments" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">the project onion</figcaption>
+</figure>
+</div>
+</section>
+<section id="the-project-onion-r" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="the-project-onion-r"><span class="header-section-number">6.3</span> the project onion: R</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./img/r-project-oyster.svg" title="scoop install rig; rig install 4.3.0; rig rstudio projects/myproject/renv.lock" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">the project onion, R</figcaption>
+</figure>
+</div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -524,13 +569,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./read-source.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Read the source</span></span>
+      <a href="./api-for-an-analysis.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">API for an analysis</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./sessioninfo.html" class="pagination-link">
-        <span class="nav-page-text">Session info</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./r-startup.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">R Startup</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
