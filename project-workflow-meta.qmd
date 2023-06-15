@@ -1,0 +1,28 @@
+---
+title: "Project Workflow: the meta"
+---
+
+## the cycle
+
+```{mermaid}
+flowchart LR
+
+start(starting R)
+packages(installing R packages)
+repro(creating reproducible environments)
+installing("installing | upgrading R")
+
+start --> packages --> repro --> installing --> start
+```
+
+If you go all in on the project-oriented workflow, installing R and upgrading R are the same operation.
+
+## the project onion
+
+Going all in on the project-oriented workflow means adopting tools that make it possible to programmatically manage each of the layers of project setup:
+
+![the project onion](./img/project-oyster.svg "package managers install language managers install language verions which install environments")
+
+## the project onion: R
+
+![the project onion, R](./img/r-project-oyster.svg "scoop install rig; rig install 4.3.0; rig rstudio projects/myproject/renv.lock")

@@ -1,0 +1,9 @@
+# Reproducible Environments
+
+## posit package manager
+
+[Posit Public Package Manager, or P3M](https://p3m.dev)
+
+## renv
+
+https://rstudio.github.io/renv/
