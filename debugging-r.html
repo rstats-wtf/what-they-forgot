@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>What They Forgot to Teach You About R - 13&nbsp; Debugging R code</title>
+<title>What They Forgot to Teach You About R - 10&nbsp; Debugging R code</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -122,7 +122,7 @@ ga('send', {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./debugging-r.html">All is Fail</a></li><li class="breadcrumb-item"><a href="./debugging-r.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Debugging R code</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./debugging-r.html">All is Fail</a></li><li class="breadcrumb-item"><a href="./debugging-r.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Debugging R code</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -208,8 +208,8 @@ ga('send', {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./project-workflow-meta.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Project Workflow: the meta</span></span></a>
+  <a href="./get-to-know-your-r-installation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Get to know your R installation</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -220,32 +220,14 @@ ga('send', {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./installing-packages.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Installing packages</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./reproducible-environments.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Reproducible Environments</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./installing-r.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Installing R</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./maintaining-r.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Maintaining R</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Maintaining R</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./install-single-package.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Install a source package</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Install a source package</span></span></a>
   </div>
 </li>
       </ul>
@@ -262,19 +244,19 @@ ga('send', {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./debugging-r.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Debugging R code</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Debugging R code</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./read-source.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Read the source</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Read the source</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./reprexing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Reproduce the problem</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Reproduce the problem</span></span></a>
   </div>
 </li>
       </ul>
@@ -295,27 +277,27 @@ ga('send', {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#debugging-your-own-code" id="toc-debugging-your-own-code" class="nav-link active" data-scroll-target="#debugging-your-own-code"><span class="header-section-number">13.1</span> Debugging your own code</a>
+  <li><a href="#debugging-your-own-code" id="toc-debugging-your-own-code" class="nav-link active" data-scroll-target="#debugging-your-own-code"><span class="header-section-number">10.1</span> Debugging your own code</a>
   <ul class="collapse">
-  <li><a href="#traceback" id="toc-traceback" class="nav-link" data-scroll-target="#traceback"><span class="header-section-number">13.1.1</span> traceback()</a></li>
-  <li><a href="#print" id="toc-print" class="nav-link" data-scroll-target="#print"><span class="header-section-number">13.1.2</span> <code>print()</code></a></li>
-  <li><a href="#browser" id="toc-browser" class="nav-link" data-scroll-target="#browser"><span class="header-section-number">13.1.3</span> <code>browser()</code></a></li>
+  <li><a href="#traceback" id="toc-traceback" class="nav-link" data-scroll-target="#traceback"><span class="header-section-number">10.1.1</span> traceback()</a></li>
+  <li><a href="#print" id="toc-print" class="nav-link" data-scroll-target="#print"><span class="header-section-number">10.1.2</span> <code>print()</code></a></li>
+  <li><a href="#browser" id="toc-browser" class="nav-link" data-scroll-target="#browser"><span class="header-section-number">10.1.3</span> <code>browser()</code></a></li>
   </ul></li>
-  <li><a href="#debugging-in-rstudio" id="toc-debugging-in-rstudio" class="nav-link" data-scroll-target="#debugging-in-rstudio"><span class="header-section-number">13.2</span> Debugging in RStudio</a>
+  <li><a href="#debugging-in-rstudio" id="toc-debugging-in-rstudio" class="nav-link" data-scroll-target="#debugging-in-rstudio"><span class="header-section-number">10.2</span> Debugging in RStudio</a>
   <ul class="collapse">
-  <li><a href="#editor-breakpoints" id="toc-editor-breakpoints" class="nav-link" data-scroll-target="#editor-breakpoints"><span class="header-section-number">13.2.1</span> Editor breakpoints</a></li>
-  <li><a href="#stopping-on-error" id="toc-stopping-on-error" class="nav-link" data-scroll-target="#stopping-on-error"><span class="header-section-number">13.2.2</span> Stopping on error</a></li>
-  <li><a href="#debugging-console" id="toc-debugging-console" class="nav-link" data-scroll-target="#debugging-console"><span class="header-section-number">13.2.3</span> Debugging console</a></li>
+  <li><a href="#editor-breakpoints" id="toc-editor-breakpoints" class="nav-link" data-scroll-target="#editor-breakpoints"><span class="header-section-number">10.2.1</span> Editor breakpoints</a></li>
+  <li><a href="#stopping-on-error" id="toc-stopping-on-error" class="nav-link" data-scroll-target="#stopping-on-error"><span class="header-section-number">10.2.2</span> Stopping on error</a></li>
+  <li><a href="#debugging-console" id="toc-debugging-console" class="nav-link" data-scroll-target="#debugging-console"><span class="header-section-number">10.2.3</span> Debugging console</a></li>
   </ul></li>
-  <li><a href="#debugging-others-code" id="toc-debugging-others-code" class="nav-link" data-scroll-target="#debugging-others-code"><span class="header-section-number">13.3</span> Debugging others’ code</a>
+  <li><a href="#debugging-others-code" id="toc-debugging-others-code" class="nav-link" data-scroll-target="#debugging-others-code"><span class="header-section-number">10.3</span> Debugging others’ code</a>
   <ul class="collapse">
-  <li><a href="#recover" id="toc-recover" class="nav-link" data-scroll-target="#recover"><span class="header-section-number">13.3.1</span> <code>recover()</code></a></li>
-  <li><a href="#debug" id="toc-debug" class="nav-link" data-scroll-target="#debug"><span class="header-section-number">13.3.2</span> <code>debug()</code></a></li>
-  <li><a href="#trace" id="toc-trace" class="nav-link" data-scroll-target="#trace"><span class="header-section-number">13.3.3</span> <code>trace()</code></a></li>
+  <li><a href="#recover" id="toc-recover" class="nav-link" data-scroll-target="#recover"><span class="header-section-number">10.3.1</span> <code>recover()</code></a></li>
+  <li><a href="#debug" id="toc-debug" class="nav-link" data-scroll-target="#debug"><span class="header-section-number">10.3.2</span> <code>debug()</code></a></li>
+  <li><a href="#trace" id="toc-trace" class="nav-link" data-scroll-target="#trace"><span class="header-section-number">10.3.3</span> <code>trace()</code></a></li>
   </ul></li>
-  <li><a href="#debugging-in-r-markdown-documents" id="toc-debugging-in-r-markdown-documents" class="nav-link" data-scroll-target="#debugging-in-r-markdown-documents"><span class="header-section-number">13.4</span> Debugging in R Markdown documents</a>
+  <li><a href="#debugging-in-r-markdown-documents" id="toc-debugging-in-r-markdown-documents" class="nav-link" data-scroll-target="#debugging-in-r-markdown-documents"><span class="header-section-number">10.4</span> Debugging in R Markdown documents</a>
   <ul class="collapse">
-  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources"><span class="header-section-number">13.4.1</span> Resources</a></li>
+  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources"><span class="header-section-number">10.4.1</span> Resources</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -325,7 +307,7 @@ ga('send', {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Debugging R code</span></h1>
+<h1 class="title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Debugging R code</span></h1>
 </div>
 
 
@@ -341,8 +323,8 @@ ga('send', {
 </header>
 
 <p>R scripts are great things, when they work. What are some strategies you can use when things go sideways and an error occurs in your script?</p>
-<section id="debugging-your-own-code" class="level2" data-number="13.1">
-<h2 data-number="13.1" class="anchored" data-anchor-id="debugging-your-own-code"><span class="header-section-number">13.1</span> Debugging your own code</h2>
+<section id="debugging-your-own-code" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="debugging-your-own-code"><span class="header-section-number">10.1</span> Debugging your own code</h2>
 <p>The most common case you will run into a bug is when writing new code yourself. Often the mistake is obvious and easily fixed, but sometimes it only appears after multiple levels of calls and is harder to diagnose. There are a few common strategies to use when debugging your own code.</p>
 <ul>
 <li>Use <code>traceback()</code> to determine where a given error is occurring.</li>
@@ -351,8 +333,8 @@ ga('send', {
 <li>Use <code>debug()</code> to automatically open a debugger at the start of a function call.</li>
 <li>Use <code>trace()</code> to start a debugger at a location inside a function.</li>
 </ul>
-<section id="traceback" class="level3" data-number="13.1.1">
-<h3 data-number="13.1.1" class="anchored" data-anchor-id="traceback"><span class="header-section-number">13.1.1</span> traceback()</h3>
+<section id="traceback" class="level3" data-number="10.1.1">
+<h3 data-number="10.1.1" class="anchored" data-anchor-id="traceback"><span class="header-section-number">10.1.1</span> traceback()</h3>
 <p>The <code>traceback()</code> function can be used to print a summary of how your program arrived at the error. This is also called a call stack, stack trace or backtrace.</p>
 <p>In R this gives you each call that lead up to the error, which can be very useful for determining what lead to the error.</p>
 <p>You can use <code>traceback()</code> in two different ways, either by calling it immediately after the error has occurred.</p>
@@ -375,14 +357,14 @@ ga('send', {
 #&gt; 2: f(x) at #1
 #&gt; 1: g("a")</code></pre>
 </section>
-<section id="print" class="level3" data-number="13.1.2">
-<h3 data-number="13.1.2" class="anchored" data-anchor-id="print"><span class="header-section-number">13.1.2</span> <code>print()</code></h3>
+<section id="print" class="level3" data-number="10.1.2">
+<h3 data-number="10.1.2" class="anchored" data-anchor-id="print"><span class="header-section-number">10.1.2</span> <code>print()</code></h3>
 <p>Once you know where an error occurs it is then helpful to know why. Often errors occur because functions are given inputs their authors did not expect, so it is useful to print the value of objects during execution.</p>
 <p>The most basic way to do this is to sprinkle messages throughout your code, with <code>print()</code> or <code>str()</code>. <code>str()</code> is often more useful because it gives more detail into the exact structure of an object, which may not be the structure you expect it to be.</p>
 <p>The main downsides to the print approach is you often have to add them in multiple places to narrow down the error, and you cannot further investigate the object.</p>
 </section>
-<section id="browser" class="level3" data-number="13.1.3">
-<h3 data-number="13.1.3" class="anchored" data-anchor-id="browser"><span class="header-section-number">13.1.3</span> <code>browser()</code></h3>
+<section id="browser" class="level3" data-number="10.1.3">
+<h3 data-number="10.1.3" class="anchored" data-anchor-id="browser"><span class="header-section-number">10.1.3</span> <code>browser()</code></h3>
 <p>A more sophisticated debugging method is to put a call to <code>browser()</code> in your code. This will stop execution at that point and open R’s interactive debugger. In the debugger you can run any R command to look at objects in the current environment, modify them and continue executing.</p>
 <p>Some useful things to do are</p>
 <ol type="1">
@@ -395,30 +377,30 @@ ga('send', {
 </ol>
 </section>
 </section>
-<section id="debugging-in-rstudio" class="level2" data-number="13.2">
-<h2 data-number="13.2" class="anchored" data-anchor-id="debugging-in-rstudio"><span class="header-section-number">13.2</span> Debugging in RStudio</h2>
-<section id="editor-breakpoints" class="level3" data-number="13.2.1">
-<h3 data-number="13.2.1" class="anchored" data-anchor-id="editor-breakpoints"><span class="header-section-number">13.2.1</span> Editor breakpoints</h3>
+<section id="debugging-in-rstudio" class="level2" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="debugging-in-rstudio"><span class="header-section-number">10.2</span> Debugging in RStudio</h2>
+<section id="editor-breakpoints" class="level3" data-number="10.2.1">
+<h3 data-number="10.2.1" class="anchored" data-anchor-id="editor-breakpoints"><span class="header-section-number">10.2.1</span> Editor breakpoints</h3>
 <p>RStudio provides some additional tooling for debugging over using R on the command line. First you can set an editor breakpoint by clicking to the left of the line number in the source file, or by pressing <code>Shift+F9</code> with your cursor on the line. A breakpoint is equivalent to a <code>browser()</code> call, but you avoid needing to change your code like <code>browser()</code>.</p>
 <p><img src="https://support.rstudio.com/hc/en-us/article_attachments/201608458/editor-breakpoint.png" class="img-fluid"></p>
 </section>
-<section id="stopping-on-error" class="level3" data-number="13.2.2">
-<h3 data-number="13.2.2" class="anchored" data-anchor-id="stopping-on-error"><span class="header-section-number">13.2.2</span> Stopping on error</h3>
+<section id="stopping-on-error" class="level3" data-number="10.2.2">
+<h3 data-number="10.2.2" class="anchored" data-anchor-id="stopping-on-error"><span class="header-section-number">10.2.2</span> Stopping on error</h3>
 <p>If you are trying to hunt down a particular error it is often useful to have RStudio enter the debugger when it occurs. You can control the error behavior with (<code>Debug -&gt; On Error -&gt; Error Inspector</code>).</p>
 <p><img src="https://support.rstudio.com/hc/en-us/article_attachments/201608428/break-in-code.png" class="img-fluid"></p>
 </section>
-<section id="debugging-console" class="level3" data-number="13.2.3">
-<h3 data-number="13.2.3" class="anchored" data-anchor-id="debugging-console"><span class="header-section-number">13.2.3</span> Debugging console</h3>
+<section id="debugging-console" class="level3" data-number="10.2.3">
+<h3 data-number="10.2.3" class="anchored" data-anchor-id="debugging-console"><span class="header-section-number">10.2.3</span> Debugging console</h3>
 <p><img src="https://support.rstudio.com/hc/en-us/article_attachments/201608408/console-window.png" class="img-fluid"></p>
 <p>The RStudio debugging console has a few buttons to make debugging a little nicer, From left to right they are, next (equivalent to <code>n</code>), step info (<code>s</code>), continue (<code>c</code>) and Stop (<code>Q</code>).</p>
 </section>
 </section>
-<section id="debugging-others-code" class="level2" data-number="13.3">
-<h2 data-number="13.3" class="anchored" data-anchor-id="debugging-others-code"><span class="header-section-number">13.3</span> Debugging others’ code</h2>
+<section id="debugging-others-code" class="level2" data-number="10.3">
+<h2 data-number="10.3" class="anchored" data-anchor-id="debugging-others-code"><span class="header-section-number">10.3</span> Debugging others’ code</h2>
 <p>When the error is occurring outside of your own code it is also useful to be able to debug the code. In this case you <em>could</em> download the package code locally and debug it like you would with your own code above by adding <code>print()</code> and / or <code>browser()</code> calls. Because R and most R packages are open source this is a perfectly viable option and one I often do myself. However depending on the package this can sometimes be challenging, particularly for those packages which come with R itself.</p>
 <p>The other option is to use additional functions which allow you to start a browser in existing functions, <code>recover()</code>, <code>debug()</code>, <code>trace()</code> .</p>
-<section id="recover" class="level3" data-number="13.3.1">
-<h3 data-number="13.3.1" class="anchored" data-anchor-id="recover"><span class="header-section-number">13.3.1</span> <code>recover()</code></h3>
+<section id="recover" class="level3" data-number="10.3.1">
+<h3 data-number="10.3.1" class="anchored" data-anchor-id="recover"><span class="header-section-number">10.3.1</span> <code>recover()</code></h3>
 <p><code>recover()</code> is not used directly, instead it is used as an error handler, by calling <code>options(error = recover)</code>. You can also use other functions, such as <code>browser()</code> as an error handler, which will start the debugger automatically when there is an error.</p>
 <p>The benefit to <code>recover()</code> over using <code>options(error = browser)</code> is that you can browse on any of the call stack, not just where the error occurred. Often the issue is most easily diagnosed in calls higher on the stack than immediately where the error occurred.</p>
 <p>When <code>recover()</code> is called it prints a list of the current calls, with a prompt to select which you want to browse in. Then a debugging session is started at that location.</p>
@@ -437,8 +419,8 @@ Note
 </div>
 </div>
 </section>
-<section id="debug" class="level3" data-number="13.3.2">
-<h3 data-number="13.3.2" class="anchored" data-anchor-id="debug"><span class="header-section-number">13.3.2</span> <code>debug()</code></h3>
+<section id="debug" class="level3" data-number="10.3.2">
+<h3 data-number="10.3.2" class="anchored" data-anchor-id="debug"><span class="header-section-number">10.3.2</span> <code>debug()</code></h3>
 <p>If you have control of the code (because you are the one writing it), using <code>browser()</code> is generally the most convenient way to enter the debugger. However if the error is occurring in code in a package what options do you have?</p>
 <p>This is where the <code>debug()</code> function is useful, it will open the R debugger on any function, including those in packages.</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">debug</span>(ggplot2<span class="sc">::</span>ggplot)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -446,8 +428,8 @@ Note
 <div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">debug</span>(ggplot2<span class="sc">:::</span>set_last_plot)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><code>undebug()</code> is used to remove the debugging code.</p>
 </section>
-<section id="trace" class="level3" data-number="13.3.3">
-<h3 data-number="13.3.3" class="anchored" data-anchor-id="trace"><span class="header-section-number">13.3.3</span> <code>trace()</code></h3>
+<section id="trace" class="level3" data-number="10.3.3">
+<h3 data-number="10.3.3" class="anchored" data-anchor-id="trace"><span class="header-section-number">10.3.3</span> <code>trace()</code></h3>
 <p><code>debug()</code> is very useful, but one drawback is it always executes the first time a function is called. What can you do if the bug only happens the 100th time a function is called?</p>
 <p><code>trace()</code> is a more flexible version of <code>debug()</code> that not only lets you start a debugger at the start of a function, it lets you insert <em>any</em> code at <em>any</em> location in a function. The downside to this power and flexibility is that <code>trace()</code> is comparatively harder to use than <code>debug()</code>.</p>
 <p>If called with no additional arguments <code>trace()</code> simply prints a message when the function is entered.</p>
@@ -492,8 +474,8 @@ Note
 </div>
 </section>
 </section>
-<section id="debugging-in-r-markdown-documents" class="level2" data-number="13.4">
-<h2 data-number="13.4" class="anchored" data-anchor-id="debugging-in-r-markdown-documents"><span class="header-section-number">13.4</span> Debugging in R Markdown documents</h2>
+<section id="debugging-in-r-markdown-documents" class="level2" data-number="10.4">
+<h2 data-number="10.4" class="anchored" data-anchor-id="debugging-in-r-markdown-documents"><span class="header-section-number">10.4</span> Debugging in R Markdown documents</h2>
 <p>One special case where it can sometimes be more difficult to debug is an error that occurs only when knitting an R Markdown document.</p>
 <p>The easiest way to debug most of the errors is to simply run the code inside the chunk as regular R code in the console and use the normal techniques such as inserting <code>browser()</code> calls.</p>
 <p>However rarely an error will only occur when the code is being knitted. In this case you can set an error handler with the following code.</p>
@@ -514,8 +496,8 @@ Warning
 <p>Note you <em>cannot</em> use the ‘Knit’ button in RStudio when trying to debug R Markdown documents in any case. The ‘Knit’ button opens a separate R process, so there is no way to use an interactive debugger in that case.</p>
 </div>
 </div>
-<section id="resources" class="level3" data-number="13.4.1">
-<h3 data-number="13.4.1" class="anchored" data-anchor-id="resources"><span class="header-section-number">13.4.1</span> Resources</h3>
+<section id="resources" class="level3" data-number="10.4.1">
+<h3 data-number="10.4.1" class="anchored" data-anchor-id="resources"><span class="header-section-number">10.4.1</span> Resources</h3>
 <ul>
 <li><a href="https://resources.rstudio.com/wistia-rstudio-conf-2018-2/debugging-techniques-in-rstudio-amanda-gadrow-4">Debugging techniques in RStudio - Amanda Gadrow’s talk at rstudio::conf 2018</a></li>
 <li><a href="https://support.rstudio.com/hc/en-us/articles/200713843">Debugging in RStudio article</a></li>
@@ -762,12 +744,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./install-single-package.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Install a source package</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Install a source package</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./read-source.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Read the source</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Read the source</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
