@@ -29,7 +29,6 @@ book:
         - reproducible-environments.qmd
         - installing-r.qmd
         - maintaining-r.qmd
-        - install-single-package.qmd
     - part: "All is Fail"
       chapters:
         - debugging-r.qmd
