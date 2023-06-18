@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>What They Forgot to Teach You About R - 6&nbsp; Project Workflow: the meta</title>
+<title>What They Forgot to Teach You About R - 6&nbsp; Meta Project-Oriented Workflow</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -91,7 +91,7 @@ ga('send', {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./project-workflow-meta.html">Personal R Administration</a></li><li class="breadcrumb-item"><a href="./project-workflow-meta.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Project Workflow: the meta</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./personal-radmin.html">Personal R Administration</a></li><li class="breadcrumb-item"><a href="./personal-radmin.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Meta Project-Oriented Workflow</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -177,8 +177,8 @@ ga('send', {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./project-workflow-meta.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Project Workflow: the meta</span></span></a>
+  <a href="./personal-radmin.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Meta Project-Oriented Workflow</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -258,9 +258,16 @@ ga('send', {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#the-cycle" id="toc-the-cycle" class="nav-link active" data-scroll-target="#the-cycle"><span class="header-section-number">6.1</span> the cycle</a></li>
-  <li><a href="#the-project-onion" id="toc-the-project-onion" class="nav-link" data-scroll-target="#the-project-onion"><span class="header-section-number">6.2</span> the project onion</a></li>
-  <li><a href="#the-project-onion-r" id="toc-the-project-onion-r" class="nav-link" data-scroll-target="#the-project-onion-r"><span class="header-section-number">6.3</span> the project onion: R</a></li>
+  <li><a href="#the-project-onion" id="toc-the-project-onion" class="nav-link active" data-scroll-target="#the-project-onion"><span class="header-section-number">6.1</span> The Project Onion</a>
+  <ul class="collapse">
+  <li><a href="#package-managers" id="toc-package-managers" class="nav-link" data-scroll-target="#package-managers"><span class="header-section-number">6.1.1</span> package managers</a></li>
+  <li><a href="#language-manager" id="toc-language-manager" class="nav-link" data-scroll-target="#language-manager"><span class="header-section-number">6.1.2</span> language manager</a></li>
+  <li><a href="#language-version" id="toc-language-version" class="nav-link" data-scroll-target="#language-version"><span class="header-section-number">6.1.3</span> language version</a></li>
+  <li><a href="#environment-manager" id="toc-environment-manager" class="nav-link" data-scroll-target="#environment-manager"><span class="header-section-number">6.1.4</span> environment manager</a></li>
+  <li><a href="#your-project" id="toc-your-project" class="nav-link" data-scroll-target="#your-project"><span class="header-section-number">6.1.5</span> your project</a></li>
+  </ul></li>
+  <li><a href="#the-project-onion-r" id="toc-the-project-onion-r" class="nav-link" data-scroll-target="#the-project-onion-r"><span class="header-section-number">6.2</span> The Project Onion: R</a></li>
+  <li><a href="#the-workflow-cycle" id="toc-the-workflow-cycle" class="nav-link" data-scroll-target="#the-workflow-cycle"><span class="header-section-number">6.3</span> The Workflow Cycle</a></li>
   </ul>
 </nav>
     </div>
@@ -269,7 +276,7 @@ ga('send', {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Project Workflow: the meta</span></h1>
+<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Meta Project-Oriented Workflow</span></h1>
 </div>
 
 
@@ -284,8 +291,50 @@ ga('send', {
 
 </header>
 
-<section id="the-cycle" class="level2" data-number="6.1">
-<h2 data-number="6.1" class="anchored" data-anchor-id="the-cycle"><span class="header-section-number">6.1</span> the cycle</h2>
+<p>The goal of these chapters is to help you build a system for answering questions like:</p>
+<ul>
+<li>How do I upgrade the version of R I’m using for this project?</li>
+<li>How do I track which package versions I’m using for this project?</li>
+<li>How do I move this project from one computer to another?</li>
+</ul>
+<p>across many projects and many computers.</p>
+<p>This system takes the principles articulated in “Holistic Workflow” and extends them to all the ways you might use R, but also to other software you use.</p>
+<section id="the-project-onion" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="the-project-onion"><span class="header-section-number">6.1</span> The Project Onion</h2>
+<p>Going all in on the project-oriented workflow means adopting tools that make it possible to programmatically manage each of the layers of project setup, which can be visualized via the “project onion”:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./img/project-onion.svg" title="package managers install language managers install language verions which install environments" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">the project onion</figcaption>
+</figure>
+</div>
+<section id="package-managers" class="level3" data-number="6.1.1">
+<h3 data-number="6.1.1" class="anchored" data-anchor-id="package-managers"><span class="header-section-number">6.1.1</span> package managers</h3>
+</section>
+<section id="language-manager" class="level3" data-number="6.1.2">
+<h3 data-number="6.1.2" class="anchored" data-anchor-id="language-manager"><span class="header-section-number">6.1.2</span> language manager</h3>
+</section>
+<section id="language-version" class="level3" data-number="6.1.3">
+<h3 data-number="6.1.3" class="anchored" data-anchor-id="language-version"><span class="header-section-number">6.1.3</span> language version</h3>
+</section>
+<section id="environment-manager" class="level3" data-number="6.1.4">
+<h3 data-number="6.1.4" class="anchored" data-anchor-id="environment-manager"><span class="header-section-number">6.1.4</span> environment manager</h3>
+</section>
+<section id="your-project" class="level3" data-number="6.1.5">
+<h3 data-number="6.1.5" class="anchored" data-anchor-id="your-project"><span class="header-section-number">6.1.5</span> your project</h3>
+</section>
+</section>
+<section id="the-project-onion-r" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="the-project-onion-r"><span class="header-section-number">6.2</span> The Project Onion: R</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./img/r-project-onion.svg" title="scoop install rig; rig install 4.3.0; rig rstudio projects/myproject/renv.lock" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">the project onion, R</figcaption>
+</figure>
+</div>
+</section>
+<section id="the-workflow-cycle" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="the-workflow-cycle"><span class="header-section-number">6.3</span> The Workflow Cycle</h2>
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -304,25 +353,6 @@ start --&gt; packages --&gt; repro --&gt; installing --&gt; start
 </div>
 </div>
 <p>If you go all in on the project-oriented workflow, installing R and upgrading R are the same operation.</p>
-</section>
-<section id="the-project-onion" class="level2" data-number="6.2">
-<h2 data-number="6.2" class="anchored" data-anchor-id="the-project-onion"><span class="header-section-number">6.2</span> the project onion</h2>
-<p>Going all in on the project-oriented workflow means adopting tools that make it possible to programmatically manage each of the layers of project setup:</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="./img/project-oyster.svg" title="package managers install language managers install language verions which install environments" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">the project onion</figcaption>
-</figure>
-</div>
-</section>
-<section id="the-project-onion-r" class="level2" data-number="6.3">
-<h2 data-number="6.3" class="anchored" data-anchor-id="the-project-onion-r"><span class="header-section-number">6.3</span> the project onion: R</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="./img/r-project-oyster.svg" title="scoop install rig; rig install 4.3.0; rig rstudio projects/myproject/renv.lock" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">the project onion, R</figcaption>
-</figure>
-</div>
 
 
 </section>

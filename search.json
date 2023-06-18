@@ -140,25 +140,25 @@
     "text": "Prose version of slides 57 - 63 from here:\nhttps://speakerdeck.com/jennybc/zen-and-the-art-of-workflow-maintenance?slide=57"
   },
   {
-    "objectID": "project-workflow-meta.html#the-cycle",
-    "href": "project-workflow-meta.html#the-cycle",
-    "title": "6  Project Workflow: the meta",
-    "section": "6.1 the cycle",
-    "text": "6.1 the cycle\n\n\n\n\nflowchart LR\n\nstart(starting R)\npackages(installing R packages)\nrepro(creating reproducible environments)\ninstalling(\"installing | upgrading R\")\n\nstart --&gt; packages --&gt; repro --&gt; installing --&gt; start\n\n\n\n\n\nIf you go all in on the project-oriented workflow, installing R and upgrading R are the same operation."
+    "objectID": "personal-radmin.html#the-project-onion",
+    "href": "personal-radmin.html#the-project-onion",
+    "title": "6  Meta Project-Oriented Workflow",
+    "section": "6.1 The Project Onion",
+    "text": "6.1 The Project Onion\nGoing all in on the project-oriented workflow means adopting tools that make it possible to programmatically manage each of the layers of project setup, which can be visualized via the “project onion”:\n\n\n\nthe project onion\n\n\n\n6.1.1 package managers\n\n\n6.1.2 language manager\n\n\n6.1.3 language version\n\n\n6.1.4 environment manager\n\n\n6.1.5 your project"
   },
   {
-    "objectID": "project-workflow-meta.html#the-project-onion",
-    "href": "project-workflow-meta.html#the-project-onion",
-    "title": "6  Project Workflow: the meta",
-    "section": "6.2 the project onion",
-    "text": "6.2 the project onion\nGoing all in on the project-oriented workflow means adopting tools that make it possible to programmatically manage each of the layers of project setup:\n\n\n\nthe project onion"
+    "objectID": "personal-radmin.html#the-project-onion-r",
+    "href": "personal-radmin.html#the-project-onion-r",
+    "title": "6  Meta Project-Oriented Workflow",
+    "section": "6.2 The Project Onion: R",
+    "text": "6.2 The Project Onion: R\n\n\n\nthe project onion, R"
   },
   {
-    "objectID": "project-workflow-meta.html#the-project-onion-r",
-    "href": "project-workflow-meta.html#the-project-onion-r",
-    "title": "6  Project Workflow: the meta",
-    "section": "6.3 the project onion: R",
-    "text": "6.3 the project onion: R\n\n\n\nthe project onion, R"
+    "objectID": "personal-radmin.html#the-workflow-cycle",
+    "href": "personal-radmin.html#the-workflow-cycle",
+    "title": "6  Meta Project-Oriented Workflow",
+    "section": "6.3 The Workflow Cycle",
+    "text": "6.3 The Workflow Cycle\n\n\n\n\nflowchart LR\n\nstart(starting R)\npackages(installing R packages)\nrepro(creating reproducible environments)\ninstalling(\"installing | upgrading R\")\n\nstart --&gt; packages --&gt; repro --&gt; installing --&gt; start\n\n\n\n\n\nIf you go all in on the project-oriented workflow, installing R and upgrading R are the same operation."
   },
   {
     "objectID": "r-startup.html#renviron",
@@ -326,6 +326,6 @@
     "href": "sessioninfo.html",
     "title": "Session info",
     "section": "",
-    "text": "git2r::repository()\n\nLocal:    (detached) /home/runner/work/what-they-forgot/what-they-forgot\nHead:     [91fde9b] 2023-06-18: Merge f02c5873b2deebc2a86ad6102db881e6839580ff into 50e56e5e4048d541ddbbeca129af1ee674c9ee19\n\nsessioninfo::session_info()\n\n─ Session info ───────────────────────────────────────────────────────────────\n setting  value\n version  R version 4.3.1 (2023-06-16)\n os       Ubuntu 22.04.2 LTS\n system   x86_64, linux-gnu\n ui       X11\n language (EN)\n collate  C.UTF-8\n ctype    C.UTF-8\n tz       UTC\n date     2023-06-18\n pandoc   2.9.2.1 @ /usr/bin/ (via rmarkdown)\n\n─ Packages ───────────────────────────────────────────────────────────────────\n package     * version date (UTC) lib source\n cli           3.6.1   2023-03-23 [1] RSPM\n digest        0.6.31  2022-12-11 [1] RSPM\n evaluate      0.21    2023-05-05 [1] RSPM\n fastmap       1.1.1   2023-02-24 [1] RSPM\n git2r         0.32.0  2023-04-12 [1] RSPM\n htmltools     0.5.5   2023-03-23 [1] RSPM\n jsonlite      1.8.5   2023-06-05 [1] RSPM\n knitr         1.43    2023-05-25 [1] RSPM\n rlang         1.1.1   2023-04-28 [1] RSPM\n rmarkdown     2.22    2023-06-01 [1] RSPM\n sessioninfo   1.2.2   2021-12-06 [1] RSPM\n xfun          0.39    2023-04-20 [1] RSPM\n\n [1] /home/runner/work/_temp/Library\n [2] /opt/R/4.3.1/lib/R/site-library\n [3] /opt/R/4.3.1/lib/R/library\n\n──────────────────────────────────────────────────────────────────────────────"
+    "text": "git2r::repository()\n\nLocal:    (detached) /home/runner/work/what-they-forgot/what-they-forgot\nHead:     [7fd5119] 2023-06-18: Merge a72a9c06c77d4d6e5647d820a36446e781bedc64 into 50e56e5e4048d541ddbbeca129af1ee674c9ee19\n\nsessioninfo::session_info()\n\n─ Session info ───────────────────────────────────────────────────────────────\n setting  value\n version  R version 4.3.1 (2023-06-16)\n os       Ubuntu 22.04.2 LTS\n system   x86_64, linux-gnu\n ui       X11\n language (EN)\n collate  C.UTF-8\n ctype    C.UTF-8\n tz       UTC\n date     2023-06-18\n pandoc   2.9.2.1 @ /usr/bin/ (via rmarkdown)\n\n─ Packages ───────────────────────────────────────────────────────────────────\n package     * version date (UTC) lib source\n cli           3.6.1   2023-03-23 [1] RSPM\n digest        0.6.31  2022-12-11 [1] RSPM\n evaluate      0.21    2023-05-05 [1] RSPM\n fastmap       1.1.1   2023-02-24 [1] RSPM\n git2r         0.32.0  2023-04-12 [1] RSPM\n htmltools     0.5.5   2023-03-23 [1] RSPM\n jsonlite      1.8.5   2023-06-05 [1] RSPM\n knitr         1.43    2023-05-25 [1] RSPM\n rlang         1.1.1   2023-04-28 [1] RSPM\n rmarkdown     2.22    2023-06-01 [1] RSPM\n sessioninfo   1.2.2   2021-12-06 [1] any (@1.2.2)\n xfun          0.39    2023-04-20 [1] RSPM\n\n [1] /home/runner/work/_temp/Library\n [2] /opt/R/4.3.1/lib/R/site-library\n [3] /opt/R/4.3.1/lib/R/library\n\n──────────────────────────────────────────────────────────────────────────────"
   }
 ]
