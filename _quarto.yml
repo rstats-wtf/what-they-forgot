@@ -23,7 +23,7 @@ book:
         - api-for-an-analysis.qmd
     - part: "Personal R Administration"
       chapters:
-        - project-workflow-meta.qmd
+        - personal-radmin.qmd
         - r-startup.qmd
         - installing-packages.qmd
         - reproducible-environments.qmd
