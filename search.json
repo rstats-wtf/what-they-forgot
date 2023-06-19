@@ -4,14 +4,35 @@
     "href": "index.html",
     "title": "What They Forgot to Teach You About R",
     "section": "",
-    "text": "What They Forgot to Teach You About R\nThe initial impetus for creating these materials is a two-day hands-on workshop. The target learner:\nThe in-person workshops are still the primary delivery method for this content, but we’ve begun recording prose versions of this content, in order to make it more widely available and for participants to refer back to. Warning: these materials absolutely do not constitute a self-contained “book”, nor do they capture all workshop content.\nWe focus on building holistic and project-oriented workflows that address the most common sources of friction in data analysis, outside of doing the statistical analysis itself."
+    "text": "What They Forgot to Teach You About R"
+  },
+  {
+    "objectID": "index.html#about",
+    "href": "index.html#about",
+    "title": "What They Forgot to Teach You About R",
+    "section": "About",
+    "text": "About\n\n\n\n\n\n\nWarning\n\n\n\nThis is book is a work in progress.\n\n\nThis book focuses on content intrinsically related to programming in R, but does not delve into the programming itself.\nSection 1 discusses building holistic and project-oriented workflows that address common sources of friction in data analysis.\nSection 2 describes your personal R administration, which empowers R users to confidently manage their R programming environment.\nSection 3 showcases functions, options, and RStudio capabilities for debugging code, facilitating more efficient resolution of errant code."
+  },
+  {
+    "objectID": "index.html#audience",
+    "href": "index.html#audience",
+    "title": "What They Forgot to Teach You About R",
+    "section": "Audience",
+    "text": "Audience\nThe target learner for this material:\n\nHas a moderate amount of R and RStudio experience.\nIs largely self-taught.\nSuspects they have drifted into some idiosyncratic habits that may slow them down or make their work products more brittle.\nIs interested in (re)designing their R lifestyle, to be more effective and more self-sufficient."
+  },
+  {
+    "objectID": "index.html#origin",
+    "href": "index.html#origin",
+    "title": "What They Forgot to Teach You About R",
+    "section": "Origin",
+    "text": "Origin\nThe initial impetus for creating this book was a two-day hands-on workshop first instructed in 2018. The workshop materials and this book will likely continue to both overlap and diverge in content."
   },
   {
     "objectID": "index.html#workshops",
     "href": "index.html#workshops",
     "title": "What They Forgot to Teach You About R",
     "section": "Workshops",
-    "text": "Workshops\nUpcoming and past offerings:\n\nposit::conf 2023, Chicago, IL\nrstudio::conf 2022, Oxon Hill, MD\nrstudio::conf 2020, San Francisco, CA\nrstudio::conf 2019, Austin, TX\nWTF Seattle Seattle, WA\nrstudio::conf 2018, San Diego, CA\n\nThe workshops typically include substantial components that draw on other materials, such as:\n\nHappy Git and GitHub for the useR\nIterating well with the purrr package\n\npurrr tutorial\nRow-oriented workflows in R with the tidyverse\n\n\nWhat They Forgot to Teach You About R by Jennifer Bryan, Jim Hester is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License."
+    "text": "Workshops\nUpcoming and past offerings:\n\nposit::conf 2023, Chicago, IL\nrstudio::conf 2022, Oxon Hill, MD\nrstudio::conf 2020, San Francisco, CA\nrstudio::conf 2019, Austin, TX\nWTF Seattle Seattle, WA\nrstudio::conf 2018, San Diego, CA\n\nThe workshops typically include substantial components that draw on other materials, such as:\n\nHappy Git and GitHub for the useR\nIterating well with the purrr package\n\npurrr tutorial\nRow-oriented workflows in R with the tidyverse\n\n\nWhat They Forgot to Teach You About R by Jennifer Bryan, Jim Hester, Shannon Pileggi, E. David Aja is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License."
   },
   {
     "objectID": "source-and-blank-slates.html#save-source-not-the-workspace",
@@ -140,25 +161,11 @@
     "text": "Prose version of slides 57 - 63 from here:\nhttps://speakerdeck.com/jennybc/zen-and-the-art-of-workflow-maintenance?slide=57"
   },
   {
-    "objectID": "personal-radmin.html#the-project-onion",
-    "href": "personal-radmin.html#the-project-onion",
-    "title": "6  Meta Project-Oriented Workflow",
-    "section": "6.1 The Project Onion",
-    "text": "6.1 The Project Onion\nGoing all in on the project-oriented workflow means adopting tools that make it possible to programmatically manage each of the layers of project setup, which can be visualized via the “project onion”:\n\n\n\nthe project onion\n\n\n\n6.1.1 package managers\n\n\n6.1.2 language manager\n\n\n6.1.3 language version\n\n\n6.1.4 environment manager\n\n\n6.1.5 your project"
-  },
-  {
-    "objectID": "personal-radmin.html#the-project-onion-r",
-    "href": "personal-radmin.html#the-project-onion-r",
-    "title": "6  Meta Project-Oriented Workflow",
-    "section": "6.2 The Project Onion: R",
-    "text": "6.2 The Project Onion: R\n\n\n\nthe project onion, R"
-  },
-  {
-    "objectID": "personal-radmin.html#the-workflow-cycle",
-    "href": "personal-radmin.html#the-workflow-cycle",
-    "title": "6  Meta Project-Oriented Workflow",
-    "section": "6.3 The Workflow Cycle",
-    "text": "6.3 The Workflow Cycle\n\n\n\n\nflowchart LR\n\nstart(starting R)\npackages(installing R packages)\nrepro(creating reproducible environments)\ninstalling(\"installing | upgrading R\")\n\nstart --&gt; packages --&gt; repro --&gt; installing --&gt; start\n\n\n\n\n\nIf you go all in on the project-oriented workflow, installing R and upgrading R are the same operation."
+    "objectID": "get-to-know-your-r-installation.html",
+    "href": "get-to-know-your-r-installation.html",
+    "title": "6  Get to know your R installation",
+    "section": "",
+    "text": "R version, where the executable lives.\nStudy your package library."
   },
   {
     "objectID": "r-startup.html#renviron",
@@ -182,142 +189,100 @@
     "text": "7.3 Disabling startup files\nYou can run R without any startup files by using the --vanilla argument when starting R. In RStudio you can do this by checking the option Project Options -&gt; Disable .Rprofile execution on session start / resume. You can also selectively disable only the user or site .Rprofile with --no-init-file and --no-site-file respectively, and disable the environment files with --no-environ.\n\n\n\n\n\n\nWarning\n\n\n\nBoth .Renviron and .Rprofile must end with a newline character. If they do not the last line will be ignored without a warning or error."
   },
   {
-    "objectID": "installing-packages.html#a-highly-simplified-package-lifecycle",
-    "href": "installing-packages.html#a-highly-simplified-package-lifecycle",
-    "title": "8  Installing packages",
-    "section": "8.1 a highly simplified package lifecycle",
-    "text": "8.1 a highly simplified package lifecycle\n\n\n\n\n%%{init: {\"theme\": \"dark\" } }%%\ngraph TD\nSource -- \"devtools::build()\" --&gt; Bundled\nBundled -- \"devtools::build(binary = TRUE)\"--&gt; Binary \nBinary --\"install.packages()\"--&gt; Installed \nInstalled --\"library()\"--&gt; Loaded \n\n\n\n\n\n\n\n\n\n%%{init: {\"theme\": \"dark\" } }%%\nflowchart TD\nsubgraph dev\n  direction LR\nSource -- \"devtools::build()\" --&gt; Bundled\nBundled -- \"devtools::build(binary = TRUE)\"--&gt; Binary \nend\nsubgraph use\ndirection LR\nBinary --\"install.packages()\"--&gt; Installed \nInstalled --\"library()\"--&gt; Loaded \nend\n\n\n\n\n\nR Packages covers these phases of the package lifecycle in much more detail."
-  },
-  {
-    "objectID": "installing-packages.html#binary-packages",
-    "href": "installing-packages.html#binary-packages",
-    "title": "8  Installing packages",
-    "section": "8.2 Binary packages",
-    "text": "8.2 Binary packages\n\nwhere to get them\nhow to know you got them"
-  },
-  {
-    "objectID": "installing-packages.html#source-packages",
-    "href": "installing-packages.html#source-packages",
-    "title": "8  Installing packages",
-    "section": "8.3 Source packages",
-    "text": "8.3 Source packages\nThe most common type of package you install is a binary package. Packages released on CRAN are built as pre-compiled binaries.\nHowever often it is useful to install packages which do not have a pre-built binary version available. This allows you to install development versions not yet released on CRAN, as well as older versions of released packages. It also lets you build your own packages locally.\nTo install a source package you will need to setup a development environment.\nThere are a few main functions used to install source packages.\n\ndevtools::install_dev() to install the latest development version of a CRAN package. 1\ndevtools::install_github() to install a package directly from GitHub, even if it is not on CRAN.\ndevtools::install_version() to install previously released CRAN versions of a package.\n\nFor example devtools::install_dev(\"dplyr\") will install the development version of dplyr. devtools::install_github(\"jimhester/lookup\") will install Jim’s lookup package (which is not on CRAN), and devtools::install_version(\"readr\", \"1.0.0\") will install readr 1.0.0.\nIt is also possible to fork, clone and work with a package directly then use devtools::install() and devtools::load_all() to work with the package locally like you would with a package you have created yourself."
-  },
-  {
-    "objectID": "installing-packages.html#installation-to-a-temporary-library",
-    "href": "installing-packages.html#installation-to-a-temporary-library",
-    "title": "8  Installing packages",
-    "section": "8.4 Installation to a temporary library",
-    "text": "8.4 Installation to a temporary library\nIt is sometimes useful to install packages to a temporary library, so that they don’t affect your normal packages. This can be done by using the lib argument to the devtools install functions, then using lib.loc in library() when you load the package.\nlibrary(devtools)\n\ntmp_lib &lt;- \"~/tmp/tmp_library\"\ndir.create(tmp_lib)\n\ndevtools::install_github(\"dill/beyonce\", lib = tmp_lib)\n\n## restart R\n\n## explicitly load the affected packages from the temporary library\nlibrary(beyonce, lib.loc = tmp_lib)\n\n## your experimentation goes here\n\n## done? clean up!\nunlink(tmp_lib, recursive = TRUE)\n\n\n\n\n\n\nNote\n\n\n\nTry the activity: usethis::use_course(\"rstd.io/wtf-source-package\")\nTo practice installing various types of source packages."
-  },
-  {
-    "objectID": "installing-packages.html#footnotes",
-    "href": "installing-packages.html#footnotes",
-    "title": "8  Installing packages",
-    "section": "",
-    "text": "This will only work if the package includes a link to the development location in the package DESCRIPTION↩︎"
-  },
-  {
-    "objectID": "reproducible-environments.html#posit-package-manager",
-    "href": "reproducible-environments.html#posit-package-manager",
-    "title": "9  Reproducible Environments",
-    "section": "9.1 posit package manager",
-    "text": "9.1 posit package manager\nPosit Public Package Manager, or P3M"
-  },
-  {
-    "objectID": "reproducible-environments.html#renv",
-    "href": "reproducible-environments.html#renv",
-    "title": "9  Reproducible Environments",
-    "section": "9.2 renv",
-    "text": "9.2 renv\nhttps://rstudio.github.io/renv/"
-  },
-  {
-    "objectID": "installing-r.html#rig",
-    "href": "installing-r.html#rig",
-    "title": "10  Installing R",
-    "section": "10.1 rig",
-    "text": "10.1 rig\nhttps://github.com/r-lib/rig"
-  },
-  {
     "objectID": "maintaining-r.html#how-to-upgrade-an-installed-package-to-the-latest-version.",
     "href": "maintaining-r.html#how-to-upgrade-an-installed-package-to-the-latest-version.",
-    "title": "11  Maintaining R",
-    "section": "11.1 How to upgrade an installed package to the latest version.",
-    "text": "11.1 How to upgrade an installed package to the latest version.\nSometimes you would like to upgrade a particular package to the latest available version. Often this is because you have heard about a new feature, or maybe you have run into a bug that may have been fixed.\n\n11.1.1 In RStudio\n\n\n\nRStudio has an update dialog (Packages Tab -&gt; Update). Check packages to update them\n\n\n\n\n11.1.2 R terminal\nDevtools has a function update_packages() which will upgrade a package (from the same source) for any CRAN or development package.\ndevtools::update_packages(\"pkgname\")\nIn addition if the given package is not already installed it will install it."
+    "title": "8  Maintaining R",
+    "section": "8.1 How to upgrade an installed package to the latest version.",
+    "text": "8.1 How to upgrade an installed package to the latest version.\nSometimes you would like to upgrade a particular package to the latest available version. Often this is because you have heard about a new feature, or maybe you have run into a bug that may have been fixed.\n\n8.1.1 In RStudio\n\n\n\nRStudio has an update dialog (Packages Tab -&gt; Update). Check packages to update them\n\n\n\n\n8.1.2 R terminal\nDevtools has a function update_packages() which will upgrade a package (from the same source) for any CRAN or development package.\ndevtools::update_packages(\"pkgname\")\nIn addition if the given package is not already installed it will install it."
   },
   {
     "objectID": "maintaining-r.html#how-to-upgrade-all-out-of-date-packages",
     "href": "maintaining-r.html#how-to-upgrade-all-out-of-date-packages",
-    "title": "11  Maintaining R",
-    "section": "11.2 How to upgrade all out-of-date packages",
-    "text": "11.2 How to upgrade all out-of-date packages\n\n11.2.1 In RStudio\n\n\n\nRStudio also allows you to update all packages (Packages Tab -&gt; Update -&gt; Select All)\n\n\n\n\n11.2.2 CRAN packages\ndevtools::update_packages(TRUE)"
+    "title": "8  Maintaining R",
+    "section": "8.2 How to upgrade all out-of-date packages",
+    "text": "8.2 How to upgrade all out-of-date packages\n\n8.2.1 In RStudio\n\n\n\nRStudio also allows you to update all packages (Packages Tab -&gt; Update -&gt; Select All)\n\n\n\n\n8.2.2 CRAN packages\ndevtools::update_packages(TRUE)"
   },
   {
     "objectID": "maintaining-r.html#how-to-downgrade-a-package",
     "href": "maintaining-r.html#how-to-downgrade-a-package",
-    "title": "11  Maintaining R",
-    "section": "11.3 How to downgrade a package",
-    "text": "11.3 How to downgrade a package\nFirst if unsure what version -&gt; CRAN page -&gt; pkgname archive\ndevtools::install_version(\"devtools\", \"1.13.3\")"
+    "title": "8  Maintaining R",
+    "section": "8.3 How to downgrade a package",
+    "text": "8.3 How to downgrade a package\nFirst if unsure what version -&gt; CRAN page -&gt; pkgname archive\ndevtools::install_version(\"devtools\", \"1.13.3\")"
   },
   {
     "objectID": "maintaining-r.html#how-to-transfer-your-library-when-updating-r",
     "href": "maintaining-r.html#how-to-transfer-your-library-when-updating-r",
-    "title": "11  Maintaining R",
-    "section": "11.4 How to transfer your library when updating R",
-    "text": "11.4 How to transfer your library when updating R\nOften you will not need to do anything when updating R. For ‘patch’ R versions, the ‘z’ in ‘x.y.z’ the R core developers ensure package compatibility across versions. So if you are updating from R 3.5.0 to R 3.5.1 you can use the same packages you are currently using.\nFor ‘minor’ version changes, the ‘y’ in ‘x.y.z’ the package interface can change, so packages need to be re-installed.\n\n\n\n\n\n\nWarning\n\n\n\nYou may see some suggestions that you can just copy your packages even when the ‘minor’ version changes. DO NOT DO THIS. While it may work some (even most) of the time, R-core does not guarantee compatibility between these versions and things could break (even break silently).\n\n\nI suggest you keep the packages R comes with (base and recommended) packages separate from the rest of your packages. This makes it easy to re-install R if needed without touching your CRAN packages. You also want to make sure the package library is specific to the minor version of R.\nR_LIBS_USER is actually set by default to this scheme, (to ~/R/win-library/x.y on Windows and ~/Library/R/x.y/library on macOS) but the directory may not already exist, so one option is just to create this directory (fs::dir_create(Sys.getenv(\"R_LIBS_USER\"))).\nYou can also alternatively set R_LIBS_USER to a different path; but make sure to include the %v wildcard. e.g. ~/R/library/%v. The %v is automatically expanded to the major and minor version of R, so with R 3.5.1 this path becomes ~/R/library/3.5. See Renviron for how to edit your .Renviron file.\n\n\n\n\n\n\nWarning\n\n\n\nPaths in R_LIBS_USER are only used if the directories they specify actually exist. So in addition to adding R_LIBS_USER to your .Renviron you need to create the directory as well.\n\n\nOnce this is setup, the process for transferring your package library becomes. (assumes R_LIBS_USER is set to ~/Library/R/3.5/library).\n# Install new version of R (lets say 3.5.0 in this example)\n\n# Create a new directory for the version of R\nfs::dir_create(\"~/Library/R/3.5/library\")\n\n# Re-start R so the .libPaths are updated\n\n# Lookup what packages were in your old package library\npkgs &lt;- fs::path_file(fs::dir_ls(\"~/Library/R/3.4/library\"))\n\n# Filter these packages as needed\n\n# Install the packages in the new version\ninstall.packages(pkgs)"
+    "title": "8  Maintaining R",
+    "section": "8.4 How to transfer your library when updating R",
+    "text": "8.4 How to transfer your library when updating R\nOften you will not need to do anything when updating R. For ‘patch’ R versions, the ‘z’ in ‘x.y.z’ the R core developers ensure package compatibility across versions. So if you are updating from R 3.5.0 to R 3.5.1 you can use the same packages you are currently using.\nFor ‘minor’ version changes, the ‘y’ in ‘x.y.z’ the package interface can change, so packages need to be re-installed.\n\n\n\n\n\n\nWarning\n\n\n\nYou may see some suggestions that you can just copy your packages even when the ‘minor’ version changes. DO NOT DO THIS. While it may work some (even most) of the time, R-core does not guarantee compatibility between these versions and things could break (even break silently).\n\n\nI suggest you keep the packages R comes with (base and recommended) packages separate from the rest of your packages. This makes it easy to re-install R if needed without touching your CRAN packages. You also want to make sure the package library is specific to the minor version of R.\nR_LIBS_USER is actually set by default to this scheme, (to ~/R/win-library/x.y on Windows and ~/Library/R/x.y/library on macOS) but the directory may not already exist, so one option is just to create this directory (fs::dir_create(Sys.getenv(\"R_LIBS_USER\"))).\nYou can also alternatively set R_LIBS_USER to a different path; but make sure to include the %v wildcard. e.g. ~/R/library/%v. The %v is automatically expanded to the major and minor version of R, so with R 3.5.1 this path becomes ~/R/library/3.5. See Renviron for how to edit your .Renviron file.\n\n\n\n\n\n\nWarning\n\n\n\nPaths in R_LIBS_USER are only used if the directories they specify actually exist. So in addition to adding R_LIBS_USER to your .Renviron you need to create the directory as well.\n\n\nOnce this is setup, the process for transferring your package library becomes. (assumes R_LIBS_USER is set to ~/Library/R/3.5/library).\n# Install new version of R (lets say 3.5.0 in this example)\n\n# Create a new directory for the version of R\nfs::dir_create(\"~/Library/R/3.5/library\")\n\n# Re-start R so the .libPaths are updated\n\n# Lookup what packages were in your old package library\npkgs &lt;- fs::path_file(fs::dir_ls(\"~/Library/R/3.4/library\"))\n\n# Filter these packages as needed\n\n# Install the packages in the new version\ninstall.packages(pkgs)"
+  },
+  {
+    "objectID": "install-single-package.html#installation-to-a-temporary-library",
+    "href": "install-single-package.html#installation-to-a-temporary-library",
+    "title": "9  Install a source package",
+    "section": "9.1 Installation to a temporary library",
+    "text": "9.1 Installation to a temporary library\nIt is sometimes useful to install packages to a temporary library, so that they don’t affect your normal packages. This can be done by using the lib argument to the devtools install functions, then using lib.loc in library() when you load the package.\nlibrary(devtools)\n\ntmp_lib &lt;- \"~/tmp/tmp_library\"\ndir.create(tmp_lib)\n\ndevtools::install_github(\"dill/beyonce\", lib = tmp_lib)\n\n## restart R\n\n## explicitly load the affected packages from the temporary library\nlibrary(beyonce, lib.loc = tmp_lib)\n\n## your experimentation goes here\n\n## done? clean up!\nunlink(tmp_lib, recursive = TRUE)\n\n\n\n\n\n\nNote\n\n\n\nTry the activity: usethis::use_course(\"rstd.io/wtf-source-package\")\nTo practice installing various types of source packages."
+  },
+  {
+    "objectID": "install-single-package.html#footnotes",
+    "href": "install-single-package.html#footnotes",
+    "title": "9  Install a source package",
+    "section": "",
+    "text": "This will only work if the package includes a link to the development location in the package DESCRIPTION↩︎"
   },
   {
     "objectID": "debugging-r.html#debugging-your-own-code",
     "href": "debugging-r.html#debugging-your-own-code",
-    "title": "12  Debugging R code",
-    "section": "12.1 Debugging your own code",
-    "text": "12.1 Debugging your own code\nThe most common case you will run into a bug is when writing new code yourself. Often the mistake is obvious and easily fixed, but sometimes it only appears after multiple levels of calls and is harder to diagnose. There are a few common strategies to use when debugging your own code.\n\nUse traceback() to determine where a given error is occurring.\nOutput diagnostic information in code with print(), cat() or message() statements.\nUse browser() to open an interactive debugger before the error\nUse debug() to automatically open a debugger at the start of a function call.\nUse trace() to start a debugger at a location inside a function.\n\n\n12.1.1 traceback()\nThe traceback() function can be used to print a summary of how your program arrived at the error. This is also called a call stack, stack trace or backtrace.\nIn R this gives you each call that lead up to the error, which can be very useful for determining what lead to the error.\nYou can use traceback() in two different ways, either by calling it immediately after the error has occurred.\n\n\nf &lt;- function(x) x + 1\ng &lt;- function(x) f(x)\ng(\"a\")\n\n#&gt; Error in x + 1 : non-numeric argument to binary operator\ntraceback()\n#&gt; 2: f(x) at #1\n#&gt; 1: g(\"a\")\nOr by using traceback() as an error handler, which will call it immediately on any error. (You could even put this in your .Rprofile)\n\noptions(error = traceback)\ng(\"a\")\n\n#&gt; Error in x + 1 : non-numeric argument to binary operator\n#&gt; 2: f(x) at #1\n#&gt; 1: g(\"a\")\n\n\n12.1.2 print()\nOnce you know where an error occurs it is then helpful to know why. Often errors occur because functions are given inputs their authors did not expect, so it is useful to print the value of objects during execution.\nThe most basic way to do this is to sprinkle messages throughout your code, with print() or str(). str() is often more useful because it gives more detail into the exact structure of an object, which may not be the structure you expect it to be.\nThe main downsides to the print approach is you often have to add them in multiple places to narrow down the error, and you cannot further investigate the object.\n\n\n12.1.3 browser()\nA more sophisticated debugging method is to put a call to browser() in your code. This will stop execution at that point and open R’s interactive debugger. In the debugger you can run any R command to look at objects in the current environment, modify them and continue executing.\nSome useful things to do are\n\nUse ls() to determine what objects are available in the current environment. This allows you to see exactly what things you can examine.\nUse str(), print() etc. to examine the objects\nUse n to evaluate the next statement. Use s to evaluate the next statement, but step into function calls.\nUse where to print a stack trace\nUse c to leave the debugger and continue execution\nUse Q to exit the debugger and return to the R prompt."
+    "title": "10  Debugging R code",
+    "section": "10.1 Debugging your own code",
+    "text": "10.1 Debugging your own code\nThe most common case you will run into a bug is when writing new code yourself. Often the mistake is obvious and easily fixed, but sometimes it only appears after multiple levels of calls and is harder to diagnose. There are a few common strategies to use when debugging your own code.\n\nUse traceback() to determine where a given error is occurring.\nOutput diagnostic information in code with print(), cat() or message() statements.\nUse browser() to open an interactive debugger before the error\nUse debug() to automatically open a debugger at the start of a function call.\nUse trace() to start a debugger at a location inside a function.\n\n\n10.1.1 traceback()\nThe traceback() function can be used to print a summary of how your program arrived at the error. This is also called a call stack, stack trace or backtrace.\nIn R this gives you each call that lead up to the error, which can be very useful for determining what lead to the error.\nYou can use traceback() in two different ways, either by calling it immediately after the error has occurred.\n\n\nf &lt;- function(x) x + 1\ng &lt;- function(x) f(x)\ng(\"a\")\n\n#&gt; Error in x + 1 : non-numeric argument to binary operator\ntraceback()\n#&gt; 2: f(x) at #1\n#&gt; 1: g(\"a\")\nOr by using traceback() as an error handler, which will call it immediately on any error. (You could even put this in your .Rprofile)\n\noptions(error = traceback)\ng(\"a\")\n\n#&gt; Error in x + 1 : non-numeric argument to binary operator\n#&gt; 2: f(x) at #1\n#&gt; 1: g(\"a\")\n\n\n10.1.2 print()\nOnce you know where an error occurs it is then helpful to know why. Often errors occur because functions are given inputs their authors did not expect, so it is useful to print the value of objects during execution.\nThe most basic way to do this is to sprinkle messages throughout your code, with print() or str(). str() is often more useful because it gives more detail into the exact structure of an object, which may not be the structure you expect it to be.\nThe main downsides to the print approach is you often have to add them in multiple places to narrow down the error, and you cannot further investigate the object.\n\n\n10.1.3 browser()\nA more sophisticated debugging method is to put a call to browser() in your code. This will stop execution at that point and open R’s interactive debugger. In the debugger you can run any R command to look at objects in the current environment, modify them and continue executing.\nSome useful things to do are\n\nUse ls() to determine what objects are available in the current environment. This allows you to see exactly what things you can examine.\nUse str(), print() etc. to examine the objects\nUse n to evaluate the next statement. Use s to evaluate the next statement, but step into function calls.\nUse where to print a stack trace\nUse c to leave the debugger and continue execution\nUse Q to exit the debugger and return to the R prompt."
   },
   {
     "objectID": "debugging-r.html#debugging-in-rstudio",
     "href": "debugging-r.html#debugging-in-rstudio",
-    "title": "12  Debugging R code",
-    "section": "12.2 Debugging in RStudio",
-    "text": "12.2 Debugging in RStudio\n\n12.2.1 Editor breakpoints\nRStudio provides some additional tooling for debugging over using R on the command line. First you can set an editor breakpoint by clicking to the left of the line number in the source file, or by pressing Shift+F9 with your cursor on the line. A breakpoint is equivalent to a browser() call, but you avoid needing to change your code like browser().\n\n\n\n12.2.2 Stopping on error\nIf you are trying to hunt down a particular error it is often useful to have RStudio enter the debugger when it occurs. You can control the error behavior with (Debug -&gt; On Error -&gt; Error Inspector).\n\n\n\n12.2.3 Debugging console\n\nThe RStudio debugging console has a few buttons to make debugging a little nicer, From left to right they are, next (equivalent to n), step info (s), continue (c) and Stop (Q)."
+    "title": "10  Debugging R code",
+    "section": "10.2 Debugging in RStudio",
+    "text": "10.2 Debugging in RStudio\n\n10.2.1 Editor breakpoints\nRStudio provides some additional tooling for debugging over using R on the command line. First you can set an editor breakpoint by clicking to the left of the line number in the source file, or by pressing Shift+F9 with your cursor on the line. A breakpoint is equivalent to a browser() call, but you avoid needing to change your code like browser().\n\n\n\n10.2.2 Stopping on error\nIf you are trying to hunt down a particular error it is often useful to have RStudio enter the debugger when it occurs. You can control the error behavior with (Debug -&gt; On Error -&gt; Error Inspector).\n\n\n\n10.2.3 Debugging console\n\nThe RStudio debugging console has a few buttons to make debugging a little nicer, From left to right they are, next (equivalent to n), step info (s), continue (c) and Stop (Q)."
   },
   {
     "objectID": "debugging-r.html#debugging-others-code",
     "href": "debugging-r.html#debugging-others-code",
-    "title": "12  Debugging R code",
-    "section": "12.3 Debugging others’ code",
-    "text": "12.3 Debugging others’ code\nWhen the error is occurring outside of your own code it is also useful to be able to debug the code. In this case you could download the package code locally and debug it like you would with your own code above by adding print() and / or browser() calls. Because R and most R packages are open source this is a perfectly viable option and one I often do myself. However depending on the package this can sometimes be challenging, particularly for those packages which come with R itself.\nThe other option is to use additional functions which allow you to start a browser in existing functions, recover(), debug(), trace() .\n\n12.3.1 recover()\nrecover() is not used directly, instead it is used as an error handler, by calling options(error = recover). You can also use other functions, such as browser() as an error handler, which will start the debugger automatically when there is an error.\nThe benefit to recover() over using options(error = browser) is that you can browse on any of the call stack, not just where the error occurred. Often the issue is most easily diagnosed in calls higher on the stack than immediately where the error occurred.\nWhen recover() is called it prints a list of the current calls, with a prompt to select which you want to browse in. Then a debugging session is started at that location.\n\n\n\n\n\n\nNote\n\n\n\nTry activity 1 usethis::use_course(\"rstd.io/wtf-debugging\") Try activity 2 usethis::use_course(\"rstd.io/wtf-debugging\")\nto practice debugging errors using the tools described\n\n\n\n\n12.3.2 debug()\nIf you have control of the code (because you are the one writing it), using browser() is generally the most convenient way to enter the debugger. However if the error is occurring in code in a package what options do you have?\nThis is where the debug() function is useful, it will open the R debugger on any function, including those in packages.\ndebug(ggplot2::ggplot)\nUse can use the :: syntax to find ‘exported’ functions in a package, but there is also a way to access any function, including un-exported ones, :::.\ndebug(ggplot2:::set_last_plot)\nundebug() is used to remove the debugging code.\n\n\n12.3.3 trace()\ndebug() is very useful, but one drawback is it always executes the first time a function is called. What can you do if the bug only happens the 100th time a function is called?\ntrace() is a more flexible version of debug() that not only lets you start a debugger at the start of a function, it lets you insert any code at any location in a function. The downside to this power and flexibility is that trace() is comparatively harder to use than debug().\nIf called with no additional arguments trace() simply prints a message when the function is entered.\nIf called with a function as the second argument this inserts the function at the start of the function. trace(fun, browser) is functionally equivalent to debug(fun). browser() or recover() are generally the most useful functions to use, but this could actually be any R function or even regular R expressions. This is often useful to open the debugger only when a certain condition is met.\n\ntrace(print, quote(if (is.numeric(x) && x &gt;= 3) cat(\"hi\\n\")), print = FALSE)\n\nTracing function \"print\" in package \"base\"\n\n\n[1] \"print\"\n\nprint(1)\n\n[1] 1\n\nprint(3)\n\nhi\n[1] 3\n\n# Use untrace to remove the tracing code\nuntrace(print)\n\nUntracing function \"print\" in package \"base\"\n\n\nYou can also use the at argument to trace() to insert the tracing expressions at other points in the function body. To determine the number of the expression to insert convert the body of the function to a list. e.g. as.list(body(fun)).\n\n\n\n\n\n\nNote\n\n\n\nTry activity 3 usethis::use_course(\"rstd.io/wtf-debugging\")\nto explore using trace() with at."
+    "title": "10  Debugging R code",
+    "section": "10.3 Debugging others’ code",
+    "text": "10.3 Debugging others’ code\nWhen the error is occurring outside of your own code it is also useful to be able to debug the code. In this case you could download the package code locally and debug it like you would with your own code above by adding print() and / or browser() calls. Because R and most R packages are open source this is a perfectly viable option and one I often do myself. However depending on the package this can sometimes be challenging, particularly for those packages which come with R itself.\nThe other option is to use additional functions which allow you to start a browser in existing functions, recover(), debug(), trace() .\n\n10.3.1 recover()\nrecover() is not used directly, instead it is used as an error handler, by calling options(error = recover). You can also use other functions, such as browser() as an error handler, which will start the debugger automatically when there is an error.\nThe benefit to recover() over using options(error = browser) is that you can browse on any of the call stack, not just where the error occurred. Often the issue is most easily diagnosed in calls higher on the stack than immediately where the error occurred.\nWhen recover() is called it prints a list of the current calls, with a prompt to select which you want to browse in. Then a debugging session is started at that location.\n\n\n\n\n\n\nNote\n\n\n\nTry activity 1 usethis::use_course(\"rstd.io/wtf-debugging\") Try activity 2 usethis::use_course(\"rstd.io/wtf-debugging\")\nto practice debugging errors using the tools described\n\n\n\n\n10.3.2 debug()\nIf you have control of the code (because you are the one writing it), using browser() is generally the most convenient way to enter the debugger. However if the error is occurring in code in a package what options do you have?\nThis is where the debug() function is useful, it will open the R debugger on any function, including those in packages.\ndebug(ggplot2::ggplot)\nUse can use the :: syntax to find ‘exported’ functions in a package, but there is also a way to access any function, including un-exported ones, :::.\ndebug(ggplot2:::set_last_plot)\nundebug() is used to remove the debugging code.\n\n\n10.3.3 trace()\ndebug() is very useful, but one drawback is it always executes the first time a function is called. What can you do if the bug only happens the 100th time a function is called?\ntrace() is a more flexible version of debug() that not only lets you start a debugger at the start of a function, it lets you insert any code at any location in a function. The downside to this power and flexibility is that trace() is comparatively harder to use than debug().\nIf called with no additional arguments trace() simply prints a message when the function is entered.\nIf called with a function as the second argument this inserts the function at the start of the function. trace(fun, browser) is functionally equivalent to debug(fun). browser() or recover() are generally the most useful functions to use, but this could actually be any R function or even regular R expressions. This is often useful to open the debugger only when a certain condition is met.\n\ntrace(print, quote(if (is.numeric(x) && x &gt;= 3) cat(\"hi\\n\")), print = FALSE)\n\nTracing function \"print\" in package \"base\"\n\n\n[1] \"print\"\n\nprint(1)\n\n[1] 1\n\nprint(3)\n\nhi\n[1] 3\n\n# Use untrace to remove the tracing code\nuntrace(print)\n\nUntracing function \"print\" in package \"base\"\n\n\nYou can also use the at argument to trace() to insert the tracing expressions at other points in the function body. To determine the number of the expression to insert convert the body of the function to a list. e.g. as.list(body(fun)).\n\n\n\n\n\n\nNote\n\n\n\nTry activity 3 usethis::use_course(\"rstd.io/wtf-debugging\")\nto explore using trace() with at."
   },
   {
     "objectID": "debugging-r.html#debugging-in-r-markdown-documents",
     "href": "debugging-r.html#debugging-in-r-markdown-documents",
-    "title": "12  Debugging R code",
-    "section": "12.4 Debugging in R Markdown documents",
-    "text": "12.4 Debugging in R Markdown documents\nOne special case where it can sometimes be more difficult to debug is an error that occurs only when knitting an R Markdown document.\nThe easiest way to debug most of the errors is to simply run the code inside the chunk as regular R code in the console and use the normal techniques such as inserting browser() calls.\nHowever rarely an error will only occur when the code is being knitted. In this case you can set an error handler with the following code.\nFirst you will need to modify recover slightly, by adding a sink() call to the beginning, which disables the sink used by knitr internally. We do this by using trace(). This can be run in a setup block or in your R console before calling knitr::knit() / rmarkdown::render()\ntrace(recover, sink)\nThen add the following knitr chunk options to the chunk which is failing. error = FALSE, R.options = list(error = recover).\nThen knit the file on the R console with knitr::knit() or rmarkdown::render(). The traceback will contain all of the knitr calls as well, so you will need to look near the end to find the calls in your code.\n\n\n\n\n\n\nWarning\n\n\n\nNote you cannot use the ‘Knit’ button in RStudio when trying to debug R Markdown documents in any case. The ‘Knit’ button opens a separate R process, so there is no way to use an interactive debugger in that case.\n\n\n\n12.4.1 Resources\n\nDebugging techniques in RStudio - Amanda Gadrow’s talk at rstudio::conf 2018\nDebugging in RStudio article"
+    "title": "10  Debugging R code",
+    "section": "10.4 Debugging in R Markdown documents",
+    "text": "10.4 Debugging in R Markdown documents\nOne special case where it can sometimes be more difficult to debug is an error that occurs only when knitting an R Markdown document.\nThe easiest way to debug most of the errors is to simply run the code inside the chunk as regular R code in the console and use the normal techniques such as inserting browser() calls.\nHowever rarely an error will only occur when the code is being knitted. In this case you can set an error handler with the following code.\nFirst you will need to modify recover slightly, by adding a sink() call to the beginning, which disables the sink used by knitr internally. We do this by using trace(). This can be run in a setup block or in your R console before calling knitr::knit() / rmarkdown::render()\ntrace(recover, sink)\nThen add the following knitr chunk options to the chunk which is failing. error = FALSE, R.options = list(error = recover).\nThen knit the file on the R console with knitr::knit() or rmarkdown::render(). The traceback will contain all of the knitr calls as well, so you will need to look near the end to find the calls in your code.\n\n\n\n\n\n\nWarning\n\n\n\nNote you cannot use the ‘Knit’ button in RStudio when trying to debug R Markdown documents in any case. The ‘Knit’ button opens a separate R process, so there is no way to use an interactive debugger in that case.\n\n\n\n10.4.1 Resources\n\nDebugging techniques in RStudio - Amanda Gadrow’s talk at rstudio::conf 2018\nDebugging in RStudio article"
   },
   {
     "objectID": "read-source.html#github-search",
     "href": "read-source.html#github-search",
-    "title": "13  Read the source",
-    "section": "13.1 GitHub search",
-    "text": "13.1 GitHub search\nGitHub allows you to search code, repositories, and issues which can often reveal useful insights into problems.\nDoing a generic search is often fruitful, but you can often get more pertinent results with a more targeted approach."
+    "title": "11  Read the source",
+    "section": "11.1 GitHub search",
+    "text": "11.1 GitHub search\nGitHub allows you to search code, repositories, and issues which can often reveal useful insights into problems.\nDoing a generic search is often fruitful, but you can often get more pertinent results with a more targeted approach."
   },
   {
     "objectID": "read-source.html#where-things-exist-in-the-r-source",
     "href": "read-source.html#where-things-exist-in-the-r-source",
-    "title": "13  Read the source",
-    "section": "13.2 Where things exist in the R source",
-    "text": "13.2 Where things exist in the R source\nThe SVN repository used by the R core team to develop R is mirrored on GitHub by Winston Chang at https://github.com/wch/r-source. This means that all the code used by your local R session (including compiled code) is searchable.\nThe R source uses a complicated layout and contains the source of all the code in base R (src/main) as well as the set of packages included in base R, such as stats, graphics, utils and others (src/library/*). It also contains all of the documentation included in R including Writing R extensions, R internals and R admin guides (doc/manual).\n\n\n\n\n\n\nNote\n\n\n\nTry the activity usethis::use_course(\"rstd.io/wtf-read-source\")\nto search the R source for code and documentation."
+    "title": "11  Read the source",
+    "section": "11.2 Where things exist in the R source",
+    "text": "11.2 Where things exist in the R source\nThe SVN repository used by the R core team to develop R is mirrored on GitHub by Winston Chang at https://github.com/wch/r-source. This means that all the code used by your local R session (including compiled code) is searchable.\nThe R source uses a complicated layout and contains the source of all the code in base R (src/main) as well as the set of packages included in base R, such as stats, graphics, utils and others (src/library/*). It also contains all of the documentation included in R including Writing R extensions, R internals and R admin guides (doc/manual).\n\n\n\n\n\n\nNote\n\n\n\nTry the activity usethis::use_course(\"rstd.io/wtf-read-source\")\nto search the R source for code and documentation."
   },
   {
     "objectID": "read-source.html#where-things-exist-in-cran-packages",
     "href": "read-source.html#where-things-exist-in-cran-packages",
-    "title": "13  Read the source",
-    "section": "13.3 Where things exist in CRAN packages",
-    "text": "13.3 Where things exist in CRAN packages\nYou can find the development home of most R packages by looking at the URL field in the package DESCRIPTION, as can be seen on the CRAN landing page (e.g. devtools landing page). The BugReports field will give you a direct link to the issue page where you should report any issues found with the package.\nIn addition all code for CRAN packages is mirrored on GitHub by Gábor Csárdi at https://github.com/cran, which means all the code for CRAN packages is also searchable.\nAll R code in packages is kept in R/. In addition if the package is using roxygen the source code will also contain roxygen comments (#') with the function level documentation.\nIf a package is not using roxygen (often older packages or those in base R) the documentation will be in .Rd files in the man/ directory. (These files also exist in roxygen packages, but are generated automatically and should not be edited by hand).\nIf the package uses compiled code it will be in src/ regardless of what language the compiled code is written in.\nLong-form documentation in the form of vignettes are stored in vignettes/.\n\n\n\n\n\n\nNote\n\n\n\nTry the activity usethis::use_course(\"rstd.io/wtf-read-source\")\nto search and find source code and documentation in CRAN packages."
+    "title": "11  Read the source",
+    "section": "11.3 Where things exist in CRAN packages",
+    "text": "11.3 Where things exist in CRAN packages\nYou can find the development home of most R packages by looking at the URL field in the package DESCRIPTION, as can be seen on the CRAN landing page (e.g. devtools landing page). The BugReports field will give you a direct link to the issue page where you should report any issues found with the package.\nIn addition all code for CRAN packages is mirrored on GitHub by Gábor Csárdi at https://github.com/cran, which means all the code for CRAN packages is also searchable.\nAll R code in packages is kept in R/. In addition if the package is using roxygen the source code will also contain roxygen comments (#') with the function level documentation.\nIf a package is not using roxygen (often older packages or those in base R) the documentation will be in .Rd files in the man/ directory. (These files also exist in roxygen packages, but are generated automatically and should not be edited by hand).\nIf the package uses compiled code it will be in src/ regardless of what language the compiled code is written in.\nLong-form documentation in the form of vignettes are stored in vignettes/.\n\n\n\n\n\n\nNote\n\n\n\nTry the activity usethis::use_course(\"rstd.io/wtf-read-source\")\nto search and find source code and documentation in CRAN packages."
   },
   {
     "objectID": "reprexing.html",
     "href": "reprexing.html",
-    "title": "14  Reproduce the problem",
+    "title": "12  Reproduce the problem",
     "section": "",
     "text": "Before you seek outside help, strive to nail down your problem with this level of rigor:\n\nYou can reliably induce it, with minimal setup and fuss. To the point where others can reproduce it.\n\nDiscuss “bisect” as a useful mentality, applied to lines of code / functions or across versions.\nLink out to reprex stuff re: mechanics of sharing."
   },
@@ -326,6 +291,6 @@
     "href": "sessioninfo.html",
     "title": "Session info",
     "section": "",
-    "text": "git2r::repository()\n\nLocal:    (detached) /home/runner/work/what-they-forgot/what-they-forgot\nHead:     [7fd5119] 2023-06-18: Merge a72a9c06c77d4d6e5647d820a36446e781bedc64 into 50e56e5e4048d541ddbbeca129af1ee674c9ee19\n\nsessioninfo::session_info()\n\n─ Session info ───────────────────────────────────────────────────────────────\n setting  value\n version  R version 4.3.1 (2023-06-16)\n os       Ubuntu 22.04.2 LTS\n system   x86_64, linux-gnu\n ui       X11\n language (EN)\n collate  C.UTF-8\n ctype    C.UTF-8\n tz       UTC\n date     2023-06-18\n pandoc   2.9.2.1 @ /usr/bin/ (via rmarkdown)\n\n─ Packages ───────────────────────────────────────────────────────────────────\n package     * version date (UTC) lib source\n cli           3.6.1   2023-03-23 [1] RSPM\n digest        0.6.31  2022-12-11 [1] RSPM\n evaluate      0.21    2023-05-05 [1] RSPM\n fastmap       1.1.1   2023-02-24 [1] RSPM\n git2r         0.32.0  2023-04-12 [1] RSPM\n htmltools     0.5.5   2023-03-23 [1] RSPM\n jsonlite      1.8.5   2023-06-05 [1] RSPM\n knitr         1.43    2023-05-25 [1] RSPM\n rlang         1.1.1   2023-04-28 [1] RSPM\n rmarkdown     2.22    2023-06-01 [1] RSPM\n sessioninfo   1.2.2   2021-12-06 [1] any (@1.2.2)\n xfun          0.39    2023-04-20 [1] RSPM\n\n [1] /home/runner/work/_temp/Library\n [2] /opt/R/4.3.1/lib/R/site-library\n [3] /opt/R/4.3.1/lib/R/library\n\n──────────────────────────────────────────────────────────────────────────────"
+    "text": "git2r::repository()\n\nLocal:    (detached) /home/runner/work/what-they-forgot/what-they-forgot\nHead:     [a3e8f5d] 2023-06-19: Merge a14b230253e24de835aa2af04344b4dc02809ffe into 50e56e5e4048d541ddbbeca129af1ee674c9ee19\n\nsessioninfo::session_info()\n\n─ Session info ───────────────────────────────────────────────────────────────\n setting  value\n version  R version 4.3.1 (2023-06-16)\n os       Ubuntu 22.04.2 LTS\n system   x86_64, linux-gnu\n ui       X11\n language (EN)\n collate  C.UTF-8\n ctype    C.UTF-8\n tz       UTC\n date     2023-06-19\n pandoc   2.9.2.1 @ /usr/bin/ (via rmarkdown)\n\n─ Packages ───────────────────────────────────────────────────────────────────\n package     * version date (UTC) lib source\n cli           3.6.1   2023-03-23 [1] RSPM\n digest        0.6.31  2022-12-11 [1] RSPM\n evaluate      0.21    2023-05-05 [1] RSPM\n fastmap       1.1.1   2023-02-24 [1] RSPM\n git2r         0.32.0  2023-04-12 [1] RSPM\n htmltools     0.5.5   2023-03-23 [1] RSPM\n jsonlite      1.8.5   2023-06-05 [1] RSPM\n knitr         1.43    2023-05-25 [1] RSPM\n rlang         1.1.1   2023-04-28 [1] RSPM\n rmarkdown     2.22    2023-06-01 [1] RSPM\n sessioninfo   1.2.2   2021-12-06 [1] any (@1.2.2)\n xfun          0.39    2023-04-20 [1] RSPM\n\n [1] /home/runner/work/_temp/Library\n [2] /opt/R/4.3.1/lib/R/site-library\n [3] /opt/R/4.3.1/lib/R/library\n\n──────────────────────────────────────────────────────────────────────────────"
   }
 ]

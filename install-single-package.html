@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>What They Forgot to Teach You About R - 8&nbsp; Installing packages</title>
+<title>What They Forgot to Teach You About R - 9&nbsp; Install a source package</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,8 +64,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./reproducible-environments.html" rel="next">
-<link href="./r-startup.html" rel="prev">
+<link href="./debugging-r.html" rel="next">
+<link href="./maintaining-r.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -109,9 +109,6 @@ ga('send', {
   'anonymizeIp': true,
 });
 </script>
-<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
-<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
-<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 </head>
@@ -125,7 +122,7 @@ ga('send', {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./personal-radmin.html">Personal R Administration</a></li><li class="breadcrumb-item"><a href="./installing-packages.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Installing packages</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./get-to-know-your-r-installation.html">Personal R Administration</a></li><li class="breadcrumb-item"><a href="./install-single-package.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Install a source package</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -211,8 +208,8 @@ ga('send', {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./personal-radmin.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Meta Project-Oriented Workflow</span></span></a>
+  <a href="./get-to-know-your-r-installation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Get to know your R installation</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -223,26 +220,14 @@ ga('send', {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./installing-packages.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Installing packages</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./reproducible-environments.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Reproducible Environments</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./installing-r.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Installing R</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./maintaining-r.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Maintaining R</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Maintaining R</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./install-single-package.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Install a source package</span></span></a>
   </div>
 </li>
       </ul>
@@ -259,19 +244,19 @@ ga('send', {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./debugging-r.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Debugging R code</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Debugging R code</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./read-source.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Read the source</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Read the source</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./reprexing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Reproduce the problem</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Reproduce the problem</span></span></a>
   </div>
 </li>
       </ul>
@@ -292,10 +277,7 @@ ga('send', {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#a-highly-simplified-package-lifecycle" id="toc-a-highly-simplified-package-lifecycle" class="nav-link active" data-scroll-target="#a-highly-simplified-package-lifecycle"><span class="header-section-number">8.1</span> a highly simplified package lifecycle</a></li>
-  <li><a href="#binary-packages" id="toc-binary-packages" class="nav-link" data-scroll-target="#binary-packages"><span class="header-section-number">8.2</span> Binary packages</a></li>
-  <li><a href="#source-packages" id="toc-source-packages" class="nav-link" data-scroll-target="#source-packages"><span class="header-section-number">8.3</span> Source packages</a></li>
-  <li><a href="#installation-to-a-temporary-library" id="toc-installation-to-a-temporary-library" class="nav-link" data-scroll-target="#installation-to-a-temporary-library"><span class="header-section-number">8.4</span> Installation to a temporary library</a></li>
+  <li><a href="#installation-to-a-temporary-library" id="toc-installation-to-a-temporary-library" class="nav-link active" data-scroll-target="#installation-to-a-temporary-library"><span class="header-section-number">9.1</span> Installation to a temporary library</a></li>
   </ul>
 </nav>
     </div>
@@ -304,7 +286,7 @@ ga('send', {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Installing packages</span></h1>
+<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Install a source package</span></h1>
 </div>
 
 
@@ -319,55 +301,6 @@ ga('send', {
 
 </header>
 
-<section id="a-highly-simplified-package-lifecycle" class="level2" data-number="8.1">
-<h2 data-number="8.1" class="anchored" data-anchor-id="a-highly-simplified-package-lifecycle"><span class="header-section-number">8.1</span> a highly simplified package lifecycle</h2>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<div>
-<pre class="mermaid mermaid-js">%%{init: {"theme": "dark" } }%%
-graph TD
-Source -- "devtools::build()" --&gt; Bundled
-Bundled -- "devtools::build(binary = TRUE)"--&gt; Binary 
-Binary --"install.packages()"--&gt; Installed 
-Installed --"library()"--&gt; Loaded 
-</pre>
-</div>
-</div>
-</div>
-</div>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<div>
-<pre class="mermaid mermaid-js">%%{init: {"theme": "dark" } }%%
-flowchart TD
-subgraph dev
-  direction LR
-Source -- "devtools::build()" --&gt; Bundled
-Bundled -- "devtools::build(binary = TRUE)"--&gt; Binary 
-end
-subgraph use
-direction LR
-Binary --"install.packages()"--&gt; Installed 
-Installed --"library()"--&gt; Loaded 
-end
-</pre>
-</div>
-</div>
-</div>
-</div>
-<p><a href="https://r-pkgs.org/Structure.html">R Packages</a> covers these phases of the package lifecycle in much more detail.</p>
-</section>
-<section id="binary-packages" class="level2" data-number="8.2">
-<h2 data-number="8.2" class="anchored" data-anchor-id="binary-packages"><span class="header-section-number">8.2</span> Binary packages</h2>
-<ul>
-<li>where to get them</li>
-<li>how to know you got them</li>
-</ul>
-</section>
-<section id="source-packages" class="level2" data-number="8.3">
-<h2 data-number="8.3" class="anchored" data-anchor-id="source-packages"><span class="header-section-number">8.3</span> Source packages</h2>
 <p>The most common type of package you install is a <strong>binary</strong> package. Packages released on CRAN are built as pre-compiled binaries.</p>
 <p>However often it is useful to install packages which do not have a pre-built binary version available. This allows you to install development versions not yet released on CRAN, as well as older versions of released packages. It also lets you build your own packages locally.</p>
 <p>To install a source package you will need to <a href="#set-up-an-r-dev-environment">setup a development environment</a>.</p>
@@ -379,9 +312,8 @@ end
 </ul>
 <p>For example <code>devtools::install_dev("dplyr")</code> will install the development version of dplyr. <code>devtools::install_github("jimhester/lookup")</code> will install Jim’s lookup package (which is not on CRAN), and <code>devtools::install_version("readr", "1.0.0")</code> will install readr 1.0.0.</p>
 <p>It is also possible to <a href="https://happygitwithr.com/fork.html">fork, clone and work with a package directly</a> then use <code>devtools::install()</code> and <code>devtools::load_all()</code> to work with the package locally like you would with a package you have created yourself.</p>
-</section>
-<section id="installation-to-a-temporary-library" class="level2" data-number="8.4">
-<h2 data-number="8.4" class="anchored" data-anchor-id="installation-to-a-temporary-library"><span class="header-section-number">8.4</span> Installation to a temporary library</h2>
+<section id="installation-to-a-temporary-library" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="installation-to-a-temporary-library"><span class="header-section-number">9.1</span> Installation to a temporary library</h2>
 <p>It is sometimes useful to install packages to a temporary library, so that they don’t affect your normal packages. This can be done by using the <code>lib</code> argument to the devtools install functions, then using <code>lib.loc</code> in <code>library()</code> when you load the package.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(devtools)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -659,13 +591,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./r-startup.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">R Startup</span></span>
+      <a href="./maintaining-r.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Maintaining R</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./reproducible-environments.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Reproducible Environments</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./debugging-r.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Debugging R code</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
