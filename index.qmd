@@ -30,6 +30,24 @@ The target learner for this material:
     them down or make their work products more brittle.
   * Is interested in (re)designing their R lifestyle, to be more effective and
     more self-sufficient.
+    
+## Mindset
+
+::: {.callout-tip}
+## Tweet from [Greg Wilson (2018)](https://twitter.com/gvwilson/status/1028964474135429122)
+(One of the things research programmers struggle with is the transition from exploration to infrastructure, i.e., from "coding to figure out what the problem is" to "I'm building a reusable tool". Habits from the first are often carried over to the second.) 2/N
+:::
+
+As a data analyst grows in their skills, eventually the infrastructure
+surrounding the analysis will become an important catalyst for the reproducibility 
+and longevity of analysis artifacts. Yet the analyst is unlikely to have benefited
+from any formal training or mentorship related to these topics, and may find themselves
+exploring arenas typically associated with other domains like software engineering.
+
+With this book, we hope to help you gracefully fall into this gap. Don't fret
+over past mistakes, but raise the bar for new work. Small but meaningful
+incremental changes add up over time, resulting in transformative workflows.
+
 
 ## Origin 
 
