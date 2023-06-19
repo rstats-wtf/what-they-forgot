@@ -46,7 +46,7 @@ exploring arenas typically associated with other domains like software engineeri
 
 With this book, we hope to help you gracefully fall into this gap. Don't fret
 over past mistakes, but raise the bar for new work. Small but meaningful
-incremental changes add up over time, resulting in transformative workflows.
+incremental changes add up over time, transforming your R quality of life.
 
 
 ## Origin 
