@@ -1,6 +1,4 @@
-# What They Forgot to Teach You About R {-}
-
-## About {-}
+# What They Forgot to Teach You About R
 
 ::: {.callout-warning}
 ## Warning
@@ -8,17 +6,21 @@
 This is book is a work in progress.
 :::
 
-This book focuses on content intrinsically related to programming in R, 
-but does not delve into the programming itself.
+## About 
 
-Section 1 discusses building holistic and project-oriented workflows that address common sources of friction in data analysis. 
+This book focuses on content intrinsically related to the infrastructure surrounding
+data analysis in R, but does not delve into the data analysis itself.
 
-Section 2 describes your personal R administration, which empowers R users to confidently manage their R programming environment.
+1. _A holistic workflow_ provides guidance on project-oriented workflows 
+that address common sources of friction in data analysis. 
 
-Section 3 showcases functions, options, and RStudio capabilities for 
+2. _Personal R administration_ empowers R users to confidently manage 
+their R programming environment.
+
+3. _All is Fail_ showcases functions, options, and RStudio capabilities for 
 debugging code, facilitating more efficient resolution of errant code. 
 
-## Audience {-}
+## Audience 
 
 The target learner for this material:
 
@@ -29,11 +31,13 @@ The target learner for this material:
   * Is interested in (re)designing their R lifestyle, to be more effective and
     more self-sufficient.
 
-## Origin {-}
+## Origin 
 
-The initial impetus for creating this book was a two-day hands-on workshop first instructed in 2018. The workshop materials and this book will likely continue to both overlap and diverge in content.
+The initial impetus for creating this book was a two-day hands-on workshop first 
+instructed in 2018. The workshop materials and this book will likely continue to
+both overlap and diverge in content.
 
-## Workshops {-}
+## Workshops 
 
 Upcoming and past offerings:
 
@@ -44,7 +48,7 @@ Upcoming and past offerings:
   * [WTF Seattle](https://github.com/rstats-wtf/wtf-2018-seattle) Seattle, WA
   * rstudio::conf 2018, San Diego, CA
   
-The workshops typically include substantial components that draw on other materials, such as:
+The workshops may include substantial components that draw on other materials, such as:
 
   * [Happy Git and GitHub for the useR](https://happygitwithr.com)
   * Iterating well with the purrr package
@@ -53,9 +57,4 @@ The workshops typically include substantial components that draw on other materi
 
 <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">What They Forgot to Teach You About R</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="https://github.com/jennybc/what-they-forgot" property="cc:attributionName" rel="cc:attributionURL">Jennifer Bryan, Jim Hester, Shannon Pileggi, E. David Aja</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
 
-```{r include=FALSE}
-# automatically create a bib database for R packages
-knitr::write_bib(c(
-  .packages(), 'bookdown', 'knitr', 'rmarkdown'
-), 'packages.bib')
-```
+
