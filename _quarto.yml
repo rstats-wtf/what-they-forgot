@@ -16,11 +16,11 @@ book:
     - index.qmd
     - part: "A holistic workflow"
       chapters:
-        - 11-source-and-blank-slates.qmd
-        - 12-projects.qmd
-        - 13-practice-safe-paths.qmd
-        - 14-naming-files.qmd
-        - 15-api-for-an-analysis.qmd
+        - source-and-blank-slates.qmd
+        - projects.qmd
+        - practice-safe-paths.qmd
+        - naming-files.qmd
+        - api-for-an-analysis.qmd
     - part: "Personal R Administration"
       chapters:
         - get-to-know-your-r-installation.qmd
