@@ -1,6 +1,28 @@
-# What They Forgot to Teach You About R {-}
+# What They Forgot to Teach You About R
 
-The initial impetus for creating these materials is a two-day hands-on workshop. The target learner:
+::: {.callout-warning}
+## Warning
+
+This book is a work in progress.
+:::
+
+## About 
+
+This book focuses on content intrinsically related to the infrastructure surrounding
+data analysis in R, but does not delve into the data analysis itself.
+
+1. _A holistic workflow_ provides guidance on project-oriented workflows 
+that address common sources of friction in data analysis. 
+
+2. _Personal R administration_ empowers R users to confidently manage 
+their R programming environment.
+
+3. _All is Fail_ showcases functions, options, and RStudio capabilities for 
+debugging code, facilitating more efficient resolution of errant code. 
+
+## Audience 
+
+The target learner for this material:
 
   * Has a moderate amount of R and RStudio experience.
   * Is largely self-taught.
@@ -8,12 +30,32 @@ The initial impetus for creating these materials is a two-day hands-on workshop.
     them down or make their work products more brittle.
   * Is interested in (re)designing their R lifestyle, to be more effective and
     more self-sufficient.
+    
+## Mindset
 
-The in-person workshops are still the primary delivery method for this content, but we've begun recording prose versions of this content, in order to make it more widely available and for participants to refer back to. Warning: these materials absolutely do not constitute a self-contained "book", nor do they capture all workshop content. 
+::: {.callout-tip}
+## Tweet from [Greg Wilson (2018)](https://twitter.com/gvwilson/status/1028964474135429122)
+(One of the things research programmers struggle with is the transition from exploration to infrastructure, i.e., from "coding to figure out what the problem is" to "I'm building a reusable tool". Habits from the first are often carried over to the second.) 2/N
+:::
 
-We focus on building holistic and project-oriented workflows that address the most common sources of friction in data analysis, *outside of doing the statistical analysis itself*.
+As a data analyst grows in their skills, eventually the infrastructure
+surrounding the analysis will become an important catalyst for the reproducibility 
+and longevity of analysis artifacts. Yet the analyst is unlikely to have benefited
+from any formal training or mentorship related to these topics, and may find themselves
+exploring arenas typically associated with other domains like software engineering.
 
-## Workshops {-}
+With this book, we hope to help you gracefully fall into this gap. Don't fret
+over past mistakes, but raise the bar for new work. Small but meaningful
+incremental changes add up over time, transforming your R quality of life.
+
+
+## Origin 
+
+The initial impetus for creating this book was a two-day hands-on workshop first 
+instructed in 2018. The workshop materials and this book will likely continue to
+both overlap and diverge in content.
+
+## Workshops 
 
 Upcoming and past offerings:
 
@@ -24,18 +66,13 @@ Upcoming and past offerings:
   * [WTF Seattle](https://github.com/rstats-wtf/wtf-2018-seattle) Seattle, WA
   * rstudio::conf 2018, San Diego, CA
   
-The workshops typically include substantial components that draw on other materials, such as:
+The workshops may include substantial components that draw on other materials, such as:
 
   * [Happy Git and GitHub for the useR](https://happygitwithr.com)
   * Iterating well with the purrr package
     - [purrr tutorial](https://jennybc.github.io/purrr-tutorial/)
     - [Row-oriented workflows in R with the tidyverse](https://github.com/jennybc/row-oriented-workflows#readme)
 
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">What They Forgot to Teach You About R</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="https://github.com/jennybc/what-they-forgot" property="cc:attributionName" rel="cc:attributionURL">Jennifer Bryan, Jim Hester</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">What They Forgot to Teach You About R</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="https://github.com/jennybc/what-they-forgot" property="cc:attributionName" rel="cc:attributionURL">Jennifer Bryan, Jim Hester, Shannon Pileggi, E. David Aja</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
 
-```{r include=FALSE}
-# automatically create a bib database for R packages
-knitr::write_bib(c(
-  .packages(), 'bookdown', 'knitr', 'rmarkdown'
-), 'packages.bib')
-```
+
