@@ -3,7 +3,7 @@
 ::: {.callout-warning}
 ## Warning
 
-This is book is a work in progress.
+This book is a work in progress.
 :::
 
 ## About 
