@@ -3,7 +3,7 @@ project:
 
 book:
   title: "What They Forgot to Teach You About R"
-  subtitle: "The stuff you need to know about R, besides statistical analysis."
+  subtitle: "The stuff you need to know about R, besides data analysis."
   repo-url: https://github.com/rstats-wtf/what-they-forgot
   site-url: https://rstats.wtf
   google-analytics: UA-131757508-1
