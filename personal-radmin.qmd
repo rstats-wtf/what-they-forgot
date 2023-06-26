@@ -1,13 +1,49 @@
-# Personal R Administration
+---
+title: "Meta Project-Oriented Workflow"
+---
+
+The goal of these chapters is to help you build a system for answering questions like:
+
+- How do I upgrade the version of R I'm using for this project?
+- How do I track which package versions I'm using for this project?
+- How do I move this project from one computer to another?
+
+across many projects and many computers.
+
+This system takes the principles articulated in "Holistic Workflow" and extends them to all the ways you might use R, but also to other software you use.
+
+## The Project Onion
+
+Going all in on the project-oriented workflow means adopting tools that make it possible to programmatically manage each of the layers of project setup, which can be visualized via the "project onion":
+
+![the project onion](./img/project-onion.svg "package managers install language managers install language verions which install environments")
+
+### package managers
+
+### language manager
+
+### language version
+
+### environment manager
+
+### your project
+
+## The Project Onion: R
+
+![the project onion, R](./img/r-project-onion.svg "scoop install rig; rig install 4.3.0; rig rstudio projects/myproject/renv.lock")
 
 
+## The Workflow Cycle
 
 ```{mermaid}
-flowchart TD
-inst(Installing & Upgrading R)
-start(Starting R)
-pkg(Installing Packages)
-repro(Reproducible Environments)
+flowchart LR
 
-start --> pkg --> repro --> inst --> start
+start(starting R)
+packages(installing R packages)
+repro(creating reproducible environments)
+installing("installing | upgrading R")
+
+start --> packages --> repro --> installing --> start
 ```
+
+If you go all in on the project-oriented workflow, installing R and upgrading R are the same operation.

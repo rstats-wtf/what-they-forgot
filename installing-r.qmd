@@ -1,0 +1,11 @@
+# Installing R
+
+::: {.callout-tip}
+Avoid installing your language with a package manager.  
+Similarly, avoid installing your language with a tool written in that language.
+:::
+
+
+## rig
+
+https://github.com/r-lib/rig

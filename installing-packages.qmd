@@ -1,4 +1,40 @@
-# Install a source package
+# Installing packages
+
+
+## a highly simplified package lifecycle
+```{mermaid}
+%%{init: {"theme": "dark" } }%%
+graph TD
+Source -- "devtools::build()" --> Bundled
+Bundled -- "devtools::build(binary = TRUE)"--> Binary 
+Binary --"install.packages()"--> Installed 
+Installed --"library()"--> Loaded 
+```
+
+
+```{mermaid}
+%%{init: {"theme": "dark" } }%%
+flowchart TD
+subgraph dev
+  direction LR
+Source -- "devtools::build()" --> Bundled
+Bundled -- "devtools::build(binary = TRUE)"--> Binary 
+end
+subgraph use
+direction LR
+Binary --"install.packages()"--> Installed 
+Installed --"library()"--> Loaded 
+end
+```
+
+[R Packages](https://r-pkgs.org/Structure.html) covers these phases of the package lifecycle in much more detail.
+
+## Binary packages
+
+- where to get them
+- how to know you got them
+
+##  Source packages
 
 The most common type of package you install is a **binary** package. Packages
 released on CRAN are built as pre-compiled binaries.

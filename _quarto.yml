@@ -23,10 +23,12 @@ book:
         - api-for-an-analysis.qmd
     - part: "Personal R Administration"
       chapters:
-        - get-to-know-your-r-installation.qmd
+        - personal-radmin.qmd
         - r-startup.qmd
+        - installing-packages.qmd
+        - reproducible-environments.qmd
+        - installing-r.qmd
         - maintaining-r.qmd
-        - install-single-package.qmd
     - part: "All is Fail"
       chapters:
         - debugging-r.qmd
