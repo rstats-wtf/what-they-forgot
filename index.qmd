@@ -33,10 +33,7 @@ The target learner for this material:
     
 ## Mindset
 
-::: {.callout-tip}
-## Tweet from [Greg Wilson (2018)](https://twitter.com/gvwilson/status/1028964474135429122)
-(One of the things research programmers struggle with is the transition from exploration to infrastructure, i.e., from "coding to figure out what the problem is" to "I'm building a reusable tool". Habits from the first are often carried over to the second.) 2/N
-:::
+{{< tweet gvwilson 1028964474135429122 >}}
 
 As a data analyst grows in their skills, eventually the infrastructure
 surrounding the analysis will become an important catalyst for the reproducibility 
