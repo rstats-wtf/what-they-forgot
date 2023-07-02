@@ -2,66 +2,66 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://rstats.wtf/index.html</loc>
-    <lastmod>2023-07-01T07:19:40.074Z</lastmod>
+    <lastmod>2023-07-02T07:18:45.093Z</lastmod>
   </url>
   <url>
     <loc>https://rstats.wtf/source-and-blank-slates.html</loc>
-    <lastmod>2023-07-01T07:19:40.086Z</lastmod>
+    <lastmod>2023-07-02T07:18:45.101Z</lastmod>
   </url>
   <url>
     <loc>https://rstats.wtf/projects.html</loc>
-    <lastmod>2023-07-01T07:19:40.098Z</lastmod>
+    <lastmod>2023-07-02T07:18:45.113Z</lastmod>
   </url>
   <url>
     <loc>https://rstats.wtf/practice-safe-paths.html</loc>
-    <lastmod>2023-07-01T07:19:40.106Z</lastmod>
+    <lastmod>2023-07-02T07:18:45.121Z</lastmod>
   </url>
   <url>
     <loc>https://rstats.wtf/naming-files.html</loc>
-    <lastmod>2023-07-01T07:19:40.118Z</lastmod>
+    <lastmod>2023-07-02T07:18:45.129Z</lastmod>
   </url>
   <url>
     <loc>https://rstats.wtf/api-for-an-analysis.html</loc>
-    <lastmod>2023-07-01T07:19:40.126Z</lastmod>
+    <lastmod>2023-07-02T07:18:45.137Z</lastmod>
   </url>
   <url>
     <loc>https://rstats.wtf/personal-radmin.html</loc>
-    <lastmod>2023-07-01T07:19:40.134Z</lastmod>
+    <lastmod>2023-07-02T07:18:45.141Z</lastmod>
   </url>
   <url>
     <loc>https://rstats.wtf/r-startup.html</loc>
-    <lastmod>2023-07-01T07:19:40.142Z</lastmod>
+    <lastmod>2023-07-02T07:18:45.153Z</lastmod>
   </url>
   <url>
     <loc>https://rstats.wtf/installing-packages.html</loc>
-    <lastmod>2023-07-01T07:19:40.154Z</lastmod>
+    <lastmod>2023-07-02T07:18:45.161Z</lastmod>
   </url>
   <url>
     <loc>https://rstats.wtf/reproducible-environments.html</loc>
-    <lastmod>2023-07-01T07:19:40.158Z</lastmod>
+    <lastmod>2023-07-02T07:18:45.165Z</lastmod>
   </url>
   <url>
     <loc>https://rstats.wtf/installing-r.html</loc>
-    <lastmod>2023-07-01T07:19:40.178Z</lastmod>
+    <lastmod>2023-07-02T07:18:45.181Z</lastmod>
   </url>
   <url>
     <loc>https://rstats.wtf/maintaining-r.html</loc>
-    <lastmod>2023-07-01T07:19:40.186Z</lastmod>
+    <lastmod>2023-07-02T07:18:45.189Z</lastmod>
   </url>
   <url>
     <loc>https://rstats.wtf/debugging-r.html</loc>
-    <lastmod>2023-07-01T07:19:40.198Z</lastmod>
+    <lastmod>2023-07-02T07:18:45.201Z</lastmod>
   </url>
   <url>
     <loc>https://rstats.wtf/read-source.html</loc>
-    <lastmod>2023-07-01T07:19:40.206Z</lastmod>
+    <lastmod>2023-07-02T07:18:45.209Z</lastmod>
   </url>
   <url>
     <loc>https://rstats.wtf/reprexing.html</loc>
-    <lastmod>2023-07-01T07:19:40.214Z</lastmod>
+    <lastmod>2023-07-02T07:18:45.213Z</lastmod>
   </url>
   <url>
     <loc>https://rstats.wtf/sessioninfo.html</loc>
-    <lastmod>2023-07-01T07:19:40.218Z</lastmod>
+    <lastmod>2023-07-02T07:18:45.217Z</lastmod>
   </url>
 </urlset>
