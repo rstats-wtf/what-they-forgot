@@ -60,7 +60,7 @@ re-install R if needed without touching your CRAN packages. You also want to
 make sure the package library is specific to the minor version of R.
 
 `R_LIBS_USER` is actually set by default to this scheme, (to
-`~/R/win-library/x.y` on Windows and `~/Library/R/x.y/library` on macOS) but
+`~/AppData/Local/R/win-library/x.y` on Windows and `~/Library/R/x.y/library` on macOS) but
 the directory may not already exist, so one option is just to create this
 directory (`fs::dir_create(Sys.getenv("R_LIBS_USER"))`).
 
