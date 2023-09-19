@@ -54,15 +54,17 @@ of the time, R-core does not guarantee compatibility between these versions and
 things could break (even break silently).
 :::
 
-I suggest you keep the packages R comes with (base and recommended)
-packages separate from the rest of your packages. This makes it easy to
-re-install R if needed without touching your CRAN packages. You also want to
-make sure the package library is specific to the minor version of R.
+I suggest you keep R's base and recommended packages separate from the other packages you install from CRAN or elsewhere.
+This makes it easy to re-install R if needed, without touching your CRAN packages.
+You also want to make sure the package library is specific to the minor version of R.
+`R_LIBS_USER` is actually set by default to this scheme:
 
-`R_LIBS_USER` is actually set by default to this scheme, (to
-~/R/win-library/x.y` (for versions of R prior to 4.2) or `~/AppData/Local/R/win-library/x.y` (for version of R at or above 4.2) on Windows and `~/Library/R/x.y/library` on macOS) but
-the directory may not already exist, so one option is just to create this
-directory (`fs::dir_create(Sys.getenv("R_LIBS_USER"))`).
+* Windows, R < 4.2: `~/R/win-library/x.y`
+* Windows, R >= 4.2: `~/AppData/Local/R/win-library/x.y`
+* macOS: `~/Library/R/x.y/library`
+
+Note, however, that this directory does not necessarily exist and will not necessarily be created automatically.
+Therefore, to adopt this lifestyle next time you upgrade R, make sure that this directory exists before you start to re-install your add-on packages (`fs::dir_create(Sys.getenv("R_LIBS_USER"))`).
 
 You can also alternatively set `R_LIBS_USER` to a different path; but make sure
 to include the `%v` wildcard. e.g. `~/R/library/%v`. The `%v` is
