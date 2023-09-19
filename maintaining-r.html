@@ -381,8 +381,13 @@ Warning
 <p>You may see some suggestions that you can just copy your packages even when the ‘minor’ version changes. <strong>DO NOT DO THIS</strong>. While it may work some (even most) of the time, R-core does not guarantee compatibility between these versions and things could break (even break silently).</p>
 </div>
 </div>
-<p>I suggest you keep the packages R comes with (base and recommended) packages separate from the rest of your packages. This makes it easy to re-install R if needed without touching your CRAN packages. You also want to make sure the package library is specific to the minor version of R.</p>
-<p><code>R_LIBS_USER</code> is actually set by default to this scheme, (to <code>~/R/win-library/x.y</code> on Windows and <code>~/Library/R/x.y/library</code> on macOS) but the directory may not already exist, so one option is just to create this directory (<code>fs::dir_create(Sys.getenv("R_LIBS_USER"))</code>).</p>
+<p>I suggest you keep R’s base and recommended packages separate from the other packages you install from CRAN or elsewhere. This makes it easy to re-install R if needed, without touching your CRAN packages. You also want to make sure the package library is specific to the minor version of R. <code>R_LIBS_USER</code> is actually set by default to this scheme:</p>
+<ul>
+<li>Windows, R &lt; 4.2: <code>~/R/win-library/x.y</code></li>
+<li>Windows, R &gt;= 4.2: <code>~/AppData/Local/R/win-library/x.y</code></li>
+<li>macOS: <code>~/Library/R/x.y/library</code></li>
+</ul>
+<p>Note, however, that this directory does not necessarily exist and will not necessarily be created automatically. Therefore, to adopt this lifestyle next time you upgrade R, make sure that this directory exists before you start to re-install your add-on packages (<code>fs::dir_create(Sys.getenv("R_LIBS_USER"))</code>).</p>
 <p>You can also alternatively set <code>R_LIBS_USER</code> to a different path; but make sure to include the <code>%v</code> wildcard. e.g.&nbsp;<code>~/R/library/%v</code>. The <code>%v</code> is automatically expanded to the major and minor version of R, so with R 3.5.1 this path becomes <code>~/R/library/3.5</code>. See <a href="r-startup.html#renviron">Renviron</a> for how to edit your <code>.Renviron</code> file.</p>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
