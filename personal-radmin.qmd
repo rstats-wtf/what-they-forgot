@@ -18,20 +18,109 @@ Going all in on the project-oriented workflow means adopting tools that make it 
 
 ![the project onion](./img/project-onion.svg "package managers install language managers install language verions which install environments")
 
+### test environments
+
+a way to test changes to your environment without wrecking your machine:
+
+::: panel-tabset
+
+#### {{< fa brands windows >}}
+
+[Windows Sandbox](https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-sandbox/windows-sandbox-overview)
+
+#### {{< fa brands apple >}}
+
+- [UTM](https://mac.getutm.app/)
+- [Tart](https://github.com/cirruslabs/tart)
+
+#### {{< fa brands linux >}}
+
+- [Docker](https://www.docker.com/)
+- [Multipass](https://multipass.run/)
+- [Digital Ocean](https://www.digitalocean.com/) | [Linode](https://www.linode.com/) | [Hetzner](https://www.hetzner.com/)
+
+:::
+
 ### package managers
 
-### language manager
+::: panel-tabset
 
-### language version
+#### {{< fa brands windows >}}
 
-### environment manager
+- [scoop](https://scoop.sh/)
+- [winget](https://learn.microsoft.com/en-us/windows/package-manager/winget/)
 
-### your project
+#### {{< fa brands apple >}}
+
+- [homebrew](https://brew.sh/)
+
+#### {{< fa brands linux >}}
+
+- [homebrew](https://docs.brew.sh/Homebrew-on-Linux)
+- [apt](https://wiki.debian.org/Apt) | [dnf](https://docs.fedoraproject.org/en-US/quick-docs/dnf/)
+
+:::
 
 ## The Project Onion: R
 
 ![the project onion, R](./img/r-project-onion.svg "scoop install rig; rig install 4.3.0; rig rstudio projects/myproject/renv.lock")
 
+### language manager
+
+::: panel-tabset
+
+#### {{< fa brands windows >}}
+
+```bash
+scoop bucket add r-bucket https://github.com/cderv/r-bucket.git
+scoop install rig
+scoop install rtools
+```
+or  
+
+```bash
+winget install posit.rig
+winget install Rtools
+```
+
+#### {{< fa brands apple >}}
+
+```
+brew tap r-lib/rig
+brew install --cask rig
+```
+
+
+#### {{< fa brands linux >}}
+
+```
+curl -Ls https://github.com/r-lib/rig/releases/download/latest/rig-linux-$(arch)-latest.tar.gz |
+  `which sudo` tar xz -C /usr/local
+```
+
+:::
+
+### language version
+
+```bash
+rig add release
+rig add devel
+rig add 3.6.2
+```
+
+### environment manager
+
+```r
+renv::init()
+renv::snapshot()
+```
+
+### your project
+
+```
+renv.lock
+my_project.Rproj
+```
 
 ## The Workflow Cycle
 
