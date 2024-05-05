@@ -1,4 +1,4 @@
-# Practice safe paths {#safe-paths}
+# Practice safe paths {#sec-safe-paths}
 
 Adapt from <https://github.com/jennybc/here_here#readme>.
 

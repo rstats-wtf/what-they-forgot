@@ -1,12 +1,12 @@
-# Project-oriented workflow {#project-oriented-workflow}
+# Project-oriented workflow {#sec-project-oriented-workflow}
 
-In \@ref(rm-list-ls), we discouraged the habit of starting R scripts with `rm(list = ls())`, because it doesn't actually achieve the intended goal: to reset things. Restarting R is a better way to power-cycle.
+In @sec-rm-list-ls, we discouraged the habit of starting R scripts with `rm(list = ls())`, because it doesn't actually achieve the intended goal: to reset things. Restarting R is a better way to power-cycle.
 
-But what if you want to shift focus from project A to project B? Restarting R, alone, is not enough. It doesn't change R's working directory, which is needed if projects A and B live in different directories, which they should (see \@ref(work-in-a-project)). Also, what if you want to have project A and B available for work at the same time?
+But what if you want to shift focus from project A to project B? Restarting R, alone, is not enough. It doesn't change R's working directory, which is needed if projects A and B live in different directories, which they should (see @sec-work-in-a-project)). Also, what if you want to have project A and B available for work at the same time?
 
 My strong recommendation is to use a development tool with first-class support for projects. But first ...
 
-## We need to talk about `setwd("path/that/only/works/on/my/machine")` {#setwd}
+## We need to talk about `setwd("path/that/only/works/on/my/machine")` {#sec-setwd}
 
 A common response to the working directory problem is to set the working directory at the beginning of each script via `setwd()`. At the start of [STAT 545](http://stat545.com), we see a lot of student code that looks like this:
 
@@ -35,7 +35,7 @@ If, after reading this article, you still decide to use `setwd()` in your script
     ggsave("figs/foofy_scatterplot.png")
     ```
 
-The convention about leaving working directory at the top-level of a project is tightly connected to topics in \@ref(safe-paths).
+The convention about leaving working directory at the top-level of a project is tightly connected to topics in @sec-safe-paths.
 
 ### If you like `setwd()`, then carry on
 
@@ -52,16 +52,16 @@ Problem statement:
 
 The lowest-tech solution is to simply set working directory yourself, interactively, at the same time as you restart R, when you switch from project A to project B. Execute `setwd("path/to/projectA")`, but don't bake it into your scripts. This works! But it's aggravating enough that most people go back to using `setwd()` anyway and/or are reluctant to cycle rapidly between projects.
 
-I strongly recommend [using an IDE](#use-an-ide) that supports a project-based workflow. This eliminates the tension between your development convenience and the portability of the code.
+I strongly recommend [using an IDE](#sec-use-an-ide) that supports a project-based workflow. This eliminates the tension between your development convenience and the portability of the code.
 
-## Organize work into projects (colloquial definition) {#work-in-a-project}
+## Organize work into projects (colloquial definition) {#sec-work-in-a-project}
 
 Here's what I mean by "work in a project":
 
   * File system discipline: put all the files related to a single project in a designated folder.
     - This applies to data, code, figures, notes, etc.
     - Depending on project complexity, you might enforce further organization into subfolders.
-    - Other common file practices are detailed in [API for an analysis](#api-for-an-analysis) and [How to name files](#how-to-name-files).
+    - Other common file practices are detailed in [API for an analysis](#sec-api-for-an-analysis) and [How to name files](#sec-how-to-name-files).
   * Working directory intentionality: when working on project A, make sure working directory is set to project A's folder.
     - Ideally, this is achieved via the development workflow and tooling, not by baking absolute paths into the code.
   * File path discipline: all paths are relative and, by default, relative to the project's folder.
@@ -74,7 +74,7 @@ It's like agreeing that we will all drive on the left or the right. A hallmark o
 
 ## IDE support for projects
 
-Projects are a common and very attractive feature of many IDEs (\@ref(use-an-ide)). Again, the practice of organizing work in projects is not prevalent among long-time coders because they use an IDE. It's the other way around: one of the attractions of an IDE is that it makes it easier to exploit development practices that have proven to be useful across many languages and domains.
+Projects are a common and very attractive feature of many IDEs (@sec-use-an-ide)). Again, the practice of organizing work in projects is not prevalent among long-time coders because they use an IDE. It's the other way around: one of the attractions of an IDE is that it makes it easier to exploit development practices that have proven to be useful across many languages and domains.
 
 I would say an IDE or workflow supports project-oriented work in R if there's a way to do these things:
 

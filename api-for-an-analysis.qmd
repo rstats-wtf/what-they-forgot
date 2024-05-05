@@ -1,4 +1,4 @@
-# API for an analysis
+# API for an analysis {#sec-api-for-an-analysis}
 
 Prose version of slides 57 - 63 from here:
 
