@@ -297,13 +297,13 @@ ga('send', {
    
   <ul>
   <li><a href="#save-source-not-the-workspace" id="toc-save-source-not-the-workspace" class="nav-link active" data-scroll-target="#save-source-not-the-workspace"><span class="header-section-number">2.1</span> Save source, not the workspace</a></li>
-  <li><a href="#use-an-ide" id="toc-use-an-ide" class="nav-link" data-scroll-target="#use-an-ide"><span class="header-section-number">2.2</span> Use an IDE</a></li>
+  <li><a href="#sec-use-an-ide" id="toc-sec-use-an-ide" class="nav-link" data-scroll-target="#sec-use-an-ide"><span class="header-section-number">2.2</span> Use an IDE</a></li>
   <li><a href="#always-start-r-with-a-blank-slate" id="toc-always-start-r-with-a-blank-slate" class="nav-link" data-scroll-target="#always-start-r-with-a-blank-slate"><span class="header-section-number">2.3</span> Always start R with a blank slate</a></li>
   <li><a href="#restart-r-often-during-development" id="toc-restart-r-often-during-development" class="nav-link" data-scroll-target="#restart-r-often-during-development"><span class="header-section-number">2.4</span> Restart R often during development</a>
   <ul class="collapse">
   <li><a href="#pre-emptively-handling-a-faq" id="toc-pre-emptively-handling-a-faq" class="nav-link" data-scroll-target="#pre-emptively-handling-a-faq"><span class="header-section-number">2.4.1</span> Pre-emptively handling a FAQ</a></li>
   </ul></li>
-  <li><a href="#rm-list-ls" id="toc-rm-list-ls" class="nav-link" data-scroll-target="#rm-list-ls"><span class="header-section-number">2.5</span> What’s wrong with <code>rm(list = ls())</code>?</a></li>
+  <li><a href="#sec-rm-list-ls" id="toc-sec-rm-list-ls" class="nav-link" data-scroll-target="#sec-rm-list-ls"><span class="header-section-number">2.5</span> What’s wrong with <code>rm(list = ls())</code>?</a></li>
   <li><a href="#objects-that-take-a-long-time-to-create" id="toc-objects-that-take-a-long-time-to-create" class="nav-link" data-scroll-target="#objects-that-take-a-long-time-to-create"><span class="header-section-number">2.6</span> Objects that take a long time to create</a></li>
   <li><a href="#automated-workflows" id="toc-automated-workflows" class="nav-link" data-scroll-target="#automated-workflows"><span class="header-section-number">2.7</span> Automated workflows</a></li>
   <li><a href="#links-to-other-resources" id="toc-links-to-other-resources" class="nav-link" data-scroll-target="#links-to-other-resources"><span class="header-section-number">2.8</span> Links to other resources</a></li>
@@ -315,7 +315,7 @@ ga('send', {
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./source-and-blank-slates.html">A holistic workflow</a></li><li class="breadcrumb-item"><a href="./source-and-blank-slates.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Saving source and blank slates</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="save-source" class="quarto-section-identifier"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Saving source and blank slates</span></span></h1>
+<h1 class="title"><span id="sec-save-source" class="quarto-section-identifier"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Saving source and blank slates</span></span></h1>
 </div>
 
 
@@ -354,8 +354,8 @@ ga('send', {
 <p>Saving code – not workspaces – is incredibly important because it is an absolute requirement for reproducibility. Renouncing <code>.Rdata</code> and restarting R often are not intrinsically important or morally superior behaviours. They are important because they provide constant pressure for you to do the right thing: save the source code needed to create all important artefacts of your analysis.</p>
 <p>Below we lay out the concrete measures for adopting this workflow.</p>
 </section>
-<section id="use-an-ide" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="use-an-ide"><span class="header-section-number">2.2</span> Use an IDE</h2>
+<section id="sec-use-an-ide" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="sec-use-an-ide"><span class="header-section-number">2.2</span> Use an IDE</h2>
 <p>When working with R, save your commands in a <code>.R</code> file, a.k.a. a script, or in <code>.Rmd</code>, a.k.a. an R Markdown document. It doesn’t have to be polished. Just save it!</p>
 <p>An <a href="https://en.wikipedia.org/wiki/Integrated_development_environment">integrated development environment</a> (IDE) is critical for making this workflow pleasant. Without an IDE, you edit your code in one app, copy one or more lines to the clipboard, then paste that into R, and execute. Over and over. If this is your life, it is very attractive to type code directly in R!</p>
 <p>Any good IDE offers a powerful, R-aware code editor and provides many ways to send your code to a running R process (along with other modern conveniences). This eliminates the temptation to develop code directly in the R Console. Instead, it becomes easier to do the right thing, which is to develop code in a <code>.R</code> or <code>.Rmd</code> file.</p>
@@ -409,8 +409,8 @@ ga('send', {
 <p>Which brings us to …</p>
 </section>
 </section>
-<section id="rm-list-ls" class="level2" data-number="2.5">
-<h2 data-number="2.5" class="anchored" data-anchor-id="rm-list-ls"><span class="header-section-number">2.5</span> What’s wrong with <code>rm(list = ls())</code>?</h2>
+<section id="sec-rm-list-ls" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="sec-rm-list-ls"><span class="header-section-number">2.5</span> What’s wrong with <code>rm(list = ls())</code>?</h2>
 <p>It’s fairly common to see data analysis scripts that begin with this object-nuking command:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list =</span> <span class="fu">ls</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -419,7 +419,7 @@ ga('send', {
 <p>This line is meant to reset things, either to power-cycle the current analysis or to switch from one project to another. But there are better ways to do both:</p>
 <ul>
 <li>To power-cycle the current analysis, restart R! See above.</li>
-<li>To switch from one project to another, either restart R or, even better, use an IDE with proper support for projects, where each project gets its own R process. See <a href="projects.html">Project-oriented workflow</a>.</li>
+<li>To switch from one project to another, either restart R or, even better, use an IDE with proper support for projects, where each project gets its own R process. See <a href="#project-oriented-workflow">Project-oriented workflow</a>.</li>
 </ul>
 <p><strong>The problem with <code>rm(list = ls())</code> is that, given the intent, it does not go far enough.</strong> All it does is delete user-created objects from the global workspace.</p>
 <p>Many other changes to the R landscape persist invisibly and can have profound effects on subsequent development. Any packages that have ever been attached via <code>library()</code> are still available. Any options that have been set to non-default values remain that way. Working directory is not affected (which is, of course, why we see <code>setwd()</code> so often here too!).</p>

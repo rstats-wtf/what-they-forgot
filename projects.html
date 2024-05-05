@@ -296,12 +296,12 @@ ga('send', {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#setwd" id="toc-setwd" class="nav-link active" data-scroll-target="#setwd"><span class="header-section-number">3.1</span> We need to talk about <code>setwd("path/that/only/works/on/my/machine")</code></a>
+  <li><a href="#sec-setwd" id="toc-sec-setwd" class="nav-link active" data-scroll-target="#sec-setwd"><span class="header-section-number">3.1</span> We need to talk about <code>setwd("path/that/only/works/on/my/machine")</code></a>
   <ul class="collapse">
   <li><a href="#if-you-like-setwd-then-carry-on" id="toc-if-you-like-setwd-then-carry-on" class="nav-link" data-scroll-target="#if-you-like-setwd-then-carry-on"><span class="header-section-number">3.1.1</span> If you like <code>setwd()</code>, then carry on</a></li>
   </ul></li>
   <li><a href="#dilemma-and-a-solution" id="toc-dilemma-and-a-solution" class="nav-link" data-scroll-target="#dilemma-and-a-solution"><span class="header-section-number">3.2</span> Dilemma and a solution</a></li>
-  <li><a href="#work-in-a-project" id="toc-work-in-a-project" class="nav-link" data-scroll-target="#work-in-a-project"><span class="header-section-number">3.3</span> Organize work into projects (colloquial definition)</a></li>
+  <li><a href="#sec-work-in-a-project" id="toc-sec-work-in-a-project" class="nav-link" data-scroll-target="#sec-work-in-a-project"><span class="header-section-number">3.3</span> Organize work into projects (colloquial definition)</a></li>
   <li><a href="#ide-support-for-projects" id="toc-ide-support-for-projects" class="nav-link" data-scroll-target="#ide-support-for-projects"><span class="header-section-number">3.4</span> IDE support for projects</a></li>
   <li><a href="#rstudio-projects" id="toc-rstudio-projects" class="nav-link" data-scroll-target="#rstudio-projects"><span class="header-section-number">3.5</span> RStudio Projects</a>
   <ul class="collapse">
@@ -320,7 +320,7 @@ ga('send', {
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./source-and-blank-slates.html">A holistic workflow</a></li><li class="breadcrumb-item"><a href="./projects.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Project-oriented workflow</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="project-oriented-workflow" class="quarto-section-identifier"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Project-oriented workflow</span></span></h1>
+<h1 class="title"><span id="sec-project-oriented-workflow" class="quarto-section-identifier"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Project-oriented workflow</span></span></h1>
 </div>
 
 
@@ -337,11 +337,11 @@ ga('send', {
 </header>
 
 
-<p>In @ref(rm-list-ls), we discouraged the habit of starting R scripts with <code>rm(list = ls())</code>, because it doesn’t actually achieve the intended goal: to reset things. Restarting R is a better way to power-cycle.</p>
-<p>But what if you want to shift focus from project A to project B? Restarting R, alone, is not enough. It doesn’t change R’s working directory, which is needed if projects A and B live in different directories, which they should (see @ref(work-in-a-project)). Also, what if you want to have project A and B available for work at the same time?</p>
+<p>In <a href="source-and-blank-slates.html#sec-rm-list-ls" class="quarto-xref"><span>Section 2.5</span></a>, we discouraged the habit of starting R scripts with <code>rm(list = ls())</code>, because it doesn’t actually achieve the intended goal: to reset things. Restarting R is a better way to power-cycle.</p>
+<p>But what if you want to shift focus from project A to project B? Restarting R, alone, is not enough. It doesn’t change R’s working directory, which is needed if projects A and B live in different directories, which they should (see <a href="#sec-work-in-a-project" class="quarto-xref"><span>Section 3.3</span></a>)). Also, what if you want to have project A and B available for work at the same time?</p>
 <p>My strong recommendation is to use a development tool with first-class support for projects. But first …</p>
-<section id="setwd" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="setwd"><span class="header-section-number">3.1</span> We need to talk about <code>setwd("path/that/only/works/on/my/machine")</code></h2>
+<section id="sec-setwd" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="sec-setwd"><span class="header-section-number">3.1</span> We need to talk about <code>setwd("path/that/only/works/on/my/machine")</code></h2>
 <p>A common response to the working directory problem is to set the working directory at the beginning of each script via <code>setwd()</code>. At the start of <a href="http://stat545.com">STAT 545</a>, we see a lot of student code that looks like this:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
@@ -365,7 +365,7 @@ ga('send', {
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">"figs/foofy_scatterplot.png"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></li>
 </ul>
-<p>The convention about leaving working directory at the top-level of a project is tightly connected to topics in @ref(safe-paths).</p>
+<p>The convention about leaving working directory at the top-level of a project is tightly connected to topics in <a href="practice-safe-paths.html" class="quarto-xref"><span>Chapter 4</span></a>.</p>
 <section id="if-you-like-setwd-then-carry-on" class="level3" data-number="3.1.1">
 <h3 data-number="3.1.1" class="anchored" data-anchor-id="if-you-like-setwd-then-carry-on"><span class="header-section-number">3.1.1</span> If you like <code>setwd()</code>, then carry on</h3>
 <p>If you use <code>setwd("path/that/only/works/on/my/machine")</code> and it does not cause you or your collaborators grief, then I am happy for you. Carry on. This was my practice as well for many years.</p>
@@ -380,17 +380,17 @@ ga('send', {
 <li>But we also want to keep code like <code>setwd("path/to/projectA")</code> out of our <code>.R</code> scripts.</li>
 </ul>
 <p>The lowest-tech solution is to simply set working directory yourself, interactively, at the same time as you restart R, when you switch from project A to project B. Execute <code>setwd("path/to/projectA")</code>, but don’t bake it into your scripts. This works! But it’s aggravating enough that most people go back to using <code>setwd()</code> anyway and/or are reluctant to cycle rapidly between projects.</p>
-<p>I strongly recommend <a href="source-and-blank-slates.html#use-an-ide">using an IDE</a> that supports a project-based workflow. This eliminates the tension between your development convenience and the portability of the code.</p>
+<p>I strongly recommend <a href="source-and-blank-slates.html#sec-use-an-ide">using an IDE</a> that supports a project-based workflow. This eliminates the tension between your development convenience and the portability of the code.</p>
 </section>
-<section id="work-in-a-project" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="work-in-a-project"><span class="header-section-number">3.3</span> Organize work into projects (colloquial definition)</h2>
+<section id="sec-work-in-a-project" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="sec-work-in-a-project"><span class="header-section-number">3.3</span> Organize work into projects (colloquial definition)</h2>
 <p>Here’s what I mean by “work in a project”:</p>
 <ul>
 <li>File system discipline: put all the files related to a single project in a designated folder.
 <ul>
 <li>This applies to data, code, figures, notes, etc.</li>
 <li>Depending on project complexity, you might enforce further organization into subfolders.</li>
-<li>Other common file practices are detailed in <a href="#api-for-an-analysis">API for an analysis</a> and <a href="#how-to-name-files">How to name files</a>.</li>
+<li>Other common file practices are detailed in <a href="api-for-an-analysis.html">API for an analysis</a> and <a href="naming-files.html">How to name files</a>.</li>
 </ul></li>
 <li>Working directory intentionality: when working on project A, make sure working directory is set to project A’s folder.
 <ul>
@@ -404,7 +404,7 @@ ga('send', {
 </section>
 <section id="ide-support-for-projects" class="level2" data-number="3.4">
 <h2 data-number="3.4" class="anchored" data-anchor-id="ide-support-for-projects"><span class="header-section-number">3.4</span> IDE support for projects</h2>
-<p>Projects are a common and very attractive feature of many IDEs (@ref(use-an-ide)). Again, the practice of organizing work in projects is not prevalent among long-time coders because they use an IDE. It’s the other way around: one of the attractions of an IDE is that it makes it easier to exploit development practices that have proven to be useful across many languages and domains.</p>
+<p>Projects are a common and very attractive feature of many IDEs (<a href="source-and-blank-slates.html#sec-use-an-ide" class="quarto-xref"><span>Section 2.2</span></a>)). Again, the practice of organizing work in projects is not prevalent among long-time coders because they use an IDE. It’s the other way around: one of the attractions of an IDE is that it makes it easier to exploit development practices that have proven to be useful across many languages and domains.</p>
 <p>I would say an IDE or workflow supports project-oriented work in R if there’s a way to do these things:</p>
 <ul>
 <li>Launch the IDE in project A:
