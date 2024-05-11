@@ -306,7 +306,7 @@
     "href": "personal-radmin.html#the-project-onion",
     "title": "7  Meta Project-Oriented Workflow",
     "section": "",
-    "text": "the project onion\n\n\n\n7.1.1 package managers\n\n\n7.1.2 language manager\n\n\n7.1.3 language version\n\n\n7.1.4 environment manager\n\n\n7.1.5 your project",
+    "text": "the project onion\n\n\n\n7.1.1 test environments\na way to test changes to your environment without wrecking your machine:\n\n\n\n\nWindows Sandbox\n\n\n\nUTM\nTart\n\n\n\n\nDocker\nMultipass\nDigital Ocean | Linode | Hetzner\n\n\n\n\n\n\n7.1.2 package managers\n\n\n\n\n\nscoop\nwinget\n\n\n\n\nhomebrew\n\n\n\n\nhomebrew\napt | dnf",
     "crumbs": [
       "Personal R Administration",
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Meta Project-Oriented Workflow</span>"
@@ -317,7 +317,7 @@
     "href": "personal-radmin.html#the-project-onion-r",
     "title": "7  Meta Project-Oriented Workflow",
     "section": "7.2 The Project Onion: R",
-    "text": "7.2 The Project Onion: R\n\n\n\nthe project onion, R",
+    "text": "7.2 The Project Onion: R\n\n\n\nthe project onion, R\n\n\n\n7.2.1 language manager\n\n\n\n\nscoop bucket add r-bucket https://github.com/cderv/r-bucket.git\nscoop install rig\nscoop install rtools\nor\nwinget install posit.rig\nwinget install Rtools\n\n\nbrew tap r-lib/rig\nbrew install --cask rig\n\n\ncurl -Ls https://github.com/r-lib/rig/releases/download/latest/rig-linux-$(arch)-latest.tar.gz |\n  `which sudo` tar xz -C /usr/local\n\n\n\n\n\n7.2.2 language version\nrig add release\nrig add devel\nrig add 3.6.2\n\n\n7.2.3 environment manager\nrenv::init()\nrenv::snapshot()\n\n\n7.2.4 your project\nrenv.lock\nmy_project.Rproj",
     "crumbs": [
       "Personal R Administration",
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Meta Project-Oriented Workflow</span>"
@@ -625,7 +625,7 @@
     "href": "sessioninfo.html",
     "title": "Session info",
     "section": "",
-    "text": "git2r::repository()\n\nLocal:    main /home/runner/work/what-they-forgot/what-they-forgot\nRemote:   main @ origin (https://github.com/rstats-wtf/what-they-forgot)\nHead:     [1f3a9c7] 2024-05-05: Merge pull request #101 from rdinter/main\n\nsessioninfo::session_info()\n\n─ Session info ───────────────────────────────────────────────────────────────\n setting  value\n version  R version 4.4.0 (2024-04-24)\n os       Ubuntu 22.04.4 LTS\n system   x86_64, linux-gnu\n ui       X11\n language (EN)\n collate  C.UTF-8\n ctype    C.UTF-8\n tz       UTC\n date     2024-05-11\n pandoc   2.9.2.1 @ /usr/bin/ (via rmarkdown)\n\n─ Packages ───────────────────────────────────────────────────────────────────\n package     * version date (UTC) lib source\n cli           3.6.2   2023-12-11 [1] RSPM\n digest        0.6.35  2024-03-11 [1] RSPM\n evaluate      0.23    2023-11-01 [1] RSPM\n fastmap       1.1.1   2023-02-24 [1] RSPM\n git2r         0.33.0  2023-11-26 [1] RSPM\n htmltools     0.5.8.1 2024-04-04 [1] RSPM\n jsonlite      1.8.8   2023-12-04 [1] RSPM\n knitr         1.46    2024-04-06 [1] RSPM\n rlang         1.1.3   2024-01-10 [1] RSPM\n rmarkdown     2.26    2024-03-05 [1] RSPM\n sessioninfo   1.2.2   2021-12-06 [1] RSPM\n xfun          0.43    2024-03-25 [1] RSPM\n\n [1] /home/runner/work/_temp/Library\n [2] /opt/R/4.4.0/lib/R/site-library\n [3] /opt/R/4.4.0/lib/R/library\n\n──────────────────────────────────────────────────────────────────────────────",
+    "text": "git2r::repository()\n\nLocal:    (detached) /home/runner/work/what-they-forgot/what-they-forgot\nHead:     [e5afd48] 2024-05-11: Merge 201247188d3bd56ba58b37c3f07dd18f518e2a99 into 1f3a9c7b5468e4fbe646a32d764872cc3c9c12db\n\nsessioninfo::session_info()\n\n─ Session info ───────────────────────────────────────────────────────────────\n setting  value\n version  R version 4.4.0 (2024-04-24)\n os       Ubuntu 22.04.4 LTS\n system   x86_64, linux-gnu\n ui       X11\n language (EN)\n collate  C.UTF-8\n ctype    C.UTF-8\n tz       UTC\n date     2024-05-11\n pandoc   2.9.2.1 @ /usr/bin/ (via rmarkdown)\n\n─ Packages ───────────────────────────────────────────────────────────────────\n package     * version date (UTC) lib source\n cli           3.6.2   2023-12-11 [1] RSPM\n digest        0.6.35  2024-03-11 [1] RSPM\n evaluate      0.23    2023-11-01 [1] RSPM\n fastmap       1.1.1   2023-02-24 [1] RSPM\n git2r         0.33.0  2023-11-26 [1] RSPM\n htmltools     0.5.8.1 2024-04-04 [1] RSPM\n jsonlite      1.8.8   2023-12-04 [1] RSPM\n knitr         1.46    2024-04-06 [1] RSPM\n rlang         1.1.3   2024-01-10 [1] RSPM\n rmarkdown     2.26    2024-03-05 [1] RSPM\n sessioninfo   1.2.2   2021-12-06 [1] RSPM\n xfun          0.43    2024-03-25 [1] RSPM\n\n [1] /home/runner/work/_temp/Library\n [2] /opt/R/4.4.0/lib/R/site-library\n [3] /opt/R/4.4.0/lib/R/library\n\n──────────────────────────────────────────────────────────────────────────────",
     "crumbs": [
       "Session info"
     ]
