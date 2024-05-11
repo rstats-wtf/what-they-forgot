@@ -85,7 +85,7 @@ winget install Rtools
 
 #### {{< fa brands apple >}}
 
-```
+```bash
 brew tap r-lib/rig
 brew install --cask rig
 ```
@@ -93,7 +93,7 @@ brew install --cask rig
 
 #### {{< fa brands linux >}}
 
-```
+```bash
 curl -Ls https://github.com/r-lib/rig/releases/download/latest/rig-linux-$(arch)-latest.tar.gz |
   `which sudo` tar xz -C /usr/local
 ```
