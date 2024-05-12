@@ -20,40 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -75,8 +41,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -303,16 +267,13 @@ ga('send', {
   <ul>
   <li><a href="#the-project-onion" id="toc-the-project-onion" class="nav-link active" data-scroll-target="#the-project-onion"><span class="header-section-number">7.1</span> The Project Onion</a>
   <ul class="collapse">
-  <li><a href="#test-environments" id="toc-test-environments" class="nav-link" data-scroll-target="#test-environments"><span class="header-section-number">7.1.1</span> test environments</a></li>
-  <li><a href="#package-managers" id="toc-package-managers" class="nav-link" data-scroll-target="#package-managers"><span class="header-section-number">7.1.2</span> package managers</a></li>
+  <li><a href="#package-managers" id="toc-package-managers" class="nav-link" data-scroll-target="#package-managers"><span class="header-section-number">7.1.1</span> package managers</a></li>
+  <li><a href="#language-manager" id="toc-language-manager" class="nav-link" data-scroll-target="#language-manager"><span class="header-section-number">7.1.2</span> language manager</a></li>
+  <li><a href="#language-version" id="toc-language-version" class="nav-link" data-scroll-target="#language-version"><span class="header-section-number">7.1.3</span> language version</a></li>
+  <li><a href="#environment-manager" id="toc-environment-manager" class="nav-link" data-scroll-target="#environment-manager"><span class="header-section-number">7.1.4</span> environment manager</a></li>
+  <li><a href="#your-project" id="toc-your-project" class="nav-link" data-scroll-target="#your-project"><span class="header-section-number">7.1.5</span> your project</a></li>
   </ul></li>
-  <li><a href="#the-project-onion-r" id="toc-the-project-onion-r" class="nav-link" data-scroll-target="#the-project-onion-r"><span class="header-section-number">7.2</span> The Project Onion: R</a>
-  <ul class="collapse">
-  <li><a href="#language-manager" id="toc-language-manager" class="nav-link" data-scroll-target="#language-manager"><span class="header-section-number">7.2.1</span> language manager</a></li>
-  <li><a href="#language-version" id="toc-language-version" class="nav-link" data-scroll-target="#language-version"><span class="header-section-number">7.2.2</span> language version</a></li>
-  <li><a href="#environment-manager" id="toc-environment-manager" class="nav-link" data-scroll-target="#environment-manager"><span class="header-section-number">7.2.3</span> environment manager</a></li>
-  <li><a href="#your-project" id="toc-your-project" class="nav-link" data-scroll-target="#your-project"><span class="header-section-number">7.2.4</span> your project</a></li>
-  </ul></li>
+  <li><a href="#the-project-onion-r" id="toc-the-project-onion-r" class="nav-link" data-scroll-target="#the-project-onion-r"><span class="header-section-number">7.2</span> The Project Onion: R</a></li>
   <li><a href="#the-workflow-cycle" id="toc-the-workflow-cycle" class="nav-link" data-scroll-target="#the-workflow-cycle"><span class="header-section-number">7.3</span> The Workflow Cycle</a></li>
   </ul>
 </nav>
@@ -356,55 +317,20 @@ ga('send', {
 <figcaption>the project onion</figcaption>
 </figure>
 </div>
-<section id="test-environments" class="level3" data-number="7.1.1">
-<h3 data-number="7.1.1" class="anchored" data-anchor-id="test-environments"><span class="header-section-number">7.1.1</span> test environments</h3>
-<p>a way to test changes to your environment without wrecking your machine:</p>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page"><i class="fa-brands fa-windows" aria-label="windows"></i></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false"><i class="fa-brands fa-apple" aria-label="apple"></i></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false"><i class="fa-brands fa-linux" aria-label="linux"></i></a></li></ul>
-<div class="tab-content">
-<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<p><a href="https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-sandbox/windows-sandbox-overview">Windows Sandbox</a></p>
-</div>
-<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<ul>
-<li><a href="https://mac.getutm.app/">UTM</a></li>
-<li><a href="https://github.com/cirruslabs/tart">Tart</a></li>
-</ul>
-</div>
-<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
-<ul>
-<li><a href="https://www.docker.com/">Docker</a></li>
-<li><a href="https://multipass.run/">Multipass</a></li>
-<li><a href="https://www.digitalocean.com/">Digital Ocean</a> | <a href="https://www.linode.com/">Linode</a> | <a href="https://www.hetzner.com/">Hetzner</a></li>
-</ul>
-</div>
-</div>
-</div>
+<section id="package-managers" class="level3" data-number="7.1.1">
+<h3 data-number="7.1.1" class="anchored" data-anchor-id="package-managers"><span class="header-section-number">7.1.1</span> package managers</h3>
 </section>
-<section id="package-managers" class="level3" data-number="7.1.2">
-<h3 data-number="7.1.2" class="anchored" data-anchor-id="package-managers"><span class="header-section-number">7.1.2</span> package managers</h3>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true"><i class="fa-brands fa-windows" aria-label="windows"></i></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false"><i class="fa-brands fa-apple" aria-label="apple"></i></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false"><i class="fa-brands fa-linux" aria-label="linux"></i></a></li></ul>
-<div class="tab-content">
-<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
-<ul>
-<li><a href="https://scoop.sh/">scoop</a></li>
-<li><a href="https://learn.microsoft.com/en-us/windows/package-manager/winget/">winget</a></li>
-</ul>
-</div>
-<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
-<ul>
-<li><a href="https://brew.sh/">homebrew</a></li>
-</ul>
-</div>
-<div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
-<ul>
-<li><a href="https://docs.brew.sh/Homebrew-on-Linux">homebrew</a></li>
-<li><a href="https://wiki.debian.org/Apt">apt</a> | <a href="https://docs.fedoraproject.org/en-US/quick-docs/dnf/">dnf</a></li>
-</ul>
-</div>
-</div>
-</div>
+<section id="language-manager" class="level3" data-number="7.1.2">
+<h3 data-number="7.1.2" class="anchored" data-anchor-id="language-manager"><span class="header-section-number">7.1.2</span> language manager</h3>
+</section>
+<section id="language-version" class="level3" data-number="7.1.3">
+<h3 data-number="7.1.3" class="anchored" data-anchor-id="language-version"><span class="header-section-number">7.1.3</span> language version</h3>
+</section>
+<section id="environment-manager" class="level3" data-number="7.1.4">
+<h3 data-number="7.1.4" class="anchored" data-anchor-id="environment-manager"><span class="header-section-number">7.1.4</span> environment manager</h3>
+</section>
+<section id="your-project" class="level3" data-number="7.1.5">
+<h3 data-number="7.1.5" class="anchored" data-anchor-id="your-project"><span class="header-section-number">7.1.5</span> your project</h3>
 </section>
 </section>
 <section id="the-project-onion-r" class="level2" data-number="7.2">
@@ -415,46 +341,6 @@ ga('send', {
 <figcaption>the project onion, R</figcaption>
 </figure>
 </div>
-<section id="language-manager" class="level3" data-number="7.2.1">
-<h3 data-number="7.2.1" class="anchored" data-anchor-id="language-manager"><span class="header-section-number">7.2.1</span> language manager</h3>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true"><i class="fa-brands fa-windows" aria-label="windows"></i></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false"><i class="fa-brands fa-apple" aria-label="apple"></i></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-3" role="tab" aria-controls="tabset-3-3" aria-selected="false"><i class="fa-brands fa-linux" aria-label="linux"></i></a></li></ul>
-<div class="tab-content">
-<div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">scoop</span> bucket add r-bucket https://github.com/cderv/r-bucket.git</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">scoop</span> install rig</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">scoop</span> install rtools</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>or</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">winget</span> install posit.rig</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">winget</span> install Rtools</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">brew</span> tap r-lib/rig</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">brew</span> install <span class="at">--cask</span> rig</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="tabset-3-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-3-tab">
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-Ls</span> https://github.com/r-lib/rig/releases/download/latest/rig-linux-<span class="va">$(</span><span class="fu">arch</span><span class="va">)</span>-latest.tar.gz <span class="kw">|</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">`</span><span class="fu">which</span> sudo<span class="kw">`</span> tar xz <span class="at">-C</span> /usr/local</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="language-version" class="level3" data-number="7.2.2">
-<h3 data-number="7.2.2" class="anchored" data-anchor-id="language-version"><span class="header-section-number">7.2.2</span> language version</h3>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">rig</span> add release</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ex">rig</span> add devel</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="ex">rig</span> add 3.6.2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="environment-manager" class="level3" data-number="7.2.3">
-<h3 data-number="7.2.3" class="anchored" data-anchor-id="environment-manager"><span class="header-section-number">7.2.3</span> environment manager</h3>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">init</span>()</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">snapshot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="your-project" class="level3" data-number="7.2.4">
-<h3 data-number="7.2.4" class="anchored" data-anchor-id="your-project"><span class="header-section-number">7.2.4</span> your project</h3>
-<pre><code>renv.lock
-my_project.Rproj</code></pre>
-</section>
 </section>
 <section id="the-workflow-cycle" class="level2" data-number="7.3">
 <h2 data-number="7.3" class="anchored" data-anchor-id="the-workflow-cycle"><span class="header-section-number">7.3</span> The Workflow Cycle</h2>
