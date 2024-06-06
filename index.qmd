@@ -59,6 +59,7 @@ both overlap and diverge in content.
 
 Upcoming and past offerings:
 
+  * [posit::conf 2024](https://github.com/posit-conf-2024/wtf), Seattle, WA
   * [posit::conf 2023](https://github.com/posit-conf-2023/wtf), Chicago, IL
   * [rstudio::conf 2022](https://rstats-wtf.github.io/wtf-2022-rsc/), Oxon Hill, MD
   * [rstudio::conf 2020](https://rstats-wtf.github.io/wtf-2020-rsc/), San Francisco, CA
