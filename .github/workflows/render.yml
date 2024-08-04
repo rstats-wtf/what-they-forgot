@@ -27,7 +27,7 @@ jobs:
           git config --global user.name "$GITHUB_ACTOR"
           git config --global user.email "$GITHUB_ACTOR@users.noreply.github.com"
 
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - uses: quarto-dev/quarto-actions/setup@v2
         with:
@@ -53,7 +53,7 @@ jobs:
       - name: Deploy to Netlify
         if: contains(env.isExtPR, 'false')
         id: netlify-deploy
-        uses: nwtgck/actions-netlify@v2.0
+        uses: nwtgck/actions-netlify@v3.0
         with:
           publish-dir: './_book'
           production-branch: main
