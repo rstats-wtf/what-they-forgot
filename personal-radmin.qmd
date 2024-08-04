@@ -1,5 +1,5 @@
 ---
-title: "Meta Project-Oriented Workflow"
+title: "Personal R Administration"
 ---
 
 The goal of these chapters is to help you build a system for answering questions like:

@@ -21,15 +21,16 @@ book:
         - practice-safe-paths.qmd
         - naming-files.qmd
         - api-for-an-analysis.qmd
-    - part: "Personal R Administration"
+
+    - part: personal-radmin.qmd
       chapters:
-        - personal-radmin.qmd
         - r-startup.qmd
         - installing-packages.qmd
         - system-prep-for-build.qmd
         - reproducible-environments.qmd
         - installing-r.qmd
         - maintaining-r.qmd
+
     - part: "All is Fail"
       chapters:
         - debugging-r.qmd
