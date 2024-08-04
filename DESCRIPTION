@@ -1,12 +1,10 @@
 Package: whatTheyForgot
 Type: Book
-Title: Does not matter.
+Title: What They Forgot to Teach You About R
 Version: 0.0.1
 Imports:
-  bookdown,
   emo,
   git2r,
   sessioninfo
 Remotes:
-  rstudio/bookdown,
   hadley/emo

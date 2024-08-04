@@ -13,3 +13,4 @@ package-lock.json
 /.quarto/
 
 /.luarc.json
+.Rprofile
