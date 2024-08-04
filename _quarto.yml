@@ -26,6 +26,7 @@ book:
         - personal-radmin.qmd
         - r-startup.qmd
         - installing-packages.qmd
+        - system-prep-for-build.qmd
         - reproducible-environments.qmd
         - installing-r.qmd
         - maintaining-r.qmd
