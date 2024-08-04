@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>10&nbsp; Reproducible Environments – What They Forgot to Teach You About R</title>
+<title>9&nbsp; Reproducible Environments – What They Forgot to Teach You About R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,7 +31,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./installing-r.html" rel="next">
-<link href="./system-prep-for-build.html" rel="prev">
+<link href="./installing-packages.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -95,7 +95,7 @@ ga('send', {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./personal-radmin.html">Personal R Administration</a></li><li class="breadcrumb-item"><a href="./reproducible-environments.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Reproducible Environments</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./personal-radmin.html">Personal R Administration</a></li><li class="breadcrumb-item"><a href="./reproducible-environments.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Reproducible Environments</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -193,26 +193,20 @@ ga('send', {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./system-prep-for-build.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Set up an R dev environment</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./reproducible-environments.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Reproducible Environments</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Reproducible Environments</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./installing-r.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Installing R</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Installing R</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./maintaining-r.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Maintaining R</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Maintaining R</span></span></a>
   </div>
 </li>
       </ul>
@@ -229,19 +223,19 @@ ga('send', {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./debugging-r.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Debugging R code</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Debugging R code</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./read-source.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Read the source</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Read the source</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./reprexing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Reproduce the problem</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Reproduce the problem</span></span></a>
   </div>
 </li>
       </ul>
@@ -262,17 +256,17 @@ ga('send', {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#posit-package-manager" id="toc-posit-package-manager" class="nav-link active" data-scroll-target="#posit-package-manager"><span class="header-section-number">10.1</span> posit package manager</a></li>
-  <li><a href="#renv" id="toc-renv" class="nav-link" data-scroll-target="#renv"><span class="header-section-number">10.2</span> renv</a></li>
+  <li><a href="#posit-package-manager" id="toc-posit-package-manager" class="nav-link active" data-scroll-target="#posit-package-manager"><span class="header-section-number">9.1</span> posit package manager</a></li>
+  <li><a href="#renv" id="toc-renv" class="nav-link" data-scroll-target="#renv"><span class="header-section-number">9.2</span> renv</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./personal-radmin.html">Personal R Administration</a></li><li class="breadcrumb-item"><a href="./reproducible-environments.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Reproducible Environments</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./personal-radmin.html">Personal R Administration</a></li><li class="breadcrumb-item"><a href="./reproducible-environments.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Reproducible Environments</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Reproducible Environments</span></h1>
+<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Reproducible Environments</span></h1>
 </div>
 
 
@@ -289,12 +283,12 @@ ga('send', {
 </header>
 
 
-<section id="posit-package-manager" class="level2" data-number="10.1">
-<h2 data-number="10.1" class="anchored" data-anchor-id="posit-package-manager"><span class="header-section-number">10.1</span> posit package manager</h2>
+<section id="posit-package-manager" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="posit-package-manager"><span class="header-section-number">9.1</span> posit package manager</h2>
 <p><a href="https://p3m.dev">Posit Public Package Manager, or P3M</a></p>
 </section>
-<section id="renv" class="level2" data-number="10.2">
-<h2 data-number="10.2" class="anchored" data-anchor-id="renv"><span class="header-section-number">10.2</span> renv</h2>
+<section id="renv" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="renv"><span class="header-section-number">9.2</span> renv</h2>
 <p>https://rstudio.github.io/renv/</p>
 
 
@@ -723,13 +717,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./system-prep-for-build.html" class="pagination-link" aria-label="Set up an R dev environment">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Set up an R dev environment</span></span>
+      <a href="./installing-packages.html" class="pagination-link" aria-label="Installing packages">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Installing packages</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./installing-r.html" class="pagination-link" aria-label="Installing R">
-        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Installing R</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Installing R</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
