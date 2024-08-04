@@ -1,7 +1,5 @@
 ---
 format: html
-filters:
-   - lightbox
 lightbox: auto
 ---
 
