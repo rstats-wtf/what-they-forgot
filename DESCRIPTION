@@ -5,6 +5,7 @@ Version: 0.0.1
 Imports:
   emo,
   git2r,
-  sessioninfo
+  sessioninfo,
+  rmarkdown
 Remotes:
   hadley/emo
