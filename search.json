@@ -108,7 +108,7 @@
     "href": "source-and-blank-slates.html#restart-r-often-during-development",
     "title": "2  Saving source and blank slates",
     "section": "2.4 Restart R often during development",
-    "text": "2.4 Restart R often during development\n\nHave you tried turning it off and then on again?\n– timeless troubleshooting wisdom, applies to everything\n\nIf you use RStudio, use the menu item Session &gt; Restart R or the associated keyboard shortcut Ctrl+Shift+F10 (Windows and Linux) or Command+Shift+F10 (Mac OS). Additional keyboard shortcuts make it easy to restart development where you left off, i.e. to say “re-run all the code up to HERE”:\n\nIn an R script, use Ctrl+Alt+B (Windows and Linux) or Command+Option+B (Mac OS)\nIn R markdown, use Ctrl+Alt+P (Windows and Linux) or Command+Option+P (Mac OS)\n\nIf you run R from the shell, use Ctrl+D or q() to quit, then restart R.\n\n2.4.1 Pre-emptively handling a FAQ\nNo, there is no R command you can put at the top of a script to restart R before executing the rest of the file.\nNo, this is a not a good reason to build RStudio API hacks into your scripts. We shall not speak of your favorite trick that starts with .rs.api.*.\nYou use a menu or keyboard shortcut to save your code or to re-indent it or run a spell-checker, right? This is how you should approach restarting R periodically during the day. It’s a workflow task. It does not belong in your code.\nWhich brings us to …",
+    "text": "2.4 Restart R often during development\n\nHave you tried turning it off and then on again?\n– timeless troubleshooting wisdom, applies to everything\n\nIf you use RStudio, use the menu item Session &gt; Restart R or the associated keyboard shortcut:\n\nCtrl+Shift+F10 (Windows and Linux)\nCommand+Shift+F10 or Command+Shift+0 (Mac OS)\n\nAdditional keyboard shortcuts make it easy to restart development where you left off, i.e. to say “re-run all the code up to HERE”:\n\nIn an R script, use Ctrl+Alt+B (Windows and Linux) or Command+Option+B (Mac OS)\nIn R markdown, use Ctrl+Alt+P (Windows and Linux) or Command+Option+P (Mac OS)\n\nIf you run R from the shell, use Ctrl+D or q() to quit, then restart R.\n\n2.4.1 Pre-emptively handling a FAQ\nNo, there is no R command you can put at the top of a script to restart R before executing the rest of the file.\nNo, this is a not a good reason to build RStudio API hacks into your scripts. We shall not speak of your favorite trick that starts with .rs.api.*.\nYou use a menu or keyboard shortcut to save your code or to re-indent it or run a spell-checker, right? This is how you should approach restarting R periodically during the day. It’s a workflow task. It does not belong in your code.\nWhich brings us to …",
     "crumbs": [
       "A holistic workflow",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Saving source and blank slates</span>"
@@ -163,7 +163,7 @@
     "href": "projects.html",
     "title": "3  Project-oriented workflow",
     "section": "",
-    "text": "3.1 We need to talk about setwd(\"path/that/only/works/on/my/machine\")\nA common response to the working directory problem is to set the working directory at the beginning of each script via setwd(). At the start of STAT 545, we see a lot of student code that looks like this:\nlibrary(ggplot2)\nsetwd(\"/Users/jenny/cuddly_broccoli/verbose_funicular/foofy/data\")\ndf &lt;- read.delim(\"raw_foofy_data.csv\")\np &lt;- ggplot(df, aes(x, y)) + geom_point()\nggsave(\"../figs/foofy_scatterplot.png\")\nThe chance of the setwd() command having the desired effect – making the file paths work – for anyone besides its author is 0%. It’s also unlikely to work for the author one or two years or computers from now. To recreate and perhaps extend this plot, the lucky recipient will need to hand edit one or more paths to reflect where the project has landed on their machine.\nHard-wired, absolute paths, especially when sprinkled throughout the code, make a project brittle. Such code does not travel well across time or space.\nIf, after reading this article, you still decide to use setwd() in your scripts, you should at least be very disciplined about it:\nThe convention about leaving working directory at the top-level of a project is tightly connected to topics in Chapter 4.",
+    "text": "3.1 We need to talk about setwd(\"path/that/only/works/on/my/machine\")\nIn Section 2.5, we discouraged the habit of starting R scripts with rm(list = ls()), because it doesn’t actually achieve the intended goal: to reset things. Restarting R is a better way to power-cycle.\nBut what if you want to shift focus from project A to project B? Restarting R, alone, is not enough. It doesn’t change R’s working directory, which is needed if projects A and B live in different directories, which they should (see Section 3.3)). Also, what if you want to have project A and B available for work at the same time?\nMy strong recommendation is to use a development tool with first-class support for projects. But first …\nA common response to the working directory problem is to set the working directory at the beginning of each script via setwd(). At the start of STAT 545, we see a lot of student code that looks like this:\nlibrary(ggplot2)\nsetwd(\"/Users/jenny/cuddly_broccoli/verbose_funicular/foofy/data\")\ndf &lt;- read.delim(\"raw_foofy_data.csv\")\np &lt;- ggplot(df, aes(x, y)) + geom_point()\nggsave(\"../figs/foofy_scatterplot.png\")\nThe chance of the setwd() command having the desired effect – making the file paths work – for anyone besides its author is 0%. It’s also unlikely to work for the author one or two years or computers from now. To recreate and perhaps extend this plot, the lucky recipient will need to hand edit one or more paths to reflect where the project has landed on their machine.\nHard-wired, absolute paths, especially when sprinkled throughout the code, make a project brittle. Such code does not travel well across time or space.\nIf, after reading this article, you still decide to use setwd() in your scripts, you should at least be very disciplined about it:\nThe convention about leaving working directory at the top-level of a project is tightly connected to topics in Chapter 4.",
     "crumbs": [
       "A holistic workflow",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Project-oriented workflow</span>"
@@ -251,7 +251,7 @@
     "href": "practice-safe-paths.html",
     "title": "4  Practice safe paths",
     "section": "",
-    "text": "4.1 Use projects and the here package\nHow can you avoid setwd() at the top of every script?\nTo continue our example, start R in the foofy directory, wherever that may be. Now the code looks like so:\nlibrary(ggplot2)\nlibrary(here)\n\ndf &lt;- read.delim(here(\"data\", \"raw_foofy_data.csv\"))\np &lt;- ggplot(df, aes(x, y)) + geom_point()\nggsave(here(\"figs\", \"foofy_scatterplot.png\"))\nThis will run, with no edits, for anyone who follows the convention about launching R in the project folder. In fact, it will even work if R’s working directory is anywhere inside the project, i.e. it will work from sub-folders. This plays well with knitr/rmarkdown’s default behavior around working directory and in package development/checking workflows.\nRead up on the here package to learn about more features, such as additional ways to mark the top directory and troubleshooting with dr_here(). I have also written a more detailed paean to this package before.",
+    "text": "4.1 Use projects and the here package\nAdapt from https://github.com/jennybc/here_here#readme.\nInclude some coverage of fs.\nHow can you avoid setwd() at the top of every script?\nTo continue our example, start R in the foofy directory, wherever that may be. Now the code looks like so:\nlibrary(ggplot2)\nlibrary(here)\n\ndf &lt;- read.delim(here(\"data\", \"raw_foofy_data.csv\"))\np &lt;- ggplot(df, aes(x, y)) + geom_point()\nggsave(here(\"figs\", \"foofy_scatterplot.png\"))\nThis will run, with no edits, for anyone who follows the convention about launching R in the project folder. In fact, it will even work if R’s working directory is anywhere inside the project, i.e. it will work from sub-folders. This plays well with knitr/rmarkdown’s default behavior around working directory and in package development/checking workflows.\nRead up on the here package to learn about more features, such as additional ways to mark the top directory and troubleshooting with dr_here(). I have also written a more detailed paean to this package before.",
     "crumbs": [
       "A holistic workflow",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Practice safe paths</span>"
@@ -291,11 +291,51 @@
     ]
   },
   {
+    "objectID": "personal-radmin.html",
+    "href": "personal-radmin.html",
+    "title": "Personal R Administration",
+    "section": "",
+    "text": "The Project Onion\nThe goal of these chapters is to help you build a system for answering questions like:\nacross many projects and many computers.\nThis system takes the principles articulated in “Holistic Workflow” and extends them to all the ways you might use R, but also to other software you use.\nGoing all in on the project-oriented workflow means adopting tools that make it possible to programmatically manage each of the layers of project setup, which can be visualized via the “project onion”:",
+    "crumbs": [
+      "Personal R Administration"
+    ]
+  },
+  {
+    "objectID": "personal-radmin.html#the-project-onion",
+    "href": "personal-radmin.html#the-project-onion",
+    "title": "Personal R Administration",
+    "section": "",
+    "text": "the project onion\n\n\n\npackage managers\n\n\nlanguage manager\n\n\nlanguage version\n\n\nenvironment manager\n\n\nyour project",
+    "crumbs": [
+      "Personal R Administration"
+    ]
+  },
+  {
+    "objectID": "personal-radmin.html#the-project-onion-r",
+    "href": "personal-radmin.html#the-project-onion-r",
+    "title": "Personal R Administration",
+    "section": "The Project Onion: R",
+    "text": "The Project Onion: R\n\n\n\nthe project onion, R",
+    "crumbs": [
+      "Personal R Administration"
+    ]
+  },
+  {
+    "objectID": "personal-radmin.html#the-workflow-cycle",
+    "href": "personal-radmin.html#the-workflow-cycle",
+    "title": "Personal R Administration",
+    "section": "The Workflow Cycle",
+    "text": "The Workflow Cycle\n\n\n\n\n\nflowchart LR\n\nstart(starting R)\npackages(installing R packages)\nrepro(creating reproducible environments)\ninstalling(\"installing | upgrading R\")\n\nstart --&gt; packages --&gt; repro --&gt; installing --&gt; start\n\n\n\n\n\n\nIf you go all in on the project-oriented workflow, installing R and upgrading R are the same operation.",
+    "crumbs": [
+      "Personal R Administration"
+    ]
+  },
+  {
     "objectID": "r-startup.html",
     "href": "r-startup.html",
     "title": "7  R Startup",
     "section": "",
-    "text": "7.1 .Renviron\nThe .Renviron file is most useful for defining sensitive information such as API keys (such as GitHub or twitter) as well as R specific environment variables like the history size (R_HISTSIZE=100000) and default library locations R_LIBS_USER.\nThe .Renviron file contains lists of environment variables to set. This is not R code, it uses a format similar to that used on the command line shell.\nThe easiest way to edit .Renviron is by running usethis::edit_r_environ().\nA simple example of a .Renviron file is:",
+    "text": "7.1 .Renviron\nR has been designed to be used from shared computing resources such as linux servers. As a result R’s startup offers lots of opportunity for customization; both for every user of a system as well as for each individual user. However this flexibility comes at a cost: complexity.\nAnd for sure, R’s startup procedures are complex:\nHowever most R users can ignore the majority of this complexity and focus on two main files.\nThese files are R specific instances of a broader family of customization files commonly referred to as dotfiles. These are used to tailor the behavior of many programs, particularly those with roots in the unix command line.\nMany people store their dotfiles on GitHub and a great way to find inspiration for what you can do with them is to browse other people’s dotfile repositories.\nOne way to find R specific dotfiles is to do a GitHub search for filename:.Rprofile.\nThe .Renviron file is most useful for defining sensitive information such as API keys (such as GitHub or twitter) as well as R specific environment variables like the history size (R_HISTSIZE=100000) and default library locations R_LIBS_USER.\nThe .Renviron file contains lists of environment variables to set. This is not R code, it uses a format similar to that used on the command line shell.\nThe easiest way to edit .Renviron is by running usethis::edit_r_environ().\nA simple example of a .Renviron file is:",
     "crumbs": [
       "Personal R Administration",
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>R Startup</span>"
@@ -493,7 +533,7 @@
     "href": "debugging-r.html",
     "title": "12  Debugging R code",
     "section": "",
-    "text": "12.1 Debugging your own code\nThe most common case you will run into a bug is when writing new code yourself. Often the mistake is obvious and easily fixed, but sometimes it only appears after multiple levels of calls and is harder to diagnose. There are a few common strategies to use when debugging your own code.",
+    "text": "12.1 Debugging your own code\nR scripts are great things, when they work. What are some strategies you can use when things go sideways and an error occurs in your script?\nThe most common case you will run into a bug is when writing new code yourself. Often the mistake is obvious and easily fixed, but sometimes it only appears after multiple levels of calls and is harder to diagnose. There are a few common strategies to use when debugging your own code.",
     "crumbs": [
       "All is Fail",
       "<span class='chapter-number'>12</span>  <span class='chapter-title'>Debugging R code</span>"
@@ -548,7 +588,7 @@
     "href": "read-source.html",
     "title": "13  Read the source",
     "section": "",
-    "text": "13.1 GitHub search\nGitHub allows you to search code, repositories, and issues which can often reveal useful insights into problems.\nDoing a generic search is often fruitful, but you can often get more pertinent results with a more targeted approach.",
+    "text": "13.1 GitHub search\nOften when you encounter an error and you do not immediately understand why or what it is saying, the first thing you should try is to search for the error message. You can search the error directly on google, or search on specific sites like https://community.rstudio.com or https://stackoverflow.com.\nAnother option is to GitHub search to shed light on your problem.\nGitHub allows you to search code, repositories, and issues which can often reveal useful insights into problems.\nDoing a generic search is often fruitful, but you can often get more pertinent results with a more targeted approach.",
     "crumbs": [
       "All is Fail",
       "<span class='chapter-number'>13</span>  <span class='chapter-title'>Read the source</span>"
@@ -592,49 +632,9 @@
     "href": "sessioninfo.html",
     "title": "Session info",
     "section": "",
-    "text": "git2r::repository()\n\nLocal:    main /home/runner/work/what-they-forgot/what-they-forgot\nRemote:   main @ origin (https://github.com/rstats-wtf/what-they-forgot)\nHead:     [2c6cff3] 2024-08-10: rmd &gt;&gt; description\n\nsessioninfo::session_info()\n\n─ Session info ───────────────────────────────────────────────────────────────\n setting  value\n version  R version 4.5.0 (2025-04-11)\n os       Ubuntu 24.04.2 LTS\n system   x86_64, linux-gnu\n ui       X11\n language (EN)\n collate  C.UTF-8\n ctype    C.UTF-8\n tz       UTC\n date     2025-06-08\n pandoc   3.1.3 @ /usr/bin/ (via rmarkdown)\n quarto   1.5.56 @ /usr/local/bin/quarto\n\n─ Packages ───────────────────────────────────────────────────────────────────\n package     * version date (UTC) lib source\n cli           3.6.5   2025-04-23 [1] RSPM\n digest        0.6.37  2024-08-19 [1] RSPM\n evaluate      1.0.3   2025-01-10 [1] RSPM\n fastmap       1.2.0   2024-05-15 [1] RSPM\n git2r         0.36.2  2025-03-29 [1] RSPM\n htmltools     0.5.8.1 2024-04-04 [1] RSPM\n jsonlite      2.0.0   2025-03-27 [1] RSPM\n knitr         1.50    2025-03-16 [1] RSPM\n rlang         1.1.6   2025-04-11 [1] RSPM\n rmarkdown     2.29    2024-11-04 [1] RSPM\n sessioninfo   1.2.3   2025-02-05 [1] RSPM\n xfun          0.52    2025-04-02 [1] RSPM\n\n [1] /home/runner/work/_temp/Library\n [2] /opt/R/4.5.0/lib/R/site-library\n [3] /opt/R/4.5.0/lib/R/library\n\n──────────────────────────────────────────────────────────────────────────────",
+    "text": "git2r::repository()\n\nLocal:    (detached) /home/runner/work/what-they-forgot/what-they-forgot\nHead:     [40d9326] 2025-06-08: Merge 4253ba4f71edd55ad36229064844bacb0b659c13 into 2c6cff360227169a557d97d3d53a89eb32b1bb3c\n\nsessioninfo::session_info()\n\n─ Session info ───────────────────────────────────────────────────────────────\n setting  value\n version  R version 4.5.0 (2025-04-11)\n os       Ubuntu 24.04.2 LTS\n system   x86_64, linux-gnu\n ui       X11\n language (EN)\n collate  C.UTF-8\n ctype    C.UTF-8\n tz       UTC\n date     2025-06-08\n pandoc   3.1.3 @ /usr/bin/ (via rmarkdown)\n quarto   1.7.31 @ /usr/local/bin/quarto\n\n─ Packages ───────────────────────────────────────────────────────────────────\n package     * version date (UTC) lib source\n cli           3.6.5   2025-04-23 [1] RSPM\n digest        0.6.37  2024-08-19 [1] RSPM\n evaluate      1.0.3   2025-01-10 [1] RSPM\n fastmap       1.2.0   2024-05-15 [1] RSPM\n git2r         0.36.2  2025-03-29 [1] RSPM\n htmltools     0.5.8.1 2024-04-04 [1] RSPM\n jsonlite      2.0.0   2025-03-27 [1] RSPM\n knitr         1.50    2025-03-16 [1] RSPM\n rlang         1.1.6   2025-04-11 [1] RSPM\n rmarkdown     2.29    2024-11-04 [1] RSPM\n sessioninfo   1.2.3   2025-02-05 [1] RSPM\n xfun          0.52    2025-04-02 [1] RSPM\n\n [1] /home/runner/work/_temp/Library\n [2] /opt/R/4.5.0/lib/R/site-library\n [3] /opt/R/4.5.0/lib/R/library\n\n──────────────────────────────────────────────────────────────────────────────",
     "crumbs": [
       "Session info"
-    ]
-  },
-  {
-    "objectID": "personal-radmin.html",
-    "href": "personal-radmin.html",
-    "title": "Personal R Administration",
-    "section": "",
-    "text": "The Project Onion\nGoing all in on the project-oriented workflow means adopting tools that make it possible to programmatically manage each of the layers of project setup, which can be visualized via the “project onion”:",
-    "crumbs": [
-      "Personal R Administration"
-    ]
-  },
-  {
-    "objectID": "personal-radmin.html#the-project-onion",
-    "href": "personal-radmin.html#the-project-onion",
-    "title": "Personal R Administration",
-    "section": "",
-    "text": "the project onion\n\n\n\npackage managers\n\n\nlanguage manager\n\n\nlanguage version\n\n\nenvironment manager\n\n\nyour project",
-    "crumbs": [
-      "Personal R Administration"
-    ]
-  },
-  {
-    "objectID": "personal-radmin.html#the-project-onion-r",
-    "href": "personal-radmin.html#the-project-onion-r",
-    "title": "Personal R Administration",
-    "section": "The Project Onion: R",
-    "text": "The Project Onion: R\n\n\n\nthe project onion, R",
-    "crumbs": [
-      "Personal R Administration"
-    ]
-  },
-  {
-    "objectID": "personal-radmin.html#the-workflow-cycle",
-    "href": "personal-radmin.html#the-workflow-cycle",
-    "title": "Personal R Administration",
-    "section": "The Workflow Cycle",
-    "text": "The Workflow Cycle\n\n\n\n\n\nflowchart LR\n\nstart(starting R)\npackages(installing R packages)\nrepro(creating reproducible environments)\ninstalling(\"installing | upgrading R\")\n\nstart --&gt; packages --&gt; repro --&gt; installing --&gt; start\n\n\n\n\n\n\nIf you go all in on the project-oriented workflow, installing R and upgrading R are the same operation.",
-    "crumbs": [
-      "Personal R Administration"
     ]
   }
 ]
