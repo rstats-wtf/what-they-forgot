@@ -54,7 +54,12 @@ knitr::include_graphics("img/rstudio-workspace.png")
 >
 > -- timeless troubleshooting wisdom, applies to everything
 
-If you use RStudio, use the menu item *Session > Restart R* or the associated keyboard shortcut Ctrl+Shift+F10 (Windows and Linux) or Command+Shift+F10 (Mac OS). Additional keyboard shortcuts make it easy to restart development where you left off, i.e. to say "re-run all the code up to HERE":
+If you use RStudio, use the menu item *Session > Restart R* or the associated keyboard shortcut:
+
+-  Ctrl+Shift+F10 (Windows and Linux)
+-  Command+Shift+F10 or Command+Shift+0 (Mac OS)
+
+Additional keyboard shortcuts make it easy to restart development where you left off, i.e. to say "re-run all the code up to HERE":
 
   * In an R script, use Ctrl+Alt+B (Windows and Linux) or Command+Option+B (Mac OS)
   * In R markdown, use Ctrl+Alt+P (Windows and Linux) or Command+Option+P (Mac OS)
